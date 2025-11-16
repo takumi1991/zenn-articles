@@ -6,12 +6,13 @@ topics: [aws, free-tier, cost]
 published: true
 ---
 
-> 最終更新: 2025-11-16T00:50:25Z (UTC)
+> 最終更新: 2025-11-16T08:36:34Z (UTC)
 
 ## 常時無料枠（Always Free）一覧
 
 | サービス | 無料上限 | 主な注意点 |
 |---|---|---|
+| Lambda Test OK | Demo | This is a test output from Python 3.14 Lambda. |
 
 ### 注意事項
 - 利用量が常時無料枠を**超えると課金**されます。
