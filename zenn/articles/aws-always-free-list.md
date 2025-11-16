@@ -6,7 +6,7 @@ topics: [aws, free-tier, cost]
 published: true
 ---
 
-> 最終更新: 2025-11-15T00:44:52Z (UTC)
+> 最終更新: 2025-11-16T00:50:25Z (UTC)
 
 ## 常時無料枠（Always Free）一覧
 
