@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       REGION: ap-northeast-1
-      FREE_TIER_API: https://example.com/aws/free-tier.json    # ← あなたのAPIに置き換えてください
+      FREE_TIER_API: https://aws-always-free-json-zenn.s3.ap-northeast-1.amazonaws.com/free-tier.json    # ← あなたのAPIに置き換えてください
       OUT_PATH: zenn/articles/aws-always-free-list.md
     steps:
       - name: Checkout
