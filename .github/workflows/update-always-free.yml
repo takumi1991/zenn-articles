@@ -1,40 +1,43 @@
 name: Update AWS Always Free Article
 
 on:
+  workflow_dispatch:
   schedule:
-    - cron: "0 0 1 * *"   # 毎月1日の 09:00 JST（UTC0 の 0:00）
-  workflow_dispatch:       # 手動実行
+    - cron: "0 0 1 * *"
+
+env:
+  APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+  APIFY_ACTOR_ID: ${{ secrets.APIFY_ACTOR_ID }}
 
 jobs:
-  update-article:
+  update:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      - name: Install Apify Client
+      - name: Install deps
         run: npm install apify-client
 
-      - name: Fetch Dataset from Apify
-        id: fetch
+      - name: Fetch dataset from Apify
         run: |
           node << 'EOF'
           import { ApifyClient } from 'apify-client';
           import fs from 'fs';
-
+          
           const client = new ApifyClient({
             token: process.env.APIFY_TOKEN,
           });
-
+          
           const actorId = process.env.APIFY_ACTOR_ID;
 
-          // 最新の run を取得
+          console.log("ACTOR ID:", actorId);  // デバッグ
+
           const lastRun = await client.actor(actorId).lastRun({ status: 'SUCCEEDED' });
           const datasetId = lastRun.defaultDatasetId;
 
@@ -43,15 +46,12 @@ jobs:
 
           console.log(`Fetched items: ${items.length}`);
 
-          // Markdown 生成
           let md = `# AWS Always Free 一覧\n\n更新日: ${new Date().toISOString().slice(0,10)}\n\n`;
 
           for (const item of items) {
             md += `## ${item.title}\n\n`;
             if (item.body) {
-              const text = item.body
-                .replace(/<[^>]+>/g, '')  // HTML除去
-                .trim();
+              const text = item.body.replace(/<[^>]+>/g, '').trim();
               md += `${text}\n\n`;
             } else {
               md += '_No description_\n\n';
@@ -61,10 +61,10 @@ jobs:
           fs.writeFileSync("articles/aws-always-free.md", md);
           EOF
 
-      - name: Commit and push changes
+      - name: Commit & Push
         run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
           git add articles/aws-always-free.md
-          git commit -m "Update AWS Always Free list" || echo "No changes to commit"
+          git commit -m "Update AWS Always Free article"
           git push
