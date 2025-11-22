@@ -1,3 +1,11 @@
+---
+title: "AWS Always Free 一覧"
+emoji: "🌐"
+type: "tech"
+topics: ["aws", "free-tier", "cloud"]
+published: true
+---
+
 # AWS Always Free 一覧
 
 更新日: 2025-11-22
