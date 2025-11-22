@@ -1,79 +1,40 @@
-# .github/workflows/update-zenn-always-free.yml
-name: Update Zenn "Always Free" article
+name: Update Zenn AWS Always Free Article
 
 on:
   schedule:
-    - cron: "0 0 * * *"   # 毎日 00:00 UTC（JST 09:00ごろに反映）
-  workflow_dispatch:
-
-permissions:
-  contents: write   # コミット/Pushに必要
+    - cron: "0 0 1 * *"   # 毎月1日 00:00 JST換算（UTC基準）
+  workflow_dispatch:       # 手動実行も可能
 
 jobs:
-  build-and-commit:
+  update-zenn:
     runs-on: ubuntu-latest
-    env:
-      REGION: ap-northeast-1
-      FREE_TIER_API: https://aws-always-free-json-zenn.s3.ap-northeast-1.amazonaws.com/free-tier.json    # ← あなたのAPIに置き換えてください
-      OUT_PATH: zenn/articles/aws-always-free-list.md
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Ensure Zenn directories exist
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Apify CLI
+        run: npm install -g apify-cli
+
+      - name: Run Apify Actor
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
         run: |
-          mkdir -p zenn/articles zenn/books zenn/images
-          touch zenn/books/.keep
-          touch zenn/images/.keep
+          apify run My-Actor2 --silent --purge > output.json
 
-      - name: Fetch Always Free JSON
+      - name: Create Zenn article markdown
         run: |
-          curl -sS "${FREE_TIER_API}" -o free-tier.json
-          test -s free-tier.json
+          node scripts/generate_article.js
 
-      - name: Generate Markdown for Zenn
+      - name: Commit and push changes
         run: |
-          echo "---" > "${OUT_PATH}"
-          echo "title: AWS「常時無料枠」一覧（自動更新）" >> "${OUT_PATH}"
-          echo "emoji: 🆓" >> "${OUT_PATH}"
-          echo "type: tech" >> "${OUT_PATH}"
-          echo "topics: [aws, free-tier, cost]" >> "${OUT_PATH}"
-          echo "published: true" >> "${OUT_PATH}"
-          echo "---" >> "${OUT_PATH}"
-          echo "" >> "${OUT_PATH}"
-          echo "> 最終更新: $(date -u '+%Y-%m-%dT%H:%M:%SZ') (UTC)" >> "${OUT_PATH}"
-          echo "" >> "${OUT_PATH}"
-          echo "## 常時無料枠（Always Free）一覧" >> "${OUT_PATH}"
-          echo "" >> "${OUT_PATH}"
-          echo "| サービス | 無料上限 | 主な注意点 |" >> "${OUT_PATH}"
-          echo "|---|---|---|" >> "${OUT_PATH}"
-
-          # 例：jqで常時無料枠のみ抽出して表化（APIの構造に合わせて編集）
-          jq -r '
-            .services[]
-            | select(.tier=="ALWAYS_FREE")
-            | [
-                .name,
-                (.limits // "N/A"),
-                (.notes  // "—")
-              ]
-            | @tsv
-          ' free-tier.json | while IFS=$'\t' read -r NAME LIMITS NOTES; do
-            echo "| ${NAME} | ${LIMITS} | ${NOTES} |" >> "${OUT_PATH}"
-          done
-
-          echo "" >> "${OUT_PATH}"
-          echo "### 注意事項" >> "${OUT_PATH}"
-          echo "- 利用量が常時無料枠を**超えると課金**されます。" >> "${OUT_PATH}"
-          echo "- リージョン差異や条件（例：クエリ回数、ストレージ容量）に注意してください。" >> "${OUT_PATH}"
-          echo "- 12か月無料枠と常時無料枠は別。**アカウント作成から12か月を過ぎても常時無料枠は継続**します（制限内利用）。" >> "${OUT_PATH}"
-          echo "" >> "${OUT_PATH}"
-          echo "（このページはGitHub Actionsで毎日自動更新されます）" >> "${OUT_PATH}"
-
-      - name: Commit & Push
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "${OUT_PATH}" zenn/books/.keep zenn/images/.keep
-          git commit -m "chore: auto-update always-free list"
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Update Always Free list"
           git push
