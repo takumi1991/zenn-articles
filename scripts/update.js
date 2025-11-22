@@ -16,7 +16,7 @@ async function main() {
     // ★ Zenn の Front Matter + 導入文 ★
     let md = `---
 title: "AWS Always Free 一覧"
-emoji: "☁️"
+emoji: "🉐"
 type: "tech"
 topics: ["aws", "free-tier", "cloud"]
 published: true
