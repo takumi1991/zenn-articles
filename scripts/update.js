@@ -7,14 +7,12 @@ async function main() {
       token: process.env.APIFY_TOKEN,
     });
 
-    const actorId = process.env.APIFY_ACTOR_ID;
+    // ★ Apify の Dataset ID を固定で使う ★
+    const DATASET_ID = "I06GDgrFBvXQ5zP2o";
 
-    console.log("ACTOR ID:", actorId);
+    console.log("Using fixed DATASET ID:", DATASET_ID);
 
-    const lastRun = await client.actor(actorId).lastRun({ status: 'SUCCEEDED' });
-    const datasetId = lastRun.defaultDatasetId;
-
-    const dataset = await client.dataset(datasetId).listItems();
+    const dataset = await client.dataset(DATASET_ID).listItems();
     const items = dataset.items;
 
     console.log(`Fetched items: ${items.length}`);
@@ -32,8 +30,7 @@ async function main() {
     }
 
     fs.writeFileSync("articles/aws-always-free.md", md);
-
-    console.log("Markdown file updated.");
+    console.log("Markdown updated!");
   } catch (err) {
     console.error("ERROR:", err);
     process.exit(1);
