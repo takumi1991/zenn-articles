@@ -24,47 +24,13 @@ jobs:
       - name: Install deps
         run: npm install apify-client
 
-      - name: Fetch dataset from Apify
-        run: |
-          node << 'EOF'
-          import { ApifyClient } from 'apify-client';
-          import fs from 'fs';
-          
-          const client = new ApifyClient({
-            token: process.env.APIFY_TOKEN,
-          });
-          
-          const actorId = process.env.APIFY_ACTOR_ID;
-
-          console.log("ACTOR ID:", actorId);  // デバッグ
-
-          const lastRun = await client.actor(actorId).lastRun({ status: 'SUCCEEDED' });
-          const datasetId = lastRun.defaultDatasetId;
-
-          const dataset = await client.dataset(datasetId).listItems();
-          const items = dataset.items;
-
-          console.log(`Fetched items: ${items.length}`);
-
-          let md = `# AWS Always Free 一覧\n\n更新日: ${new Date().toISOString().slice(0,10)}\n\n`;
-
-          for (const item of items) {
-            md += `## ${item.title}\n\n`;
-            if (item.body) {
-              const text = item.body.replace(/<[^>]+>/g, '').trim();
-              md += `${text}\n\n`;
-            } else {
-              md += '_No description_\n\n';
-            }
-          }
-
-          fs.writeFileSync("articles/aws-always-free.md", md);
-          EOF
+      - name: Run update script
+        run: node scripts/update.js
 
       - name: Commit & Push
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add articles/aws-always-free.md
-          git commit -m "Update AWS Always Free article"
+          git commit -m "Update AWS Always Free article" || echo "No changes"
           git push
