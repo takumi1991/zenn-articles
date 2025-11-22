@@ -1,7 +1,7 @@
 name: Update AWS Always Free Article
 
 permissions:
-  contents: write
+  contents: write   # ← 必須！
 
 on:
   workflow_dispatch:
@@ -25,10 +25,10 @@ jobs:
           node-version: 20
 
       - name: Install deps
-        run: npm install apify-client
+        run: npm install
 
-      - name: Run update script
-        run: node scripts/update.js
+      - name: Run updater script
+        run: npm run update
 
       - name: Commit & Push
         run: |
