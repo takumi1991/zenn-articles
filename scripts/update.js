@@ -7,18 +7,28 @@ async function main() {
       token: process.env.APIFY_TOKEN,
     });
 
-    // ★ Apify の Dataset ID を固定で使う ★
     const DATASET_ID = "I06GDgrFBvXQ5zP2o";
-
-    console.log("Using fixed DATASET ID:", DATASET_ID);
-
     const dataset = await client.dataset(DATASET_ID).listItems();
     const items = dataset.items;
 
     console.log(`Fetched items: ${items.length}`);
 
-    let md = `# AWS Always Free 一覧\n\n更新日: ${new Date().toISOString().slice(0,10)}\n\n`;
+    // ★ Zenn の Front Matter を追加 ★
+    let md = `---
+title: "AWS Always Free 一覧"
+emoji: "🌐"
+type: "tech"
+topics: ["aws", "free-tier", "cloud"]
+published: true
+---
 
+# AWS Always Free 一覧
+
+更新日: ${new Date().toISOString().slice(0,10)}
+
+`;
+
+    // 本文生成
     for (const item of items) {
       md += `## ${item.title}\n\n`;
       if (item.body) {
