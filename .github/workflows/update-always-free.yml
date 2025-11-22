@@ -1,0 +1,70 @@
+name: Update AWS Always Free Article
+
+on:
+  schedule:
+    - cron: "0 0 1 * *"   # 毎月1日の 09:00 JST（UTC0 の 0:00）
+  workflow_dispatch:       # 手動実行
+
+jobs:
+  update-article:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install Apify Client
+        run: npm install apify-client
+
+      - name: Fetch Dataset from Apify
+        id: fetch
+        run: |
+          node << 'EOF'
+          import { ApifyClient } from 'apify-client';
+          import fs from 'fs';
+
+          const client = new ApifyClient({
+            token: process.env.APIFY_TOKEN,
+          });
+
+          const actorId = process.env.APIFY_ACTOR_ID;
+
+          // 最新の run を取得
+          const lastRun = await client.actor(actorId).lastRun({ status: 'SUCCEEDED' });
+          const datasetId = lastRun.defaultDatasetId;
+
+          const dataset = await client.dataset(datasetId).listItems();
+          const items = dataset.items;
+
+          console.log(`Fetched items: ${items.length}`);
+
+          // Markdown 生成
+          let md = `# AWS Always Free 一覧\n\n更新日: ${new Date().toISOString().slice(0,10)}\n\n`;
+
+          for (const item of items) {
+            md += `## ${item.title}\n\n`;
+            if (item.body) {
+              const text = item.body
+                .replace(/<[^>]+>/g, '')  // HTML除去
+                .trim();
+              md += `${text}\n\n`;
+            } else {
+              md += '_No description_\n\n';
+            }
+          }
+
+          fs.writeFileSync("articles/aws-always-free.md", md);
+          EOF
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add articles/aws-always-free.md
+          git commit -m "Update AWS Always Free list" || echo "No changes to commit"
+          git push
