@@ -15,18 +15,18 @@ async function main() {
 
     // ★ Zenn の Front Matter + 導入文 ★
     let md = `---
-title: "AWS Always Free 一覧"
+title: "AWS 常時無料枠 (Always Free) 一覧"
 emoji: "🉐"
 type: "tech"
 topics: ["aws", "free-tier", "cloud"]
 published: true
 ---
 
-# AWS Always Free 一覧
+# AWS 常時無料枠（Always Free） 一覧
 
-AWS の Always Free（永年無料枠）はアカウント作成後の 12 か月間だけ利用できる Free Tier とは異なり、**特定の使用量まではずっと無料で使えるサービス群** です。
+AWS の 常時無料枠（Always Free）はアカウント作成後の 12 か月間だけ利用できる無料利用枠（Free Tier）とは異なり、**特定の使用量まではずっと無料で使えるサービス群** です。
 
-完全に無制限で無料というわけではありません。各サービスの無料枠（リクエスト数、GB、クォータなど）を超えた部分は通常の従量課金が発生します。
+完全に無制限で無料というわけではありませんが、各サービスの無料枠（リクエスト数、GB、クォータなど）を超えた部分は通常の従量課金が発生します。
 
 本記事では　AWS が公式に公開している Always Free 対象サービスを一覧でまとめています。  
 クラウド学習、個人開発、コスト最適化の参考にぜひご活用ください。
