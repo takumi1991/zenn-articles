@@ -1,5 +1,8 @@
 name: Update AWS Always Free Article
 
+permissions:
+  contents: write
+
 on:
   workflow_dispatch:
   schedule:
