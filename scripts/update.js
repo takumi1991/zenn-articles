@@ -13,8 +13,9 @@ async function main() {
 
     console.log(`Fetched items: ${items.length}`);
 
-    // ★ Zenn の Front Matter を追加 ★
-    let md = `---
+    // ★ Zenn の Front Matter + 導入文 ★
+    let md = `
+---
 title: "AWS Always Free 一覧"
 emoji: "☁️"
 type: "tech"
@@ -24,34 +25,14 @@ published: true
 
 # AWS Always Free 一覧
 
-AWS の Always Free（永年無料枠）は、アカウント作成後の 12 か月間だけの Free Tier とは異なり、**特定の使用量まではずっと無料で利用できるサービス群** です。
+AWS の Always Free（永年無料枠）は、アカウント作成後の 12 か月間だけ利用できる Free Tier とは異なり、  
+**特定の使用量までは、ずっと無料で使えるサービス群** です。
 
-「完全に無制限で無料」というわけではありません。  
-各サービスごとに明確な無料枠（リクエスト数、GB、クォータなど）が設定されており、  
-その上限を超えた分は通常の従量課金が発生します。
+ただし **完全に無制限で無料というわけではありません**。  
+各サービスの無料枠（リクエスト数、GB、クォータなど）を超えた部分は通常の従量課金が発生します。
 
-本記事では、現時点で AWS が公式に公開している Always Free 対象サービスを一覧にして表示しています。  
-
-クラウド学習、コスト最適化、個人開発の基盤構築にご活用ください。
-let md = `---
-title: "AWS Always Free 一覧"
-emoji: "☁️"
-type: "tech"
-topics: ["aws", "free-tier", "cloud"]
-published: true
----
-
-# AWS Always Free 一覧
-
-AWS の Always Free（永年無料枠）は、アカウント作成後の 12 か月間だけの Free Tier とは異なり、  
-**特定の使用量まではずっと無料で利用できるサービス群** です。
-
-**「完全に無制限で無料」ではありません**。  
-各サービスごとに無料枠（リクエスト数、GB、クォータなど）が定められており、  
-その上限を超えた分は従量課金となります。
-
-本記事は AWS が公開している Always Free 対象サービスを  
-一覧としてまとめたものです。クラウド学習や個人開発の参考にどうぞ。
+本記事では、AWS が公式に公開している Always Free 対象サービスを一覧でまとめています。  
+クラウド学習、個人開発、コスト最適化の参考にぜひご活用ください。
 
 <div style="text-align: right;">
   <span style="color: #999;">更新日: ${new Date().toISOString().slice(0,10)}</span>
@@ -59,9 +40,7 @@ AWS の Always Free（永年無料枠）は、アカウント作成後の 12 か
 
 `;
 
-`;
-
-    // 本文生成
+    // ★ 本文（各サービス） ★
     for (const item of items) {
       md += `## ${item.title}\n\n`;
       if (item.body) {
@@ -72,21 +51,20 @@ AWS の Always Free（永年無料枠）は、アカウント作成後の 12 か
       }
     }
 
-    // ★ あとがきセクションを追加 ★
+    // ★ あとがき ★
     md += `
 ---
 
 ## あとがき
 
-AWS では多くのサービスが “Always Free” として提供されており、  
-学習・個人開発・プロトタイプ作成にとても役立ちます。
+AWS の Always Free は、学習や個人開発で非常に役立つ仕組みです。  
+ただし、無料枠には上限があり、超過した場合は課金が発生します。
 
-ただし無料枠には上限があり、利用状況によっては課金が発生する可能性があります。  
-サービスの正式な条件や最新の情報は、必ず AWS 公式ページでご確認ください。
+利用前には必ず AWS 公式の最新情報をチェックしてください。  
+本記事が、ご主人様のクラウド活用に少しでもお役に立てば幸いです。
 
-本記事が AWS を低コストで利用したい方の助けになれば幸いです。
 `;
-    
+
     fs.writeFileSync("articles/aws-always-free.md", md);
     console.log("Markdown updated!");
   } catch (err) {
