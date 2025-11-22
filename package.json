@@ -1,0 +1,11 @@
+{
+  "name": "zenn-articles",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "update": "node scripts/update.js"
+  },
+  "dependencies": {
+    "apify-client": "^2.7.1"
+  }
+}
