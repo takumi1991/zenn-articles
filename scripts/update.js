@@ -14,8 +14,7 @@ async function main() {
     console.log(`Fetched items: ${items.length}`);
 
     // ★ Zenn の Front Matter + 導入文 ★
-    let md = `
----
+    let md = `---
 title: "AWS Always Free 一覧"
 emoji: "☁️"
 type: "tech"
@@ -49,8 +48,7 @@ AWS の Always Free（永年無料枠）は、アカウント作成後の 12 か
     }
 
     // ★ あとがき ★
-    md += `
----
+    md += `---
 
 ## あとがき
 
