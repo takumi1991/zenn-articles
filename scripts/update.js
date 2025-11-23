@@ -1,32 +1,31 @@
 import { ApifyClient } from 'apify-client';
 import fs from 'fs';
 import { v2 } from '@google-cloud/translate';
+
 const { Translate } = v2;
 
 /* ======================================
-   ▼ Google 翻訳クライアントの初期化を修正
-      Base64 のサービスアカウントキー対応
+   ▼ Google 翻訳クライアントの初期化（JSON 直接パース版）
    ====================================== */
 
-const loadCredentials = () => {
-  try {
-    if (process.env.GCP_SA_KEY_BASE64) {
-      const decoded = Buffer.from(process.env.GCP_SA_KEY_BASE64, 'base64').toString('utf-8');
-      return JSON.parse(decoded);
-    }
-  } catch (err) {
-    console.error("❌ Failed to parse GCP_SA_KEY_BASE64:", err.message);
-  }
-  return null;
-};
+function loadCredentials() {
+  const raw = process.env.GCP_SA_KEY_JSON;
 
-const credentials = loadCredentials();
-if (!credentials) {
-  console.error("❌ Google Service Account credentials not found.");
-  process.exit(1);
+  if (!raw) {
+    console.error("❌ Environment variable GCP_SA_KEY_JSON is not set.");
+    process.exit(1);
+  }
+
+  try {
+    return JSON.parse(raw);
+  } catch (err) {
+    console.error("❌ Failed to parse GCP_SA_KEY_JSON:", err.message);
+    process.exit(1);
+  }
 }
 
-// ★ 翻訳クライアント（修正版）
+const credentials = loadCredentials();
+
 const translate = new Translate({
   projectId: credentials.project_id,
   credentials: {
@@ -35,10 +34,10 @@ const translate = new Translate({
   }
 });
 
-console.log("Google Translation client initialized");
+console.log("✅ Google Translation client initialized");
 
 /* ======================================
-   ▼ 翻訳関数（元のまま）
+   ▼ 翻訳関数
    ====================================== */
 
 async function translateToJapanese(text) {
@@ -46,10 +45,14 @@ async function translateToJapanese(text) {
     const [result] = await translate.translate(text, 'ja');
     return result;
   } catch (err) {
-    console.error("Translation failed:", err.message);
+    console.error("❌ Translation failed:", err.message);
     return null;
   }
 }
+
+/* ======================================
+   ▼ メイン処理
+   ====================================== */
 
 async function main() {
   try {
@@ -61,9 +64,9 @@ async function main() {
     const dataset = await client.dataset(DATASET_ID).listItems();
     const items = dataset.items;
 
-    console.log(`Fetched items: ${items.length}`);
+    console.log(`📦 Fetched items: ${items.length}`);
 
-    // ★ Zenn Front Matter + リード文（元のまま）
+    // Zenn Front Matter + リード文
     let md = `---
 title: "AWS 常時無料枠一覧 🆓"
 emoji: "🉐"
@@ -85,7 +88,7 @@ AWS の 常時無料枠（Always Free）はアカウント作成後の 12 か月
 
 `;
 
-    // ★ 各サービス（英語 + 日本語訳）
+    // 各サービス（英語 + 日本語訳）
     for (const item of items) {
       md += `## ${item.title}\n\n`;
 
@@ -95,19 +98,19 @@ AWS の 常時無料枠（Always Free）はアカウント作成後の 12 か月
       }
 
       const text = item.body.replace(/<[^>]+>/g, '').trim();
-      console.log("Body content sample:", text.slice(0, 100));
+      console.log("📝 Body content sample:", text.slice(0, 100));
       md += `${text}\n\n`;
 
       const translated = await translateToJapanese(text);
-      if (!translated) {
-        console.log("Translation skipped for:", item.title);
-      }
+
       if (translated) {
         md += `日本語訳：\n\n${translated}\n\n`;
+      } else {
+        md += `日本語訳：\n\n_Translation failed_\n\n`;
       }
     }
 
-    // ★ あとがき（元のまま）
+    // あとがき
     md += `
 ---
 
@@ -118,13 +121,13 @@ AWS の Always Free は、学習や個人開発で非常に役立つ仕組みで
 
 利用前には必ず AWS 公式の最新情報をチェックしてください。  
 本記事が AWS を活用する際の参考になれば幸いです。
-
 `;
 
     fs.writeFileSync("articles/aws-always-free.md", md);
-    console.log("Markdown updated!");
+    console.log("📄 Markdown updated!");
+
   } catch (err) {
-    console.error("ERROR:", err);
+    console.error("❌ ERROR:", err);
     process.exit(1);
   }
 }
