@@ -1,6 +1,6 @@
 import { ApifyClient } from 'apify-client';
 import fs from 'fs';
-import { Translate } from '@google-cloud/translate';
+import {Translate} from '@google-cloud/translate').v2;
 
 // ★ Google 翻訳クライアント
 const translate = new Translate();
