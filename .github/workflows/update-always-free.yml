@@ -1,12 +1,12 @@
 name: Update AWS Always Free Article
 
 permissions:
-  contents: write   # ← 必須！
+  contents: write   # ← Zenn/GitHub に push するため必須
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 1 * *"
+    - cron: "0 0 1 * *"   # 毎月1日の 00:00 (UTC) → 日本時間 9:00
 
 env:
   APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
@@ -15,21 +15,44 @@ env:
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
+      # --------------------------
+      # 1. Apify Actor を強制実行する
+      # --------------------------
+      - name: Run Apify Actor (force refresh dataset)
+        run: |
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $APIFY_TOKEN" \
+            "https://api.apify.com/v2/actors/${APIFY_ACTOR_ID}/runs?token=$APIFY_TOKEN"
+
+      # --------------------------
+      # 2. Node.js セットアップ
+      # --------------------------
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
+      # --------------------------
+      # 3. package.json の依存関係をインストール
+      # --------------------------
       - name: Install deps
         run: npm install
 
+      # --------------------------
+      # 4. Always Free 記事生成スクリプトを実行
+      # --------------------------
       - name: Run updater script
         run: npm run update
 
+      # --------------------------
+      # 5. GitHub にコミットして push
+      # --------------------------
       - name: Commit & Push
         run: |
           git config user.name "github-actions"
