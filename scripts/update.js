@@ -3,18 +3,51 @@ import fs from 'fs';
 import { v2 } from '@google-cloud/translate';
 const { Translate } = v2;
 
-// ★ Google 翻訳クライアント
-const translate = new Translate();
+/* ======================================
+   ▼ Google 翻訳クライアントの初期化を修正
+      Base64 のサービスアカウントキー対応
+   ====================================== */
+
+const loadCredentials = () => {
+  try {
+    if (process.env.GCP_SA_KEY_BASE64) {
+      const decoded = Buffer.from(process.env.GCP_SA_KEY_BASE64, 'base64').toString('utf-8');
+      return JSON.parse(decoded);
+    }
+  } catch (err) {
+    console.error("❌ Failed to parse GCP_SA_KEY_BASE64:", err.message);
+  }
+  return null;
+};
+
+const credentials = loadCredentials();
+if (!credentials) {
+  console.error("❌ Google Service Account credentials not found.");
+  process.exit(1);
+}
+
+// ★ 翻訳クライアント（修正版）
+const translate = new Translate({
+  projectId: credentials.project_id,
+  credentials: {
+    client_email: credentials.client_email,
+    private_key: credentials.private_key,
+  }
+});
+
 console.log("Google Translation client initialized");
 
-// ★ 翻訳関数（失敗したら null を返す）
+/* ======================================
+   ▼ 翻訳関数（元のまま）
+   ====================================== */
+
 async function translateToJapanese(text) {
   try {
     const [result] = await translate.translate(text, 'ja');
     return result;
   } catch (err) {
     console.error("Translation failed:", err.message);
-    return null;  // 翻訳失敗 → 記載しない
+    return null;
   }
 }
 
@@ -30,7 +63,7 @@ async function main() {
 
     console.log(`Fetched items: ${items.length}`);
 
-    // ★ Zenn Front Matter + リード文
+    // ★ Zenn Front Matter + リード文（元のまま）
     let md = `---
 title: "AWS 常時無料枠一覧 🆓"
 emoji: "🉐"
@@ -52,7 +85,7 @@ AWS の 常時無料枠（Always Free）はアカウント作成後の 12 か月
 
 `;
 
-    // ★ 各サービス（英語 + 日本語訳）を追加
+    // ★ 各サービス（英語 + 日本語訳）
     for (const item of items) {
       md += `## ${item.title}\n\n`;
 
@@ -61,12 +94,10 @@ AWS の 常時無料枠（Always Free）はアカウント作成後の 12 か月
         continue;
       }
 
-      // 英語本文
       const text = item.body.replace(/<[^>]+>/g, '').trim();
       console.log("Body content sample:", text.slice(0, 100));
       md += `${text}\n\n`;
 
-      // 日本語訳
       const translated = await translateToJapanese(text);
       if (!translated) {
         console.log("Translation skipped for:", item.title);
@@ -76,7 +107,7 @@ AWS の 常時無料枠（Always Free）はアカウント作成後の 12 か月
       }
     }
 
-    // ★ あとがき
+    // ★ あとがき（元のまま）
     md += `
 ---
 
