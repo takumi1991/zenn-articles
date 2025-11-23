@@ -39,24 +39,19 @@ jobs:
           node-version: 20
 
       # --------------------------
-      # 【追加】Google 認証ファイルを生成
-      # --------------------------
-      - name: Setup Google Credentials
-        run: |
-          echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}" | base64 --decode > key.json
-          echo "GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/key.json" >> $GITHUB_ENV
-
-
-      # --------------------------
-      # 3. package.json の依存関係をインストール
+      # 3. 依存関係のインストール
       # --------------------------
       - name: Install deps
         run: npm install
 
       # --------------------------
       # 4. Always Free 記事生成スクリプトを実行
+      #    （Google Base64 認証キーをここで渡す）
       # --------------------------
       - name: Run updater script
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          GCP_SA_KEY_BASE64: ${{ secrets.GCP_SA_KEY_BASE64 }}  # ← 追加
         run: npm run update
 
       # --------------------------
