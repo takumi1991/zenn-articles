@@ -68,8 +68,8 @@ async function main() {
 
     // Zenn Front Matter + リード文
     let md = `---
-title: "AWS 常時無料枠一覧 🆓"
-emoji: "🉐"
+title: "AWSの常時無料枠一覧 (Always Free)"
+emoji: "😊"
 type: "tech"
 topics: ["aws", "free-tier", "cloud"]
 published: true
