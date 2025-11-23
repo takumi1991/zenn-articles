@@ -6,6 +6,7 @@
     "update": "node scripts/update.js"
   },
   "dependencies": {
-    "apify-client": "^2.7.1"
+    "apify-client": "^2.7.1",
+    "@google-cloud/translate": "^8.1.0"
   }
 }
