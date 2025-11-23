@@ -5,6 +5,7 @@ const { Translate } = v2;
 
 // ★ Google 翻訳クライアント
 const translate = new Translate();
+console.log("Google Translation client initialized");
 
 // ★ 翻訳関数（失敗したら null を返す）
 async function translateToJapanese(text) {
@@ -62,12 +63,16 @@ AWS の 常時無料枠（Always Free）はアカウント作成後の 12 か月
 
       // 英語本文
       const text = item.body.replace(/<[^>]+>/g, '').trim();
+      console.log("Body content sample:", text.slice(0, 100));
       md += `${text}\n\n`;
 
       // 日本語訳
       const translated = await translateToJapanese(text);
+      if (!translated) {
+        console.log("Translation skipped for:", item.title);
+      }
       if (translated) {
-        md += `**日本語訳：**\n\n${translated}\n\n`;
+        md += `日本語訳：\n\n${translated}\n\n`;
       }
     }
 
