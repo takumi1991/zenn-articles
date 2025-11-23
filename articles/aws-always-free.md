@@ -8,15 +8,14 @@ published: true
 
 # AWS 常時無料枠（Always Free） 一覧
 
-AWS の 常時無料枠（Always Free）はアカウント作成後の 12 か月間だけ利用できる無料利用枠（Free Tier）とは異なり、１２ヶ月を超えても**特定の使用量まではずっと無料で使えるサービス群** です。
+AWS の 常時無料枠（Always Free）はアカウント作成後の 12 か月間だけ利用できる無料利用枠（Free Tier）とは異なり、12 ヶ月を超えても **特定の使用量まではずっと無料で使えるサービス群** です。
 
-完全に無制限で無料というわけではありませんが、各サービスの無料枠（リクエスト数、GB、クォータなど）を超えた部分は通常の従量課金が発生します。
+完全に無制限で無料というわけではなく、各サービスの無料枠（リクエスト数、GB、クォータなど）を超えた部分は通常の従量課金が発生します。
 
-本記事では　AWS が公式に公開している Always Free 対象サービスを一覧でまとめています。  
+本記事では AWS が公式に公開している Always Free 対象サービスを一覧でまとめています。  
 クラウド学習、個人開発、コスト最適化の参考にぜひご活用ください。
 
-更新日: 2025-11-22
-
+更新日: 2025-11-23
 
 ## Amazon DynamoDB
 
@@ -189,6 +188,7 @@ Unleash the power of generative AI in the workplace with Amazon Q Business
 ## AWS Control Tower
 
 The easiest way to set up and govern a new, secure multi-account AWS environment.
+
 
 ---
 
