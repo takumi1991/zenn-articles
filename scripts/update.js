@@ -1,5 +1,20 @@
 import { ApifyClient } from 'apify-client';
 import fs from 'fs';
+import { Translate } from '@google-cloud/translate/build/src/v2/index.js';
+
+// ★ Google 翻訳クライアント
+const translate = new Translate();
+
+// ★ 翻訳関数（失敗したら null を返す）
+async function translateToJapanese(text) {
+  try {
+    const [result] = await translate.translate(text, 'ja');
+    return result;
+  } catch (err) {
+    console.error("Translation failed:", err.message);
+    return null;  // 翻訳失敗 → 記載しない
+  }
+}
 
 async function main() {
   try {
@@ -13,7 +28,7 @@ async function main() {
 
     console.log(`Fetched items: ${items.length}`);
 
-    // ★ Zenn の Front Matter + 導入文 ★
+    // ★ Zenn Front Matter + リード文
     let md = `---
 title: "AWS 常時無料枠一覧 🆓"
 emoji: "🉐"
@@ -24,31 +39,40 @@ published: true
 
 # AWS 常時無料枠（Always Free） 一覧
 
-AWS の 常時無料枠（Always Free）はアカウント作成後の 12 か月間だけ利用できる無料利用枠（Free Tier）とは異なり、１２ヶ月を超えても**特定の使用量まではずっと無料で使えるサービス群** です。
+AWS の 常時無料枠（Always Free）はアカウント作成後の 12 か月間だけ利用できる無料利用枠（Free Tier）とは異なり、12 ヶ月を超えても **特定の使用量まではずっと無料で使えるサービス群** です。
 
-完全に無制限で無料というわけではありませんが、各サービスの無料枠（リクエスト数、GB、クォータなど）を超えた部分は通常の従量課金が発生します。
+完全に無制限で無料というわけではなく、各サービスの無料枠（リクエスト数、GB、クォータなど）を超えた部分は通常の従量課金が発生します。
 
-本記事では　AWS が公式に公開している Always Free 対象サービスを一覧でまとめています。  
+本記事では AWS が公式に公開している Always Free 対象サービスを一覧でまとめています。  
 クラウド学習、個人開発、コスト最適化の参考にぜひご活用ください。
 
 更新日: ${new Date().toISOString().slice(0,10)}
 
-
 `;
 
-    // ★ 本文（各サービス） ★
+    // ★ 各サービス（英語 + 日本語訳）を追加
     for (const item of items) {
       md += `## ${item.title}\n\n`;
-      if (item.body) {
-        const text = item.body.replace(/<[^>]+>/g, '').trim();
-        md += `${text}\n\n`;
-      } else {
+
+      if (!item.body) {
         md += '_No description_\n\n';
+        continue;
+      }
+
+      // 英語本文
+      const text = item.body.replace(/<[^>]+>/g, '').trim();
+      md += `${text}\n\n`;
+
+      // 日本語訳
+      const translated = await translateToJapanese(text);
+      if (translated) {
+        md += `**日本語訳：**\n\n${translated}\n\n`;
       }
     }
 
-    // ★ あとがき ★
-    md += `---
+    // ★ あとがき
+    md += `
+---
 
 ## あとがき
 
