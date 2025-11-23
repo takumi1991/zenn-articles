@@ -104,9 +104,9 @@ AWS の 常時無料枠（Always Free）はアカウント作成後の 12 か月
       const translated = await translateToJapanese(text);
 
       if (translated) {
-        md += `日本語訳：\n\n${translated}\n\n`;
+        md += `\n\n${translated}\n\n`;
       } else {
-        md += `日本語訳：\n\n_Translation failed_\n\n`;
+        md += `\n\n_Translation failed_\n\n`;
       }
     }
 
