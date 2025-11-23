@@ -39,6 +39,15 @@ jobs:
           node-version: 20
 
       # --------------------------
+      # 【追加】Google 認証ファイルを生成
+      # --------------------------
+      - name: Setup Google Credentials
+        run: |
+          echo "${{ secrets.GOOGLE_APPLICATION_CREDENTIALS_JSON }}" > key.json
+          echo "GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/key.json" >> $GITHUB_ENV
+
+
+      # --------------------------
       # 3. package.json の依存関係をインストール
       # --------------------------
       - name: Install deps
