@@ -1,14 +1,14 @@
 ---
-title: "AWS 常時無料枠一覧 🆓"
-emoji: "🉐"
+title: "AWSの常時無料一覧 (Always Free Services)"
+emoji: "😊"
 type: "tech"
 topics: ["aws", "free-tier", "cloud"]
 published: true
 ---
 
-# AWS 常時無料枠（Always Free） 一覧
+# AWS 常時無料サービス（Always Free Services） 一覧
 
-AWS の 常時無料枠（Always Free）はアカウント作成後の 12 か月間だけ利用できる無料利用枠（Free Tier）とは異なり、12 ヶ月を超えても **特定の使用量まではずっと無料で使えるサービス群** です。
+AWS の常時無料サービス（Always Free Services）はアカウント作成後の 12 か月間だけ利用できる無料利用枠（Free Tier）とは異なり、12 ヶ月を超えても **特定の使用量まではずっと無料で使えるサービス群** です。
 
 完全に無制限で無料というわけではなく、各サービスの無料枠（リクエスト数、GB、クォータなど）を超えた部分は通常の従量課金が発生します。
 
