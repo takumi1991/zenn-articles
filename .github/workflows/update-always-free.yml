@@ -1,12 +1,12 @@
 name: Update AWS Always Free Article
 
 permissions:
-  contents: write   # ← Zenn/GitHub に push するため必須
+  contents: write   # 記事を push するため
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 1 * *"   # 毎月1日の 00:00 (UTC) → 日本時間 9:00
+    - cron: "0 0 1 * *"   # 毎月1日の00:00 UTC → 日本時間09:00
 
 env:
   APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
@@ -17,11 +17,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # --------------------------
+      # 1. Checkout
+      # --------------------------
       - name: Checkout
         uses: actions/checkout@v3
 
       # --------------------------
-      # 1. Apify Actor を強制実行する
+      # 2. Apify Actor を強制実行
       # --------------------------
       - name: Run Apify Actor (force refresh dataset)
         run: |
@@ -31,7 +34,7 @@ jobs:
             "https://api.apify.com/v2/actors/${APIFY_ACTOR_ID}/runs?token=$APIFY_TOKEN"
 
       # --------------------------
-      # 2. Node.js セットアップ
+      # 3. Node.js セットアップ
       # --------------------------
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -39,23 +42,32 @@ jobs:
           node-version: 20
 
       # --------------------------
-      # 3. 依存関係のインストール
+      # 4. 依存関係インストール
       # --------------------------
       - name: Install deps
         run: npm install
 
       # --------------------------
-      # 4. Always Free 記事生成スクリプトを実行
-      #    （Google Base64 認証キーをここで渡す）
+      # 5. Google SA JSON を gcp.json として保存
+      # --------------------------
+      - name: Write GCP key file
+        env:
+          GCP_SA_KEY_JSON: ${{ secrets.GCP_SA_KEY_JSON }}
+        run: |
+          echo "$GCP_SA_KEY_JSON" > gcp.json
+          echo "gcp.json written."
+
+      # --------------------------
+      # 6. update.js 実行
       # --------------------------
       - name: Run updater script
         env:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
-          GCP_SA_KEY_BASE64: ${{ secrets.GCP_SA_KEY_BASE64 }}  # ← 追加
+          GCP_SA_KEY_JSON: ${{ secrets.GCP_SA_KEY_JSON }}
         run: npm run update
 
       # --------------------------
-      # 5. GitHub にコミットして push
+      # 7. GitHub へ push
       # --------------------------
       - name: Commit & Push
         run: |
