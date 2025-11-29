@@ -20,9 +20,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install jq
-        run: sudo apt-get update && sudo apt-get install -y jq
-
       - name: Run Apify Actor (GCP)
         id: run_actor
         run: |
@@ -32,7 +29,6 @@ jobs:
 
           RUN_ID=$(echo "$RUN_JSON" | jq -r '.data.id')
           echo "Run ID = $RUN_ID"
-
           echo "RUN_ID=$RUN_ID" >> $GITHUB_ENV
 
       - name: Wait for Actor Run to finish
@@ -40,7 +36,6 @@ jobs:
           echo "Waiting for run to finish..."
           for i in {1..40}; do
             STATUS=$(curl -s "https://api.apify.com/v2/actor-runs/${RUN_ID}?token=${APIFY_TOKEN}" | jq -r '.data.status')
-
             echo "Status: $STATUS"
 
             if [[ "$STATUS" == "SUCCEEDED" ]]; then
@@ -67,10 +62,10 @@ jobs:
           echo "" >> articles/gcp-always-free.md
 
           jq -c '.items[]' data.json | while read item; do
-            TITLE=$(echo $item | jq -r '.title')
-            DESC=$(echo $item | jq -r '.description')
-            FREE=$(echo $item | jq -r '.free_tier')
-            LINK=$(echo $item | jq -r '.link')
+            TITLE=$(echo "$item" | jq -r '.title')
+            DESC=$(echo "$item" | jq -r '.description')
+            FREE=$(echo "$item" | jq -r '.free_tier')
+            LINK=$(echo "$item" | jq -r '.link')
 
             cat <<EOF >> articles/gcp-always-free.md
 ## 🌟 ${TITLE}
