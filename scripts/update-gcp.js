@@ -1,53 +1,78 @@
-import fs from 'fs';
-import fetch from 'node-fetch';
+name: Update AWS Always Free Article
 
-const TOKEN = process.env.APIFY_TOKEN;
-const ACTOR_ID = process.env.APIFY_ACTOR_ID_GCP;
-const DATASET_ID = "Lvnyi6fUL1M1mHB2N";   // ← 固定でOK
+permissions:
+  contents: write   # 記事を push するため
 
-async function run() {
-  console.log("Fetching GCP Always Free data...");
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 1 * *"   # 毎月1日の00:00 UTC → 日本時間09:00
 
-  // 1) Actor 実行
-  const runRes = await fetch(
-    `https://api.apify.com/v2/acts/${ACTOR_ID}/runs?token=${TOKEN}`,
-    { method: "POST" }
-  );
-  const runJson = await runRes.json();
-  const runId = runJson.data.id;
+env:
+  APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+  APIFY_ACTOR_ID: ${{ secrets.APIFY_ACTOR_ID }}
 
-  // 2) 完了待ち
-  let status = "RUNNING";
-  while (status !== "SUCCEEDED") {
-    const st = await fetch(
-      `https://api.apify.com/v2/actor-runs/${runId}?token=${TOKEN}`
-    );
-    const stJson = await st.json();
-    status = stJson.data.status;
-    console.log("STATUS:", status);
-    if (status !== "SUCCEEDED") await new Promise(r => setTimeout(r, 5000));
-  }
+jobs:
+  update:
+    runs-on: ubuntu-latest
 
-  // 3) Dataset 取得
-  const dsRes = await fetch(
-    `https://api.apify.com/v2/datasets/${DATASET_ID}/items?token=${TOKEN}`
-  );
+    steps:
+      # --------------------------
+      # 1. Checkout
+      # --------------------------
+      - name: Checkout
+        uses: actions/checkout@v3
 
-  if (!dsRes.ok) {
-    throw new Error(`Failed dataset fetch: ${dsRes.status}`);
-  }
+      # --------------------------
+      # 2. Apify Actor を強制実行
+      # --------------------------
+      - name: Run Apify Actor (force refresh dataset)
+        run: |
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $APIFY_TOKEN" \
+            "https://api.apify.com/v2/actors/${APIFY_ACTOR_ID}/runs?token=$APIFY_TOKEN"
 
-  const items = await dsRes.json();
+      # --------------------------
+      # 3. Node.js セットアップ
+      # --------------------------
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
 
-  const data = {
-    fetchedAt: new Date().toISOString(),
-    total: items.length,
-    items,
-  };
+      # --------------------------
+      # 4. 依存関係インストール
+      # --------------------------
+      - name: Install deps
+        run: npm install
 
-  // 4) data.json として保存
-  fs.writeFileSync("data.json", JSON.stringify(data, null, 2));
-  console.log("DONE. data.json created.");
-}
+      # --------------------------
+      # 5. Google SA JSON を gcp.json として保存
+      # --------------------------
+      - name: Write GCP key file
+        env:
+          GCP_SA_KEY_JSON: ${{ secrets.GCP_SA_KEY_JSON }}
+        run: |
+          echo "$GCP_SA_KEY_JSON" > gcp.json
+          echo "gcp.json written."
 
-run();
+      # --------------------------
+      # 6. update.js 実行
+      # --------------------------
+      - name: Run updater script
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          GCP_SA_KEY_JSON: ${{ secrets.GCP_SA_KEY_JSON }}
+        run: npm run update
+
+      # --------------------------
+      # 7. GitHub へ push
+      # --------------------------
+      - name: Commit & Push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add articles/aws-always-free.md
+          git commit -m "Update AWS Always Free article" || echo "No changes"
+          git push
