@@ -1,75 +1,68 @@
 import fs from "fs";
-import fetch from "node-fetch";
+import path from "path";
+import { JSDOM } from "jsdom";
 
-const TOKEN = process.env.APIFY_TOKEN;
-const ACTOR_ID = process.env.APIFY_ACTOR_ID_GCP;
+//
+// 1. Apify の output.json を読み込む
+//
+const INPUT_PATH = process.env.APIFY_JSON_PATH || "./output.json"; 
+const OUTPUT_MD = "./articles/aws-always-free.md";
 
-async function runActor() {
-  const url = `https://api.apify.com/v2/actors/${ACTOR_ID}/runs?token=${TOKEN}`;
-  const res = await fetch(url, { method: "POST" });
-  const json = await res.json();
-  return json.data.id; // runId
+function stripHtml(html) {
+    if (!html) return "";
+    const dom = new JSDOM(html);
+    return dom.window.document.body.textContent.trim();
 }
 
-async function waitForFinish(runId) {
-  while (true) {
-    const url = `https://api.apify.com/v2/actor-runs/${runId}?token=${TOKEN}`;
-    const res = await fetch(url);
-    const json = await res.json();
-
-    console.log("STATUS:", json.data.status);
-
-    if (json.data.status === "SUCCEEDED") return;
-    if (json.data.status === "FAILED") throw new Error("Actor failed");
-
-    await new Promise((r) => setTimeout(r, 5000));
-  }
+function buildServiceMarkdown(item) {
+    const title = item.title || item.heading || "Untitled Service";
+    const bodyText = stripHtml(item.body);
+    return `## ${title}\n${bodyText}\n`;
 }
 
-async function fetchDataset() {
-  const DATASET_ID = "Lvnyi6fUL1M1mHB2N";
-  const url = `https://api.apify.com/v2/datasets/${DATASET_ID}/items?token=${TOKEN}`;
-  const res = await fetch(url);
-  return await res.json();
-}
-
-function buildMarkdown(items) {
-  let md = `---
-title: "Google Cloud Always Free"
+function generateFullMarkdown(items) {
+    const header = `---
+title: "AWS Always Free 一覧（自動更新）"
 emoji: "☁️"
 type: "tech"
-topics: ["gcp", "cloud"]
+topics: ["aws", "free-tier"]
 published: true
 ---
 
-# Google Cloud Always Free
+# AWS Always Free 一覧（自動更新）
 
-最終更新日: ${new Date().toISOString()}
+本記事は Apify Actor により自動取得した **AWS Always Free サービス一覧（タイトル＋概要）** を掲載しています。  
+GitHub Actions により毎月自動的に上書き更新されます。
+
+---
 
 `;
 
-  for (const item of items) {
-    md += `## ${item.title}\n`;
-    md += `${item.description}\n\n`;
-    md += `**Free Tier:** ${item.free_tier}\n\n`;
-    md += `[公式リンク](${item.link})\n\n`;
-  }
+    const servicesMd = items
+        .map((item) => buildServiceMarkdown(item))
+        .join("\n");
 
-  return md;
+    return header + servicesMd;
 }
 
-async function main() {
-  console.log("Fetching GCP Always Free data...");
+// --------------------
+// メイン処理
+// --------------------
 
-  const runId = await runActor();
-  await waitForFinish(runId);
+console.log("📘 Loading Apify JSON:", INPUT_PATH);
 
-  const items = await fetchDataset();
+const json = JSON.parse(fs.readFileSync(INPUT_PATH, "utf8"));
 
-  const md = buildMarkdown(items);
-  fs.writeFileSync("articles/gcp-always-free.md", md);
+console.log(`📘 ${json.length} 件を Markdown に変換します…`);
 
-  console.log("DONE. Markdown updated.");
+const markdown = generateFullMarkdown(json);
+
+// articles フォルダがなければ作る
+const dir = path.dirname(OUTPUT_MD);
+if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
 }
 
-main();
+fs.writeFileSync(OUTPUT_MD, markdown, "utf8");
+
+console.log("✅ 完了: ", OUTPUT_MD);
