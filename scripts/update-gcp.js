@@ -54,7 +54,7 @@ ${item.description}
 
 **毎月無料で使える上限**：${item.free_tier}
 
-${item.link}
+🔗 ${item.link}
 
 `;
         })
