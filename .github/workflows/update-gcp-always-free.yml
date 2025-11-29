@@ -6,7 +6,7 @@ permissions:
 on:
   workflow_dispatch:
   schedule:
-    - cron: "5 0 1 * *"   # 毎月1日の00:05 UTC → JST 09:05
+    - cron: "5 0 1 * *"
 
 env:
   APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
@@ -17,15 +17,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # --------------------------
-      # 1. Checkout
-      # --------------------------
       - name: Checkout
         uses: actions/checkout@v3
 
-      # --------------------------
-      # 2. Apify Actor を実行 & Run ID を取得
-      # --------------------------
+      # jq を入れないと絶対に動かない
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
       - name: Run Apify Actor (GCP)
         id: run_actor
         run: |
@@ -38,9 +36,6 @@ jobs:
 
           echo "RUN_ID=$RUN_ID" >> $GITHUB_ENV
 
-      # --------------------------
-      # 3. Run 完了待ち
-      # --------------------------
       - name: Wait for Actor Run to finish
         run: |
           echo "Waiting for run to finish..."
@@ -56,21 +51,15 @@ jobs:
             sleep 5
           done
 
-      # --------------------------
-      # 4. Apify の KV から JSON（GCP_ALWAYS_FREE）を取得
-      # --------------------------
       - name: Download Actor Output (JSON)
         run: |
           curl -s \
-            "https://api.apify.com/v2/actor-runs/${RUN_ID}/key-value-stores/GCP_ALWAYS_FREE/records/GCP_ALWAYS_FREE?disableRedirect=true&token=${APIFY_TOKEN}" \
+            "https://api/apify.com/v2/actor-runs/${RUN_ID}/key-value-stores/GCP_ALWAYS_FREE/records/GCP_ALWAYS_FREE?disableRedirect=true&token=${APIFY_TOKEN}" \
             -o data.json
 
           echo "Downloaded data.json:"
           cat data.json
 
-      # --------------------------
-      # 5. Markdown 生成
-      # --------------------------
       - name: Generate Markdown
         run: |
           echo "# Google Cloud Always Free" > articles/gcp-always-free.md
@@ -84,20 +73,16 @@ jobs:
             FREE=$(echo $item | jq -r '.free_tier')
             LINK=$(echo $item | jq -r '.link')
 
-            cat <<EOF >> articles/gcp-always-free.md
+cat <<EOF >> articles/gcp-always-free.md
 ## 🌟 ${TITLE}
 ${DESC}
 **無料枠**：${FREE}  
 ${LINK}
 
 ---
-
 EOF
           done
 
-      # --------------------------
-      # 6. Commit & Push
-      # --------------------------
       - name: Commit & Push
         run: |
           git config user.name "github-actions"
