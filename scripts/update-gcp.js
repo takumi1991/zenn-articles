@@ -1,58 +1,45 @@
 import fs from 'fs';
-import path from 'path';
 import fetch from 'node-fetch';
 
-const APIFY_TOKEN = process.env.APIFY_TOKEN;
+const TOKEN = process.env.APIFY_TOKEN;
 const ACTOR_ID = process.env.APIFY_ACTOR_ID_GCP;
 
-const OUTPUT_PATH = path.join('articles', 'gcp-always-free.md');
+async function fetchActorOutput(runId) {
+  const url = `https://api.apify.com/v2/actor-runs/${runId}/key-value-stores/ALWAYS_FREE_GCP/records/ALWAYS_FREE_GCP?disableRedirect=true&token=${TOKEN}`;
+  const res = await fetch(url);
 
-async function fetchActorOutput() {
-    console.log("Fetching GCP Always Free data from Apify...");
+  if (!res.ok) {
+    throw new Error(`Failed to fetch JSON: ${res.status}`);
+  }
 
-    // 最新の Actor run を取得
-    const runsRes = await fetch(
-        `https://api.apify.com/v2/actors/${ACTOR_ID}/runs?token=${APIFY_TOKEN}`
-    );
-    const runsJson = await runsRes.json();
-    const runId = runsJson.data.items[0].id;
-
-    console.log(`Latest Run ID: ${runId}`);
-
-    // KV ストアから JSON を取得
-    const kvRes = await fetch(
-        `https://api.apify.com/v2/actor-runs/${runId}/key-value-stores/GCP_ALWAYS_FREE/records/GCP_ALWAYS_FREE?disableRedirect=true&token=${APIFY_TOKEN}`
-    );
-
-    const data = await kvRes.json();
-    return data;
+  return await res.json();
 }
 
-function generateMarkdown(data) {
-    let md = `# Google Cloud Always Free\n\n`;
-    md += `最終更新日: ${data.fetchedAt}\n\n`;
+async function run() {
+  console.log("Fetching GCP Always Free data...");
 
-    for (const item of data.items) {
-        md += `## 🌟 ${item.title}\n`;
-        md += `${item.description}\n`;
-        md += `**無料枠**：${item.free_tier}  \n`;
-        md += `${item.link}\n\n`;
-        md += `---\n\n`;
-    }
+  const runRes = await fetch(
+    `https://api.apify.com/v2/acts/${ACTOR_ID}/runs?token=${TOKEN}`,
+    { method: "POST" }
+  );
+  const runJson = await runRes.json();
+  const runId = runJson.data.id;
 
-    return md;
+  let status = "RUNNING";
+  while (status !== "SUCCEEDED") {
+    const st = await fetch(
+      `https://api.apify.com/v2/actor-runs/${runId}?token=${TOKEN}`
+    );
+    const stJson = await st.json();
+    status = stJson.data.status;
+    console.log("STATUS:", status);
+    if (status !== "SUCCEEDED") await new Promise(r => setTimeout(r, 5000));
+  }
+
+  const data = await fetchActorOutput(runId);
+  fs.writeFileSync("data.json", JSON.stringify(data, null, 2));
+
+  console.log("DONE.");
 }
 
-(async () => {
-    try {
-        const data = await fetchActorOutput();
-        const markdown = generateMarkdown(data);
-
-        fs.writeFileSync(OUTPUT_PATH, markdown);
-        console.log("Updated gcp-always-free.md successfully!");
-
-    } catch (err) {
-        console.error(err);
-        process.exit(1);
-    }
-})();
+run();
