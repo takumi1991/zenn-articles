@@ -6,7 +6,7 @@ permissions:
 on:
   workflow_dispatch:
   schedule:
-    - cron: "5 0 1 * *"
+    - cron: "5 0 1 * *"   # 毎月1日の00:05 UTC → JST 09:05
 
 env:
   APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
@@ -20,7 +20,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # jq を入れないと絶対に動かない
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
 
@@ -54,7 +53,7 @@ jobs:
       - name: Download Actor Output (JSON)
         run: |
           curl -s \
-            "https://api/apify.com/v2/actor-runs/${RUN_ID}/key-value-stores/GCP_ALWAYS_FREE/records/GCP_ALWAYS_FREE?disableRedirect=true&token=${APIFY_TOKEN}" \
+            "https://api.apify.com/v2/actor-runs/${RUN_ID}/key-value-stores/GCP_ALWAYS_FREE/records/GCP_ALWAYS_FREE?disableRedirect=true&token=${APIFY_TOKEN}" \
             -o data.json
 
           echo "Downloaded data.json:"
@@ -73,7 +72,7 @@ jobs:
             FREE=$(echo $item | jq -r '.free_tier')
             LINK=$(echo $item | jq -r '.link')
 
-cat <<EOF >> articles/gcp-always-free.md
+            cat <<EOF >> articles/gcp-always-free.md
 ## 🌟 ${TITLE}
 ${DESC}
 **無料枠**：${FREE}  
