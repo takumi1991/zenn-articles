@@ -6,7 +6,7 @@ permissions:
 on:
   workflow_dispatch:
   schedule:
-    - cron: "5 0 1 * *"
+    - cron: "5 0 1 * *"   # 毎月1日 00:05 UTC（日本時間 09:05）
 
 env:
   APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
@@ -17,59 +17,100 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # --------------------------
+      # 1. Checkout
+      # --------------------------
       - name: Checkout
         uses: actions/checkout@v3
 
+      # --------------------------
+      # 2. Apify Actor 実行
+      # --------------------------
       - name: Run Apify Actor (GCP)
         id: run_actor
         run: |
           echo "Starting Apify actor..."
           RUN_JSON=$(curl -s -X POST "https://api.apify.com/v2/acts/${APIFY_ACTOR_ID_GCP}/runs?token=${APIFY_TOKEN}")
-          echo "$RUN_JSON" > run.json
           RUN_ID=$(echo "$RUN_JSON" | jq -r '.data.id')
+          echo "Run ID = $RUN_ID"
           echo "RUN_ID=$RUN_ID" >> $GITHUB_ENV
 
-      - name: Wait for Actor Run
+      # --------------------------
+      # 3. Actor 完了待ち
+      # --------------------------
+      - name: Wait for Actor Run to finish
         run: |
+          echo "Waiting for actor to finish..."
           for i in {1..40}; do
             STATUS=$(curl -s "https://api.apify.com/v2/actor-runs/${RUN_ID}?token=${APIFY_TOKEN}" | jq -r '.data.status')
-            echo "STATUS: $STATUS"
+            echo "Status: $STATUS"
+
             if [[ "$STATUS" == "SUCCEEDED" ]]; then
               break
             fi
             sleep 5
           done
 
+      # --------------------------
+      # 4. KV から出力 JSON を取得
+      # --------------------------
       - name: Download Actor Output (JSON)
         run: |
           curl -s \
             "https://api.apify.com/v2/actor-runs/${RUN_ID}/key-value-stores/ALWAYS_FREE_GCP/records/ALWAYS_FREE_GCP?disableRedirect=true&token=${APIFY_TOKEN}" \
             -o data.json
 
-          echo "JSON downloaded:"
+          echo "Downloaded JSON:"
           cat data.json
 
+      # --------------------------
+      # 5. Markdown 生成（Zenn用 FrontMatter 付き）
+      # --------------------------
       - name: Generate Markdown
         run: |
-          echo "# Google Cloud Always Free" > articles/gcp-always-free.md
-          echo "" >> articles/gcp-always-free.md
+          mkdir -p articles
+
+          # ===== FrontMatter（Zenn必須） =====
+          cat << 'EOF' > articles/gcp-always-free.md
+---
+title: "Google Cloud Always Free"
+emoji: "☁️"
+type: "tech"
+topics: ["gcp", "free-tier"]
+published: true
+---
+
+# Google Cloud Always Free
+
+EOF
+
           echo "最終更新日: $(jq -r '.fetchedAt' data.json)" >> articles/gcp-always-free.md
           echo "" >> articles/gcp-always-free.md
 
+          # ===== 本文ループ =====
           jq -c '.items[]' data.json | while read item; do
             TITLE=$(echo "$item" | jq -r '.title')
             DESC=$(echo "$item" | jq -r '.description')
             FREE=$(echo "$item" | jq -r '.free_tier')
             LINK=$(echo "$item" | jq -r '.link')
 
-            printf "## 🌟 %s\n%s\n**無料枠**：%s\n%s\n\n---\n\n" \
-              "$TITLE" "$DESC" "$FREE" "$LINK" >> articles/gcp-always-free.md
+            cat <<EOF >> articles/gcp-always-free.md
+## 🌟 ${TITLE}
+${DESC}
+**無料枠**：${FREE}  
+${LINK}
+
+---
+EOF
           done
 
+      # --------------------------
+      # 6. Commit & Push
+      # --------------------------
       - name: Commit & Push
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add articles/gcp-always-free.md
-          git commit -m "Update GCP Always Free article" || echo "No changes"
+          git commit -m "Update GCP Always Free article" || echo "No changes to commit"
           git push
