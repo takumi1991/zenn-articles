@@ -37,8 +37,6 @@ published: true
 
 本記事は **Google Cloud Always Free（常時無料）サービス一覧** を掲載しています。  
 
-最終取得日: ${fetchedAt}
-
 ---
 
 `;
