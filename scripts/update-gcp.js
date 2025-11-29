@@ -35,7 +35,7 @@ published: true
 
 # Google Cloud 無料枠プロダクト
 
-本記事は **Google Cloud** の上限内で無料で利用できるサービス一覧 を掲載しています。  
+本記事は **Google Cloud** の上限内で無料で利用できるサービス一覧 をまとめています。  
 
 ---
 
