@@ -6,7 +6,7 @@ permissions:
 on:
   workflow_dispatch:
   schedule:
-    - cron: "5 0 1 * *"
+    - cron: "5 0 1 * *"   # 毎月1日 09:05 JST
 
 env:
   APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
@@ -20,17 +20,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # アクター実行
       - name: Run Apify Actor (GCP)
         id: run_actor
         run: |
           RUN_JSON=$(curl -s -X POST "https://api.apify.com/v2/acts/${APIFY_ACTOR_ID_GCP}/runs?token=${APIFY_TOKEN}")
-          echo "$RUN_JSON" > run.json
           RUN_ID=$(echo "$RUN_JSON" | jq -r '.data.id')
           echo "RUN_ID=$RUN_ID" >> $GITHUB_ENV
 
-      # 完了待ち
-      - name: Wait for run
+      - name: Wait for Run
         run: |
           for i in {1..40}; do
             STATUS=$(curl -s "https://api.apify.com/v2/actor-runs/${RUN_ID}?token=${APIFY_TOKEN}" | jq -r '.data.status')
@@ -39,30 +36,28 @@ jobs:
             sleep 5
           done
 
-      # JSON 取得
       - name: Download JSON
         run: |
           curl -s \
             "https://api.apify.com/v2/actor-runs/${RUN_ID}/key-value-stores/GCP_ALWAYS_FREE/records/GCP_ALWAYS_FREE?disableRedirect=true&token=${APIFY_TOKEN}" \
             -o data.json
 
-      # Markdown 本文生成
-      - name: Append content to Markdown
+      - name: Build Markdown
         run: |
           TARGET="articles/gcp-always-free.md"
 
-          # FrontMatter以外の本文部分を削除
+          # FrontMatter のみ抽出
           awk '
             NR==1, /^---$/ { print; next }
             /^---$/ { c++; if (c==2) next }
             c<2
-          ' "$TARGET" > frontmatter.md
+          ' "$TARGET" > tmp.md
 
-          echo "" >> frontmatter.md
-          echo "# Google Cloud Always Free" >> frontmatter.md
-          echo "" >> frontmatter.md
-          echo "最終更新日: $(jq -r '.fetchedAt' data.json)" >> frontmatter.md
-          echo "" >> frontmatter.md
+          echo "" >> tmp.md
+          echo "# Google Cloud Always Free" >> tmp.md
+          echo "" >> tmp.md
+          echo "最終更新日: $(jq -r '.fetchedAt' data.json)" >> tmp.md
+          echo "" >> tmp.md
 
           jq -c '.items[]' data.json | while read item; do
             TITLE=$(echo "$item" | jq -r '.title')
@@ -70,20 +65,20 @@ jobs:
             FREE=$(echo "$item" | jq -r '.free_tier')
             LINK=$(echo "$item" | jq -r '.link')
 
-            cat <<EOF >> frontmatter.md
+cat <<EOF >> tmp.md
 ## 🌟 ${TITLE}
 ${DESC}
 
 **無料枠**：${FREE}  
 [詳細リンク](${LINK})
 
----
+----
 EOF
+
           done
 
-          mv frontmatter.md "$TARGET"
+          mv tmp.md "$TARGET"
 
-      # push
       - name: Commit & Push
         run: |
           git config user.name "github-actions"
