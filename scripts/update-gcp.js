@@ -1,78 +1,78 @@
-name: Update AWS Always Free Article
+import fs from "fs";
+import path from "path";
 
-permissions:
-  contents: write   # 記事を push するため
+// ==============================
+// ▼ 設定
+// ==============================
+const OUTPUT_MD = "./articles/gcp-always-free.md";
+const DATA_JSON_PATH = "./data.json";
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 0 1 * *"   # 毎月1日の00:00 UTC → 日本時間09:00
+console.log("📘 Loading GCP data JSON:", DATA_JSON_PATH);
 
-env:
-  APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
-  APIFY_ACTOR_ID: ${{ secrets.APIFY_ACTOR_ID }}
+// ==============================
+// ▼ data.json の読み込み
+// ==============================
+if (!fs.existsSync(DATA_JSON_PATH)) {
+    console.error("❌ data.json が存在しません。workflow 側で data.json を生成できていません。");
+    process.exit(1);
+}
 
-jobs:
-  update:
-    runs-on: ubuntu-latest
+const json = JSON.parse(fs.readFileSync(DATA_JSON_PATH, "utf8"));
+const items = json.items || [];
 
-    steps:
-      # --------------------------
-      # 1. Checkout
-      # --------------------------
-      - name: Checkout
-        uses: actions/checkout@v3
+console.log(`📘 ${items.length} 件を Markdown に変換します…`);
 
-      # --------------------------
-      # 2. Apify Actor を強制実行
-      # --------------------------
-      - name: Run Apify Actor (force refresh dataset)
-        run: |
-          curl -X POST \
-            -H "Content-Type: application/json" \
-            -H "Authorization: Bearer $APIFY_TOKEN" \
-            "https://api.apify.com/v2/actors/${APIFY_ACTOR_ID}/runs?token=$APIFY_TOKEN"
+// ==============================
+// ▼ Markdown 生成関数
+// ==============================
+function generateFullMarkdown(items, fetchedAt) {
+    const header = `---
+title: "Google Cloud Always Free（自動更新）"
+emoji: "☁️"
+type: "tech"
+topics: ["gcp", "free-tier", "cloud"]
+published: true
+---
 
-      # --------------------------
-      # 3. Node.js セットアップ
-      # --------------------------
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
+# Google Cloud Always Free（自動更新）
 
-      # --------------------------
-      # 4. 依存関係インストール
-      # --------------------------
-      - name: Install deps
-        run: npm install
+本記事は Apify Actor により自動取得した **Google Cloud Always Free（常時無料）サービス一覧** を掲載しています。  
+GitHub Actions により毎月自動的に上書き更新されます。
 
-      # --------------------------
-      # 5. Google SA JSON を gcp.json として保存
-      # --------------------------
-      - name: Write GCP key file
-        env:
-          GCP_SA_KEY_JSON: ${{ secrets.GCP_SA_KEY_JSON }}
-        run: |
-          echo "$GCP_SA_KEY_JSON" > gcp.json
-          echo "gcp.json written."
+最終取得日: ${fetchedAt}
 
-      # --------------------------
-      # 6. update.js 実行
-      # --------------------------
-      - name: Run updater script
-        env:
-          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
-          GCP_SA_KEY_JSON: ${{ secrets.GCP_SA_KEY_JSON }}
-        run: npm run update
+---
 
-      # --------------------------
-      # 7. GitHub へ push
-      # --------------------------
-      - name: Commit & Push
-        run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add articles/aws-always-free.md
-          git commit -m "Update AWS Always Free article" || echo "No changes"
-          git push
+`;
+
+    const body = items
+        .map((item) => {
+            return `## 🌟 ${item.title}
+
+${item.description}
+
+**無料枠**: ${item.free_tier}
+
+🔗 ${item.link}
+
+`;
+        })
+        .join("\n");
+
+    return header + body;
+}
+
+// ==============================
+// ▼ Markdown 生成
+// ==============================
+const markdown = generateFullMarkdown(items, json.fetchedAt);
+
+// articles フォルダがなければ作る
+const dir = path.dirname(OUTPUT_MD);
+if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+}
+
+fs.writeFileSync(OUTPUT_MD, markdown, "utf8");
+
+console.log("✅ 完了:", OUTPUT_MD);
