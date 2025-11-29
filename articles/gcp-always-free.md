@@ -6,9 +6,9 @@ topics: ["gcp", "free-tier", "cloud"]
 published: true
 ---
 
-# Google Cloud Always Free（自動更新）
+# Google Cloud 無料枠プロダクト
 
-本記事は **Google Cloud Always Free（常時無料）サービス一覧** を掲載しています。  
+本記事は **Google Cloud** の上限内で無料で利用できるサービス一覧 を掲載しています。  
 
 ---
 
