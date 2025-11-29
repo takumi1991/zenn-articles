@@ -6,14 +6,12 @@ async function main() {
     token: process.env.APIFY_TOKEN,
   });
 
-  // ★ ここに固定の Dataset ID を使う（GCP 版）
+  // ★ 固定 Dataset ID（GCP Actor の出力）
   const DATASET_ID = "Lvnyi6fUL1M1mHB2N";
 
   console.log("📦 Fetching Dataset:", DATASET_ID);
 
-  const dataset = await client.dataset(DATASET_ID).listItems();
-  const items = dataset.items;
-
+  const { items } = await client.dataset(DATASET_ID).listItems();
   console.log(`📦 Items: ${items.length}`);
 
   let md = `---
