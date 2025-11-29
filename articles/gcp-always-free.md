@@ -1,14 +1,21 @@
 ---
-title: "Google Cloud Always Free（自動更新）"
+title: "Google Cloud Always Free（無料枠一覧）"
 emoji: "☁️"
 type: "tech"
 topics: ["gcp", "free-tier", "cloud"]
 published: true
 ---
 
-# Google Cloud 無料枠プロダクト
+# Google Cloud 無料枠プロダクト一覧
 
-本記事は **Google Cloud** の上限内で無料で利用できるサービス一覧 を掲載しています。  
+Google Cloud（GCP）には、アカウント作成直後の **12 ヶ月無料トライアル** とは別に、  
+毎月の使用量が上限内であれば、**期限なく “ずっと無料” で使える Always Free 枠** が存在します。
+
+Cloud Run・Firestore・BigQuery などは、この無料枠だけでも  
+小規模アプリやデータ基盤を実用レベルで運用できるのが大きな特徴です。
+
+本記事では、Google Cloud の Always Free 対象プロダクトを  
+**「毎月無料で使える上限」** とともにわかりやすくまとめています。
 
 ---
 
@@ -16,7 +23,7 @@ published: true
 
 スケーラブルで高性能な仮想マシン。
 
-**上限**: 1 つの e2-micro インスタンス（1 か月あたり）
+**毎月無料で使える上限**：1 つの e2-micro インスタンス（1 か月あたり）
 
 https://cloud.google.com/free/docs/gcp-free-tier#compute
 
@@ -25,7 +32,7 @@ https://cloud.google.com/free/docs/gcp-free-tier#compute
 
 高い性能と信頼性、手頃な料金体系で、あらゆるストレージ要件に対応。
 
-**上限**: 5 GB-月の Standard Storage
+**毎月無料で使える上限**：5 GB-月の Standard Storage
 
 https://cloud.google.com/free/docs/gcp-free-tier/#storage
 
@@ -34,7 +41,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#storage
 
 ペタバイト規模のフルマネージド分析データ ウェアハウス。
 
-**上限**: 1 TB クエリ（1 か月あたり）
+**毎月無料で使える上限**：1 TB クエリ（1 か月あたり）
 
 https://cloud.google.com/free/docs/gcp-free-tier/#bigquery
 
@@ -43,7 +50,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#bigquery
 
 ステートレス コンテナの実行、アプリの構築、ウェブサイトのホストとデプロイを行うためのフルマネージド環境。
 
-**上限**: 200 万リクエスト（1 か月あたり）
+**毎月無料で使える上限**：200 万リクエスト（1 か月あたり）
 
 https://cloud.google.com/free/docs/gcp-free-tier/#cloud-run
 
@@ -52,7 +59,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#cloud-run
 
 Google が管理する Kubernetes クラスタを使用して、ワンクリックでコンテナ オーケストレーションを実施。
 
-**上限**: 1 つの Autopilot またはゾーンクラスタ（1 か月あたり）
+**毎月無料で使える上限**：1 つの Autopilot またはゾーンクラスタ（1 か月あたり）
 
 https://cloud.google.com/free/docs/gcp-free-tier/#kubernetes-engine
 
@@ -61,7 +68,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#kubernetes-engine
 
 高速で一貫した信頼性の高いビルドを Google Cloud で実行。
 
-**上限**: 120 ビルド分数（1 日あたり）
+**毎月無料で使える上限**：120 ビルド分数（1 日あたり）
 
 https://cloud.google.com/free/docs/gcp-free-tier/#cloud-build
 
@@ -70,7 +77,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#cloud-build
 
 Google Cloud 上のアプリケーションのモニタリング、ロギング、診断。
 
-**上限**: ロギングとモニタリングのための月々の割り当て
+**毎月無料で使える上限**：ロギングとモニタリングのための月々の割り当て
 
 https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
 
@@ -79,7 +86,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
 
 アプリのデータを簡単に保存、同期、照会できる NoSQL ドキュメント データベース。
 
-**上限**: 1 GB のストレージ
+**毎月無料で使える上限**：1 GB のストレージ
 
 https://cloud.google.com/free/docs/gcp-free-tier/#firestore
 
@@ -88,7 +95,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#firestore
 
 リアルタイムで信頼性の高いメッセージングとデータのストリーミングを実現するグローバル サービス。
 
-**上限**: 10 GB のメッセージ（1 か月あたり）
+**毎月無料で使える上限**：10 GB のメッセージ（1 か月あたり）
 
 https://cloud.google.com/free/docs/gcp-free-tier/#pub-sub
 
@@ -97,7 +104,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#pub-sub
 
 コードによるクラウド サービスの作成と接続が可能なサーバーレス環境。
 
-**上限**: 200 万回の呼び出し（1 か月あたり）
+**毎月無料で使える上限**：200 万回の呼び出し（1 か月あたり）
 
 https://cloud.google.com/free/docs/gcp-free-tier/#cloud-functions
 
@@ -106,7 +113,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#cloud-functions
 
 ラベル検出、OCR、顔検出をはじめとする多数の機能を提供。
 
-**上限**: 1,000 ユニット（1 か月あたり）
+**毎月無料で使える上限**：1,000 ユニット（1 か月あたり）
 
 https://cloud.google.com/free/docs/gcp-free-tier/#vision-api
 
@@ -115,7 +122,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#vision-api
 
 Google 独自のプロダクトにも採用されている音声文字変換。
 
-**上限**: 60 分（1 か月あたり）
+**毎月無料で使える上限**：60 分（1 か月あたり）
 
 https://cloud.google.com/free/docs/gcp-free-tier/#speech-to-text
 
@@ -124,7 +131,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#speech-to-text
 
 Google の機械学習を使用して非構造化テキストから分析情報を引き出す。
 
-**上限**: 5,000 ユニット（1 か月あたり）
+**毎月無料で使える上限**：5,000 ユニット（1 か月あたり）
 
 https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
 
@@ -133,7 +140,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
 
 推奨される暗号化のプラクティスに沿った整合性を確保するために、適切な Cloud KMS 鍵をオンデマンドで取得します。
 
-**上限**: 100 個の有効な鍵バージョンと 10,000 個の鍵オペレーション（1 か月あたり）
+**毎月無料で使える上限**：100 個の有効な鍵バージョンと 10,000 個の鍵オペレーション（1 か月あたり）
 
 https://cloud.google.com/kms/pricing#pricing_overview
 
@@ -142,7 +149,7 @@ https://cloud.google.com/kms/pricing#pricing_overview
 
 保存された動画とストリーミング動画内の物体、場所、アクションを認識する、事前トレーニングされた ML モデル。
 
-**上限**: 1,000 ユニット（1 か月あたり）
+**毎月無料で使える上限**：1,000 ユニット（1 か月あたり）
 
 https://cloud.google.com/free/docs/gcp-free-tier/#video-intelligence
 
@@ -151,7 +158,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#video-intelligence
 
 Google Cloud や HTTP API でサービス呼び出しのフルマネージド シーケンスを実行。
 
-**上限**: 5,000 の内部ステップが無料（1 か月あたり）
+**毎月無料で使える上限**：5,000 の内部ステップが無料（1 か月あたり）
 
 https://cloud.google.com/free/docs/gcp-free-tier/#workflows
 
@@ -160,7 +167,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#workflows
 
 Google Cloud がホストするさまざまなプライベート Git リポジトリ。
 
-**上限**: 最大 5 ユーザーが無料で利用可能
+**毎月無料で使える上限**：最大 5 ユーザーが無料で利用可能
 
 https://cloud.google.com/free/docs/gcp-free-tier/#cloud-source-repos
 
@@ -169,7 +176,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#cloud-source-repos
 
 Google Cloud パートナーから提供される、クリック デプロイ可能な本番環境クラスのソリューション。
 
-**上限**: 一部のアプリやサービスの無料トライアル
+**毎月無料で使える上限**：一部のアプリやサービスの無料トライアル
 
 https://cloud.google.com/marketplace
 
@@ -178,7 +185,7 @@ https://cloud.google.com/marketplace
 
 API キー、パスワード、証明書、その他の機密データを安全に保存。
 
-**上限**: 6 つのシークレット バージョン（1 か月あたり）
+**毎月無料で使える上限**：6 つのシークレット バージョン（1 か月あたり）
 
 https://cloud.google.com/free/docs/gcp-free-tier/#secret-manager
 
@@ -187,7 +194,21 @@ https://cloud.google.com/free/docs/gcp-free-tier/#secret-manager
 
 どこからでもブラウザでアクセスできるオンラインの開発および運用環境。
 
-**上限**: 5 GB の永続ディスク ストレージが含まれます
+**毎月無料で使える上限**：5 GB の永続ディスク ストレージが含まれます
 
 https://cloud.google.com/shell/docs
 
+
+---
+
+## おわりに
+
+Google Cloud の Always Free 枠は、単なる試用期間ではなく  
+**「毎月の上限内であれば永久に無料で使える」** という強力な仕組みです。
+
+特に Cloud Run、Firestore、BigQuery は無料枠だけでも  
+本番運用に近い構成が組めるため、個人開発者にとって非常に魅力的です。
+
+ただし無料枠には明確な制限があるため、  
+本格運用を行う場合は最新の公式ドキュメントを確認しながら  
+コスト管理を行うことをおすすめします。
