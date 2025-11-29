@@ -1,3 +1,4 @@
+# AWS 常時無料サービス（Always Free Services）
 import { ApifyClient } from 'apify-client';
 import fs from 'fs';
 import { v2 } from '@google-cloud/translate';
