@@ -1,12 +1,12 @@
 name: Update GCP Always Free Article
 
 permissions:
-  contents: write
+  contents: write   # push のため
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "5 0 1 * *"   # 毎月1日の00:05 UTC → JST 09:05
+    - cron: "5 0 1 * *"   # 毎月 1 日 00:05 UTC（日本 09:05）
 
 env:
   APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
@@ -17,9 +17,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # --------------------------
+      # 1. Checkout
+      # --------------------------
       - name: Checkout
         uses: actions/checkout@v3
 
+      # --------------------------
+      # 2. Apify Actor を実行し Run ID を取得
+      # --------------------------
       - name: Run Apify Actor (GCP)
         id: run_actor
         run: |
@@ -29,8 +35,12 @@ jobs:
 
           RUN_ID=$(echo "$RUN_JSON" | jq -r '.data.id')
           echo "Run ID = $RUN_ID"
+
           echo "RUN_ID=$RUN_ID" >> $GITHUB_ENV
 
+      # --------------------------
+      # 3. Run 完了待ち
+      # --------------------------
       - name: Wait for Actor Run to finish
         run: |
           echo "Waiting for run to finish..."
@@ -41,10 +51,12 @@ jobs:
             if [[ "$STATUS" == "SUCCEEDED" ]]; then
               break
             fi
-
             sleep 5
           done
 
+      # --------------------------
+      # 4. Apify KV から JSON を取得
+      # --------------------------
       - name: Download Actor Output (JSON)
         run: |
           curl -s \
@@ -54,6 +66,9 @@ jobs:
           echo "Downloaded data.json:"
           cat data.json
 
+      # --------------------------
+      # 5. Markdown 生成（ここが最重要）
+      # --------------------------
       - name: Generate Markdown
         run: |
           echo "# Google Cloud Always Free" > articles/gcp-always-free.md
@@ -77,6 +92,9 @@ ${LINK}
 EOF
           done
 
+      # --------------------------
+      # 6. GitHub へ push
+      # --------------------------
       - name: Commit & Push
         run: |
           git config user.name "github-actions"
