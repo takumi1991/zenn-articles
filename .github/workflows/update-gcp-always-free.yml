@@ -6,11 +6,7 @@ permissions:
 on:
   workflow_dispatch:
   schedule:
-    - cron: "5 0 1 * *"   # 毎月1日 09:05 JST
-
-env:
-  APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
-  APIFY_ACTOR_ID_GCP: ${{ secrets.APIFY_ACTOR_ID_GCP }}
+    - cron: "5 0 1 * *"
 
 jobs:
   update:
@@ -20,44 +16,47 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Run Apify Actor (GCP)
-        id: run_actor
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run update script
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          APIFY_ACTOR_ID_GCP: ${{ secrets.APIFY_ACTOR_ID_GCP }}
+        run: node scripts/update-gcp.js
+
+      - name: Check output
         run: |
-          RUN_JSON=$(curl -s -X POST "https://api.apify.com/v2/acts/${APIFY_ACTOR_ID_GCP}/runs?token=${APIFY_TOKEN}")
-          RUN_ID=$(echo "$RUN_JSON" | jq -r '.data.id')
-          echo "RUN_ID=$RUN_ID" >> $GITHUB_ENV
+          echo "data.json content:"
+          cat data.json
 
-      - name: Wait for Run
+      - name: Generate markdown
         run: |
-          for i in {1..40}; do
-            STATUS=$(curl -s "https://api.apify.com/v2/actor-runs/${RUN_ID}?token=${APIFY_TOKEN}" | jq -r '.data.status')
-            echo "Status: $STATUS"
-            if [[ "$STATUS" == "SUCCEEDED" ]]; then break; fi
-            sleep 5
-          done
+          mkdir -p articles
 
-      - name: Download JSON
-        run: |
-          curl -s \
-            "https://api.apify.com/v2/actor-runs/${RUN_ID}/key-value-stores/GCP_ALWAYS_FREE/records/GCP_ALWAYS_FREE?disableRedirect=true&token=${APIFY_TOKEN}" \
-            -o data.json
+          # FrontMatter
+          cat <<'EOF' > articles/gcp-always-free.md
+---
+title: "Google Cloud Always Free"
+emoji: "☁️"
+type: "tech"
+topics: ["gcp", "cloud"]
+published: true
+---
+EOF
 
-      - name: Build Markdown
-        run: |
-          TARGET="articles/gcp-always-free.md"
+          echo "" >> articles/gcp-always-free.md
+          echo "# Google Cloud Always Free" >> articles/gcp-always-free.md
 
-          # FrontMatter のみ抽出
-          awk '
-            NR==1, /^---$/ { print; next }
-            /^---$/ { c++; if (c==2) next }
-            c<2
-          ' "$TARGET" > tmp.md
-
-          echo "" >> tmp.md
-          echo "# Google Cloud Always Free" >> tmp.md
-          echo "" >> tmp.md
-          echo "最終更新日: $(jq -r '.fetchedAt' data.json)" >> tmp.md
-          echo "" >> tmp.md
+          DATE=$(jq -r '.fetchedAt' data.json)
+          echo "" >> articles/gcp-always-free.md
+          echo "最終更新日: ${DATE}" >> articles/gcp-always-free.md
+          echo "" >> articles/gcp-always-free.md
 
           jq -c '.items[]' data.json | while read item; do
             TITLE=$(echo "$item" | jq -r '.title')
@@ -65,21 +64,20 @@ jobs:
             FREE=$(echo "$item" | jq -r '.free_tier')
             LINK=$(echo "$item" | jq -r '.link')
 
-cat <<EOF >> tmp.md
+            cat <<EOF >> articles/gcp-always-free.md
 ## 🌟 ${TITLE}
+
 ${DESC}
 
 **無料枠**：${FREE}  
-[詳細リンク](${LINK})
+${LINK}
 
-----
+---
+
 EOF
-
           done
 
-          mv tmp.md "$TARGET"
-
-      - name: Commit & Push
+      - name: Commit and push
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
