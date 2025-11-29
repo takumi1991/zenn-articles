@@ -1,5 +1,5 @@
 ---
-title: "Google Cloud Always Free（無料枠一覧）"
+title: "Google Cloud 無料枠プロダクト一覧"
 emoji: "☁️"
 type: "tech"
 topics: ["gcp", "free-tier", "cloud"]
@@ -211,4 +211,4 @@ Google Cloud の Always Free 枠は、単なる試用期間ではなく
 
 ただし無料枠には明確な制限があるため、  
 本格運用を行う場合は最新の公式ドキュメントを確認しながら  
-コスト管理を行うことをおすすめします。
+コスト管理を行いましょう。
