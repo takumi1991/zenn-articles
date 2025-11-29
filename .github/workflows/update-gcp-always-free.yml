@@ -1,12 +1,14 @@
+# .github/workflows/update-gcp-always-free.yml
+
 name: Update GCP Always Free Article
 
 permissions:
-  contents: write
+  contents: write   # 記事を push するため
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "5 0 1 * *"
+    - cron: "5 0 1 * *"   # 毎月1日の00:05 UTC → 日本時間09:05（AWS版と5分ずらし）
 
 env:
   APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
@@ -17,79 +19,47 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # --------------------------
+      # 1. Checkout
+      # --------------------------
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Run Apify Actor
-        id: actor_run
+      # --------------------------
+      # 2. GCP用 Apify Actor を強制実行（Datasetを最新化）
+      # --------------------------
+      - name: Run Apify Actor (GCP, force refresh dataset)
         run: |
-          echo "Starting Apify actor..."
-          RUN_JSON=$(curl -s -X POST "https://api.apify.com/v2/acts/${APIFY_ACTOR_ID_GCP}/runs?token=${APIFY_TOKEN}")
-          echo "$RUN_JSON" > run.json
-          RUN_ID=$(echo "$RUN_JSON" | jq -r '.data.id')
-          echo "RUN_ID=$RUN_ID" >> "$GITHUB_ENV"
-          echo "Run ID: $RUN_ID"
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $APIFY_TOKEN" \
+            "https://api.apify.com/v2/actors/${APIFY_ACTOR_ID_GCP}/runs?token=$APIFY_TOKEN"
 
-      - name: Wait for Actor to finish
-        run: |
-          echo "Waiting for actor run..."
-          for i in {1..40}; do
-            STATUS=$(curl -s "https://api.apify.com/v2/actor-runs/${RUN_ID}?token=${APIFY_TOKEN}" | jq -r '.data.status')
-            echo "STATUS: $STATUS"
-            if [[ "$STATUS" == "SUCCEEDED" ]]; then
-              break
-            fi
-            sleep 5
-          done
+      # --------------------------
+      # 3. Node.js セットアップ
+      # --------------------------
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
 
-      - name: Download output JSON
-        run: |
-          mkdir -p datasets
-          curl -s \
-            "https://api.apify.com/v2/actor-runs/${RUN_ID}/dataset/items?token=${APIFY_TOKEN}" \
-            -o data.json
-          echo "Downloaded data.json"
-          cat data.json
+      # --------------------------
+      # 4. 依存関係インストール
+      # --------------------------
+      - name: Install deps
+        run: npm install
 
-      - name: Generate Markdown
-        run: |
-          mkdir -p articles
-          # ★ FrontMatter 書き出し（スペースなし）
-          cat <<'EOF' > articles/gcp-always-free.md
----
-title: "Google Cloud Always Free"
-emoji: "☁️"
-type: "tech"
-topics: ["gcp", "cloud"]
-published: true
----
+      # --------------------------
+      # 5. GCP 用 updater script 実行
+      # --------------------------
+      - name: Run update-gcp.js
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+        run: node scripts/update-gcp.js
 
-# Google Cloud Always Free
-
-最終更新日: PLACEHOLDER_DATE
-
-EOF
-
-          DATE=$(jq -r '.[0].fetchedAt // ""' data.json)
-          sed -i "s/PLACEHOLDER_DATE/$DATE/" articles/gcp-always-free.md
-
-          jq -c '.[]' data.json | while read item; do
-            TITLE=$(echo "$item" | jq -r '.title')
-            DESC=$(echo "$item" | jq -r '.description')
-            FREE=$(echo "$item" | jq -r '.free_tier')
-            LINK=$(echo "$item" | jq -r '.link')
-
-            cat <<EOF >> articles/gcp-always-free.md
-
-## 🌟 $TITLE
-$DESC  
-**無料枠**：$FREE  
-🔗 $LINK
-
----
-EOF
-          done
-
+      # --------------------------
+      # 6. GitHub へ push（GCP 記事）
+      # --------------------------
       - name: Commit & Push
         run: |
           git config user.name "github-actions"
