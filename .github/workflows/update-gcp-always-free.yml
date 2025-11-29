@@ -8,6 +8,10 @@ on:
   schedule:
     - cron: "5 0 1 * *"
 
+env:
+  APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+  APIFY_ACTOR_ID_GCP: ${{ secrets.APIFY_ACTOR_ID_GCP }}
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -16,30 +20,41 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run update script
-        env:
-          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
-          APIFY_ACTOR_ID_GCP: ${{ secrets.APIFY_ACTOR_ID_GCP }}
-        run: node scripts/update-gcp.js
-
-      - name: Check output
+      - name: Run Apify Actor
+        id: actor_run
         run: |
-          echo "data.json content:"
+          echo "Starting Apify actor..."
+          RUN_JSON=$(curl -s -X POST "https://api.apify.com/v2/acts/${APIFY_ACTOR_ID_GCP}/runs?token=${APIFY_TOKEN}")
+          echo "$RUN_JSON" > run.json
+          RUN_ID=$(echo "$RUN_JSON" | jq -r '.data.id')
+          echo "RUN_ID=$RUN_ID" >> "$GITHUB_ENV"
+          echo "Run ID: $RUN_ID"
+
+      - name: Wait for Actor to finish
+        run: |
+          echo "Waiting for actor run..."
+          for i in {1..40}; do
+            STATUS=$(curl -s "https://api.apify.com/v2/actor-runs/${RUN_ID}?token=${APIFY_TOKEN}" | jq -r '.data.status')
+            echo "STATUS: $STATUS"
+            if [[ "$STATUS" == "SUCCEEDED" ]]; then
+              break
+            fi
+            sleep 5
+          done
+
+      - name: Download output JSON
+        run: |
+          mkdir -p datasets
+          curl -s \
+            "https://api.apify.com/v2/actor-runs/${RUN_ID}/dataset/items?token=${APIFY_TOKEN}" \
+            -o data.json
+          echo "Downloaded data.json"
           cat data.json
 
-      - name: Generate markdown
+      - name: Generate Markdown
         run: |
           mkdir -p articles
-
-          # FrontMatter
+          # ★ FrontMatter 書き出し（スペースなし）
           cat <<'EOF' > articles/gcp-always-free.md
 ---
 title: "Google Cloud Always Free"
@@ -48,36 +63,34 @@ type: "tech"
 topics: ["gcp", "cloud"]
 published: true
 ---
+
+# Google Cloud Always Free
+
+最終更新日: PLACEHOLDER_DATE
+
 EOF
 
-          echo "" >> articles/gcp-always-free.md
-          echo "# Google Cloud Always Free" >> articles/gcp-always-free.md
+          DATE=$(jq -r '.[0].fetchedAt // ""' data.json)
+          sed -i "s/PLACEHOLDER_DATE/$DATE/" articles/gcp-always-free.md
 
-          DATE=$(jq -r '.fetchedAt' data.json)
-          echo "" >> articles/gcp-always-free.md
-          echo "最終更新日: ${DATE}" >> articles/gcp-always-free.md
-          echo "" >> articles/gcp-always-free.md
-
-          jq -c '.items[]' data.json | while read item; do
+          jq -c '.[]' data.json | while read item; do
             TITLE=$(echo "$item" | jq -r '.title')
             DESC=$(echo "$item" | jq -r '.description')
             FREE=$(echo "$item" | jq -r '.free_tier')
             LINK=$(echo "$item" | jq -r '.link')
 
             cat <<EOF >> articles/gcp-always-free.md
-## 🌟 ${TITLE}
 
-${DESC}
-
-**無料枠**：${FREE}  
-${LINK}
+## 🌟 $TITLE
+$DESC  
+**無料枠**：$FREE  
+🔗 $LINK
 
 ---
-
 EOF
           done
 
-      - name: Commit and push
+      - name: Commit & Push
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
