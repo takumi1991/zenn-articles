@@ -6,7 +6,7 @@ permissions:
 on:
   workflow_dispatch:
   schedule:
-    - cron: "5 0 1 * *"   # 毎月1日 00:05 UTC → JST 09:05
+    - cron: "5 0 1 * *"
 
 env:
   APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
@@ -17,60 +17,38 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # --------------------------
-      # 1. Checkout
-      # --------------------------
       - name: Checkout
         uses: actions/checkout@v3
 
-      # --------------------------
-      # 2. Run Apify Actor (GCP) & get RUN_ID
-      # --------------------------
       - name: Run Apify Actor (GCP)
         id: run_actor
         run: |
           echo "Starting Apify actor..."
-          RUN_JSON=$(curl -s -X POST "https://api.apify.com/v2/actors/${APIFY_ACTOR_ID_GCP}/runs?token=${APIFY_TOKEN}")
+          RUN_JSON=$(curl -s -X POST "https://api.apify.com/v2/acts/${APIFY_ACTOR_ID_GCP}/runs?token=${APIFY_TOKEN}")
           echo "$RUN_JSON" > run.json
-
           RUN_ID=$(echo "$RUN_JSON" | jq -r '.data.id')
-          echo "Run ID = $RUN_ID"
-
           echo "RUN_ID=$RUN_ID" >> $GITHUB_ENV
 
-      # --------------------------
-      # 3. Wait for run to finish
-      # --------------------------
-      - name: Wait for Actor Run to finish
+      - name: Wait for Actor Run
         run: |
-          echo "Waiting for run to finish..."
           for i in {1..40}; do
             STATUS=$(curl -s "https://api.apify.com/v2/actor-runs/${RUN_ID}?token=${APIFY_TOKEN}" | jq -r '.data.status')
-
-            echo "Status: $STATUS"
-
+            echo "STATUS: $STATUS"
             if [[ "$STATUS" == "SUCCEEDED" ]]; then
               break
             fi
-
             sleep 5
           done
 
-      # --------------------------
-      # 4. Download Actor Output (Correct KV path)
-      # --------------------------
       - name: Download Actor Output (JSON)
         run: |
           curl -s \
-            "https://api.apify.com/v2/actor-runs/${RUN_ID}/key-value-stores/default/records/ALWAYS_FREE_GCP?disableRedirect=true&token=${APIFY_TOKEN}" \
+            "https://api.apify.com/v2/actor-runs/${RUN_ID}/key-value-stores/ALWAYS_FREE_GCP/records/ALWAYS_FREE_GCP?disableRedirect=true&token=${APIFY_TOKEN}" \
             -o data.json
 
-          echo "Downloaded data.json:"
+          echo "JSON downloaded:"
           cat data.json
 
-      # --------------------------
-      # 5. Generate Markdown
-      # --------------------------
       - name: Generate Markdown
         run: |
           echo "# Google Cloud Always Free" > articles/gcp-always-free.md
@@ -88,13 +66,10 @@ jobs:
               "$TITLE" "$DESC" "$FREE" "$LINK" >> articles/gcp-always-free.md
           done
 
-      # --------------------------
-      # 6. Commit & Push
-      # --------------------------
       - name: Commit & Push
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add articles/gcp-always-free.md
-          git commit -m "Update GCP Always Free article" || echo "No changes to commit"
+          git commit -m "Update GCP Always Free article" || echo "No changes"
           git push
