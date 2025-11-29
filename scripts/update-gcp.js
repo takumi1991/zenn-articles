@@ -43,13 +43,13 @@ published: true
 
     const body = data
         .map(item => {
-            return `## 🌟 ${item.title}
+            return `## ${item.title}
 
 ${item.description}
 
-**無料枠**: ${item.free_tier}
+**上限**: ${item.free_tier}
 
-🔗 ${item.link}
+${item.link}
 
 `;
         })
