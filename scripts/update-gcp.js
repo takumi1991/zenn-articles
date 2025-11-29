@@ -23,29 +23,24 @@ async function main() {
 
     console.log(`📦 ${data.length} 件を取得しました。`);
 
-    const fetchedAt = new Date().toISOString();
-
     const header = `---
-title: "Google Cloud Always Free（自動更新）"
+title: "Google Cloud Always Free（無料枠一覧）"
 emoji: "☁️"
 type: "tech"
 topics: ["gcp", "free-tier", "cloud"]
 published: true
 ---
 
-# Google Cloud 無料枠プロダクトまとめ
+# Google Cloud 無料枠プロダクト一覧
 
-Google Cloud（GCP）には、アカウント作成直後だけ利用できる  
-**12 ヶ月間の無料トライアル枠とは別に**、  
-毎月一定の使用量まで **期限なく “ずっと無料” で使い続けられる「Always Free」枠** が存在します。
+Google Cloud（GCP）には、アカウント作成直後の **12 ヶ月無料トライアル** とは別に、  
+毎月の使用量が上限内であれば、**期限なく “ずっと無料” で使える Always Free 枠** が存在します。
 
-例えば Cloud Run、BigQuery、Firestore などの実用的なサービスが  
-無料範囲内であれば **毎月ずっと課金ゼロ** で使えるため、  
-個人開発・小規模 SaaS・学習用途でも非常に強力な基盤になります。
+Cloud Run・Firestore・BigQuery などは、この無料枠だけでも  
+小規模アプリやデータ基盤を実用レベルで運用できるのが大きな特徴です。
 
-本記事では GCP の Always Free 対象プロダクトについて、  
-**「毎月無料で使える上限」** を中心にわかりやすく整理しています。  
-コストを抑えながらクラウドを最大活用したい方に最適です。
+本記事では、Google Cloud の Always Free 対象プロダクトを  
+**「毎月無料で使える上限」** とともにわかりやすくまとめています。
 
 ---
 
@@ -57,7 +52,7 @@ Google Cloud（GCP）には、アカウント作成直後だけ利用できる
 
 ${item.description}
 
-**上限**: ${item.free_tier}
+**毎月無料で使える上限**：${item.free_tier}
 
 ${item.link}
 
@@ -65,7 +60,23 @@ ${item.link}
         })
         .join("\n");
 
-    const markdown = header + body;
+    const footer = `
+---
+
+## おわりに
+
+Google Cloud の Always Free 枠は、単なる試用期間ではなく  
+**「毎月の上限内であれば永久に無料で使える」** という強力な仕組みです。
+
+特に Cloud Run、Firestore、BigQuery は無料枠だけでも  
+本番運用に近い構成が組めるため、個人開発者にとって非常に魅力的です。
+
+ただし無料枠には明確な制限があるため、  
+本格運用を行う場合は最新の公式ドキュメントを確認しながら  
+コスト管理を行うことをおすすめします。
+`;
+
+    const markdown = header + body + footer;
 
     // フォルダを作成
     const dir = path.dirname(OUTPUT_MD);
