@@ -5,7 +5,7 @@ const TOKEN = process.env.APIFY_TOKEN;
 const ACTOR_ID = process.env.APIFY_ACTOR_ID_GCP;
 
 async function fetchActorOutput(runId) {
-  const url = `https://api.apify.com/v2/actor-runs/${runId}/key-value-stores/ALWAYS_FREE_GCP/records/ALWAYS_FREE_GCP?disableRedirect=true&token=${TOKEN}`;
+  const url = `https://api.apify.com/v2/actor-runs/${runId}/key-value-stores/default/records/ALWAYS_FREE_GCP?disableRedirect=true&token=${TOKEN}`;
   const res = await fetch(url);
 
   if (!res.ok) {
@@ -28,7 +28,7 @@ async function run() {
   let status = "RUNNING";
   while (status !== "SUCCEEDED") {
     const st = await fetch(
-      `https://api.apify.com/v2/actor-runs/${runId}?token=${TOKEN}`
+      `https://api/apify.com/v2/actor-runs/${runId}?token=${TOKEN}`
     );
     const stJson = await st.json();
     status = stJson.data.status;
