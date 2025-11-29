@@ -25,7 +25,7 @@ Cloud Run・Firestore・BigQuery などは、この無料枠だけでも
 
 **毎月無料で使える上限**：1 つの e2-micro インスタンス（1 か月あたり）
 
-https://cloud.google.com/free/docs/gcp-free-tier#compute
+🔗 https://cloud.google.com/free/docs/gcp-free-tier#compute
 
 
 ## Cloud Storage
@@ -34,7 +34,7 @@ https://cloud.google.com/free/docs/gcp-free-tier#compute
 
 **毎月無料で使える上限**：5 GB-月の Standard Storage
 
-https://cloud.google.com/free/docs/gcp-free-tier/#storage
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#storage
 
 
 ## BigQuery
@@ -43,7 +43,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#storage
 
 **毎月無料で使える上限**：1 TB クエリ（1 か月あたり）
 
-https://cloud.google.com/free/docs/gcp-free-tier/#bigquery
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#bigquery
 
 
 ## Cloud Run
@@ -52,7 +52,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#bigquery
 
 **毎月無料で使える上限**：200 万リクエスト（1 か月あたり）
 
-https://cloud.google.com/free/docs/gcp-free-tier/#cloud-run
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#cloud-run
 
 
 ## Google Kubernetes Engine
@@ -61,7 +61,7 @@ Google が管理する Kubernetes クラスタを使用して、ワンクリッ�
 
 **毎月無料で使える上限**：1 つの Autopilot またはゾーンクラスタ（1 か月あたり）
 
-https://cloud.google.com/free/docs/gcp-free-tier/#kubernetes-engine
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#kubernetes-engine
 
 
 ## Cloud Build
@@ -70,7 +70,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#kubernetes-engine
 
 **毎月無料で使える上限**：120 ビルド分数（1 日あたり）
 
-https://cloud.google.com/free/docs/gcp-free-tier/#cloud-build
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#cloud-build
 
 
 ## Operations
@@ -79,7 +79,7 @@ Google Cloud 上のアプリケーションのモニタリング、ロギング�
 
 **毎月無料で使える上限**：ロギングとモニタリングのための月々の割り当て
 
-https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
 
 
 ## Firestore
@@ -88,7 +88,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
 
 **毎月無料で使える上限**：1 GB のストレージ
 
-https://cloud.google.com/free/docs/gcp-free-tier/#firestore
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#firestore
 
 
 ## Pub/Sub
@@ -97,7 +97,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#firestore
 
 **毎月無料で使える上限**：10 GB のメッセージ（1 か月あたり）
 
-https://cloud.google.com/free/docs/gcp-free-tier/#pub-sub
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#pub-sub
 
 
 ## Cloud Run functions
@@ -106,7 +106,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#pub-sub
 
 **毎月無料で使える上限**：200 万回の呼び出し（1 か月あたり）
 
-https://cloud.google.com/free/docs/gcp-free-tier/#cloud-functions
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#cloud-functions
 
 
 ## Vision AI
@@ -115,7 +115,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#cloud-functions
 
 **毎月無料で使える上限**：1,000 ユニット（1 か月あたり）
 
-https://cloud.google.com/free/docs/gcp-free-tier/#vision-api
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#vision-api
 
 
 ## Speech-to-Text
@@ -124,7 +124,7 @@ Google 独自のプロダクトにも採用されている音声文字変換。
 
 **毎月無料で使える上限**：60 分（1 か月あたり）
 
-https://cloud.google.com/free/docs/gcp-free-tier/#speech-to-text
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#speech-to-text
 
 
 ## Natural Language API
@@ -133,7 +133,7 @@ Google の機械学習を使用して非構造化テキストから分析情報�
 
 **毎月無料で使える上限**：5,000 ユニット（1 か月あたり）
 
-https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
 
 
 ## Cloud KMS Autokey
@@ -142,7 +142,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
 
 **毎月無料で使える上限**：100 個の有効な鍵バージョンと 10,000 個の鍵オペレーション（1 か月あたり）
 
-https://cloud.google.com/kms/pricing#pricing_overview
+🔗 https://cloud.google.com/kms/pricing#pricing_overview
 
 
 ## Video Intelligence API
@@ -151,7 +151,7 @@ https://cloud.google.com/kms/pricing#pricing_overview
 
 **毎月無料で使える上限**：1,000 ユニット（1 か月あたり）
 
-https://cloud.google.com/free/docs/gcp-free-tier/#video-intelligence
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#video-intelligence
 
 
 ## Workflows
@@ -160,7 +160,7 @@ Google Cloud や HTTP API でサービス呼び出しのフルマネージド �
 
 **毎月無料で使える上限**：5,000 の内部ステップが無料（1 か月あたり）
 
-https://cloud.google.com/free/docs/gcp-free-tier/#workflows
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#workflows
 
 
 ## Cloud Source Repositories
@@ -169,7 +169,7 @@ Google Cloud がホストするさまざまなプライベート Git リポジ�
 
 **毎月無料で使える上限**：最大 5 ユーザーが無料で利用可能
 
-https://cloud.google.com/free/docs/gcp-free-tier/#cloud-source-repos
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#cloud-source-repos
 
 
 ## Google Cloud Marketplace
@@ -178,7 +178,7 @@ Google Cloud パートナーから提供される、クリック デプロイ可
 
 **毎月無料で使える上限**：一部のアプリやサービスの無料トライアル
 
-https://cloud.google.com/marketplace
+🔗 https://cloud.google.com/marketplace
 
 
 ## Secret Manager
@@ -187,7 +187,7 @@ API キー、パスワード、証明書、その他の機密データを安全�
 
 **毎月無料で使える上限**：6 つのシークレット バージョン（1 か月あたり）
 
-https://cloud.google.com/free/docs/gcp-free-tier/#secret-manager
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#secret-manager
 
 
 ## Cloud Shell
@@ -196,7 +196,7 @@ https://cloud.google.com/free/docs/gcp-free-tier/#secret-manager
 
 **毎月無料で使える上限**：5 GB の永続ディスク ストレージが含まれます
 
-https://cloud.google.com/shell/docs
+🔗 https://cloud.google.com/shell/docs
 
 
 ---
