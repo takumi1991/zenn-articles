@@ -35,8 +35,7 @@ published: true
 
 # Google Cloud Always Free（自動更新）
 
-本記事は Apify Actor により自動取得した **Google Cloud Always Free（常時無料）サービス一覧** を掲載しています。  
-GitHub Actions により毎月自動的に上書き更新されます。
+本記事は **Google Cloud Always Free（常時無料）サービス一覧** を掲載しています。  
 
 最終取得日: ${fetchedAt}
 
