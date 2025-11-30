@@ -6,7 +6,7 @@ permissions:
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 1 * *"   # 毎月1日の00:00 UTC → 日本時間09:00
+    - cron: "0 0 1 * *"   # 毎月1日00:00 (UTC)
 
 env:
   APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
@@ -17,15 +17,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # --------------------------
-      # 1. Checkout
-      # --------------------------
+      # 1. リポジトリをチェックアウト
       - name: Checkout
         uses: actions/checkout@v3
 
-      # --------------------------
-      # 2. Apify Actor を強制実行
-      # --------------------------
+      # 2. Actor を強制実行
       - name: Run Apify Actor (force refresh dataset)
         run: |
           curl -X POST \
@@ -33,58 +29,44 @@ jobs:
             -H "Authorization: Bearer $APIFY_TOKEN" \
             "https://api.apify.com/v2/actors/${APIFY_ACTOR_ID}/runs?token=$APIFY_TOKEN"
 
-      # --------------------------
-      # 3. 最新の Actor Run から defaultDatasetId を取得
-      # --------------------------
+      # 3. 最後の Run を取得して defaultDatasetId を抽出
       - name: Get latest dataset ID
         run: |
-          # 最新の1件の実行結果を取得
           curl -s \
             "https://api.apify.com/v2/actor-runs?actorId=${APIFY_ACTOR_ID}&token=${APIFY_TOKEN}&limit=1" \
             -o run.json
 
-          DATASET_ID=$(jq -r '.data[0].defaultDatasetId' run.json)
+          DATASET_ID=$(jq -r '.data.items[0].defaultDatasetId' run.json)
+
           echo "DATASET_ID=$DATASET_ID" >> $GITHUB_ENV
 
           echo "Latest Dataset ID: $DATASET_ID"
 
-      # --------------------------
-      # 4. Dataset から items を JSON 形式で取得
-      # --------------------------
-      - name: Download Dataset items
+      # 4. Dataset の items を data.json に保存
+      - name: Download dataset items
         run: |
           curl -s \
-            "https://api.apify.com/v2/datasets/${DATASET_ID}/items?clean=true&format=json&token=${APIFY_TOKEN}" \
+            "https://api.apify.com/v2/datasets/${DATASET_ID}/items?token=${APIFY_TOKEN}&format=json" \
             -o data.json
+          echo "Dataset items downloaded: data.json"
 
-          echo "Downloaded dataset items:"
-          cat data.json
-
-      # --------------------------
       # 5. Node.js セットアップ
-      # --------------------------
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
-      # --------------------------
       # 6. 依存関係インストール
-      # --------------------------
       - name: Install deps
         run: npm install
 
-      # --------------------------
       # 7. update.js 実行
-      # --------------------------
       - name: Run updater script
         env:
           GCP_SA_KEY_JSON: ${{ secrets.GCP_SA_KEY_JSON }}
         run: npm run update
 
-      # --------------------------
       # 8. GitHub へ push
-      # --------------------------
       - name: Commit & Push
         run: |
           git config user.name "github-actions"
