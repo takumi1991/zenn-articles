@@ -6,7 +6,6 @@ const { Translate } = v2;
 /* ======================================
    ▼ Google 翻訳クライアントの初期化（JSON 直接パース版）
    ====================================== */
-
 function loadCredentials() {
   const raw = process.env.GCP_SA_KEY_JSON;
 
@@ -38,7 +37,6 @@ console.log("✅ Google Translation client initialized");
 /* ======================================
    ▼ 翻訳関数
    ====================================== */
-
 async function translateToJapanese(text) {
   try {
     const [result] = await translate.translate(text, 'ja');
@@ -52,15 +50,15 @@ async function translateToJapanese(text) {
 /* ======================================
    ▼ メイン処理
    ====================================== */
-
 async function main() {
   try {
-    // GitHub Actions の前ステップで必ず data.json が作られている
+    // GitHub Actions の前ステップで data.json が生成済み
     const raw = fs.readFileSync('data.json', 'utf8');
-    const json = JSON.parse(raw);
 
-    const items = json.items || [];
-    console.log(`📦 Loaded items from KV Store: ${items.length}`);
+    // Dataset API の戻りは items ではなく “配列そのもの”
+    const items = JSON.parse(raw);
+
+    console.log(`📦 Loaded items from Dataset: ${items.length}`);
 
     /* ================================
        ▼ Markdown 組み立て開始
