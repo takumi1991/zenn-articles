@@ -1,4 +1,3 @@
-import { ApifyClient } from 'apify-client';
 import fs from 'fs';
 import { v2 } from '@google-cloud/translate';
 
@@ -56,17 +55,17 @@ async function translateToJapanese(text) {
 
 async function main() {
   try {
-    const client = new ApifyClient({
-      token: process.env.APIFY_TOKEN,
-    });
+    // GitHub Actions の前ステップで必ず data.json が作られている
+    const raw = fs.readFileSync('data.json', 'utf8');
+    const json = JSON.parse(raw);
 
-    const DATASET_ID = "I06GDgrFBvXQ5zP2o";
-    const dataset = await client.dataset(DATASET_ID).listItems();
-    const items = dataset.items;
+    const items = json.items || [];
+    console.log(`📦 Loaded items from KV Store: ${items.length}`);
 
-    console.log(`📦 Fetched items: ${items.length}`);
+    /* ================================
+       ▼ Markdown 組み立て開始
+       ================================ */
 
-    // Zenn Front Matter + リード文
     let md = `---
 title: "AWSの常時無料一覧 (Always Free Services)"
 emoji: "😊"
@@ -97,19 +96,21 @@ AWS の常時無料サービス（Always Free Services）はアカウント作�
       }
 
       const text = item.body.replace(/<[^>]+>/g, '').trim();
-      console.log("📝 Body content sample:", text.slice(0, 100));
+      console.log("📝 Body content sample:", text.slice(0, 80));
       md += `${text}\n\n`;
 
       const translated = await translateToJapanese(text);
 
       if (translated) {
-        md += `\n\n${translated}\n\n`;
+        md += `${translated}\n\n`;
       } else {
-        md += `\n\n_Translation failed_\n\n`;
+        md += `_Translation failed_\n\n`;
       }
     }
 
-    // あとがき
+    /* ================================
+       ▼ あとがき
+       ================================ */
     md += `
 ---
 
@@ -122,21 +123,23 @@ AWS の Always Free は、学習や個人開発で非常に役立つ仕組みで
 本記事が AWS を活用する際の参考になれば幸いです。
 `;
 
-    // 🔥🔥🔥 ここから追記（GCP記事へのリンク）🔥🔥🔥
+    /* ================================
+       ▼ 追記：GCP リンク
+       ================================ */
     md += `
 ---
 
 ## 関連リンク：Google Cloud の無料枠まとめ
 
-Google Cloud の無料枠一覧もまとめています。
+AWS だけでなく **Google Cloud の無料枠** も記事にまとめています。  
+用途に応じてクラウドを使い分けたい方はこちらもどうぞ。
 
 👉 **Google Cloud Always Free（無料枠プロダクト一覧）**  
 https://zenn.dev/good_sleeper/articles/gcp-always-free
 `;
-    // 🔥🔥🔥 追記ここまで 🔥🔥🔥
 
     fs.writeFileSync("articles/aws-always-free.md", md);
-    console.log("📄 Markdown updated!");
+    console.log("📄 Markdown updated successfully!");
 
   } catch (err) {
     console.error("❌ ERROR:", err);
