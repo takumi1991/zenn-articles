@@ -34,7 +34,17 @@ jobs:
             "https://api.apify.com/v2/actors/${APIFY_ACTOR_ID}/runs?token=$APIFY_TOKEN"
 
       # --------------------------
-      # 3. Node.js セットアップ
+      # 3. Apify Key-Value Store から ALWAYS_FREE_SERVICES を取得
+      # --------------------------
+      - name: Download KV store data
+        run: |
+          curl -s \
+            "https://api.apify.com/v2/key-value-stores/${APIFY_ACTOR_ID}-default/records/ALWAYS_FREE_SERVICES?token=$APIFY_TOKEN" \
+            -o data.json
+          echo "KV Store downloaded: data.json"
+
+      # --------------------------
+      # 4. Node.js セットアップ
       # --------------------------
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -42,27 +52,16 @@ jobs:
           node-version: 20
 
       # --------------------------
-      # 4. 依存関係インストール
+      # 5. 依存関係インストール
       # --------------------------
       - name: Install deps
         run: npm install
-
-      # --------------------------
-      # 5. Google SA JSON を gcp.json として保存
-      # --------------------------
-      - name: Write GCP key file
-        env:
-          GCP_SA_KEY_JSON: ${{ secrets.GCP_SA_KEY_JSON }}
-        run: |
-          echo "$GCP_SA_KEY_JSON" > gcp.json
-          echo "gcp.json written."
 
       # --------------------------
       # 6. update.js 実行
       # --------------------------
       - name: Run updater script
         env:
-          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
           GCP_SA_KEY_JSON: ${{ secrets.GCP_SA_KEY_JSON }}
         run: npm run update
 
