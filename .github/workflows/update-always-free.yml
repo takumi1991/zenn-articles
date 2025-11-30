@@ -1,12 +1,12 @@
 name: Update AWS Always Free Article
 
 permissions:
-  contents: write
+  contents: write   # 記事を push するために必要
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 1 * *"   # 毎月1日00:00 (UTC)
+    - cron: "0 0 1 * *"   # 毎月1日の00:00 UTC → 日本時間09:00
 
 env:
   APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
@@ -17,60 +17,83 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. リポジトリをチェックアウト
+      # --------------------------
+      # 1. Checkout
+      # --------------------------
       - name: Checkout
         uses: actions/checkout@v3
 
-      # 2. Actor を強制実行
-      - name: Run Apify Actor (force refresh dataset)
+      # --------------------------
+      # 2. Apify Actor を実行（ACT 正式パス）
+      # --------------------------
+      - name: Run Apify Actor (force refresh)
         run: |
+          echo "▶ Running Apify Actor"
           curl -X POST \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer $APIFY_TOKEN" \
-            "https://api.apify.com/v2/actors/${APIFY_ACTOR_ID}/runs?token=$APIFY_TOKEN"
+            "https://api.apify.com/v2/acts/${APIFY_ACTOR_ID}/runs?token=$APIFY_TOKEN"
 
-      # 3. 最後の Run を取得して defaultDatasetId を抽出
-      - name: Get latest dataset ID
+      # --------------------------
+      # 3. 最新の Actor Run を取得して DATASET_ID を取り出す
+      # --------------------------
+      - name: Get latest Actor Run
         run: |
+          echo "▶ Fetching latest actor run"
           curl -s \
             "https://api.apify.com/v2/actor-runs?actorId=${APIFY_ACTOR_ID}&token=${APIFY_TOKEN}&limit=1" \
             -o run.json
 
+          # 正しいパスは data.items[0].defaultDatasetId
           DATASET_ID=$(jq -r '.data.items[0].defaultDatasetId' run.json)
 
-          echo "DATASET_ID=$DATASET_ID" >> $GITHUB_ENV
+          echo "DATASET_ID=${DATASET_ID}" >> $GITHUB_ENV
+          echo "✔ Latest Dataset ID: ${DATASET_ID}"
 
-          echo "Latest Dataset ID: $DATASET_ID"
-
-      # 4. Dataset の items を data.json に保存
+      # --------------------------
+      # 4. Dataset items をダウンロード
+      # --------------------------
       - name: Download dataset items
         run: |
+          echo "▶ Downloading dataset items"
           curl -s \
-            "https://api.apify.com/v2/datasets/${DATASET_ID}/items?token=${APIFY_TOKEN}&format=json" \
+            "https://api.apify.com/v2/datasets/${DATASET_ID}/items?format=json&token=${APIFY_TOKEN}" \
             -o data.json
-          echo "Dataset items downloaded: data.json"
 
+          echo "✔ Dataset items saved to data.json"
+
+      # --------------------------
       # 5. Node.js セットアップ
+      # --------------------------
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
+      # --------------------------
       # 6. 依存関係インストール
+      # --------------------------
       - name: Install deps
         run: npm install
 
-      # 7. update.js 実行
+      # --------------------------
+      # 7. update.js を実行
+      # --------------------------
       - name: Run updater script
         env:
           GCP_SA_KEY_JSON: ${{ secrets.GCP_SA_KEY_JSON }}
         run: npm run update
 
-      # 8. GitHub へ push
+      # --------------------------
+      # 8. 更新された md を commit & push
+      # --------------------------
       - name: Commit & Push
         run: |
+          echo "▶ Committing updated markdown"
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+
           git add articles/aws-always-free.md
+
           git commit -m "Update AWS Always Free article" || echo "No changes"
           git push
