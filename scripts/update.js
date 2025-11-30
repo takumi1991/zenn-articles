@@ -1,4 +1,3 @@
-# AWS 常時無料サービス（Always Free Services）
 import { ApifyClient } from 'apify-client';
 import fs from 'fs';
 import { v2 } from '@google-cloud/translate';
@@ -122,6 +121,19 @@ AWS の Always Free は、学習や個人開発で非常に役立つ仕組みで
 利用前には必ず AWS 公式の最新情報をチェックしてください。  
 本記事が AWS を活用する際の参考になれば幸いです。
 `;
+
+    // 🔥🔥🔥 ここから追記（GCP記事へのリンク）🔥🔥🔥
+    md += `
+---
+
+## 関連リンク：Google Cloud の無料枠まとめ
+
+Google Cloud の無料枠一覧もまとめています。
+
+👉 **Google Cloud Always Free（無料枠プロダクト一覧）**  
+https://zenn.dev/good_sleeper/articles/gcp-always-free
+`;
+    // 🔥🔥🔥 追記ここまで 🔥🔥🔥
 
     fs.writeFileSync("articles/aws-always-free.md", md);
     console.log("📄 Markdown updated!");
