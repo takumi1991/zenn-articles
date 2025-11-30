@@ -100,7 +100,7 @@ AWS の Always Free は、学習や個人開発で非常に役立つ仕組みで
 
 ## 関連リンク：Google Cloud の無料枠まとめ
 
-GCPの無料枠もまとめていますので一緒にどうぞ
+GCPの上限付きの永久無料枠もまとめていますので一緒にどうぞ
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
 `;
 
