@@ -1,7 +1,7 @@
 name: Update AWS Always Free Article
 
 permissions:
-  contents: write   # 記事を push するため
+  contents: write
 
 on:
   workflow_dispatch:
@@ -34,17 +34,34 @@ jobs:
             "https://api.apify.com/v2/actors/${APIFY_ACTOR_ID}/runs?token=$APIFY_TOKEN"
 
       # --------------------------
-      # 3. Apify Key-Value Store から ALWAYS_FREE_SERVICES を取得
+      # 3. 最新の Actor Run から defaultDatasetId を取得
       # --------------------------
-      - name: Download KV store data
+      - name: Get latest dataset ID
         run: |
+          # 最新の1件の実行結果を取得
           curl -s \
-            "https://api.apify.com/v2/key-value-stores/${APIFY_ACTOR_ID}-default/records/ALWAYS_FREE_SERVICES?token=$APIFY_TOKEN" \
-            -o data.json
-          echo "KV Store downloaded: data.json"
+            "https://api.apify.com/v2/actor-runs?actorId=${APIFY_ACTOR_ID}&token=${APIFY_TOKEN}&limit=1" \
+            -o run.json
+
+          DATASET_ID=$(jq -r '.data[0].defaultDatasetId' run.json)
+          echo "DATASET_ID=$DATASET_ID" >> $GITHUB_ENV
+
+          echo "Latest Dataset ID: $DATASET_ID"
 
       # --------------------------
-      # 4. Node.js セットアップ
+      # 4. Dataset から items を JSON 形式で取得
+      # --------------------------
+      - name: Download Dataset items
+        run: |
+          curl -s \
+            "https://api.apify.com/v2/datasets/${DATASET_ID}/items?clean=true&format=json&token=${APIFY_TOKEN}" \
+            -o data.json
+
+          echo "Downloaded dataset items:"
+          cat data.json
+
+      # --------------------------
+      # 5. Node.js セットアップ
       # --------------------------
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -52,13 +69,13 @@ jobs:
           node-version: 20
 
       # --------------------------
-      # 5. 依存関係インストール
+      # 6. 依存関係インストール
       # --------------------------
       - name: Install deps
         run: npm install
 
       # --------------------------
-      # 6. update.js 実行
+      # 7. update.js 実行
       # --------------------------
       - name: Run updater script
         env:
@@ -66,7 +83,7 @@ jobs:
         run: npm run update
 
       # --------------------------
-      # 7. GitHub へ push
+      # 8. GitHub へ push
       # --------------------------
       - name: Commit & Push
         run: |
