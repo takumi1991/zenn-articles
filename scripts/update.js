@@ -4,16 +4,14 @@ import { v2 } from '@google-cloud/translate';
 const { Translate } = v2;
 
 /* ======================================
-   ▼ Google 翻訳クライアントの初期化（JSON 直接パース版）
+   ▼ Google 翻訳クライアント初期化
    ====================================== */
 function loadCredentials() {
   const raw = process.env.GCP_SA_KEY_JSON;
-
   if (!raw) {
-    console.error("❌ Environment variable GCP_SA_KEY_JSON is not set.");
+    console.error("❌ GCP_SA_KEY_JSON not found");
     process.exit(1);
   }
-
   try {
     return JSON.parse(raw);
   } catch (err) {
@@ -32,7 +30,7 @@ const translate = new Translate({
   }
 });
 
-console.log("✅ Google Translation client initialized");
+console.log("✅ Translation client initialized");
 
 /* ======================================
    ▼ 翻訳関数
@@ -42,7 +40,7 @@ async function translateToJapanese(text) {
     const [result] = await translate.translate(text, 'ja');
     return result;
   } catch (err) {
-    console.error("❌ Translation failed:", err.message);
+    console.error("❌ Translation failed:", err);
     return null;
   }
 }
@@ -52,17 +50,10 @@ async function translateToJapanese(text) {
    ====================================== */
 async function main() {
   try {
-    // GitHub Actions の前ステップで data.json が生成済み
     const raw = fs.readFileSync('data.json', 'utf8');
-
-    // Dataset API の戻りは items ではなく “配列そのもの”
     const items = JSON.parse(raw);
 
-    console.log(`📦 Loaded items from Dataset: ${items.length}`);
-
-    /* ================================
-       ▼ Markdown 組み立て開始
-       ================================ */
+    console.log(`📦 Loaded items: ${items.length}`);
 
     let md = `---
 title: "AWSの常時無料一覧 (Always Free Services)"
@@ -84,31 +75,16 @@ AWS の常時無料サービス（Always Free Services）はアカウント作�
 
 `;
 
-    // 各サービス（英語 + 日本語訳）
     for (const item of items) {
       md += `## ${item.title}\n\n`;
 
-      if (!item.body) {
-        md += '_No description_\n\n';
-        continue;
-      }
-
-      const text = item.body.replace(/<[^>]+>/g, '').trim();
-      console.log("📝 Body content sample:", text.slice(0, 80));
+      const text = item.body ? item.body.replace(/<[^>]+>/g, '').trim() : '';
       md += `${text}\n\n`;
 
-      const translated = await translateToJapanese(text);
-
-      if (translated) {
-        md += `${translated}\n\n`;
-      } else {
-        md += `_Translation failed_\n\n`;
-      }
+      const translated = await translateToJapanese(text || "");
+      md += translated ? `${translated}\n\n` : `_Translation failed_\n\n`;
     }
 
-    /* ================================
-       ▼ あとがき
-       ================================ */
     md += `
 ---
 
@@ -119,25 +95,16 @@ AWS の Always Free は、学習や個人開発で非常に役立つ仕組みで
 
 利用前には必ず AWS 公式の最新情報をチェックしてください。  
 本記事が AWS を活用する際の参考になれば幸いです。
-`;
 
-    /* ================================
-       ▼ 追記：GCP リンク
-       ================================ */
-    md += `
 ---
 
 ## 関連リンク：Google Cloud の無料枠まとめ
 
-AWS だけでなく **Google Cloud の無料枠** も記事にまとめています。  
-用途に応じてクラウドを使い分けたい方はこちらもどうぞ。
-
-👉 **Google Cloud Always Free（無料枠プロダクト一覧）**  
-https://zenn.dev/good_sleeper/articles/gcp-always-free
+👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
 `;
 
     fs.writeFileSync("articles/aws-always-free.md", md);
-    console.log("📄 Markdown updated successfully!");
+    console.log("📄 Markdown updated!");
 
   } catch (err) {
     console.error("❌ ERROR:", err);
