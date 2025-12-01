@@ -256,11 +256,11 @@ Fully managed build service that builds and tests code in the cloud.
 
 クラウドでコードをビルドおよびテストする、完全に管理されたビルド サービス。
 
-## AWS Control Tower
+## AWS X-Ray
 
-The easiest way to set up and govern a new, secure multi-account AWS environment.
+Analyze and debug your applications.
 
-新しい安全なマルチアカウント AWS 環境をセットアップして管理する最も簡単な方法。
+アプリケーションを分析およびデバッグします。
 
 ## Amazon Q Business
 
@@ -268,11 +268,11 @@ Unleash the power of generative AI in the workplace with Amazon Q Business
 
 Amazon Q Business で職場における生成 AI のパワーを解き放ちましょう
 
-## AWS X-Ray
+## AWS Control Tower
 
-Analyze and debug your applications.
+The easiest way to set up and govern a new, secure multi-account AWS environment.
 
-アプリケーションを分析およびデバッグします。
+新しい安全なマルチアカウント AWS 環境をセットアップして管理する最も簡単な方法。
 
 
 ---
@@ -289,5 +289,5 @@ AWS の Always Free は、学習や個人開発で非常に役立つ仕組みで
 
 ## 関連リンク：Google Cloud の無料枠まとめ
 
-GCPの無料枠もまとめていますので一緒にどうぞ
+GCPの上限付きの永久無料枠もまとめていますので一緒にどうぞ
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
