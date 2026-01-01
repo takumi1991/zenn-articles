@@ -256,11 +256,11 @@ Fully managed build service that builds and tests code in the cloud.
 
 クラウドでコードをビルドおよびテストする、完全に管理されたビルド サービス。
 
-## AWS X-Ray
+## AWS Control Tower
 
-Analyze and debug your applications.
+The easiest way to set up and govern a new, secure multi-account AWS environment.
 
-アプリケーションを分析およびデバッグします。
+新しい安全なマルチアカウント AWS 環境をセットアップして管理する最も簡単な方法。
 
 ## Amazon Q Business
 
@@ -268,11 +268,11 @@ Unleash the power of generative AI in the workplace with Amazon Q Business
 
 Amazon Q Business で職場における生成 AI のパワーを解き放ちましょう
 
-## AWS Control Tower
+## AWS X-Ray
 
-The easiest way to set up and govern a new, secure multi-account AWS environment.
+Analyze and debug your applications.
 
-新しい安全なマルチアカウント AWS 環境をセットアップして管理する最も簡単な方法。
+アプリケーションを分析およびデバッグします。
 
 
 ---
