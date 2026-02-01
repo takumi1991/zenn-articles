@@ -16,6 +16,12 @@ AWS の常時無料サービス（Always Free Services）はアカウント作�
 クラウド学習、個人開発、コスト最適化の参考にぜひご活用ください。
 
 
+## AWS Transform
+
+The first agentic AI service to accelerate the transformation of Windows, mainframe, VMware, and more.
+
+Windows、メインフレーム、VMware などの変革を加速する初のエージェント AI サービス。
+
 ## Amazon DynamoDB
 
 Serverless, NoSQL, fully managed database with single-digit millisecond performance at any scale.
@@ -34,77 +40,17 @@ Fastest serverless distributed SQL database for always available applications
 
 常時利用可能なアプリケーション向けの最速のサーバーレス分散 SQL データベース
 
-## AWS Application Discovery Service
+## AWS Security Incident Response
 
-Collects server specification information, performance data, and details of running processes and network connections.
+Automated security incident response with AWS expert guidance.
 
-サーバーの仕様情報、パフォーマンス データ、実行中のプロセスとネットワーク接続の詳細を収集します。
-
-## AWS Migration Hub
-
-Migration Hub is a&nbsp;single location to track the progress of application migrations
-
-Migration Hub は、アプリケーションの移行の進行状況を追跡できる単一の場所です。
-
-## AWS WAF Bot Control
-
-Protect your web applications from common and pervasive web bots
-
-一般的なウェブボットからウェブアプリケーションを保護する
-
-## AWS re:Post
-
-A community-driven, questions-and-answers service to help AWS customers remove technical roadblocks.
-
-AWS のお客様が技術的な障害を取り除くのに役立つ、コミュニティ主導の質問と回答のサービスです。
-
-## Amazon Q Developer
-
-The most capable generative AI–powered assistant for software development
-
-ソフトウェア開発のための最も有能な生成AI搭載アシスタント
-
-## Amazon SNS
-
-Fast, flexible, fully managed push messaging service.
-
-高速で柔軟性のある、完全に管理されたプッシュ メッセージング サービス。
-
-## Amazon CodeCatalyst
-
-Quickly build and deliver apps at scale on AWS
-
-AWS で大規模なアプリケーションを迅速に構築して配信
+AWS エキスパートのガイダンスによるセキュリティインシデント対応の自動化。
 
 ## AWS Resource Explorer
 
 Use AWS Resource Explorer to easily search for and discover your resources across AWS Regions.
 
 AWS Resource Explorer を使用すると、AWS リージョン全体のリソースを簡単に検索して検出できます。
-
-## AWS CodePipeline
-
-Continuous delivery service for fast and reliable application updates.
-
-高速かつ信頼性の高いアプリケーション更新を実現する継続的デリバリー サービス。
-
-## Amazon OpenSearch Service
-
-Managed service that makes it easy to perform interactive log analytics, real-time application monitoring, website search, and more.
-
-インタラクティブなログ分析、リアルタイムのアプリケーション監視、Web サイト検索などを簡単に実行できるマネージド サービスです。
-
-## AWS Application Migration Service
-
-Simplify and expedite migrations while reducing cost.
-
-コストを削減しながら移行を簡素化および迅速化します。
-
-## AWS Systems Manager
-
-Centralize operational data from multiple AWS services and automate tasks across your AWS resources.
-
-複数の AWS サービスからの運用データを一元管理し、AWS リソース全体のタスクを自動化します。
 
 ## AWS License Manager
 
@@ -136,23 +82,11 @@ Protects networks and applications by analyzing network security configurations 
 
 ネットワーク セキュリティ構成を分析し、管理された DDoS 保護を提供することで、ネットワークとアプリケーションを保護します。
 
-## Amazon EventBridge
-
-Build event-driven applications at scale across AWS, existing systems, or SaaS applications
-
-AWS、既存のシステム、または SaaS アプリケーション全体で大規模なイベント駆動型アプリケーションを構築します
-
 ## AWS Glue
 
 Simple, flexible, and cost-effective extract, transform, and load (ETL) service.
 
 シンプルで柔軟性があり、コスト効率に優れた抽出、変換、ロード (ETL) サービス。
-
-## Migration Evaluator
-
-Migration Evaluator helps customers rapidly see projected costs of running their on-premises estate in AWS.
-
-Migration Evaluator を使用すると、お客様は AWS でオンプレミス環境を運用する場合の予想コストを迅速に把握できます。
 
 ## Amazon CloudFront
 
@@ -178,59 +112,77 @@ Model and provision all your cloud infrastructure resources with code to enable 
 
 すべてのクラウド インフラストラクチャ リソースをコードでモデル化およびプロビジョニングし、構成のコンプライアンスとトラブルシューティングの高速化を実現します。
 
-## Amazon Cognito
+## AWS Application Migration Service
 
-Simple and Secure User Sign-Up, Sign-In, and Access Control.
+Simplify and expedite migrations while reducing cost.
 
-シンプルで安全なユーザー サインアップ、サインイン、およびアクセス制御。
+コストを削減しながら移行を簡素化および迅速化します。
 
-## Amazon DataZone
+## AWS CodePipeline
 
-Unlock data across organizational boundaries with built-in governance capabilities
+Continuous delivery service for fast and reliable application updates.
 
-組み込みのガバナンス機能により組織の境界を越えてデータを解放
+高速かつ信頼性の高いアプリケーション更新を実現する継続的デリバリー サービス。
 
-## Amazon Managed Service for Prometheus
+## Migration Evaluator
 
-Amazon Managed Service for Prometheus is a Prometheus-compatible service that monitors and provides alerts on containerized applications.
+Migration Evaluator helps customers rapidly see projected costs of running their on-premises estate in AWS.
 
-Amazon Managed Service for Prometheus は、コンテナ化されたアプリケーションを監視し、アラートを提供する Prometheus 互換サービスです。
+Migration Evaluator を使用すると、お客様は AWS でオンプレミス環境を運用する場合の予想コストを迅速に把握できます。
 
-## AWS Step Functions
+## Amazon SNS
 
-Coordinate components of distributed applications.
+Fast, flexible, fully managed push messaging service.
 
-分散アプリケーションのコンポーネントを調整します。
+高速で柔軟性のある、完全に管理されたプッシュ メッセージング サービス。
+
+## Amazon OpenSearch Service
+
+Managed service that makes it easy to perform interactive log analytics, real-time application monitoring, website search, and more.
+
+インタラクティブなログ分析、リアルタイムのアプリケーション監視、Web サイト検索などを簡単に実行できるマネージド サービスです。
+
+## AWS WAF Bot Control
+
+Protect your web applications from common and pervasive web bots
+
+一般的なウェブボットからウェブアプリケーションを保護する
+
+## AWS Systems Manager
+
+Centralize operational data from multiple AWS services and automate tasks across your AWS resources.
+
+複数の AWS サービスからの運用データを一元管理し、AWS リソース全体のタスクを自動化します。
+
+## Amazon EventBridge
+
+Build event-driven applications at scale across AWS, existing systems, or SaaS applications
+
+AWS、既存のシステム、または SaaS アプリケーション全体で大規模なイベント駆動型アプリケーションを構築します
+
+## Amazon CodeCatalyst
+
+Quickly build and deliver apps at scale on AWS
+
+AWS で大規模なアプリケーションを迅速に構築して配信
+
+## Amazon Q Developer
+
+The most capable generative AI–powered assistant for software development
+
+ソフトウェア開発のための最も有能な生成AI搭載アシスタント
+
+## AWS re:Post
+
+A community-driven, questions-and-answers service to help AWS customers remove technical roadblocks.
+
+AWS のお客様が技術的な障害を取り除くのに役立つ、コミュニティ主導の質問と回答のサービスです。
 
 ## Amazon CloudWatch
 
 Monitoring for AWS cloud resources and applications.
 
 AWS クラウド リソースとアプリケーションの監視。
-
-## Amazon SWF
-
-Task coordination and state management service for Cloud applications.
-
-クラウド アプリケーションのタスク調整および状態管理サービス。
-
-## AWS Budgets
-
-Improve planning and cost control with flexible budgeting and forecasting
-
-柔軟な予算編成と予測により、計画とコスト管理を改善します
-
-## Amazon Route 53
-
-Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
-
-Amazon Route 53 は、可用性とスケーラビリティに優れたクラウド ドメインネームシステム (DNS) Web サービスです。
-
-## AWS Service Catalog
-
-Create and manage catalogs of IT services that are approved for use on AWS.
-
-AWS での使用が承認された IT サービスのカタログを作成および管理します。
 
 ## Amazon SimpleDB
 
@@ -244,18 +196,6 @@ Securely share your resources across AWS accounts or within your organization.
 
 AWS アカウント間または組織内でリソースを安全に共有します。
 
-## AWS CloudTrail
-
-Log, continuously monitor, and retain account activity related to actions across your AWS infrastructure.
-
-AWS インフラストラクチャ全体のアクションに関連するアカウントアクティビティをログに記録し、継続的に監視し、保持します。
-
-## AWS CodeBuild
-
-Fully managed build service that builds and tests code in the cloud.
-
-クラウドでコードをビルドおよびテストする、完全に管理されたビルド サービス。
-
 ## AWS Control Tower
 
 The easiest way to set up and govern a new, secure multi-account AWS environment.
@@ -268,11 +208,71 @@ Unleash the power of generative AI in the workplace with Amazon Q Business
 
 Amazon Q Business で職場における生成 AI のパワーを解き放ちましょう
 
+## Amazon Route 53
+
+Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.
+
+Amazon Route 53 は、可用性とスケーラビリティに優れたクラウド ドメインネームシステム (DNS) Web サービスです。
+
+## AWS CodeBuild
+
+Fully managed build service that builds and tests code in the cloud.
+
+クラウドでコードをビルドおよびテストする、完全に管理されたビルド サービス。
+
+## AWS Budgets
+
+Improve planning and cost control with flexible budgeting and forecasting
+
+柔軟な予算編成と予測により、計画とコスト管理を改善します
+
+## Amazon DataZone
+
+Unlock data across organizational boundaries with built-in governance capabilities
+
+組み込みのガバナンス機能により組織の境界を越えてデータを解放
+
+## AWS Step Functions
+
+Coordinate components of distributed applications.
+
+分散アプリケーションのコンポーネントを調整します。
+
 ## AWS X-Ray
 
 Analyze and debug your applications.
 
 アプリケーションを分析およびデバッグします。
+
+## Amazon Cognito
+
+Simple and Secure User Sign-Up, Sign-In, and Access Control.
+
+シンプルで安全なユーザー サインアップ、サインイン、およびアクセス制御。
+
+## AWS CloudTrail
+
+Log, continuously monitor, and retain account activity related to actions across your AWS infrastructure.
+
+AWS インフラストラクチャ全体のアクションに関連するアカウントアクティビティをログに記録し、継続的に監視し、保持します。
+
+## Amazon Managed Service for Prometheus
+
+Amazon Managed Service for Prometheus is a Prometheus-compatible service that monitors and provides alerts on containerized applications.
+
+Amazon Managed Service for Prometheus は、コンテナ化されたアプリケーションを監視し、アラートを提供する Prometheus 互換サービスです。
+
+## AWS Service Catalog
+
+Create and manage catalogs of IT services that are approved for use on AWS.
+
+AWS での使用が承認された IT サービスのカタログを作成および管理します。
+
+## Amazon SWF
+
+Task coordination and state management service for Cloud applications.
+
+クラウド アプリケーションのタスク調整および状態管理サービス。
 
 
 ---
