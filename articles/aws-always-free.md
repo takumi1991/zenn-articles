@@ -136,12 +136,6 @@ Fast, flexible, fully managed push messaging service.
 
 高速で柔軟性のある、完全に管理されたプッシュ メッセージング サービス。
 
-## Amazon OpenSearch Service
-
-Managed service that makes it easy to perform interactive log analytics, real-time application monitoring, website search, and more.
-
-インタラクティブなログ分析、リアルタイムのアプリケーション監視、Web サイト検索などを簡単に実行できるマネージド サービスです。
-
 ## AWS WAF Bot Control
 
 Protect your web applications from common and pervasive web bots
@@ -177,6 +171,12 @@ The most capable generative AI–powered assistant for software development
 A community-driven, questions-and-answers service to help AWS customers remove technical roadblocks.
 
 AWS のお客様が技術的な障害を取り除くのに役立つ、コミュニティ主導の質問と回答のサービスです。
+
+## Amazon OpenSearch Service
+
+Simplify AI-powered search, observability, and vector database operations with a secure, cost-effective managed service.
+
+安全でコスト効率に優れたマネージド サービスを使用して、AI を活用した検索、可観測性、ベクトル データベース操作を簡素化します。
 
 ## Amazon CloudWatch
 
