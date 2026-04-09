@@ -18,7 +18,7 @@ async function main() {
     console.log(`📦 ${data.length} 件を取得しました。`);
 
     const header = `---
-title: "Google Cloud 無料枠プロダクト一覧"
+title: "Google Cloud 無料枠プロダクト一覧(Free Tier products)"
 emoji: "☁️"
 type: "tech"
 topics: ["gcp", "free-tier", "cloud"]
