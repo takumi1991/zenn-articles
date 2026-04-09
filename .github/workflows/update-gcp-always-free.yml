@@ -33,7 +33,7 @@ jobs:
           curl -X POST \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer $APIFY_TOKEN" \
-            "https://api.apify.com/v2/actors/${APIFY_ACTOR_ID_GCP}/runs?token=$APIFY_TOKEN"
+            "https://api.apify.com/v2/acts/${APIFY_ACTOR_ID_GCP}/run-sync-get-dataset-items?token=$APIFY_TOKEN&format=json"
 
       # --------------------------
       # 3. Node.js セットアップ
