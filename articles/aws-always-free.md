@@ -6,14 +6,14 @@ topics: ["aws", "free-tier", "cloud"]
 published: true
 ---
 
-# AWS 常時無料サービス（Always Free Services） 一覧
+# AWS 常時無料サービス 一覧 (Always Free Services)
 
-AWS の常時無料サービス（Always Free Services）はアカウント作成後の 12 か月間だけ利用できる無料利用枠（Free Tier）とは異なり、12 ヶ月を超えても **特定の使用量まではずっと無料で使えるサービス群** です。
+Amazon Web Services の常時無料枠(Always Free Services) はアカウント作成後の12ヵ月間だけ利用できる無料利用枠(Free Tier)とは異なり、12ヶ月を超えても **特定の使用量まではずっと無料で使えるサービス群** です。
 
 完全に無制限で無料というわけではなく、各サービスの無料枠（リクエスト数、GB、クォータなど）を超えた部分は通常の従量課金が発生します。
 
-本記事では AWS が公式に公開している Always Free 対象サービスを一覧でまとめています。  
-クラウド学習、個人開発、コスト最適化の参考にぜひご活用ください。
+本記事では AWS が公開している Always Free 対象サービスを一覧でまとめています。  
+クラウドサービスの学習、個人開発、コスト最適化の参考にぜひご活用ください。
 ※なお、リージョンごとに常時無料対象のサービスが異なることがあります。本記事は日本リージョンを対象としています。
 
 
@@ -302,15 +302,15 @@ The fastest serverless distributed SQL database for always-on applications
 
 ## あとがき
 
-AWS の Always Free は、学習や個人開発で非常に役立つ仕組みです。  
-ただし、無料枠には上限があり、超過した場合は課金が発生します。
+AWS の常時無料サービス(Always Free Services) は、個人開発や学習に役立つと思います。  
+ただ、無料枠には毎月の上限があり、超過した場合は課金が発生しますのでご注意を。
 
-利用前には必ず AWS 公式の最新情報をチェックしてください。  
-本記事が AWS を活用する際の参考になれば幸いです。
+**※利用前には必ずAWS公式の最新情報をあたってください。** 
+
 
 ---
 
-## 関連リンク：Google Cloud の無料枠まとめ
+## 関連リンク：Google Cloud の常時無料枠まとめ
 
 GCPの上限付きの永久無料枠もまとめていますので一緒にどうぞ
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
