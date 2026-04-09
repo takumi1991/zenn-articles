@@ -1,23 +1,17 @@
-import { ApifyClient } from "apify-client";
 import fs from "fs";
 import path from "path";
 
-const DATASET_ID = "Lvnyi6fUL1M1mHB2N";
+const INPUT_PATH = "./data.json";
 const OUTPUT_MD = "./articles/gcp-always-free.md";
 
 async function main() {
-    console.log("📘 Fetching dataset from Apify:", DATASET_ID);
+    console.log("📘 Loading data.json");
 
-    const client = new ApifyClient({
-        token: process.env.APIFY_TOKEN
-    });
+    const raw = fs.readFileSync(INPUT_PATH, "utf8");
+    const data = JSON.parse(raw);
 
-    // Dataset から items を取得
-    const dataset = await client.dataset(DATASET_ID).listItems();
-    const data = dataset.items || [];
-
-    if (data.length === 0) {
-        console.error("❌ Dataset に items がありません。");
+    if (!data || data.length === 0) {
+        console.error("❌ data.json が空です");
         process.exit(1);
     }
 
@@ -78,7 +72,6 @@ Google Cloud の Always Free 枠は、単なる試用期間ではなく
 
     const markdown = header + body + footer;
 
-    // フォルダを作成
     const dir = path.dirname(OUTPUT_MD);
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
