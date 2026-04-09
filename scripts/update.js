@@ -1,49 +1,4 @@
 import fs from 'fs';
-import { v2 } from '@google-cloud/translate';
-
-const { Translate } = v2;
-
-/* ======================================
-   ▼ Google 翻訳クライアント初期化
-   ====================================== */
-function loadCredentials() {
-  const raw = process.env.GCP_SA_KEY_JSON;
-  if (!raw) {
-    console.error("❌ GCP_SA_KEY_JSON not found");
-    process.exit(1);
-  }
-  try {
-    return JSON.parse(raw);
-  } catch (err) {
-    console.error("❌ Failed to parse GCP_SA_KEY_JSON:", err.message);
-    process.exit(1);
-  }
-}
-
-const credentials = loadCredentials();
-
-const translate = new Translate({
-  projectId: credentials.project_id,
-  credentials: {
-    client_email: credentials.client_email,
-    private_key: credentials.private_key,
-  }
-});
-
-console.log("✅ Translation client initialized");
-
-/* ======================================
-   ▼ 翻訳関数
-   ====================================== */
-async function translateToJapanese(text) {
-  try {
-    const [result] = await translate.translate(text, 'ja');
-    return result;
-  } catch (err) {
-    console.error("❌ Translation failed:", err);
-    return null;
-  }
-}
 
 /* ======================================
    ▼ メイン処理
@@ -79,11 +34,13 @@ AWS の常時無料サービス（Always Free Services）はアカウント作�
     for (const item of items) {
       md += `## ${item.title}\n\n`;
 
-      const text = item.body ? item.body.replace(/<[^>]+>/g, '').trim() : '';
-      md += `${text}\n\n`;
+      // ★ここだけ修正（body → description）
+      md += `${item.description_en || ""}\n\n`;
+      md += `${item.description_ja || ""}\n\n`;
 
-      const translated = await translateToJapanese(text || "");
-      md += translated ? `${translated}\n\n` : `_Translation failed_\n\n`;
+      if (item.link) {
+        md += `🔗 ${item.link}\n\n`;
+      }
     }
 
     md += `
