@@ -25,16 +25,16 @@ topics: ["gcp", "free-tier", "cloud"]
 published: true
 ---
 
-# Google Cloud 無料枠プロダクト一覧
+# Google Cloud 無料枠プロダクト一覧(Free Tier products)
 
-Google Cloud（GCP）には、アカウント作成直後の **12 ヶ月無料トライアル** とは別に、  
-毎月の使用量が上限内であれば、**期限なく “ずっと無料” で使える Always Free 枠** が存在します。
+Google Cloud(GCP)には、アカウント作成直後の **12 ヶ月無料トライアル** とは別に、  
+毎月の使用量が上限内であれば、**期限なく “ずっと無料” で使える 永久無料枠(Free Tier products)** が存在します。
 
 Cloud Run・Firestore・BigQuery などは、この無料枠だけでも  
 小規模アプリやデータ基盤を実用レベルで運用できるのが大きな特徴です。
 
-本記事では、Google Cloud の Always Free 対象プロダクトを  
-**「毎月無料で使える上限」** とともにわかりやすくまとめています。
+本記事では、Google Cloud の Free Tier products 対象サービスを  
+**「毎月無料で使える上限」** とともにまとめています。
 
 ---
 
@@ -59,11 +59,11 @@ ${item.description}
 
 ## おわりに
 
-Google Cloud の Always Free 枠は、単なる試用期間ではなく  
-**「毎月の上限内であれば永久に無料で使える」** という強力な仕組みです。
+Google Cloud の Free Tier products は、単なる試用期間ではなく  
+**「毎月の上限内であれば永久に無料で使える」** という大変ありがたいサービスです。
 
 特に Cloud Run、Firestore、BigQuery は無料枠だけでも  
-本番運用に近い構成が組めるため、個人開発者にとって非常に魅力的です。
+本番運用に近い構成が組めるため、個人開発者や学習者にとって非常に魅力的です。
 
 ただし無料枠には明確な制限があるため、  
 本格運用を行う場合は最新の公式ドキュメントを確認しながら  
