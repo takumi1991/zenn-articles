@@ -6,7 +6,7 @@ topics: ["gcp", "free-tier", "cloud"]
 published: true
 ---
 
-# Google Cloud 無料枠プロダクト一覧  (Free Tier products)
+# Google Cloud 無料枠プロダクト一覧<br>(Free Tier products)
 
 Google Cloud(GCP)には、アカウント作成直後の **12 ヶ月無料トライアル** とは別に、  
 毎月の使用量が上限内であれば、**期限なく “ずっと無料” で使える 永久無料枠(Free Tier products)** が存在します。
