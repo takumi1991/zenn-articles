@@ -48,7 +48,7 @@ Cloud Run・Firestore・BigQuery などは、この無料枠だけでも
 
 ## Cloud Run
 
-ステートレス コンテナの実行、アプリの構築、ウェブサイトのホストとデプロイを行うためのフルマネージド環境。
+ステートレス コンテナの実行、アプリの構築、ウェブサイトのホストとデプロイのためのフルマネージド環境。
 
 **毎月無料で使える上限**：200 万リクエスト（1 か月あたり）
 
@@ -129,7 +129,7 @@ Google 独自のプロダクトにも採用されている音声文字変換。
 
 ## Natural Language API
 
-Google の機械学習を使用して非構造化テキストから分析情報を引き出す。
+Google の ML を使用して非構造化テキストから分析情報を引き出す。
 
 **毎月無料で使える上限**：5,000 ユニット（1 か月あたり）
 
@@ -172,15 +172,6 @@ Google Cloud がホストするさまざまなプライベート Git リポジ�
 🔗 https://cloud.google.com/free/docs/gcp-free-tier/#cloud-source-repos
 
 
-## Google Cloud Marketplace
-
-Google Cloud パートナーから提供される、クリック デプロイ可能な本番環境クラスのソリューション。
-
-**毎月無料で使える上限**：一部のアプリやサービスの無料トライアル
-
-🔗 https://cloud.google.com/marketplace
-
-
 ## Secret Manager
 
 API キー、パスワード、証明書、その他の機密データを安全に保存。
@@ -197,6 +188,15 @@ API キー、パスワード、証明書、その他の機密データを安全�
 **毎月無料で使える上限**：5 GB の永続ディスク ストレージが含まれます
 
 🔗 https://cloud.google.com/shell/docs
+
+
+## ワークロード マネージャー
+
+Google Cloud 上で実行しているワークロードを評価する、ルールベースの検証サービス。
+
+**毎月無料で使える上限**：5,000 件のリソース評価（1 か月あたり）
+
+🔗 https://docs.cloud.google.com/free/docs/free-cloud-features#workload-manager
 
 
 ---
