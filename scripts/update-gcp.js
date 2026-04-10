@@ -46,9 +46,15 @@ Cloud Run・Firestore・BigQuery などは、この無料枠だけでも
         .map(item => {
             return `## ${item.title}
 
-${item.description}
+${item.description_ja || ""}
 
-**毎月無料で使える上限**：${item.free_tier}
+**毎月無料で使える上限**  
+${item.free_tier_ja || ""}
+
+${item.description_en || ""}
+
+**Free Tier (monthly limits)**  
+${item.free_tier_en || ""}
 
 🔗 ${item.link}
 
