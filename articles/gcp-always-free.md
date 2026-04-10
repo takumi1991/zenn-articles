@@ -251,5 +251,9 @@ Google Cloud の Free Tier products は、単なる試用期間ではなく
 特に Cloud Run、Firestore、BigQuery は無料枠だけでも  
 本番運用に近い構成が組めるため、個人開発者や学習者にとって非常に魅力的です。
 
-ただし無料枠には明確な制限があるため、  
-利用前に最新の公式ドキュメントを確認してください。  
+ただし無料枠には上限があるため、利用前に最新の公式ドキュメントを確認してください。 
+
+---
+## 関連リンク：AWS の常時無料枠まとめ
+AWS の上限付きの常時無料枠 (Always Free Services)もまとめていますので一緒にどうぞ
+👉 https://zenn.dev/good_sleeper/articles/aws-always-free
