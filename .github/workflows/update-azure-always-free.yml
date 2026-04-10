@@ -1,0 +1,71 @@
+name: Update Azure Free Services Article
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "10 0 1 * *"   # 毎月1日 00:10 UTC（AWS/GCPとずらす）
+
+env:
+  APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+  APIFY_ACTOR_ID_AZURE: ${{ secrets.APIFY_ACTOR_ID_AZURE }}
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      # --------------------------
+      # 1. Checkout
+      # --------------------------
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # --------------------------
+      # 2. Apify Actor 実行（dataset取得）
+      # --------------------------
+      - name: Run Apify Actor (Azure)
+        run: |
+          echo "▶ Running Azure Actor"
+
+          curl -s -X POST \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $APIFY_TOKEN" \
+            "https://api.apify.com/v2/acts/$APIFY_ACTOR_ID_AZURE/run-sync-get-dataset-items?token=$APIFY_TOKEN&format=json" \
+            -o data.json
+
+          echo "Saved data.json:"
+          head -n 20 data.json
+
+      # --------------------------
+      # 3. Node.js
+      # --------------------------
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      # --------------------------
+      # 4. Install deps
+      # --------------------------
+      - name: Install deps
+        run: npm install
+
+      # --------------------------
+      # 5. Markdown生成
+      # --------------------------
+      - name: Update Azure article
+        run: node scripts/update-azure.js
+
+      # --------------------------
+      # 6. Commit & Push
+      # --------------------------
+      - name: Commit & Push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add articles/azure-always-free.md
+          git commit -m "Update Azure Free Services article" || echo "No changes"
+          git push
