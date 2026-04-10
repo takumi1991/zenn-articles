@@ -20,6 +20,10 @@ published: true
 
 # AWS 常時無料サービス 一覧 (Always Free Services)
 
+AWS Always Free offers services that remain free up to a certain usage limit with no expiration, unlike the 12-month Free Tier.
+However, usage beyond the limits is charged on a pay-as-you-go basis.
+This article lists the eligible services to support learning, personal projects, and cost optimization.
+
 Amazon Web Services の常時無料枠(Always Free Services) はアカウント作成後の12ヵ月間だけ利用できる無料利用枠(Free Tier)とは異なり、12ヶ月を超えても **特定の使用量まではずっと無料で使えるサービス群** です。
 
 完全に無制限で無料というわけではなく、各サービスの無料枠（リクエスト数、GB、クォータなど）を超えた部分は通常の従量課金が発生します。
