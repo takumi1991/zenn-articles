@@ -1,5 +1,5 @@
 ---
-title: "Azure 常時無料サービス一覧(Always Free Services)"
+title: "Microsoft Azure 常時無料サービス一覧(Always Free Services)"
 emoji: "🔵"
 type: "tech"
 topics: ["azure", "free-tier", "cloud"]
@@ -7,9 +7,11 @@ published: true
 ---
 
 # Azure常時無料サービス一覧 (Always Free Services)
+AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されており、それらと比較しても対象サービス数が多いです。
 
-Azureには「常時無料枠（Always Free Services）」が存在します。  
-この記事では、常時無料で使えるサービスのみをまとめています。
+AI・データ・アプリ基盤まで幅広く常時無料枠が揃っているため、個人開発でもかなり多様な構成をコストを抑えて実現できます。
+
+この記事では、常時無料で利用できるAzureサービスのみをまとめています。
 ## Azure AI Search
 
 Web およびモバイル アプリケーションにクラウド検索サービスを組み込むことができます。
@@ -726,5 +728,5 @@ Monthly limit:20,000 messages per unit per day and 20 concurrent connections per
 AWS の上限付きの常時無料枠 (Always Free Services)  
 👉 https://zenn.dev/good_sleeper/articles/aws-always-free
 
-GCPの上限付きの永久無料枠  
+Google Cloud Platformの上限付きの永久無料枠  
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
