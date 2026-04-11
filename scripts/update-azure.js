@@ -79,7 +79,7 @@ async function main() {
   // header
   // =========================
   const header = `---
-title: "Azure 常時無料サービス一覧(Always Free Services)"
+title: "Microsoft Azure 常時無料サービス一覧(Always Free Services)"
 emoji: "🔵"
 type: "tech"
 topics: ["azure", "free-tier", "cloud"]
@@ -87,8 +87,7 @@ published: true
 ---
 
 # Azure常時無料サービス一覧 (Always Free Services)
-
-Azureには「常時無料枠（Always Free Services）」が存在します。  
+Microsoft Azureには「常時無料枠（Always Free Services）」が存在します。  
 この記事では、常時無料で使えるサービスのみをまとめています。
 `;
 
@@ -113,7 +112,7 @@ Azureには「常時無料枠（Always Free Services）」が存在します。
 AWS の上限付きの常時無料枠 (Always Free Services)  
 👉 https://zenn.dev/good_sleeper/articles/aws-always-free
 
-GCPの上限付きの永久無料枠  
+Google Cloud Platformの上限付きの永久無料枠  
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
 `;
 
