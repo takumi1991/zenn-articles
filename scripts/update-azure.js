@@ -40,12 +40,6 @@ async function main() {
   // =========================
   const filtered = data.filter(d => d.period === "always");
 
-  // =========================
-  // ソート（英語優先の方が見やすい）
-  // =========================
-  filtered.sort((a, b) =>
-    (a.description_en || "").localeCompare(b.description_en || "")
-  );
 
   // =========================
   // header
