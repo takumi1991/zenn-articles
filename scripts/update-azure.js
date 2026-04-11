@@ -87,8 +87,11 @@ published: true
 ---
 
 # Azure常時無料サービス一覧 (Always Free Services)
-Microsoft Azureには「常時無料枠（Always Free Services）」が存在します。  
-この記事では、常時無料で使えるサービスのみをまとめています。
+AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されており、それらと比較しても対象サービス数が多いです。
+
+AI・データ・アプリ基盤まで幅広く常時無料枠が揃っているため、個人開発でもかなり多様な構成をコストを抑えて実現できます。
+
+この記事では、常時無料で利用できるAzureサービスのみをまとめています。
 `;
 
   // =========================
