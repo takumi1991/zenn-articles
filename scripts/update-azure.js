@@ -4,23 +4,28 @@ import path from "path";
 const INPUT = "./data.json";
 const OUTPUT = "./articles/azure-always-free.md";
 
+// =========================
+// フォーマット
+// =========================
 function formatItem(item) {
-  return `## ${item.title_en}
+  return `## ${item.title}
+
+${item.description}
+
+${item.free_tier}
 
 ${item.description_en}
 
-${item.description_ja}
+${item.free_tier_en}
 
----
-
-**Free Tier (${item.period === "always" ? "Always Free" : "12 months"})**  
-${item.free_tier}
-
-🔗 ${item.url}
+🔗 ${item.link}
 
 `;
 }
 
+// =========================
+// メイン
+// =========================
 async function main() {
   const raw = fs.readFileSync(INPUT, "utf8");
   const data = JSON.parse(raw);
@@ -30,43 +35,57 @@ async function main() {
     process.exit(1);
   }
 
-  // ソート（安定）
-  data.sort((a, b) =>
-    a.title_en.localeCompare(b.title_en)
+  // =========================
+  // alwaysのみ
+  // =========================
+  const filtered = data.filter(d => d.period === "always");
+
+  // =========================
+  // ソート（英語優先の方が見やすい）
+  // =========================
+  filtered.sort((a, b) =>
+    (a.description_en || "").localeCompare(b.description_en || "")
   );
 
+  // =========================
+  // header
+  // =========================
   const header = `---
-title: "Azure 無料枠一覧 (Free Services)"
+title: "Azure 常時無料サービス一覧(Always Free Services)"
 emoji: "🔵"
 type: "tech"
 topics: ["azure", "free-tier", "cloud"]
 published: true
 ---
 
-# Azure 無料サービス一覧 (Free Services)
-
-Microsoft Azure には、12 ヶ月無料トライアルとは別に、  
-一定の使用量まで無料で利用できるサービスが存在します。
-
-This article summarizes Azure free services, including Always Free and 12-month free tiers.
+# Azure常時無料サービス一覧 (Always Free Services) 
+Azureには「常時無料枠（Always Free Services）」が存在します。  
+この記事では、常時無料で使えるサービスのみをまとめています。
 
 ---
 
 `;
 
-  const body = data.map(formatItem).join("\n");
+  // =========================
+  // body
+  // =========================
+  const body = filtered.map(formatItem).join("\n");
 
+  // =========================
+  // footer
+  // =========================
   const footer = `
 ---
 
 ## 注意
 
-無料枠には上限があります。超過すると課金されます。  
-必ず公式ページで最新情報を確認してください。
+無料枠には上限があります。  
+超過すると課金されるため、必ず公式ドキュメントを確認してください。
 `;
 
   const markdown = header + body + footer;
 
+  // ディレクトリ作成
   const dir = path.dirname(OUTPUT);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
@@ -75,6 +94,7 @@ This article summarizes Azure free services, including Always Free and 12-month 
   fs.writeFileSync(OUTPUT, markdown, "utf8");
 
   console.log("✅ Zenn記事生成:", OUTPUT);
+  console.log(`件数: ${filtered.length}`);
 }
 
 main();
