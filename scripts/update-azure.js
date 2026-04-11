@@ -27,6 +27,18 @@ const normalizeFreeTier = (text) => {
 };
 
 // =========================
+// Free Tier En補正
+//「Free」→「Unlimited」
+// =========================
+const normalizeFreeTierEn = (text) => {
+  if (!text) return text;
+
+  const t = text.trim().toLowerCase();
+
+  return t === "Free" ? "Unlimited" : text;
+};
+
+// =========================
 // フォーマット
 // =========================
 function formatItem(item) {
@@ -39,7 +51,7 @@ ${item.description}
 毎月の上限：${freeTier}
 
 ${item.description_en}
-${item.free_tier_en}
+Monthly limit:${item.free_tier_en}
 
 🔗 ${item.link}
 
