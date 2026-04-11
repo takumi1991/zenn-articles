@@ -1,653 +1,852 @@
 ---
-title: "Azure 無料枠一覧 (Free Services)"
+title: "Azure 常時無料サービス一覧(Always Free Services)"
 emoji: "🔵"
 type: "tech"
 topics: ["azure", "free-tier", "cloud"]
 published: true
 ---
 
-# Azure 無料サービス一覧 (Free Services)
-
-Microsoft Azure には、12 ヶ月無料トライアルとは別に、  
-一定の使用量まで無料で利用できるサービスが存在します。
-
-This article summarizes Azure free services, including Always Free and 12-month free tiers.
+# Azure常時無料サービス一覧 (Always Free Services) 
+Azureには「常時無料枠（Always Free Services）」が存在します。  
+この記事では、常時無料で使えるサービスのみをまとめています。
 
 ---
-
-## AI Bot Service
-
-Develop intelligent, enterprise-grade bots that scale on demand.
-
-オンデマンドでスケーリングできる、インテリジェントなエンタープライズレベルのボットを開発できます。
-
----
-
-**Free Tier (Always Free)**  
-プレミアム チャネル メッセージ 10,000 件と無制限の標準チャネル メッセージ
-
-🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-bot-service/
-
-
-## AI Custom Vision
-
-Easily customize computer vision models for your unique use case.
-
-ユーザー固有のユース ケースに合わせてコンピューター ビジョン モデルを簡単にカスタマイズできます。
-
----
-
-**Free Tier (12 months)**  
-10,000 予測の S0 レベル、1 時間のトレーニング、それぞれ 5,000 枚のトレーニング画像を含む 2 つのプロジェクト
-
-🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-custom-vision/
-
-
-## AI Immersive Reader
-
-Embed text reading and comprehension capabilities into applications.
-
-アプリケーションにテキストの読み取りと理解機能を埋め込むことができます。
-
----
-
-**Free Tier (Always Free)**  
-300 万文字
-
-🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-immersive-reader/
-
-
-## API Management
-
-Manage APIs across all platforms with a hybrid, multicloud platform.
-
-ハイブリッド マルチクラウド プラットフォームを使用して、すべてのプラットフォームにわたって API を管理します。
-
----
-
-**Free Tier (Always Free)**  
-従量課金レベルで毎月 100 万通話無料
-
-🔗 https://azure.microsoft.com/ja-jp/products/api-management
-
-
-## App Configuration
-
-Store and manage configurations for all your Azure apps.
-
-お使いのすべての Azure アプリの構成を保存および管理します。
-
----
-
-**Free Tier (Always Free)**  
-10 MB のストレージで 1 日あたり 1,000 件のリクエスト
-
-🔗 https://azure.microsoft.com/ja-jp/products/app-configuration/
-
-
-## App Service
-
-Quickly build, deploy, and scale web apps and APIs globally with a fully managed platform as a service (PaaS).
-
-フル マネージドのサービスとしてのプラットフォーム (PaaS) を活用して、Web アプリと API をグローバルかつ迅速に構築、デプロイ、スケーリングできます。
-
----
-
-**Free Tier (Always Free)**  
-最大 10 個の Web アプリまたは API アプリ、1 GB のストレージ、1 日あたり 1 時間
-
-🔗 https://azure.microsoft.com/ja-jp/products/app-service/
-
-
-## Archive Storage
-
-Store and manage rarely accessed data with locally redundant storage (LRS) or geo-redundant storage (GRS).
-
-ローカル冗長ストレージ (LRS) または地理冗長ストレージ (GRS) を使用して、ほとんどアクセスされないデータを保存および管理します。
-
----
-
-**Free Tier (12 months)**  
-10 GB LRS ストレージ、10 GB LRS または GRS 書き込みと取得、100 回の読み取り
-
-🔗 https://azure.microsoft.com/ja-jp/products/storage
-
-
-## Automation
-
-Simplify cloud management with process automation.
-
-プロセス自動化により、クラウド管理をシンプルにします。
-
----
-
-**Free Tier (Always Free)**  
-500 分のジョブ実行時間
-
-🔗 https://azure.microsoft.com/ja-jp/products/automation/
-
-
-## Azure AI Search
-
-Include a cloud search service in your web and mobile application.
-
-Web およびモバイル アプリケーションにクラウド検索サービスを組み込むことができます。
-
----
-
-**Free Tier (Always Free)**  
-サービスごとに 10,000 件のホスト ドキュメントと 3 つのインデックスを保存できる 50 MB のストレージ
-
-🔗 https://azure.microsoft.com/ja-jp
-
-
-## Azure Document Intelligence
-
-Automate the extraction of text, key/value pairs, and tables from your documents.
-
-テキスト、キー/値のペア、表をドキュメントから自動で抽出できます。
-
----
-
-**Free Tier (12 months)**  
-500 ページ S0 レベル
-
-🔗 https://azure.microsoft.com/ja-jp
-
-
-## Bandwidth (Data Transfer)
-
-Transfer data inbound and outbound through our robust network of global data centers.
-
-グローバル データ センターの信頼性の高いネットワークを使用して送受信データを転送できます。
-
----
-
-**Free Tier (12 months)**  
-送信 15 GB
-
-🔗 https://azure.microsoft.com/ja-jp/products/virtual-network/
-
-
-## Bandwidth (Data Transfer)
-
-Transfer data inbound and outbound through our robust network of global data centers.
-
-グローバル データ センターの信頼性の高いネットワークを使用して送受信データを転送できます。
-
----
-
-**Free Tier (Always Free)**  
-送信 100 GB
-
-🔗 https://azure.microsoft.com/ja-jp/products/virtual-network/
-
-
-## Blob Storage
-
-Use massively scalable object storage for any type of unstructured data.
-
-あらゆる種類の非構造化データに、非常にスケーラブルなオブジェクト ストレージを使用します。
-
----
-
-**Free Tier (12 months)**  
-20,000 回の読み取りと 10,000 回の書き込み操作が可能な 5 GBのローカル冗長ストレージ (LRS) ホット ブロック
-
-🔗 https://azure.microsoft.com/ja-jp/products/storage/blobs/
-
-
-## Cloud Shell
-
-Manage Azure resources in a browser-based shell using popular command-line tools and programming languages.
-
-一般的なコマンドライン ツールとプログラミング言語を使用して、ブラウザーベースのシェルで Azure リソースを管理します。
-
----
-
-**Free Tier (Always Free)**  
-Azure Files での 12 か月間 5 GB の無料ストレージ
-
-🔗 https://azure.microsoft.com/ja-jp/get-started/azure-portal/cloud-shell/
-
-
-## Container Apps
-
-Build and deploy modern apps and microservices using serverless containers.
-
-サーバーレス コンテナーを使用して、最新のアプリとマイクロサービスをビルドおよび配置します。
-
----
-
-**Free Tier (Always Free)**  
-180,000 vCPU 秒、360,000 GiB 秒、200 万リクエスト
-
-🔗 https://azure.microsoft.com/ja-jp/products/container-apps/
-
-
-## Container Registry
-
-Store and manage container images across all types of Azure deployments.
-
-すべての種類の Azure デプロイメントにわたってコンテナー イメージを保存および管理します。
-
----
-
-**Free Tier (12 months)**  
-100 GB のストレージと 10 個の Webhook を備えた 1 つのStandard レベルのレジストリ
-
-🔗 https://azure.microsoft.com/ja-jp/products/container-registry/
-
-
-## Content Safety
-
-Moderate text and images to provide a safer, more positive user experience.
-
-テキストと画像を適切に管理し、より安全でポジティブなユーザー エクスペリエンスを提供できます。
-
----
-
-**Free Tier (Always Free)**  
-AKS クラスターの管理は無料です。ノードによって消費されるリソースに対して料金が発生します
-
-🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-content-safety/
-
-
-## Data Catalog
-
-Get more value from your enterprise data assets.
-
-エンタープライズ データ資産からより多くの価値を取得します。
-
----
-
-**Free Tier (Always Free)**  
-ユーザー数無制限
-
-🔗 https://azure.microsoft.com/ja-jp/products/data-catalog/
-
-
-## Data Factory
-
-Compose and manage data services at scale.
-
-データ サービスを大規模に作成し、管理しますます。
-
----
-
-**Free Tier (Always Free)**  
-5 つの低頻度アクティビティ
-
-🔗 https://azure.microsoft.com/ja-jp/products/data-factory/
-
-
-## Data Factory
-
-Compose and manage data services at scale.
-
-VM Image Builder は無料のサービスです。構築時にデータ転送や有料の Azure サービスを利用すると、料金が発生する場合があります
-
----
-
-**Free Tier (Always Free)**  
-HPC アプリケーションのジョブ オーケストレーションとスケジューリングを使用して、クラウドでアプリケーションを拡張します。
-
-🔗 https://www.microsoft.com/ja-jp/windows/
-
-
-## Database Migration Service
-
-Simplify on-premises database migration to the cloud.
-
-オンプレミスからクラウドへのデータベースの移行をシンプルにします。
-
----
-
-**Free Tier (Always Free)**  
-無料の Standard コンピューティング
-
-🔗 https://azure.microsoft.com/ja-jp/products/database-migration/
-
-
-## Event Grid
-
-Get reliable event delivery at massive scale.
-
-信頼性の高い大規模イベント配信をします。
-
----
-
-**Free Tier (Always Free)**  
-1 か月あたり 100,000 件の操作
-
-🔗 https://azure.microsoft.com/ja-jp/products/event-grid/
-
-
-## Functions
-
-Process events with a serverless code architecture.
-
-サーバー不要のコード アーキテクチャを使用してイベントを処理します。
-
----
-
-**Free Tier (Always Free)**  
-100 万回のリクエスト
-
-🔗 https://azure.microsoft.com/ja-jp/products/functions/
-
-
-## Health Data Services
-
-Unify and manage health data and protected health information (PHI) in the cloud.
-
-クラウドで医療データと保護された医療情報 (PHI) を統合して管理します。
-
----
-
-**Free Tier (Always Free)**  
-1 GB の構造化ストレージと BLOB ストレージ、50,000 件の API リクエスト、0.5 GB の変換操作、100,000 件のイベント
-
-🔗 https://azure.microsoft.com/ja-jp/products/health-data-services/
-
-
-## IoT Edge
-
-Extend cloud intelligence and analytics to IoT edge devices.
-
-クラウドのインテリジェンスと分析を IoT エッジ デバイスまで拡張します。
-
----
-
-**Free Tier (Always Free)**  
-無料のオープンソース エッジ ランタイム
-
-🔗 https://azure.microsoft.com/ja-jp/products/iot-edge/
-
-
-## IoT Hub
-
-Connect, monitor, and manage IoT assets with a scalable platform.
-
-スケーラブルなプラットフォームを使用して IoT 資産を接続、監視、管理します。
-
----
-
-**Free Tier (Always Free)**  
-無料版では、1 日あたり 8,000 件のメッセージと 0.5 KB のメッセージ メーター サイズ
-
-🔗 https://azure.microsoft.com/ja-jp/products/iot-hub/
-
-
-## Key Vault
-
-Safeguard and maintain control of keys and other secrets.
-
-キーやその他のシークレットを保護し、制御を維持します。
-
----
-
-**Free Tier (12 months)**  
-10,000 件のトランザクション RSA 2048 ビットキーまたは秘密操作、Standard レベル
-
-🔗 https://azure.microsoft.com/ja-jp/products/key-vault/
-
-
-## Load Balancer
-
-Instantly add scale, availability, and network performance to your applications.
-
-アプリケーションにスケール、可用性、ネットワーク パフォーマンスを即座に追加します。
-
----
-
-**Free Tier (12 months)**  
-750 時間、15 GB のデータ処理、および Standard Load Balancer で最大 5 つのルール
-
-🔗 https://azure.microsoft.com/ja-jp/products/load-balancer/
-
-
-## Load Balancer
-
-Instantly add scale, availability, and network performance to your applications.
-
-Azure Attestation
-
----
-
-**Free Tier (Always Free)**  
-信頼できるプラットフォーム モジュールと信頼できる実行環境の ID とセキュリティ体制を検証します。
-
-🔗 https://azure.microsoft.com/ja-jp/solutions/network-security/
-
-
-## Logic Apps
-
-Build automated integration solutions across clouds and on-premises systems.
-
-クラウドとオンプレミスのシステム全体にわたる自動化された統合ソリューションをビルドします。
-
----
-
-**Free Tier (Always Free)**  
-4,000 件の組み込みアクションと従量課金プラン
-
-🔗 https://azure.microsoft.com/ja-jp/products/logic-apps/
-
-
-## Managed Disks
-
-Get high performance, durable block storage for Azure Virtual Machines with simplified management.
-
-シンプルに管理された、Azure Virtual Machines 向けの高パフォーマンスで耐久性の高いブロック ストレージを取得します。
-
----
-
-**Free Tier (12 months)**  
-2 台の 64 GB (P6) ソリッド ステート ドライブ SSD ストレージ、1 GB のスナップショットと 200 万回の I/O 操作
-
-🔗 https://azure.microsoft.com/ja-jp/products/storage/disks/
-
-
-## Microsoft Entra ID (formerly Azure AD)
-
-Enable identity and access management in the cloud.
-
-クラウドの ID とアクセス管理を有効にします。
-
----
-
-**Free Tier (Always Free)**  
-すべてのクラウド アプリへのシングル サインオン (SSO) を備えた 50,000 個の保存オブジェクト
-
-🔗 https://www.microsoft.com/
-
-
-## Monitor
-
-Gain full observability into your applications, infrastructure, and network.
-
-アプリケーション、インフラストラクチャ、ネットワークを完全に監視します。
-
----
-
-**Free Tier (Always Free)**  
-機能ごとの無料利用額については、Azure Monitor の料金詳細を参照する
-
-🔗 https://azure.microsoft.com/ja-jp/products/monitor/
-
-
-## Network Watcher
-
-Monitor, diagnose, and gain insights into your network performance and health.
-
-ネットワークのパフォーマンスと健全性を監視、診断し、分析情報を得ます。
-
----
-
-**Free Tier (Always Free)**  
-1,000 件のチェック、10 件のテスト、10 件の接続メトリックを含む 5 GB のストレージ
-
-🔗 https://azure.microsoft.com/ja-jp/products/network-watcher/
-
-
-## Notification Hubs
-
-Send push notifications to any platform from any back end.
-
-どのバックエンドからでもあらゆるプラットフォームにプッシュ通知を送信します。
-
----
-
-**Free Tier (Always Free)**  
-100 万件のプッシュ通知と無料の名前空間
-
-🔗 https://azure.microsoft.com/ja-jp/products/notification-hubs/
-
 
 ## Open Datasets
 
-Accelerate machine learning with curated datasets.
-
 キュレーションされたデータセットで機械学習を加速します。
 
----
-
-**Free Tier (Always Free)**  
 無料 (エグレスの料金が適用される場合あり)
+
+Accelerate machine learning with curated datasets.
+
+Free (egress charges may apply)
 
 🔗 https://azure.microsoft.com/ja-jp/products/open-datasets/
 
 
-## Security Center
+## Azure Policy
 
-Prevent, detect, and respond to threats with increased visibility and control over the security of your Azure resources.
+一貫したリソース ガバナンスにより、大規模なリアルタイムのクラウド コンプライアンスを実現します。
 
-Azure リソースのセキュリティに対する可視性と制御を強化して、脅威を防止、検出、対応します。
+構成および変更追跡機能への無料アクセス
 
----
+Achieve real-time cloud compliance at scale with consistent resource governance.
 
-**Free Tier (Always Free)**  
-無料のポリシー評価と推奨事項
+Free access to configuration and change tracking features
 
-🔗 https://azure.microsoft.com/ja-jp/products/defender-for-cloud/
-
-
-## Service Bus
-
-Get reliable cloud messaging as a service with simple hybrid integration.
-
-シンプルなハイブリッド統合により、信頼性の高いクラウド メッセージングをサービスとして利用します。
-
----
-
-**Free Tier (12 months)**  
-750 時間と 1,300 万回の運用に耐える Standard レベルの基本単位
-
-🔗 https://azure.microsoft.com/ja-jp/products/service-bus/
+🔗 https://azure.microsoft.com/ja-jp/products/azure-policy/
 
 
-## Speech to Text
+## Azure SignalR Service
 
-Transcribe spoken audio to text.
+Web アプリケーションにリアルタイム通信を追加します。
 
-オーディオをテキストに変換できます。
+ユニットあたり 20 の同時接続と 20,000 件のメッセージ
 
----
+Add real-time communications into your web applications.
 
-**Free Tier (Always Free)**  
-リアルタイム音声テキスト変換を毎月 5 時間分の音声に使用可能
+20 concurrent connections per unit and 20,000 messages
+
+🔗 https://azure.microsoft.com/ja-jp/products/signalr-service/
+
+
+## Visual Studio Code
+
+クラウド開発用の強力で軽量なコード エディターを使用して生産性を向上します。
+
+無料
+
+Boost productivity with a powerful, lightweight code editor for cloud development.
+
+Free
+
+🔗 https://azure.microsoft.com/ja-jp/products/visual-studio-code/
+
+
+## Container Apps
+
+サーバーレス コンテナーを使用して、最新のアプリとマイクロサービスをビルドおよび配置します。
+
+180,000 vCPU 秒、360,000 GiB 秒、200 万リクエスト
+
+Build and deploy modern apps and microservices using serverless containers.
+
+180,000 vCPU seconds, 360,000 GiB seconds, and 2 million requests
+
+🔗 https://azure.microsoft.com/ja-jp/products/container-apps/
+
+
+## Service Fabric
+
+常時接続可能でスケーラブルな分散型アプリをビルドし、運用します。
+
+無料
+
+Build and operate always-on, scalable, distributed apps.
+
+Free
+
+🔗 https://azure.microsoft.com/ja-jp/products/service-fabric/
+
+
+## 翻訳ツール
+
+多言語サポートを必要とするアプリケーション、Web サイト、ツール、ソリューションを作成できます。
+
+標準翻訳とカスタム翻訳トレーニングを、任意の組み合わせで 200 万文字に使用可能
+
+Build applications, websites, tools, or any solution requiring multi-language support.
+
+2 million characters of any combination of standard translation and custom translation training free per month
+
+🔗 https://azure.microsoft.com/ja-jp/products/ai-foundry/tools/translator
+
+
+## Azure DevOps
+
+Git Repos、CI/CD、ビルドとリリースのオートメーションを使用して、任意の言語でアプリをビルドします。
+
+5 人のユーザーと無制限のプライベート Git Repos
+
+Build apps in any language using Git repos, CI/CD, and build and release automation.
+
+5 users with unlimited private Git repos
+
+🔗 https://azure.microsoft.com/ja-jp/products/devops/
+
+
+## テキスト読み上げ
+
+テキストをリアルな音声に変換するアプリを構築できます。
+
+標準ニューラル音声を毎月 50 万文字分使用可能
+
+Build apps that convert text to lifelike speech.
+
+0.5 million characters per month for Standard Neural Voices
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-foundry/tools/speech
 
 
-## SQL Database
+## Logic Apps
 
-Create a SQL database that delivers intelligence built-in.
+クラウドとオンプレミスのシステム全体にわたる自動化された統合ソリューションをビルドします。
 
-インテリジェンスが組み込まれた SQL Database を作成します。
+4,000 件の組み込みアクションと従量課金プラン
 
----
+Build automated integration solutions across clouds and on-premises systems.
 
-**Free Tier (Always Free)**  
-最大 10 個のデータベースを、それぞれ 100,000 vCore 秒のサーバーレス レベルと 32 GB のストレージを利用可能
+4,000 built-in actions with the Consumption plan
 
-🔗 https://azure.microsoft.com/ja-jp/products/azure-sql/database/
-
-
-## Static Web Apps
-
-Streamline full-stack development from source code to global high availability.
-
-ソース コードからグローバルな高可用性まで、フルスタック開発を合理化します。
-
----
-
-**Free Tier (Always Free)**  
-サブスクリプションあたり 100 GBの帯域幅、2 つのカスタム ドメイン、アプリあたり 0.5 GB のストレージ
-
-🔗 https://azure.microsoft.com/ja-jp/products/app-service/static/
+🔗 https://azure.microsoft.com/ja-jp/products/logic-apps/
 
 
-## Virtual Machines—Linux
+## Azure Cosmos DB
 
-Create Linux virtual machines (VMs) in seconds to meet your workload and budget needs.
+オープン API を備えた高速 NoSQL データベースを使用して、あらゆるスケールの最新アプリを構築できます。
 
-Linux 仮想マシン (VM) を、ワークロードと予算のニーズに合わせて数秒で作成できます。
+1,000 要求ユニット/秒のプロビジョニング済みスループット、25 GB のストレージ
 
----
+Build modern apps at any scale using a fast NoSQL database with open APIs.
 
-**Free Tier (12 months)**  
-B2pts v2 (Arm ベース)、B2ats v2 (AMD ベース) のバースト可能 VM を各 750 時間
+1,000 request units per-second provisioned throughput with 25 GB storage
 
-🔗 https://azure.microsoft.com/ja-jp/products/virtual-machines/linux/
-
-
-## Virtual Machines—Windows
-
-Create Windows VMs in seconds to meet your workload and budget needs.
-
-Windows 仮想マシン (VM) を、ワークロードと予算のニーズに合わせて数秒で作成できます。
-
----
-
-**Free Tier (12 months)**  
-B2pts v2 (Arm ベース)、B2ats v2 (AMD ベース) のバースト可能 VM を各 750 時間
-
-🔗 https://www.microsoft.com/ja-jp/windows/
+🔗 https://azure.microsoft.com/ja-jp/products/cosmos-db/
 
 
-## VPN Gateway
+## Azure Cosmos DB for MongoDB
 
-Establish secure, cross-premises connectivity.
+フル マネージドの MongoDB 互換データベース サービスを使用して、大規模な最新アプリを構築できます。
 
-安全なクロスプレミス接続を確立します。
+32 GB のストレージを備えた専用の MongoDB クラスター
 
----
+Build modern apps at scale with a fully managed MongoDB-compatible database service.
 
-**Free Tier (12 months)**  
-VpnGw1 ゲートウェイ タイプ 750 時間
+A dedicated MongoDB cluster with 32 GB storage
 
-🔗 https://azure.microsoft.com/ja-jp/products/vpn-gateway/
+🔗 https://azure.microsoft.com/ja-jp/products/cosmos-db/
 
 
 ## Web PubSub
 
-Build real-time, two-way communication into your web and mobile apps.
-
 Web アプリやモバイル アプリにリアルタイムの双方向通信をビルドします。
 
----
-
-**Free Tier (Always Free)**  
 1 ユニットあたり 1 日 20,000 件のメッセージ、1 ユニットあたり 20 の同時接続 (最大 1 ユニット)
 
+Build real-time, two-way communication into your web and mobile apps.
+
+20,000 messages per unit per day and 20 concurrent connections per unit (1 unit max)
+
 🔗 https://azure.microsoft.com/ja-jp/products/web-pubsub/
+
+
+## Azure Update Manager
+
+ソフトウェア更新を中央管理し、大規模に統制できます。
+
+Azure リソースは無料 (Arc 対応サーバーは課金対象) です。詳細は価格ページをご覧ください
+
+Centrally govern and manage software updates at scale.
+
+Free for Azure resources (charged for Arc-enabled servers) – see pricing page for details
+
+🔗 https://azure.microsoft.com/ja-jp/products/azure-update-management-center/
+
+
+## Data Factory
+
+データ サービスを大規模に作成し、管理しますます。
+
+5 つの低頻度アクティビティ
+
+Compose and manage data services at scale.
+
+5 low-frequency activities
+
+🔗 https://azure.microsoft.com/ja-jp/products/data-factory/
+
+
+## IoT Hub
+
+スケーラブルなプラットフォームを使用して IoT 資産を接続、監視、管理します。
+
+無料版では、1 日あたり 8,000 件のメッセージと 0.5 KB のメッセージ メーター サイズ
+
+Connect, monitor, and manage IoT assets with a scalable platform.
+
+8,000 messages per day and .5 KB message meter size of Free edition
+
+🔗 https://azure.microsoft.com/ja-jp/products/iot-hub/
+
+
+## SQL Database
+
+インテリジェンスが組み込まれた SQL Database を作成します。
+
+最大 10 個のデータベースを、それぞれ 100,000 vCore 秒のサーバーレス レベルと 32 GB のストレージを利用可能
+
+Create a SQL database that delivers intelligence built-in.
+
+Get up to 10 databases with 100,000 vCore seconds of serverless tier and 32 GB of storage each
+
+🔗 https://azure.microsoft.com/ja-jp/products/azure-sql/database/
+
+
+## Azure Maps
+
+地理空間サービス、API、SDK を使用して、位置を認識する Web アプリケーションとモバイル アプリケーションを作成します。
+
+特定のマッピングおよび位置情報分析機能のトランザクション数は 1,000 ～ 5,000 件
+
+Create location-aware web and mobile applications using geospatial services, APIs, and SDKs.
+
+1,000 to 5,000 transactions for specific mapping and location insights features
+
+🔗 https://azure.microsoft.com/ja-jp/products/azure-maps/
+
+
+## Azure Kubernetes Service (AKS)
+
+使い慣れたツールでコンテナーを配置し、管理します。
+
+AKS クラスターの管理は無料です。ノードによって消費されるリソースに対して料金が発生する
+
+Deploy and manage containers using the tools you choose.
+
+AKS cluster management is free; you’ll incur a charge for resources consumed by nodes
+
+🔗 https://azure.microsoft.com/ja-jp/products/kubernetes-service/
+
+
+## Face
+
+画像に含まれる顔の検出、人物の特定、分析、整理を行い、タグを付けることができます。
+
+Free インスタンスの 30,000 トランザクション
+
+Detect, identify, analyze, organize, and tag faces in images.
+
+30,000 transactions of Free instance
+
+🔗 https://azure.microsoft.com/ja-jp/products/cognitive-services/face/
+
+
+## Machine Learning
+
+選択したプラットフォームで R および Python モデルを開発して実行します。
+
+無料
+
+Develop and run R and Python models on your platform of choice.
+
+Free
+
+🔗 https://azure.microsoft.com/ja-jp/products/machine-learning/
+
+
+## AI Bot Service
+
+オンデマンドでスケーリングできる、インテリジェントなエンタープライズレベルのボットを開発できます。
+
+プレミアム チャネル メッセージ 10,000 件と無制限の標準チャネル メッセージ
+
+Develop intelligent, enterprise-grade bots that scale on demand.
+
+10,000 premium channel messages and unlimited standard channel messages
+
+🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-bot-service/
+
+
+## Azure Migrate
+
+オンプレミスの仮想マシンを検出し、評価し、適切なサイズに調整し、Azure に移行します。
+
+無料
+
+Discover, assess, right-size, and migrate your on-premises virtual machines to Azure.
+
+Free
+
+🔗 https://azure.microsoft.com/ja-jp/products/azure-migrate/
+
+
+## AI Immersive Reader
+
+アプリケーションにテキストの読み取りと理解機能を埋め込むことができます。
+
+300 万文字
+
+Embed text reading and comprehension capabilities into applications.
+
+3 million characters
+
+🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-immersive-reader/
+
+
+## DevTest Labs
+
+高速で簡単な、無駄のない開発およびテスト環境を実現します。
+
+無料
+
+Enable fast, easy, and lean dev-test environments.
+
+Free
+
+🔗 https://azure.microsoft.com/ja-jp/products/devtest-lab/
+
+
+## Microsoft Entra ID (旧称 Azure AD)
+
+クラウドの ID とアクセス管理を有効にします。
+
+すべてのクラウド アプリへのシングル サインオン (SSO) を備えた 50,000 個の保存オブジェクト
+
+Enable identity and access management in the cloud.
+
+50,000 stored objects with single sign-on (SSO) to all cloud apps
+
+🔗 https://www.microsoft.com/ja-jp/security/business/identity-access/microsoft-entra-id
+
+
+## Azure Arc
+
+Azure の管理とサービスを拡張します。
+
+Azure 外部のリソース向けの無料の Azure コントロール プレーン機能、Azure Arc 対応リソースの検索とインデックス作成する
+
+Extend Azure management and services.
+
+Free Azure control plane functionality for resources outside Azure, search and indexing for Azure Arc-enabled resources
+
+🔗 https://azure.microsoft.com/ja-jp/products/azure-arc/
+
+
+## IoT Edge
+
+クラウドのインテリジェンスと分析を IoT エッジ デバイスまで拡張します。
+
+無料のオープンソース エッジ ランタイム
+
+Extend cloud intelligence and analytics to IoT edge devices.
+
+Free, open-source edge runtime
+
+🔗 https://azure.microsoft.com/ja-jp/products/iot-edge/
+
+
+## Azure Language
+
+センチメント、キー フレーズ、名前付きエンティティ、言語などの情報をテキストから抽出できます。
+
+5,000 テキスト レコード
+
+Extract information such as sentiment, key phrases, named entities, and language from your text.
+
+5,000 text records
+
+🔗 https://azure.microsoft.com/ja-jp/products/ai-foundry/tools/language
+
+
+## Monitor
+
+アプリケーション、インフラストラクチャ、ネットワークを完全に監視します。
+
+機能ごとの無料利用額については、Azure Monitor の料金詳細を参照する
+
+Gain full observability into your applications, infrastructure, and network.
+
+See Azure Monitor pricing details for free amounts per feature
+
+🔗 https://azure.microsoft.com/ja-jp/products/monitor/
+
+
+## Data Catalog
+
+エンタープライズ データ資産からより多くの価値を取得します。
+
+ユーザー数無制限
+
+Get more value from your enterprise data assets.
+
+Unlimited users
+
+🔗 https://azure.microsoft.com/ja-jp/products/data-catalog/
+
+
+## Advisor
+
+Azure のパーソナライズされた推奨事項と成功事例を取得します。
+
+無制限
+
+Get personalized recommendations and best practices for Azure.
+
+Unlimited
+
+🔗 https://azure.microsoft.com/ja-jp/products/advisor/
+
+
+## Event Grid
+
+信頼性の高い大規模イベント配信をします。
+
+1 か月あたり 100,000 件の操作
+
+Get reliable event delivery at massive scale.
+
+100,000 operations per month
+
+🔗 https://azure.microsoft.com/ja-jp/products/event-grid/
+
+
+## Azure Active Directory B2C
+
+顧客向けアプリの ID とアクセス管理
+
+Azure Active Directory B2C で月間アクティブ ユーザー数 50,000 人
+
+Identity and access management for your customer-facing apps
+
+50,000 active users per month (MAU) with Azure Active Directory B2C
+
+🔗 https://www.microsoft.com/ja-jp/security/business/identity-access/microsoft-entra-id
+
+
+## Azure AI Search
+
+Web およびモバイル アプリケーションにクラウド検索サービスを組み込むことができます。
+
+サービスごとに 10,000 件のホスト ドキュメントと 3 つのインデックスを保存できる 50 MB のストレージ
+
+Include a cloud search service in your web and mobile application.
+
+50 MB storage for 10,000 hosted documents and 3 indexes per service
+
+🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-search/
+
+
+## Azure Managed Applications、サービス カタログ
+
+承認されたクラウド オファリングのカタログを使用して、サービスを取得しやすくなります。
+
+無料公開
+
+Make it easier to acquire services with a catalog of approved cloud offerings.
+
+Free publishing
+
+🔗 https://azure.microsoft.com/ja-jp/products/managed-applications/
+
+
+## API Management
+
+ハイブリッド マルチクラウド プラットフォームを使用して、すべてのプラットフォームにわたって API を管理します。
+
+従量課金レベルで毎月 100 万通話無料
+
+Manage APIs across all platforms with a hybrid, multicloud platform.
+
+1 million monthly calls free with Consumption tier
+
+🔗 https://azure.microsoft.com/ja-jp/products/api-management/
+
+
+## Cloud Shell
+
+一般的なコマンドライン ツールとプログラミング言語を使用して、ブラウザーベースのシェルで Azure リソースを管理します。
+
+Azure Files での 12 か月間 5 GB の無料ストレージ
+
+Manage Azure resources in a browser-based shell using popular command-line tools and programming languages.
+
+5 GB free storage in Azure Files for 12 months
+
+🔗 https://azure.microsoft.com/ja-jp/get-started/azure-portal/cloud-shell/
+
+
+## Azure コンテナー ストレージ
+
+ステートフル コンテナー アプリケーションの永続ストレージ ボリュームを管理できます。​
+
+このサービスでは、ストレージ プール容量 5 TiB 未満のデプロイ向けに Free レベルが提供されます
+
+Manage persistent storage volumes for stateful container applications.​
+
+This service will offer a free tier for deployments with storage pool capacity under 5 TiB
+
+🔗 https://azure.microsoft.com/ja-jp/products/container-storage/
+
+
+## Azure Lighthouse
+
+ゼロ トラストのアクセス制御を使用してサービス プロバイダーを管理します。
+
+無料
+
+Manage service providers with Zero Trust access controls.
+
+Free
+
+🔗 https://azure.microsoft.com/ja-jp/products/azure-lighthouse/
+
+
+## Content Safety
+
+テキストと画像を適切に管理し、より安全でポジティブなユーザー エクスペリエンスを提供できます。
+
+AKS クラスターの管理は無料です。ノードによって消費されるリソースに対して料金が発生します
+
+Moderate text and images to provide a safer, more positive user experience.
+
+AKS cluster management is free; you’ll incur a charge for resources consumed by nodes
+
+🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-content-safety/
+
+
+## Cost Management
+
+透明性、正確性、効率性を備え、クラウド コストを監視、割り当て、最適化します。
+
+無料
+
+Monitor, allocate, and optimize cloud costs with transparency, accuracy, and efficiency.
+
+Free
+
+🔗 https://azure.microsoft.com/ja-jp/products/cost-management/
+
+
+## Network Watcher
+
+ネットワークのパフォーマンスと健全性を監視、診断し、分析情報を得ます。
+
+1,000 件のチェック、10 件のテスト、10 件の接続メトリックを含む 5 GB のストレージ
+
+Monitor, diagnose, and gain insights into your network performance and health.
+
+5 GB storage with 1,000 checks, 10 tests, and 10 connection metrics
+
+🔗 https://azure.microsoft.com/ja-jp/products/network-watcher/
+
+
+## Security Center
+
+Azure リソースのセキュリティに対する可視性と制御を強化して、脅威を防止、検出、対応します。
+
+無料のポリシー評価と推奨事項
+
+Prevent, detect, and respond to threats with increased visibility and control over the security of your Azure resources.
+
+Free policy assessment and recommendations
+
+🔗 https://azure.microsoft.com/ja-jp/products/defender-for-cloud/
+
+
+## Private Link
+
+データを Microsoft ネットワーク上に保持しながら、Azure 上のサービスにプライベートにアクセスします。
+
+無料
+
+Privately access services on Azure, keeping your data on the Microsoft network.
+
+Free
+
+🔗 https://azure.microsoft.com/ja-jp/products/private-link/
+
+
+## Functions
+
+サーバー不要のコード アーキテクチャを使用してイベントを処理します。
+
+100 万回のリクエスト
+
+Process events with a serverless code architecture.
+
+1 million requests
+
+🔗 https://azure.microsoft.com/ja-jp/products/functions/
+
+
+## Virtual Network
+
+プライベート ネットワークをプロビジョニングし、オンプレミスのデータセンターに接続します。
+
+50 仮想ネットワーク
+
+Provision private networks and connect to on-premises datacenters.
+
+50 virtual networks
+
+🔗 https://azure.microsoft.com/ja-jp/products/virtual-network/
+
+
+## App Service
+
+フル マネージドのサービスとしてのプラットフォーム (PaaS) を活用して、Web アプリと API をグローバルかつ迅速に構築、デプロイ、スケーリングできます。
+
+最大 10 個の Web アプリまたは API アプリ、1 GB のストレージ、1 日あたり 1 時間
+
+Quickly build, deploy, and scale web apps and APIs globally with a fully managed platform as a service (PaaS).
+
+Up to 10 web or API apps with 1 GB storage and 1 hour per day
+
+🔗 https://azure.microsoft.com/ja-jp/products/app-service/
+
+
+## Azure Deployment Environments
+
+プロジェクトベースのテンプレートを使用して、アプリ インフラストラクチャ環境を迅速に立ち上げます。
+
+Azure Deployment Environments は、現在、無料のサービスです。ただし、サービスを通じてデプロイされた環境に作成されるコンピューティング、ストレージ、ネットワークなどの他の Azure リソースに対しては料金が発生します
+
+Quickly spin up app infrastructure environments with project-based templates.​
+
+Azure Deployment Environments is a free service today. However, you will be charged for other Azure resources like compute, storage, and networking that are created in environments deployed through the service
+
+🔗 https://azure.microsoft.com/ja-jp/products/deployment-environments/
+
+
+## Batch
+
+HPC アプリケーションのジョブ オーケストレーションとスケジューリングを使用して、クラウドでアプリケーションを拡張します。
+
+無料
+
+Scale your application in the cloud with job orchestration and scheduling for HPC applications.
+
+Free
+
+🔗 https://azure.microsoft.com/ja-jp/products/batch/
+
+
+## Notification Hubs
+
+どのバックエンドからでもあらゆるプラットフォームにプッシュ通知を送信します。
+
+100 万件のプッシュ通知と無料の名前空間
+
+Send push notifications to any platform from any back end.
+
+1 million push notifications with free namespace
+
+🔗 https://azure.microsoft.com/ja-jp/products/notification-hubs/
+
+
+## Azure Automanage
+
+自動化された操作で IT 管理を簡素化および最適化できます。
+
+Automanage 固有の料金は発生しません。Automanage を通じてオンボードされた Azure サービスは、個別に課金されます
+
+Simplify and optimize IT management with automated operations.
+
+There are no charges specifically for Automanage. Azure services that are onboarded through Automanage will be billed individually
+
+🔗 https://azure.microsoft.com/ja-jp/products/azure-automanage/
+
+
+## Automation
+
+プロセス自動化により、クラウド管理をシンプルにします。
+
+500 分のジョブ実行時間
+
+Simplify cloud management with process automation.
+
+500 minutes of job runtime
+
+🔗 https://azure.microsoft.com/ja-jp/products/automation/
+
+
+## Resource Manager
+
+アプリのリソースの管理方法をシンプルにします。
+
+無料
+
+Simplify how you manage your app resources.
+
+Free
+
+🔗 https://azure.microsoft.com/ja-jp/get-started/azure-portal/resource-manager/
+
+
+## Azure Resource Mover
+
+Azure リージョン間で複数のリソースを移動する方法をシンプルにします。
+
+無料 (イングレスとエグレスの料金が適用される場合があります)
+
+Simplify how you move multiple resources between Azure regions.
+
+Free (ingress and egress charges may apply)
+
+🔗 https://azure.microsoft.com/ja-jp/products/resource-mover/
+
+
+## Database Migration Service
+
+オンプレミスからクラウドへのデータベースの移行をシンプルにします。
+
+無料の Standard コンピューティング
+
+Simplify on-premises database migration to the cloud.
+
+Free Standard Compute
+
+🔗 https://azure.microsoft.com/ja-jp/products/database-migration/
+
+
+## App Configuration
+
+お使いのすべての Azure アプリの構成を保存および管理します。
+
+10 MB のストレージで 1 日あたり 1,000 件のリクエスト
+
+Store and manage configurations for all your Azure apps.
+
+1,000 requests per day with 10 MB storage
+
+🔗 https://azure.microsoft.com/ja-jp/products/app-configuration/
+
+
+## Static Web Apps
+
+ソース コードからグローバルな高可用性まで、フルスタック開発を合理化します。
+
+サブスクリプションあたり 100 GBの帯域幅、2 つのカスタム ドメイン、アプリあたり 0.5 GB のストレージ
+
+Streamline full-stack development from source code to global high availability.
+
+100 GB bandwidth per subscription, 2 custom domains and .5 GB storage per app
+
+🔗 https://azure.microsoft.com/ja-jp/products/app-service/static/
+
+
+## Azure VM Image Builder
+
+Linux および Windows VM イメージの構築、更新、パッチ適用、管理、運用を効率化できます。
+
+VM Image Builder は無料のサービスです。構築時にデータ転送や有料の Azure サービスを利用すると、料金が発生する場合があります
+
+Streamline the build, update, patch, management, and operation of Linux and Windows VM images.
+
+VM Image Builder is a free service. You may incur a charge if your build transfers data or uses paid Azure services
+
+🔗 https://azure.microsoft.com/ja-jp/products/image-builder/
+
+
+## 音声テキスト変換
+
+オーディオをテキストに変換できます。
+
+リアルタイム音声テキスト変換を毎月 5 時間分の音声に使用可能
+
+Transcribe spoken audio to text.
+
+5 audio hours per month for Realtime Speech to Text
+
+🔗 https://azure.microsoft.com/ja-jp/products/ai-foundry/tools/speech
+
+
+## Bandwidth (データ転送)
+
+グローバル データ センターの信頼性の高いネットワークを使用して送受信データを転送できます。
+
+送信 100 GB
+
+Transfer data inbound and outbound through our robust network of global data centers.
+
+100 GB outbound
+
+🔗 https://azure.microsoft.com/ja-jp/products/virtual-network/
+
+
+## 音声翻訳
+
+話し声をテキストや他言語の音声に翻訳できます。
+
+リアルタイム音声翻訳 (標準音声) を毎月 5 時間分の音声に使用可能
+
+Translate spoken audio into text and audio in other languages.
+
+5 audio hours per month for Real-time Speech Translation (with Standard Voice)
+
+🔗 https://azure.microsoft.com/ja-jp/products/ai-foundry/tools/speech
+
+
+## Health Data Services
+
+クラウドで医療データと保護された医療情報 (PHI) を統合して管理します。
+
+1 GB の構造化ストレージと BLOB ストレージ、50,000 件の API リクエスト、0.5 GB の変換操作、100,000 件のイベント
+
+Unify and manage health data and protected health information (PHI) in the cloud.
+
+1 GB structured and blob storage, 50,000 API requests, .5 GB transformation operations, 100,000 events
+
+🔗 https://azure.microsoft.com/ja-jp/products/health-data-services/
+
+
+## Azure Attestation
+
+信頼できるプラットフォーム モジュールと信頼できる実行環境の ID とセキュリティ体制を検証します。
+
+無料
+
+Verify the identity and security posture of trusted platform modules and trusted execution environments.
+
+Free
+
+🔗 https://azure.microsoft.com/ja-jp/products/azure-attestation/
 
 
 ---
 
 ## 注意
 
-無料枠には上限があります。超過すると課金されます。  
-必ず公式ページで最新情報を確認してください。
+無料枠には上限があります。  
+超過すると課金されるため、必ず公式ドキュメントを確認してください。
