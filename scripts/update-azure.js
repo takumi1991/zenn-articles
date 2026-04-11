@@ -75,6 +75,13 @@ Azureには「常時無料枠（Always Free Services）」が存在します。
 
 無料枠には上限があります。  
 超過すると課金されるため、必ず公式ドキュメントを確認してください。
+
+## 関連リンク：AWSやGoogle Cloudの常時無料枠もまとめていますのでご一緒にどうぞ
+AWS の上限付きの常時無料枠 (Always Free Services)
+👉 https://zenn.dev/good_sleeper/articles/aws-always-free
+
+GCPの上限付きの永久無料枠
+👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
 `;
 
   const markdown = header + body + footer;
