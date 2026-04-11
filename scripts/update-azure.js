@@ -5,17 +5,26 @@ const INPUT = "./data.json";
 const OUTPUT = "./articles/azure-always-free.md";
 
 // =========================
+// タイトル補正（ピンポイント）
+// =========================
+const normalizeTitle = (title) => {
+  if (!title) return title;
+
+  return title.replace("、サービス カタログ", "");
+};
+
+// =========================
 // フォーマット
 // =========================
 function formatItem(item) {
-  return `## ${item.title}
+  const title = normalizeTitle(item.title);
+
+  return `## ${title}
 
 ${item.description}
-
-${item.free_tier}
+毎月の上限：${item.free_tier}
 
 ${item.description_en}
-
 ${item.free_tier_en}
 
 🔗 ${item.link}
@@ -36,10 +45,9 @@ async function main() {
   }
 
   // =========================
-  // alwaysのみ
+  // alwaysのみ（順序維持）
   // =========================
   const filtered = data.filter(d => d.period === "always");
-
 
   // =========================
   // header
@@ -52,7 +60,8 @@ topics: ["azure", "free-tier", "cloud"]
 published: true
 ---
 
-# Azure常時無料サービス一覧 (Always Free Services) 
+# Azure常時無料サービス一覧 (Always Free Services)
+
 Azureには「常時無料枠（Always Free Services）」が存在します。  
 この記事では、常時無料で使えるサービスのみをまとめています。
 
@@ -77,16 +86,19 @@ Azureには「常時無料枠（Always Free Services）」が存在します。
 超過すると課金されるため、必ず公式ドキュメントを確認してください。
 
 ## 関連リンク：AWSやGoogle Cloudの常時無料枠もまとめていますのでご一緒にどうぞ
-AWS の上限付きの常時無料枠 (Always Free Services)
+
+AWS の上限付きの常時無料枠 (Always Free Services)  
 👉 https://zenn.dev/good_sleeper/articles/aws-always-free
 
-GCPの上限付きの永久無料枠
+GCPの上限付きの永久無料枠  
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
 `;
 
   const markdown = header + body + footer;
 
+  // =========================
   // ディレクトリ作成
+  // =========================
   const dir = path.dirname(OUTPUT);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
