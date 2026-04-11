@@ -9,8 +9,21 @@ const OUTPUT = "./articles/azure-always-free.md";
 // =========================
 const normalizeTitle = (title) => {
   if (!title) return title;
-
   return title.replace("、サービス カタログ", "");
+};
+
+// =========================
+// Free Tier補正
+// 「無料」「Free」→「なし」
+// =========================
+const normalizeFreeTier = (text) => {
+  if (!text) return text;
+
+  const t = text.trim();
+
+  return (t === "無料" || t.toLowerCase() === "free")
+    ? "なし"
+    : text;
 };
 
 // =========================
@@ -18,11 +31,12 @@ const normalizeTitle = (title) => {
 // =========================
 function formatItem(item) {
   const title = normalizeTitle(item.title);
+  const freeTier = normalizeFreeTier(item.free_tier);
 
   return `## ${title}
 
 ${item.description}
-毎月の上限：${item.free_tier}
+毎月の上限：${freeTier}
 
 ${item.description_en}
 ${item.free_tier_en}
