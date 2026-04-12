@@ -18,18 +18,18 @@ async function main() {
     console.log(`📦 ${data.length} 件を取得しました。`);
 
     const header = `---
-title: "Google Cloud 無料枠プロダクト一覧(Free Tier products)"
+title: "Google Cloud 常時無料枠プロダクト一覧(Free Tier products)"
 emoji: "☁️"
 type: "tech"
 topics: ["gcp", "free-tier", "cloud"]
 published: true
 ---
 
-# Google Cloud 無料枠プロダクト一覧<br>(Free Tier products)
+# Google Cloud 常時無料枠プロダクト一覧<br>(Free Tier products)
 
 Google Cloud offers Free Tier products that remain free within monthly usage limits, separate from the 12-month trial. This article summarizes the eligible services and their limits. Note: This article covers the Japan region.
 
-Google Cloud(GCP)には、アカウント作成直後の **12 ヶ月無料トライアル** とは別に、  
+Google Cloud Platform(GCP)には、アカウント作成直後の **12 ヶ月無料トライアル** とは別に、  
 毎月の使用量が上限内であれば、**期限なく “ずっと無料” で使える 永久無料枠(Free Tier products)** が存在します。
 
 Cloud Run・Firestore・BigQuery などは、この無料枠だけでも  
