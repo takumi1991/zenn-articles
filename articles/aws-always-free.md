@@ -8,8 +8,7 @@ published: true
 
 # AWS 常時無料サービス 一覧 (Always Free Services)
 
-AWS Always Free offers selected services at no cost within defined usage limits, with no expiration. 
-This article summarizes these services to support learning, development, and cost optimization. Note:This article covers the Japan region.
+AWS Always Free offers selected services at no cost within defined usage limits, with no expiration. This article summarizes these services to support learning, development, and cost optimization. Note: This article covers the Japan region.
 
 Amazon Web Services の常時無料枠(Always Free Services) はアカウント作成後の12ヵ月間だけ利用できる無料利用枠(Free Tier)とは異なり、12ヶ月を超えても **特定の使用量まではずっと無料で使えるサービス群** です。
 
@@ -313,7 +312,10 @@ AWS の常時無料サービス(Always Free Services) は、個人開発や学�
 
 ---
 
-## 関連リンク：Google Cloud の常時無料枠まとめ
+## 関連リンク：他クラウドの常時無料枠まとめ
 
-GCPの上限付きの永久無料枠もまとめていますので一緒にどうぞ
+Google Cloud の上限付きの永久無料枠もまとめていますので一緒にどうぞ
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
+
+Azure の上限付きの常時無料枠 (Always Free Services)
+👉 https://zenn.dev/good_sleeper/articles/azure-always-free
