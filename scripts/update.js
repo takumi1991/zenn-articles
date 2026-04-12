@@ -58,10 +58,13 @@ AWS の常時無料サービス(Always Free Services) は、個人開発や学�
 
 ---
 
-## 関連リンク：Google Cloud の常時無料枠まとめ
+## 関連リンク：他クラウドの常時無料枠まとめ
 
-GCPの上限付きの永久無料枠もまとめていますので一緒にどうぞ
+Google Cloud の上限付きの永久無料枠もまとめていますので一緒にどうぞ
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
+
+Azure の上限付きの常時無料枠 (Always Free Services)
+👉 https://zenn.dev/good_sleeper/articles/azure-always-free
 `;
 
     fs.writeFileSync("articles/aws-always-free.md", md);
