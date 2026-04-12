@@ -72,9 +72,13 @@ Google Cloud の Free Tier products は、単なる試用期間ではなく
 ただし無料枠には上限があるため、利用前に最新の公式ドキュメントを確認してください。 
 
 ---
-## 関連リンク：AWS の常時無料枠まとめ
-AWS の上限付きの常時無料枠 (Always Free Services)もまとめていますので一緒にどうぞ
+## 関連リンク：他クラウドサービスの常時無料枠まとめ
+
+AWS の上限付きの常時無料枠 (Always Free Services)
 👉 https://zenn.dev/good_sleeper/articles/aws-always-free
+
+Azure の上限付きの常時無料枠 (Always Free Services)
+👉 https://zenn.dev/good_sleeper/articles/azure-always-free
 `;
 
 
