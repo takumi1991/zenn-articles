@@ -5,7 +5,7 @@ const INPUT = "./data.json";
 const OUTPUT = "./articles/azure-always-free.md";
 
 // =========================
-// タイトル補正（ピンポイント）
+// タイトル補正
 // =========================
 const normalizeTitle = (title) => {
   if (!title) return title;
@@ -14,13 +14,10 @@ const normalizeTitle = (title) => {
 
 // =========================
 // Free Tier補正
-// 「無料」「Free」→「なし」
 // =========================
 const normalizeFreeTier = (text) => {
   if (!text) return text;
-
   const t = text.trim();
-
   return (t === "無料" || t.toLowerCase() === "free")
     ? "なし"
     : text;
@@ -28,14 +25,11 @@ const normalizeFreeTier = (text) => {
 
 // =========================
 // Free Tier En補正
-//「Free」→「Unlimited」
 // =========================
 const normalizeFreeTierEn = (text) => {
   if (!text) return text;
-
   const t = text.trim().toLowerCase();
-
-  return t === "Free" ? "Unlimited" : text;
+  return t === "free" ? "Unlimited" : text;
 };
 
 // =========================
@@ -44,6 +38,7 @@ const normalizeFreeTierEn = (text) => {
 function formatItem(item) {
   const title = normalizeTitle(item.title);
   const freeTier = normalizeFreeTier(item.free_tier);
+  const freeTierEn = normalizeFreeTierEn(item.free_tier_en);
 
   return `## ${title}
 
@@ -51,7 +46,7 @@ ${item.description}
 毎月の上限：${freeTier}
 
 ${item.description_en}
-Monthly limit:${item.free_tier_en}
+Monthly limit: ${freeTierEn}
 
 🔗 ${item.link}
 
@@ -71,9 +66,23 @@ async function main() {
   }
 
   // =========================
-  // alwaysのみ（順序維持）
+  // alwaysのみ
   // =========================
   const filtered = data.filter(d => d.period === "always");
+
+  // =========================
+  // 日本時間（秒まで）
+  // =========================
+  const now = new Date();
+  const updatedAt = now.toLocaleString("ja-JP", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
 
   // =========================
   // header
@@ -87,6 +96,9 @@ published: true
 ---
 
 # Azure常時無料サービス一覧 (Always Free Services)
+
+最終更新日: ${updatedAt}
+
 AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されており、それらと比較しても対象サービス数が多いです。
 
 AI・データ・アプリ基盤まで幅広く常時無料枠が揃っているため、個人開発でもかなり多様な構成をコストを抑えて実現できます。
@@ -112,10 +124,10 @@ AI・データ・アプリ基盤まで幅広く常時無料枠が揃っている
 
 ## 関連リンク：AWSやGoogle Cloudの常時無料枠もまとめていますのでご一緒にどうぞ
 
-AWS の上限付きの常時無料枠 (Always Free Services)  
+AWS Free Tier (Always Free)  
 👉 https://zenn.dev/good_sleeper/articles/aws-always-free
 
-Google Cloud Platformの上限付きの永久無料枠  
+Google Cloud Platform Free Tier (Always Free)  
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
 `;
 
@@ -133,6 +145,7 @@ Google Cloud Platformの上限付きの永久無料枠
 
   console.log("✅ Zenn記事生成:", OUTPUT);
   console.log(`件数: ${filtered.length}`);
+  console.log(`🕒 更新日時: ${updatedAt}`);
 }
 
 main();
