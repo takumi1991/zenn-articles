@@ -8,11 +8,13 @@ published: true
 
 # Azure常時無料サービス一覧
 
-最終更新日: 2026/04/15 16:31:25
+最終更新日: 2026/04/15 17:36:13
 
 AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されています。それらと比較して対象サービス数も多く、AI・データ・アプリ基盤まで幅広く常時無料枠が揃っているため、個人開発でも多様な構成をコストを抑えて実現できます。
 
 この記事では、常時無料で利用できるAzureサービスのみをまとめています。
+
+👉 English version: https://zenn.dev/good_sleeper/articles/azure-always-free-en
 ## Azure AI Search
 
 Web およびモバイル アプリケーションにクラウド検索サービスを組み込むことができます。
@@ -542,8 +544,8 @@ Web アプリやモバイル アプリにリアルタイムの双方向通信を
 
 ## 関連リンク：AWSやGoogle Cloudの常時無料枠
 
-AWS Always Free Tier List
+AWS Always Free Services
 👉 https://zenn.dev/good_sleeper/articles/aws-always-free
 
-Google Cloud Platform Always Free Tier List
+Google Cloud Platform Always Free Services
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
