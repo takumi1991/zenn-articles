@@ -119,10 +119,10 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
 
 ## 関連リンク：AWSやGoogle Cloudの常時無料枠
 
-AWS Free Tier (Always Free)  
+AWS Always Free Tier List
 👉 https://zenn.dev/good_sleeper/articles/aws-always-free
 
-Google Cloud Platform Free Tier (Always Free)  
+Google Cloud Platform Always Free Tier List
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
 `;
 
