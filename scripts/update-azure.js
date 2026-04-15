@@ -13,23 +13,12 @@ const normalizeTitle = (title) => {
 };
 
 // =========================
-// Free Tier補正
+// Free Tier補正（JPのみ）
 // =========================
 const normalizeFreeTier = (text) => {
   if (!text) return text;
   const t = text.trim();
-  return (t === "無料" || t.toLowerCase() === "free")
-    ? "なし"
-    : text;
-};
-
-// =========================
-// Free Tier En補正
-// =========================
-const normalizeFreeTierEn = (text) => {
-  if (!text) return text;
-  const t = text.trim().toLowerCase();
-  return t === "free" ? "Unlimited" : text;
+  return t === "無料" ? "なし" : text;
 };
 
 // =========================
@@ -38,11 +27,11 @@ const normalizeFreeTierEn = (text) => {
 function formatItem(item) {
   const title = normalizeTitle(item.title);
   const freeTier = normalizeFreeTier(item.free_tier);
-  const freeTierEn = normalizeFreeTierEn(item.free_tier_en);
 
   return `## ${title}
 
 ${item.description}
+
 **毎月の上限：** ${freeTier}
 
 🔗 ${item.link}
@@ -68,7 +57,7 @@ async function main() {
   const filtered = data.filter(d => d.period === "always");
 
   // =========================
-  // 日本時間（秒まで）
+  // 日本時間
   // =========================
   const now = new Date();
   const updatedAt = now.toLocaleString("ja-JP", {
