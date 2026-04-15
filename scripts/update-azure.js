@@ -45,9 +45,6 @@ function formatItem(item) {
 ${item.description}
 **毎月の上限：**${freeTier}
 
-// ${item.description_en}
-// Monthly limit: ${freeTierEn}
-
 🔗 ${item.link}
 
 `;
