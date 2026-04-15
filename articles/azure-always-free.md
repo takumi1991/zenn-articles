@@ -8,7 +8,7 @@ published: true
 
 # Azure常時無料サービス一覧
 
-最終更新日: 2026/04/15 17:36:13
+最終更新日: 2026/04/15 17:45:55
 
 AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されています。それらと比較して対象サービス数も多く、AI・データ・アプリ基盤まで幅広く常時無料枠が揃っているため、個人開発でも多様な構成をコストを抑えて実現できます。
 
@@ -18,6 +18,7 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
 ## Azure AI Search
 
 Web およびモバイル アプリケーションにクラウド検索サービスを組み込むことができます。
+
 **毎月の上限：** サービスごとに 10,000 件のホスト ドキュメントと 3 つのインデックスを保存できる 50 MB のストレージ
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-search/
@@ -26,6 +27,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 ## Azure Language
 
 センチメント、キー フレーズ、名前付きエンティティ、言語などの情報をテキストから抽出できます。
+
 **毎月の上限：** 5,000 テキスト レコード
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-foundry/tools/language
@@ -34,6 +36,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 ## AI Bot Service
 
 オンデマンドでスケーリングできる、インテリジェントなエンタープライズレベルのボットを開発できます。
+
 **毎月の上限：** プレミアム チャネル メッセージ 10,000 件と無制限の標準チャネル メッセージ
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-bot-service/
@@ -42,6 +45,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 ## AI Immersive Reader
 
 アプリケーションにテキストの読み取りと理解機能を埋め込むことができます。
+
 **毎月の上限：** 300 万文字
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-immersive-reader/
@@ -50,6 +54,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 ## 音声テキスト変換
 
 オーディオをテキストに変換できます。
+
 **毎月の上限：** リアルタイム音声テキスト変換を毎月 5 時間分の音声に使用可能
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-foundry/tools/speech
@@ -58,6 +63,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 ## テキスト読み上げ
 
 テキストをリアルな音声に変換するアプリを構築できます。
+
 **毎月の上限：** 標準ニューラル音声を毎月 50 万文字分使用可能
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-foundry/tools/speech
@@ -66,6 +72,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 ## 音声翻訳
 
 話し声をテキストや他言語の音声に翻訳できます。
+
 **毎月の上限：** リアルタイム音声翻訳 (標準音声) を毎月 5 時間分の音声に使用可能
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-foundry/tools/speech
@@ -74,6 +81,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 ## 翻訳ツール
 
 多言語サポートを必要とするアプリケーション、Web サイト、ツール、ソリューションを作成できます。
+
 **毎月の上限：** 標準翻訳とカスタム翻訳トレーニングを、任意の組み合わせで 200 万文字に使用可能
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-foundry/tools/translator
@@ -82,6 +90,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 ## Face
 
 画像に含まれる顔の検出、人物の特定、分析、整理を行い、タグを付けることができます。
+
 **毎月の上限：** Free インスタンスの 30,000 トランザクション
 
 🔗 https://azure.microsoft.com/ja-jp/products/cognitive-services/face/
@@ -90,6 +99,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 ## Machine Learning
 
 選択したプラットフォームで R および Python モデルを開発して実行します。
+
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/machine-learning/
@@ -98,6 +108,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 ## Open Datasets
 
 キュレーションされたデータセットで機械学習を加速します。
+
 **毎月の上限：** 無料 (エグレスの料金が適用される場合あり)
 
 🔗 https://azure.microsoft.com/ja-jp/products/open-datasets/
@@ -106,6 +117,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 ## Content Safety
 
 テキストと画像を適切に管理し、より安全でポジティブなユーザー エクスペリエンスを提供できます。
+
 **毎月の上限：** AKS クラスターの管理は無料です。ノードによって消費されるリソースに対して料金が発生します
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-content-safety/
@@ -114,6 +126,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 ## Data Catalog
 
 エンタープライズ データ資産からより多くの価値を取得します。
+
 **毎月の上限：** ユーザー数無制限
 
 🔗 https://azure.microsoft.com/ja-jp/products/data-catalog/
@@ -122,6 +135,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 ## Data Factory
 
 データ サービスを大規模に作成し、管理しますます。
+
 **毎月の上限：** 5 つの低頻度アクティビティ
 
 🔗 https://azure.microsoft.com/ja-jp/products/data-factory/
@@ -130,6 +144,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 ## App Service
 
 フル マネージドのサービスとしてのプラットフォーム (PaaS) を活用して、Web アプリと API をグローバルかつ迅速に構築、デプロイ、スケーリングできます。
+
 **毎月の上限：** 最大 10 個の Web アプリまたは API アプリ、1 GB のストレージ、1 日あたり 1 時間
 
 🔗 https://azure.microsoft.com/ja-jp/products/app-service/
@@ -138,6 +153,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 ## Azure Kubernetes Service (AKS)
 
 使い慣れたツールでコンテナーを配置し、管理します。
+
 **毎月の上限：** AKS クラスターの管理は無料です。ノードによって消費されるリソースに対して料金が発生する
 
 🔗 https://azure.microsoft.com/ja-jp/products/kubernetes-service/
@@ -146,6 +162,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 ## Azure VM Image Builder
 
 Linux および Windows VM イメージの構築、更新、パッチ適用、管理、運用を効率化できます。
+
 **毎月の上限：** VM Image Builder は無料のサービスです。構築時にデータ転送や有料の Azure サービスを利用すると、料金が発生する場合があります
 
 🔗 https://azure.microsoft.com/ja-jp/products/image-builder/
@@ -154,6 +171,7 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 ## Batch
 
 HPC アプリケーションのジョブ オーケストレーションとスケジューリングを使用して、クラウドでアプリケーションを拡張します。
+
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/batch/
@@ -162,6 +180,7 @@ HPC アプリケーションのジョブ オーケストレーションとスケ
 ## Functions
 
 サーバー不要のコード アーキテクチャを使用してイベントを処理します。
+
 **毎月の上限：** 100 万回のリクエスト
 
 🔗 https://azure.microsoft.com/ja-jp/products/functions/
@@ -170,6 +189,7 @@ HPC アプリケーションのジョブ オーケストレーションとスケ
 ## Static Web Apps
 
 ソース コードからグローバルな高可用性まで、フルスタック開発を合理化します。
+
 **毎月の上限：** サブスクリプションあたり 100 GBの帯域幅、2 つのカスタム ドメイン、アプリあたり 0.5 GB のストレージ
 
 🔗 https://azure.microsoft.com/ja-jp/products/app-service/static/
@@ -178,6 +198,7 @@ HPC アプリケーションのジョブ オーケストレーションとスケ
 ## Azure コンテナー ストレージ
 
 ステートフル コンテナー アプリケーションの永続ストレージ ボリュームを管理できます。​
+
 **毎月の上限：** このサービスでは、ストレージ プール容量 5 TiB 未満のデプロイ向けに Free レベルが提供されます
 
 🔗 https://azure.microsoft.com/ja-jp/products/container-storage/
@@ -186,6 +207,7 @@ HPC アプリケーションのジョブ オーケストレーションとスケ
 ## Container Apps
 
 サーバーレス コンテナーを使用して、最新のアプリとマイクロサービスをビルドおよび配置します。
+
 **毎月の上限：** 180,000 vCPU 秒、360,000 GiB 秒、200 万リクエスト
 
 🔗 https://azure.microsoft.com/ja-jp/products/container-apps/
@@ -194,6 +216,7 @@ HPC アプリケーションのジョブ オーケストレーションとスケ
 ## Service Fabric
 
 常時接続可能でスケーラブルな分散型アプリをビルドし、運用します。
+
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/service-fabric/
@@ -202,6 +225,7 @@ HPC アプリケーションのジョブ オーケストレーションとスケ
 ## Azure Cosmos DB
 
 オープン API を備えた高速 NoSQL データベースを使用して、あらゆるスケールの最新アプリを構築できます。
+
 **毎月の上限：** 1,000 要求ユニット/秒のプロビジョニング済みスループット、25 GB のストレージ
 
 🔗 https://azure.microsoft.com/ja-jp/products/cosmos-db/
@@ -210,6 +234,7 @@ HPC アプリケーションのジョブ オーケストレーションとスケ
 ## Azure Cosmos DB for MongoDB
 
 フル マネージドの MongoDB 互換データベース サービスを使用して、大規模な最新アプリを構築できます。
+
 **毎月の上限：** 32 GB のストレージを備えた専用の MongoDB クラスター
 
 🔗 https://azure.microsoft.com/ja-jp/products/cosmos-db/
@@ -218,6 +243,7 @@ HPC アプリケーションのジョブ オーケストレーションとスケ
 ## Database Migration Service
 
 オンプレミスからクラウドへのデータベースの移行をシンプルにします。
+
 **毎月の上限：** 無料の Standard コンピューティング
 
 🔗 https://azure.microsoft.com/ja-jp/products/database-migration/
@@ -226,6 +252,7 @@ HPC アプリケーションのジョブ オーケストレーションとスケ
 ## SQL Database
 
 インテリジェンスが組み込まれた SQL Database を作成します。
+
 **毎月の上限：** 最大 10 個のデータベースを、それぞれ 100,000 vCore 秒のサーバーレス レベルと 32 GB のストレージを利用可能
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-sql/database/
@@ -234,6 +261,7 @@ HPC アプリケーションのジョブ オーケストレーションとスケ
 ## App Configuration
 
 お使いのすべての Azure アプリの構成を保存および管理します。
+
 **毎月の上限：** 10 MB のストレージで 1 日あたり 1,000 件のリクエスト
 
 🔗 https://azure.microsoft.com/ja-jp/products/app-configuration/
@@ -242,6 +270,7 @@ HPC アプリケーションのジョブ オーケストレーションとスケ
 ## Azure Deployment Environments
 
 プロジェクトベースのテンプレートを使用して、アプリ インフラストラクチャ環境を迅速に立ち上げます。
+
 **毎月の上限：** Azure Deployment Environments は、現在、無料のサービスです。ただし、サービスを通じてデプロイされた環境に作成されるコンピューティング、ストレージ、ネットワークなどの他の Azure リソースに対しては料金が発生します
 
 🔗 https://azure.microsoft.com/ja-jp/products/deployment-environments/
@@ -250,6 +279,7 @@ HPC アプリケーションのジョブ オーケストレーションとスケ
 ## Azure DevOps
 
 Git Repos、CI/CD、ビルドとリリースのオートメーションを使用して、任意の言語でアプリをビルドします。
+
 **毎月の上限：** 5 人のユーザーと無制限のプライベート Git Repos
 
 🔗 https://azure.microsoft.com/ja-jp/products/devops/
@@ -258,6 +288,7 @@ Git Repos、CI/CD、ビルドとリリースのオートメーションを使用
 ## DevTest Labs
 
 高速で簡単な、無駄のない開発およびテスト環境を実現します。
+
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/devtest-lab/
@@ -266,6 +297,7 @@ Git Repos、CI/CD、ビルドとリリースのオートメーションを使用
 ## Visual Studio Code
 
 クラウド開発用の強力で軽量なコード エディターを使用して生産性を向上します。
+
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/visual-studio-code/
@@ -274,6 +306,7 @@ Git Repos、CI/CD、ビルドとリリースのオートメーションを使用
 ## Azure Arc
 
 Azure の管理とサービスを拡張します。
+
 **毎月の上限：** Azure 外部のリソース向けの無料の Azure コントロール プレーン機能、Azure Arc 対応リソースの検索とインデックス作成する
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-arc/
@@ -282,6 +315,7 @@ Azure の管理とサービスを拡張します。
 ## Azure Active Directory B2C
 
 顧客向けアプリの ID とアクセス管理
+
 **毎月の上限：** Azure Active Directory B2C で月間アクティブ ユーザー数 50,000 人
 
 🔗 https://www.microsoft.com/ja-jp/security/business/identity-access/microsoft-entra-id
@@ -290,6 +324,7 @@ Azure の管理とサービスを拡張します。
 ## Microsoft Entra ID (旧称 Azure AD)
 
 クラウドの ID とアクセス管理を有効にします。
+
 **毎月の上限：** すべてのクラウド アプリへのシングル サインオン (SSO) を備えた 50,000 個の保存オブジェクト
 
 🔗 https://www.microsoft.com/ja-jp/security/business/identity-access/microsoft-entra-id
@@ -298,6 +333,7 @@ Azure の管理とサービスを拡張します。
 ## API Management
 
 ハイブリッド マルチクラウド プラットフォームを使用して、すべてのプラットフォームにわたって API を管理します。
+
 **毎月の上限：** 従量課金レベルで毎月 100 万通話無料
 
 🔗 https://azure.microsoft.com/ja-jp/products/api-management/
@@ -306,6 +342,7 @@ Azure の管理とサービスを拡張します。
 ## Event Grid
 
 信頼性の高い大規模イベント配信をします。
+
 **毎月の上限：** 1 か月あたり 100,000 件の操作
 
 🔗 https://azure.microsoft.com/ja-jp/products/event-grid/
@@ -314,6 +351,7 @@ Azure の管理とサービスを拡張します。
 ## Health Data Services
 
 クラウドで医療データと保護された医療情報 (PHI) を統合して管理します。
+
 **毎月の上限：** 1 GB の構造化ストレージと BLOB ストレージ、50,000 件の API リクエスト、0.5 GB の変換操作、100,000 件のイベント
 
 🔗 https://azure.microsoft.com/ja-jp/products/health-data-services/
@@ -322,6 +360,7 @@ Azure の管理とサービスを拡張します。
 ## Logic Apps
 
 クラウドとオンプレミスのシステム全体にわたる自動化された統合ソリューションをビルドします。
+
 **毎月の上限：** 4,000 件の組み込みアクションと従量課金プラン
 
 🔗 https://azure.microsoft.com/ja-jp/products/logic-apps/
@@ -330,6 +369,7 @@ Azure の管理とサービスを拡張します。
 ## Azure Maps
 
 地理空間サービス、API、SDK を使用して、位置を認識する Web アプリケーションとモバイル アプリケーションを作成します。
+
 **毎月の上限：** 特定のマッピングおよび位置情報分析機能のトランザクション数は 1,000 ～ 5,000 件
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-maps/
@@ -338,6 +378,7 @@ Azure の管理とサービスを拡張します。
 ## IoT Edge
 
 クラウドのインテリジェンスと分析を IoT エッジ デバイスまで拡張します。
+
 **毎月の上限：** 無料のオープンソース エッジ ランタイム
 
 🔗 https://azure.microsoft.com/ja-jp/products/iot-edge/
@@ -346,6 +387,7 @@ Azure の管理とサービスを拡張します。
 ## IoT Hub
 
 スケーラブルなプラットフォームを使用して IoT 資産を接続、監視、管理します。
+
 **毎月の上限：** 無料版では、1 日あたり 8,000 件のメッセージと 0.5 KB のメッセージ メーター サイズ
 
 🔗 https://azure.microsoft.com/ja-jp/products/iot-hub/
@@ -354,6 +396,7 @@ Azure の管理とサービスを拡張します。
 ## Advisor
 
 Azure のパーソナライズされた推奨事項と成功事例を取得します。
+
 **毎月の上限：** 無制限
 
 🔗 https://azure.microsoft.com/ja-jp/products/advisor/
@@ -362,6 +405,7 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 ## Automation
 
 プロセス自動化により、クラウド管理をシンプルにします。
+
 **毎月の上限：** 500 分のジョブ実行時間
 
 🔗 https://azure.microsoft.com/ja-jp/products/automation/
@@ -370,6 +414,7 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 ## Azure Automanage
 
 自動化された操作で IT 管理を簡素化および最適化できます。
+
 **毎月の上限：** Automanage 固有の料金は発生しません。Automanage を通じてオンボードされた Azure サービスは、個別に課金されます
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-automanage/
@@ -378,6 +423,7 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 ## Azure Lighthouse
 
 ゼロ トラストのアクセス制御を使用してサービス プロバイダーを管理します。
+
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-lighthouse/
@@ -386,6 +432,7 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 ## Azure Managed Applications
 
 承認されたクラウド オファリングのカタログを使用して、サービスを取得しやすくなります。
+
 **毎月の上限：** 無料公開
 
 🔗 https://azure.microsoft.com/ja-jp/products/managed-applications/
@@ -394,6 +441,7 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 ## Azure Policy
 
 一貫したリソース ガバナンスにより、大規模なリアルタイムのクラウド コンプライアンスを実現します。
+
 **毎月の上限：** 構成および変更追跡機能への無料アクセス
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-policy/
@@ -402,6 +450,7 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 ## Azure Resource Mover
 
 Azure リージョン間で複数のリソースを移動する方法をシンプルにします。
+
 **毎月の上限：** 無料 (イングレスとエグレスの料金が適用される場合があります)
 
 🔗 https://azure.microsoft.com/ja-jp/products/resource-mover/
@@ -410,6 +459,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 ## Azure Update Manager
 
 ソフトウェア更新を中央管理し、大規模に統制できます。
+
 **毎月の上限：** Azure リソースは無料 (Arc 対応サーバーは課金対象) です。詳細は価格ページをご覧ください
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-update-management-center/
@@ -418,6 +468,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 ## Cloud Shell
 
 一般的なコマンドライン ツールとプログラミング言語を使用して、ブラウザーベースのシェルで Azure リソースを管理します。
+
 **毎月の上限：** Azure Files での 12 か月間 5 GB の無料ストレージ
 
 🔗 https://azure.microsoft.com/ja-jp/get-started/azure-portal/cloud-shell/
@@ -426,6 +477,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 ## Cost Management
 
 透明性、正確性、効率性を備え、クラウド コストを監視、割り当て、最適化します。
+
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/cost-management/
@@ -434,6 +486,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 ## Monitor
 
 アプリケーション、インフラストラクチャ、ネットワークを完全に監視します。
+
 **毎月の上限：** 機能ごとの無料利用額については、Azure Monitor の料金詳細を参照する
 
 🔗 https://azure.microsoft.com/ja-jp/products/monitor/
@@ -442,6 +495,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 ## Resource Manager
 
 アプリのリソースの管理方法をシンプルにします。
+
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/get-started/azure-portal/resource-manager/
@@ -450,6 +504,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 ## Azure Migrate
 
 オンプレミスの仮想マシンを検出し、評価し、適切なサイズに調整し、Azure に移行します。
+
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-migrate/
@@ -458,6 +513,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 ## Azure Storage Mover
 
 オンプレミス環境や他のクラウドのファイルやフォルダーを Azure へ、ダウンタイムを最小限に抑えつつ移行します。
+
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/storage-mover#Azure-storage-mover
@@ -466,6 +522,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 ## Notification Hubs
 
 どのバックエンドからでもあらゆるプラットフォームにプッシュ通知を送信します。
+
 **毎月の上限：** 100 万件のプッシュ通知と無料の名前空間
 
 🔗 https://azure.microsoft.com/ja-jp/products/notification-hubs/
@@ -474,6 +531,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 ## Bandwidth (データ転送)
 
 グローバル データ センターの信頼性の高いネットワークを使用して送受信データを転送できます。
+
 **毎月の上限：** 送信 100 GB
 
 🔗 https://azure.microsoft.com/ja-jp/products/virtual-network/
@@ -482,6 +540,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 ## Network Watcher
 
 ネットワークのパフォーマンスと健全性を監視、診断し、分析情報を得ます。
+
 **毎月の上限：** 1,000 件のチェック、10 件のテスト、10 件の接続メトリックを含む 5 GB のストレージ
 
 🔗 https://azure.microsoft.com/ja-jp/products/network-watcher/
@@ -490,6 +549,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 ## Private Link
 
 データを Microsoft ネットワーク上に保持しながら、Azure 上のサービスにプライベートにアクセスします。
+
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/private-link/
@@ -498,6 +558,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 ## Virtual Network
 
 プライベート ネットワークをプロビジョニングし、オンプレミスのデータセンターに接続します。
+
 **毎月の上限：** 50 仮想ネットワーク
 
 🔗 https://azure.microsoft.com/ja-jp/products/virtual-network/
@@ -506,6 +567,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 ## Azure Attestation
 
 信頼できるプラットフォーム モジュールと信頼できる実行環境の ID とセキュリティ体制を検証します。
+
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-attestation/
@@ -514,6 +576,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 ## Security Center
 
 Azure リソースのセキュリティに対する可視性と制御を強化して、脅威を防止、検出、対応します。
+
 **毎月の上限：** 無料のポリシー評価と推奨事項
 
 🔗 https://azure.microsoft.com/ja-jp/products/defender-for-cloud/
@@ -522,6 +585,7 @@ Azure リソースのセキュリティに対する可視性と制御を強化�
 ## Azure SignalR Service
 
 Web アプリケーションにリアルタイム通信を追加します。
+
 **毎月の上限：** ユニットあたり 20 の同時接続と 20,000 件のメッセージ
 
 🔗 https://azure.microsoft.com/ja-jp/products/signalr-service/
@@ -530,6 +594,7 @@ Web アプリケーションにリアルタイム通信を追加します。
 ## Web PubSub
 
 Web アプリやモバイル アプリにリアルタイムの双方向通信をビルドします。
+
 **毎月の上限：** 1 ユニットあたり 1 日 20,000 件のメッセージ、1 ユニットあたり 20 の同時接続 (最大 1 ユニット)
 
 🔗 https://azure.microsoft.com/ja-jp/products/web-pubsub/
