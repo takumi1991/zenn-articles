@@ -45,8 +45,8 @@ function formatItem(item) {
 ${item.description}
 **毎月の上限：**${freeTier}
 
-${item.description_en}
-Monthly limit: ${freeTierEn}
+// ${item.description_en}
+// Monthly limit: ${freeTierEn}
 
 🔗 ${item.link}
 
@@ -95,13 +95,11 @@ topics: ["azure", "free-tier", "cloud"]
 published: true
 ---
 
-# Azure常時無料サービス一覧 (Always Free Services)
+# Azure常時無料サービス一覧
 
 最終更新日: ${updatedAt}
 
-AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されており、それらと比較しても対象サービス数が多いです。
-
-AI・データ・アプリ基盤まで幅広く常時無料枠が揃っているため、個人開発でもかなり多様な構成をコストを抑えて実現できます。
+AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されています。それらと比較して対象サービス数も多く、AI・データ・アプリ基盤まで幅広く常時無料枠が揃っているため、個人開発でも多様な構成をコストを抑えて実現できます。
 
 この記事では、常時無料で利用できるAzureサービスのみをまとめています。
 `;
