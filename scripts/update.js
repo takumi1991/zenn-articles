@@ -156,18 +156,50 @@ Amazon Web Services の常時無料枠(Always Free Services) はアカウント�
 
 `;
 
-    for (const item of items) {
-      md += `## ${item.title_ja}\n\n`;
+// ===== カテゴリごとにグループ化 =====
+const grouped = {};
 
-      md += `🏷️ ${toJapaneseCategory(item.category)}\n\n`;
+for (const item of items) {
+  if (!grouped[item.category]) {
+    grouped[item.category] = [];
+  }
+  grouped[item.category].push(item);
+}
 
-      const generated = cache[item.title_ja]?.text;
-      md += `${generated || item.description_ja || ""}\n\n`;
+// ===== カテゴリ順 =====
+const CATEGORY_ORDER = [
+  "Compute",
+  "Storage",
+  "Database",
+  "Application Integration",
+  "Networking",
+  "Security",
+  "Analytics",
+  "AI",
+  "Developer Tools",
+  "Management & Governance",
+  "Migration"
+];
 
-      if (item.link) {
-        md += `🔗 ${item.link}\n\n`;
+      // ===== カテゴリ単位で出力 =====
+      for (const category of CATEGORY_ORDER) {
+        const list = grouped[category];
+        if (!list) continue;
+      
+        // カテゴリ見出し
+        md += `## ${toJapaneseCategory(category)}\n\n`;
+      
+        for (const item of list) {
+          md += `### ${item.title_ja}\n\n`;
+      
+          const generated = cache[item.title_ja]?.text;
+          md += `${generated || item.description_ja || ""}\n\n`;
+      
+          if (item.link) {
+            md += `🔗 ${item.link}\n\n`;
+          }
+        }
       }
-    }
 
      const awsFreeTierUrl = "https://aws.amazon.com/jp/free/?nc2=h_pr_ft&refid=ft_dsql&ams%23interactive-card-vertical%23pattern-data--681284034.filters=((id:GLOBAL%23local-tags-free-tier-products-plan-type.and,value:(always-free)))";
 
