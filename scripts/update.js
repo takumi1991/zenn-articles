@@ -140,6 +140,8 @@ Amazon Web Services の常時無料枠(Always Free Services) はアカウント�
     for (const item of items) {
       md += `## ${item.title_ja}\n\n`;
 
+      md += `*カテゴリ: ${item.category}*\n\n`;
+
       const generated = cache[item.title_ja]?.text;
       md += `${generated || item.description_ja || ""}\n\n`;
 
