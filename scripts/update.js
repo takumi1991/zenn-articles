@@ -148,6 +148,8 @@ Amazon Web Services の常時無料枠(Always Free Services) はアカウント�
       }
     }
 
+     const awsFreeTierUrl = "https://aws.amazon.com/jp/free/?nc2=h_pr_ft&refid=ft_dsql&ams%23interactive-card-vertical%23pattern-data--681284034.filters=((id:GLOBAL%23local-tags-free-tier-products-plan-type.and,value:(always-free)))";
+
     md += `
 ---
 
@@ -156,8 +158,7 @@ Amazon Web Services の常時無料枠(Always Free Services) はアカウント�
 AWS の常時無料サービス(Always Free Services) は、個人開発や学習に役立つと思います。  
 ただ、無料枠には毎月の上限があり、超過した場合は課金が発生しますのでご注意を。
 
-**※利用前には必ずAWS公式の最新情報をあたってください。** 
-https://aws.amazon.com/jp/free/?nc2=h_pr_ft&refid=ft_dsql&ams%23interactive-card-vertical%23pattern-data--681284034.filters=((id:GLOBAL%23local-tags-free-tier-products-plan-type.and,value:(always-free)))
+**※利用前には必ず[AWS公式](${awsFreeTierUrl})の最新情報をあたってください。**
 
 
 ---
