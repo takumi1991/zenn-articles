@@ -84,6 +84,24 @@ function toJapaneseCategory(name) {
   return MAP[name] || name;
 }
 
+function getCategoryIcon(name) {
+  const MAP = {
+    "Compute": "💻",
+    "Storage": "🗄️",
+    "Database": "🧱",
+    "Networking": "🌐",
+    "Security": "🔐",
+    "Analytics": "📊",
+    "AI": "🤖",
+    "Developer Tools": "🛠️",
+    "Management & Governance": "📋",
+    "Application Integration": "🔗",
+    "Migration": "🚚"
+  };
+
+  return MAP[name] || "📦";
+}
+
 /* ======================================
    ▼ メイン処理
    ====================================== */
@@ -187,7 +205,7 @@ const CATEGORY_ORDER = [
         if (!list) continue;
       
         // カテゴリ見出し
-        md += `## ${toJapaneseCategory(category)}\n\n`;
+        md += `## ${getCategoryIcon(category)} ${toJapaneseCategory(category)}\n\n`;
       
         for (const item of list) {
           md += `### ${item.title_ja}\n\n`;
@@ -196,7 +214,7 @@ const CATEGORY_ORDER = [
           md += `${generated || item.description_ja || ""}\n\n`;
       
           if (item.link) {
-            md += `🔗 ${item.link}\n\n`;
+            md += `🔗 ${item.link}\n\n\n`;
           }
         }
       }
