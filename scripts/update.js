@@ -65,6 +65,25 @@ ${description}
   return response.text().trim();
 }
 
+// カテゴリマップ
+function toJapaneseCategory(name) {
+  const MAP = {
+    "Compute": "コンピューティング",
+    "Storage": "ストレージ",
+    "Database": "データベース",
+    "Networking": "ネットワーク",
+    "Security": "セキュリティ",
+    "Analytics": "データ分析",
+    "AI": "AI",
+    "Developer Tools": "開発者ツール",
+    "Management & Governance": "管理とガバナンス",
+    "Application Integration": "アプリケーション統合",
+    "Migration": "移行"
+  };
+
+  return MAP[name] || name;
+}
+
 /* ======================================
    ▼ メイン処理
    ====================================== */
@@ -140,7 +159,7 @@ Amazon Web Services の常時無料枠(Always Free Services) はアカウント�
     for (const item of items) {
       md += `## ${item.title_ja}\n\n`;
 
-      md += `*カテゴリ: ${item.category}*\n\n`;
+      md += `🏷️ ${toJapaneseCategory(item.category)}\n\n`;
 
       const generated = cache[item.title_ja]?.text;
       md += `${generated || item.description_ja || ""}\n\n`;
