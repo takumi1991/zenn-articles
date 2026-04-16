@@ -34,10 +34,9 @@ Amazon Web Services の常時無料枠(Always Free Services) はアカウント�
 `;
 
     for (const item of items) {
-      md += `## ${item.title}\n\n`;
+      md += `## ${item.title_ja}\n\n`;
 
       // ★ここだけ修正（body → description）
-      md += `${item.description_en || ""}\n\n`;
       md += `${item.description_ja || ""}\n\n`;
 
       if (item.link) {
