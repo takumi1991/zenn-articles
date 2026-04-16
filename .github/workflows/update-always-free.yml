@@ -11,8 +11,7 @@ on:
 env:   # ← ここが全 step に反映される
   APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
   APIFY_ACTOR_ID: ${{ secrets.APIFY_ACTOR_ID }}
-  GCP_SA_KEY_JSON: ${{ secrets.GCP_SA_KEY_JSON }}
-  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
 jobs:
   update:
