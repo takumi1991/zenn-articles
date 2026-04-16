@@ -1,12 +1,11 @@
 import fs from 'fs';
-import OpenAI from 'openai';
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
 /* ======================================
    ▼ 設定
    ====================================== */
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 const CACHE_PATH = 'scripts/cache/aws_cache.json';
 const BATCH_SIZE = 5;
@@ -16,11 +15,19 @@ const TTL_DAYS = 30;
 const TTL_MS = TTL_DAYS * 24 * 60 * 60 * 1000;
 
 /* ======================================
-   ▼ キャッシュ処理
+   ▼ キャッシュ処理（安全版）
    ====================================== */
 function loadCache() {
   if (!fs.existsSync(CACHE_PATH)) return {};
-  return JSON.parse(fs.readFileSync(CACHE_PATH, 'utf8'));
+
+  try {
+    const text = fs.readFileSync(CACHE_PATH, 'utf8');
+    if (!text.trim()) return {};
+    return JSON.parse(text);
+  } catch (e) {
+    console.warn('⚠️ cache broken, reset');
+    return {};
+  }
 }
 
 function saveCache(cache) {
@@ -33,7 +40,7 @@ function isExpired(entry) {
 }
 
 /* ======================================
-   ▼ GPT生成
+   ▼ Gemini生成
    ====================================== */
 async function generateDescription(title, description) {
   const prompt = `
@@ -46,21 +53,17 @@ ${title}
 ${description}
 
 # 条件
-・検索キーワード（例: AWS, サービス名, 用途）を自然に含める
-・「何ができるサービスか」を最初の1文で明確に説明
-・主な用途・ユースケースを具体的に含める
-・他のAWSサービスとの違いや特徴を簡潔に触れる
-・初心者にも理解できる表現にする
-・冗長な前置きは禁止
-・箇条書きは禁止（文章で書く）
+・検索キーワード（AWS, サービス名, 用途）を自然に含める
+・最初の1文で何ができるか説明
+・ユースケースを含める
+・初心者向け
+・冗長禁止
 `;
 
-  const res = await client.responses.create({
-    model: 'gpt-4.1-mini',
-    input: prompt,
-  });
+  const result = await model.generateContent(prompt);
+  const response = await result.response;
 
-  return res.output_text.trim();
+  return response.text().trim();
 }
 
 /* ======================================
@@ -75,7 +78,7 @@ async function main() {
 
     console.log(`📦 Loaded items: ${items.length}`);
 
-    /* ===== GPT生成（バッチ処理） ===== */
+    /* ===== Gemini生成（バッチ処理） ===== */
     for (let i = 0; i < items.length; i += BATCH_SIZE) {
       const batch = items.slice(i, i + BATCH_SIZE);
 
@@ -104,8 +107,11 @@ async function main() {
             updatedAt: Date.now(),
           };
 
-          // 逐次保存（途中で落ちてもOK）
+          // 保存（途中落ち対策）
           saveCache(cache);
+
+          // 軽いレート制御
+          await new Promise(r => setTimeout(r, 1000));
         })
       );
     }
