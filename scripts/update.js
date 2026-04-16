@@ -5,7 +5,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
    ▼ 設定
    ====================================== */
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
+const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
 
 const CACHE_PATH = 'scripts/cache/aws_cache.json';
 const BATCH_SIZE = 5;
