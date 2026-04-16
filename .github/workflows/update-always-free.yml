@@ -62,5 +62,6 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add articles/aws-always-free.md
+          git add scripts/cache/aws_cache.json
           git commit -m "Update AWS Always Free article" || echo "No changes"
           git push
