@@ -53,11 +53,8 @@ ${title}
 ${description}
 
 # 条件
-・検索キーワード（AWS, サービス名, 用途）を自然に含める
 ・最初の1文で何ができるか説明
 ・ユースケースを含める
-・初心者向け
-・冗長禁止
 `;
 
   const result = await model.generateContent(prompt);
