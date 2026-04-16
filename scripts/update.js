@@ -55,6 +55,8 @@ ${description}
 # 条件
 ・最初の1文で何ができるか説明
 ・ユースケースを含める
+・箇条書き禁止
+・冗長禁止
 `;
 
   const result = await model.generateContent(prompt);
