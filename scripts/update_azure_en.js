@@ -61,7 +61,7 @@ async function main() {
   // =========================
   const header = `---
 title: "Microsoft Azure Always Free Services"
-emoji: "🔵"
+emoji: "🟦"
 type: "tech"
 topics: ["azure", "free-tier", "cloud"]
 published: true
@@ -96,7 +96,7 @@ Charges may apply if you exceed these limits, so always check the official docum
 ## Related Articles
 
 AWS Always Free Services  
-👉 https://zenn.dev/good_sleeper/articles/aws-always-free  
+👉 https://zenn.dev/good_sleeper/articles/aws-always-free-en
 
 Google Cloud Always Free Services  
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free  
