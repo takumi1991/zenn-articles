@@ -371,7 +371,6 @@ AWS Migration Evaluator is a service designed to quickly estimate the potential 
 <br><br>
 
    
-   ---
    
    ## Notes
    
