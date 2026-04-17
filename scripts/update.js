@@ -199,11 +199,11 @@ published: true
 
       list.forEach((item, index) => {
 
-         const icon = getIconPath(item.title_ja);
+         // const icon = getIconPath(item.title_ja);
          
-         if (icon) {
-           md += `<img src="${icon}" width="20" style="display:block;margin:0;">\n`;
-         }
+         // if (icon) {
+         //   md += `<img src="${icon}" width="20" style="display:block;margin:0;">\n`;
+         // }
          
          md += `### ${item.title_ja}\n\n`;
 
