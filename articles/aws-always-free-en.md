@@ -369,3 +369,19 @@ AWS Migration Evaluator is a service designed to quickly estimate the potential 
 🔗 https://aws.amazon.com/migration-evaluator/?did=ft_card2&trk=ft_migeval
 
 <br><br>
+
+   
+   ---
+   
+   ## Notes
+   
+   The AWS Always Free tier is useful for learning and small-scale development, but each service has specific monthly limits. 
+   Exceeding those limits will result in standard pay-as-you-go charges. Always check the official AWS pricing page before using these services in production.
+   
+   
+   ## Related: Always Free tiers in other clouds
+   
+   Azure Always Free
+   👉 https://zenn.dev/good_sleeper/articles/azure-always-free-en
+   
+   
