@@ -208,7 +208,7 @@ const CATEGORY_ORDER = [
         md += `## ${getCategoryIcon(category)} ${toJapaneseCategory(category)}\n\n`;
       
         for (const item of list) {
-          md += `---\n\n`;
+          
           md += `### ${item.title_ja}\n\n`;
       
           const generated = cache[item.title_ja]?.text;
@@ -217,6 +217,7 @@ const CATEGORY_ORDER = [
           if (item.link) {
             md += `🔗 ${item.link}\n\n\n`;
           }
+          md += `---\n\n`;
         }
       }
 
