@@ -184,7 +184,7 @@ AWS Glueは、ETL（Extract, Transform, Load）処理を容易にするサーバ
 🔗 https://aws.amazon.com/jp/glue/?did=ft_card2&trk=ft_glue
 
 <br><br>
-## 🤖 AI
+## 🧠 AI
 
 ### Amazon Q Developer
 
@@ -307,7 +307,7 @@ AWS Systems Managerは、AWSインフラストラクチャ全体の運用を効�
 🔗 https://aws.amazon.com/jp/systems-manager/?did=ft_card2&trk=ft_systemsmanager
 
 <br><br>
-## 🚚 移行
+## ✈️ 移行
 
 ### AWS Application Discovery Service
 
