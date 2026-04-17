@@ -207,18 +207,22 @@ const CATEGORY_ORDER = [
         // カテゴリ見出し
         md += `## ${getCategoryIcon(category)} ${toJapaneseCategory(category)}\n\n`;
       
-        for (const item of list) {
-          
+        list.forEach((item, index) => {
+      
           md += `### ${item.title_ja}\n\n`;
       
           const generated = cache[item.title_ja]?.text;
           md += `${generated || item.description_ja || ""}\n\n`;
       
           if (item.link) {
-            md += `🔗 ${item.link}\n\n\n`;
+            md += `🔗 ${item.link}\n\n`;
           }
-          md += `---\n\n`;
-        }
+      
+          // 👇 最後以外だけ区切り線
+          if (index !== list.length - 1) {
+            md += `---\n\n`;
+          }
+        });
       }
 
      const awsFreeTierUrl = "https://aws.amazon.com/jp/free/?nc2=h_pr_ft&refid=ft_dsql&ams%23interactive-card-vertical%23pattern-data--681284034.filters=((id:GLOBAL%23local-tags-free-tier-products-plan-type.and,value:(always-free)))";
