@@ -8,12 +8,11 @@ published: true
 
 # AWS 常時無料サービス 一覧 (Always Free Services)
 
-
-👉 **English version:** https://zenn.dev/good_sleeper/articles/aws-always-free-en
-
 Amazon Web Services の常時無料枠（Always Free Services）はアカウント作成後の12ヶ月間のみ利用できる無料枠（Free Tier）とは異なり、**一定の使用量までは期限なく無料で利用できるサービス群**です。完全に無制限で無料というわけではなく、各サービスごとに定められた無料枠を超えた場合は従量課金が発生します。
 
 本記事では、AWS公式が公開している常時無料対象サービスを一覧で整理しています。個人開発・学習・コスト最適化の参考として活用してください。
+
+👉 **English version:** https://zenn.dev/good_sleeper/articles/aws-always-free-en
 
 ## 💻 コンピューティング
 
@@ -330,3 +329,26 @@ Migration Evaluator は、オンプレミス環境の資産を AWS で稼働さ�
 🔗 https://aws.amazon.com/jp/migration-evaluator/?did=ft_card2&trk=ft_migeval
 
 <br><br>
+
+
+   ---
+   
+   ## あとがき
+   
+   AWS の常時無料サービス（Always Free Services）は、個人開発や学習に非常に役立ちます。
+   ただし各サービスには毎月の無料利用枠が設定されており、上限を超えると課金が発生します。
+   利用する際は、必ず公式の最新情報を確認してください。
+   
+   ---
+   
+   ## 関連記事：他クラウドの常時無料枠まとめ
+   
+   Google Cloud Platform の常時無料枠  
+   
+   👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
+   
+   Azure の常時無料枠 (Always Free Services)  
+   
+   👉 https://zenn.dev/good_sleeper/articles/azure-always-free
+   
+   
