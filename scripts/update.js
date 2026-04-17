@@ -229,10 +229,10 @@ Amazon Web Services の常時無料枠（Always Free Services）はアカウン�
    ## 関連記事：他クラウドの常時無料枠まとめ
    
    🌈 Google Cloud Platform の常時無料枠  
-   https://zenn.dev/good_sleeper/articles/gcp-always-free
+   👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
    
    🟦 Microsoft Azure の常時無料枠 (Always Free Services)  
-   https://zenn.dev/good_sleeper/articles/azure-always-free
+   👉 https://zenn.dev/good_sleeper/articles/azure-always-free
    
    `;
 
