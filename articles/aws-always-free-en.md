@@ -10,7 +10,7 @@ published: true
 
 This article lists AWS services that are included in the Always Free tier.
 
-## Storage
+## 🗄️ Storage
 
 ### Amazon SimpleDB
 
@@ -19,7 +19,7 @@ Amazon SimpleDB is a flexible, highly available, and schemaless NoSQL database s
 🔗 https://aws.amazon.com/simpledb/?did=ft_card2&trk=ft_simpledb
 
 <br><br>
-## Database
+## 🧱 Database
 
 ### Amazon Aurora
 
@@ -36,7 +36,7 @@ Amazon DynamoDB is a fully managed, serverless NoSQL database that provides sing
 🔗 https://aws.amazon.com/dynamodb/?did=ft_card2&trk=ft_dynamodb
 
 <br><br>
-## Application Integration
+## 🧩 Application Integration
 
 ### Amazon Cognito
 
@@ -93,7 +93,7 @@ AWS Step Functions is a serverless orchestration service that allows you to coor
 🔗 https://aws.amazon.com/step-functions/?did=ft_card2&trk=ft_stepfunctions
 
 <br><br>
-## Networking
+## 🌐 Networking
 
 ### Amazon CloudFront
 
@@ -110,7 +110,7 @@ Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS
 🔗 https://aws.amazon.com/route53/?did=ft_card2&trk=ft_route53
 
 <br><br>
-## Security
+## 🔐 Security
 
 ### AWS Certificate Manager
 
@@ -159,7 +159,7 @@ AWS WAF Bot Control is a managed ruleset that automatically identifies and mitig
 🔗 https://aws.amazon.com/waf/features/bot-control/?did=ft_card2&trk=ft_WAFbc
 
 <br><br>
-## Analytics
+## 📊 Analytics
 
 ### Amazon DataZone
 
@@ -184,7 +184,7 @@ AWS Glue is a fully managed, cost-effective extract, transform, and load (ETL) s
 🔗 https://aws.amazon.com/glue/?did=ft_card2&trk=ft_glue
 
 <br><br>
-## AI
+## 🧠 AI
 
 ### Amazon Q Business
 
@@ -209,7 +209,7 @@ AWS HealthLake is a HIPAA-eligible service that enables healthcare providers and
 🔗 https://aws.amazon.com/healthlake?did=ft_card2&trk=ft_healthlake
 
 <br><br>
-## Developer Tools
+## 🛠️ Developer Tools
 
 ### Amazon CloudWatch
 
@@ -258,7 +258,7 @@ AWS X-Ray is a service that helps developers analyze and debug distributed appli
 🔗 https://aws.amazon.com/xray/?did=ft_card2&trk=ft_xray
 
 <br><br>
-## Management & Governance
+## 🏛️ Management & Governance
 
 ### Amazon Managed Service for Prometheus
 
@@ -339,7 +339,7 @@ AWS Systems Manager is a unified interface that provides visibility and control 
 🔗 https://aws.amazon.com/systems-manager/?did=ft_card2&trk=ft_systemsmanager
 
 <br><br>
-## Migration
+## ✈️ Migration
 
 ### AWS Application Migration Service
 
