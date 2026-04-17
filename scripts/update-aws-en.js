@@ -201,7 +201,6 @@ This article provides a complete list of AWS Always Free services for learning, 
 
    md += `
    
-   ---
    
    ## Notes
    
