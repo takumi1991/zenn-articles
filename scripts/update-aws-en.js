@@ -8,7 +8,7 @@ import { ICON_MAP } from "./aws-icon-map.js";
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "models/gemini-2.5-flash-lite" });
 
-const CACHE_PATH = 'scripts/cache/aws_cache_en.json'; // ←分離
+const CACHE_PATH = 'scripts/cache/aws_cache_en.json';
 const BATCH_SIZE = 5;
 
 const TTL_MS = 30 * 24 * 60 * 60 * 1000;
@@ -204,7 +204,7 @@ This article provides a complete list of AWS Always Free services for learning, 
      
    ## Related: Always Free tiers in other clouds
    
-   Azure Always Free
+   🟦 Microsoft Azure Always Free
    👉 https://zenn.dev/good_sleeper/articles/azure-always-free-en
    
    `;
