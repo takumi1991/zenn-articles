@@ -94,8 +94,8 @@ function getCategoryIcon(name) {
     "Analytics": "📊",
     "AI": "🤖",
     "Developer Tools": "🛠️",
-    "Management & Governance": "📋",
-    "Application Integration": "🔗",
+    "Management & Governance": "🏛️",
+    "Application Integration": "🧩",
     "Migration": "🚚"
   };
 
