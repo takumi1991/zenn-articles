@@ -107,7 +107,7 @@ function getCategoryIcon(name) {
 function getIconPath(name) {
   const key = ICON_MAP[name];
   return key
-    ? `https://raw.githubusercontent.com/あなたのrepo/main/images/services/${key}.png`
+    ? `https://github.com/takumi1991/zenn-articles/main/images/services/${key}.png`
     : null;
 }
 
