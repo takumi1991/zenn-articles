@@ -374,7 +374,7 @@ AWS Migration Evaluator is a service designed to quickly estimate the potential 
      
    ## Related: Always Free tiers in other clouds
    
-   Azure Always Free
+   🟦 Microsoft Azure Always Free
    👉 https://zenn.dev/good_sleeper/articles/azure-always-free-en
    
    
