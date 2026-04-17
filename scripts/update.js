@@ -181,7 +181,7 @@ Amazon Web Services の常時無料枠（Always Free Services）はアカウン�
 
 本記事では、AWS公式が公開している常時無料対象サービスを一覧で整理しています。個人開発・学習・コスト最適化の参考として活用してください。
 
-👉 **English version:** https://zenn.dev/good_sleeper/articles/aws-always-free-en
+👉 English version: https://zenn.dev/good_sleeper/articles/aws-always-free-en
 
 `;
 
