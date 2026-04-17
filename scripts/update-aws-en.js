@@ -205,7 +205,7 @@ This article provides a complete list of AWS Always Free services for learning, 
    ## Related: Always Free tiers in other clouds
    
    🟦 Microsoft Azure Always Free
-   👉 https://zenn.dev/good_sleeper/articles/azure-always-free-en
+   https://zenn.dev/good_sleeper/articles/azure-always-free-en
    
    `;
 
