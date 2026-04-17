@@ -1,5 +1,6 @@
 import fs from 'fs';
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { ICON_MAP } from "./aws-icon-map.js";
 
 /* ======================================
    ▼ 設定
