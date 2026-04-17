@@ -1,6 +1,6 @@
 ---
 title: "AWSの常時無料一覧 (Always Free Services)"
-emoji: "😊"
+emoji: "🟧"
 type: "tech"
 topics: ["aws", "free-tier", "cloud"]
 published: true
