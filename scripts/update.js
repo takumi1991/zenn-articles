@@ -223,6 +223,29 @@ Amazon Web Services の常時無料枠（Always Free Services）はアカウン�
         md += index !== list.length - 1 ? `---\n\n` : `<br><br>\n`;
       });
     }
+     md += `
+
+   ---
+   
+   ## あとがき
+   
+   AWS の常時無料サービス（Always Free Services）は、個人開発や学習に非常に役立ちます。
+   ただし各サービスには毎月の無料利用枠が設定されており、上限を超えると課金が発生します。
+   利用する際は、必ず公式の最新情報を確認してください。
+   
+   ---
+   
+   ## 関連記事：他クラウドの常時無料枠まとめ
+   
+   Google Cloud Platform の常時無料枠  
+   
+   👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
+   
+   Azure の常時無料枠 (Always Free Services)  
+   
+   👉 https://zenn.dev/good_sleeper/articles/azure-always-free
+   
+   `;
 
     fs.writeFileSync('articles/aws-always-free.md', md);
     console.log('📄 Markdown updated!');
