@@ -19,6 +19,8 @@ Amazon Web Services の常時無料枠(Always Free Services) はアカウント�
 
 ## 💻 コンピューティング
 
+---
+
 ### AWS Lambda
 
 AWS Lambdaは、サーバーのプロビジョニングや管理なしにコードを実行できるサーバーレスコンピューティングサービスです。特定のイベント、例えばS3バケットへのファイルアップロードやDynamoDBテーブルへのデータ変更などをトリガーとして、Python, Node.js, Javaなどの様々な言語で記述されたコードを自動的に実行できます。これにより、Webアプリケーションのバックエンド処理、データ処理パイプラインの構築、IoTデバイスからのデータ集約など、多様なユースケースでインフラ管理の手間を省き、開発に集中することが可能になります。
@@ -27,6 +29,8 @@ AWS Lambdaは、サーバーのプロビジョニングや管理なしにコー�
 
 
 ## 🗄️ ストレージ
+
+---
 
 ### Amazon SimpleDB
 
@@ -37,12 +41,16 @@ Amazon SimpleDB は、Webアプリケーションなどのデータ保存を容�
 
 ## 🧱 データベース
 
+---
+
 ### Amazon Aurora DSQL
 
 Amazon Aurora DSQL は、高可用性とスケーラビリティが求められるアプリケーション向けに、毎秒 100 万トランザクション以上を処理できる最速のサーバーレス分散 SQL データベースです。自動スケーリング機能により、ワークロードの増減に合わせてデータベースの性能を自動的に調整するため、開発者はインフラ管理に煩わされることなく、アプリケーション開発に集中できます。たとえば、急激なトラフィック増加に対応する必要があるECサイトや、リアルタイムなデータ処理が不可欠なIoTプラットフォームなどに最適です。
 
 🔗 https://aws.amazon.com/jp/rds/aurora/dsql/?did=ft_card2&trk=ft_dsql
 
+
+---
 
 ### Amazon DynamoDB
 
@@ -53,12 +61,16 @@ Amazon DynamoDBは、AWSが提供する、フルマネージドでスケーラ�
 
 ## 🔗 アプリケーション統合
 
+---
+
 ### Amazon EventBridge
 
 Amazon EventBridgeは、AWSサービス、自社システム、SaaSアプリケーションを横断して、イベント駆動型アプリケーションを大規模に構築するためのサーバーレスイベントバスサービスです。これにより、アプリケーションのコンポーネントがイベントを送信、受信、フィルタリング、ルーティングできるようになり、システム間の連携が容易になります。例えば、S3バケットにファイルがアップロードされた際に、Lambda関数をトリガーしてデータを加工したり、EC2インスタンスのステータス変更を検知して通知を送信するといった、リアルタイムでの自動化や連携を実現できます。EventBridgeは、イベントソースとターゲットを疎結合に保ち、スケーラブルで堅牢なアーキテクチャの構築を支援します。
 
 🔗 https://aws.amazon.com/jp/eventbridge/?did=ft_card2&trk=ft_eventbridge
 
+
+---
 
 ### Amazon SNS
 
@@ -67,6 +79,8 @@ Amazon SNSは、アプリケーションからエンドポイントへのメッ�
 🔗 https://aws.amazon.com/jp/sns/?did=ft_card2&trk=ft_sns
 
 
+---
+
 ### Amazon SQS
 
 Amazon SQSは、アプリケーションコンポーネント間でやり取りされるメッセージを、信頼性が高くスケーラブルな方法で格納・管理できるマネージド型メッセージキューイングサービスです。これにより、異なるシステム間での非同期通信が可能となり、例えば、ウェブサーバーからバックエンドの処理システムへのタスクの依頼や、マイクロサービス間の疎結合な連携といったユースケースで、システム全体の可用性や拡張性を向上させることができます。メッセージの送信者と受信者を分離し、一時的な負荷の変動にも柔軟に対応できるため、堅牢なシステム設計に貢献します。
@@ -74,12 +88,16 @@ Amazon SQSは、アプリケーションコンポーネント間でやり取り�
 🔗 https://aws.amazon.com/jp/sqs/?did=ft_card2&trk=ft_sqs
 
 
+---
+
 ### Amazon SWF
 
 Amazon Simple Workflow Service (SWF) は、クラウドアプリケーションにおける複雑なワークフローの実行を調整し、その状態を管理するためのサービスです。例えば、複数のマイクロサービスが連携して処理を行うようなシナリオで、各タスクの実行順序を保証したり、失敗時のリトライ処理を自動化したりする際に役立ちます。これにより、開発者はタスクの実行状況を詳細に追跡・管理でき、信頼性の高い分散アプリケーションの構築が可能となります。
 
 🔗 https://aws.amazon.com/jp/swf/?did=ft_card2&trk=ft_swf
 
+
+---
 
 ### AWS Step Functions
 
@@ -90,12 +108,16 @@ AWS Step Functionsは、分散アプリケーションのコンポーネント�
 
 ## 🌐 ネットワーク
 
+---
+
 ### Amazon CloudFront
 
 Amazon CloudFrontは、世界中のエッジロケーションにコンテンツをキャッシュすることで、低レイテンシーかつ高速なデータ転送を実現するコンテンツデリバリーネットワーク（CDN）サービスです。これにより、ウェブサイトの画像や動画、アプリケーションのファイルなどを、エンドユーザーの所在地に近い場所から瞬時に配信できます。例えば、グローバルに展開するECサイトや動画配信サービスにおいて、ユーザー体験の向上に不可欠な役割を果たします。また、APIリクエストの高速化や、DDoS攻撃からの保護機能も提供し、セキュアで快適なデジタル体験を支えます。
 
 🔗 https://aws.amazon.com/jp/cloudfront/?did=ft_card2&trk=ft_cloudfront
 
+
+---
 
 ### Amazon Route 53
 
@@ -106,12 +128,16 @@ Amazon Route 53 は、インターネット上のドメイン名とIPアドレ�
 
 ## 🔐 セキュリティ
 
+---
+
 ### Amazon Cognito
 
 Amazon Cognitoは、Webアプリケーションやモバイルアプリケーションに、ユーザーのサインアップ、サインイン、アクセス制御といったID管理機能を簡単かつ安全に組み込めるサービスです。開発者は、ユーザーディレクトリの構築や認証フローの実装といった複雑な作業をAWSに任せ、アプリケーション開発に集中できます。例えば、ソーシャルメディアアカウント（Google、Facebookなど）でのログイン機能の提供や、独自のアカウントシステムとの連携、さらにはAPI Gatewayと連携してAPIへのアクセスを保護するといったユースケースで活用されています。これにより、スケーラブルでセキュアなユーザー管理を迅速に実現できます。
 
 🔗 https://aws.amazon.com/jp/cognito/?did=ft_card2&trk=ft_cognito
 
+
+---
 
 ### AWS Certificate Manager
 
@@ -120,12 +146,16 @@ AWS Certificate Manager (ACM) は、AWS、ハイブリッド、マルチクラ�
 🔗 https://aws.amazon.com/jp/certificate-manager/?did=ft_card2&trk=ft_certmanager
 
 
+---
+
 ### AWS Key Management Service
 
 AWS Key Management Service (KMS) は、AWSサービスやアプリケーションでデータ暗号化を容易かつ安全に管理できるフルマネージドサービスです。KMSを使用することで、独自の暗号化キーを作成、管理、使用することができ、AWSの他のサービス（S3、EBS、RDSなど）と統合して、保存されているデータを自動的に暗号化できます。例えば、機密性の高い顧客情報をS3に保存する際にKMSのキーで暗号化することで、不正アクセスからデータを保護し、コンプライアンス要件を満たすことが可能です。また、KMSはキーの使用状況を詳細に記録するため、監査証跡としても機能します。
 
 🔗 https://aws.amazon.com/jp/kms/?did=ft_card2&trk=ft_kms
 
+
+---
 
 ### AWS Resource Access Manager
 
@@ -134,12 +164,16 @@ AWS Resource Access Manager (RAM) は、AWS アカウント間や組織内で S3
 🔗 https://aws.amazon.com/jp/ram/?did=ft_card2&trk=ft_resourceaccess
 
 
+---
+
 ### AWS Shield
 
 AWS Shieldは、DDoS攻撃からお客様のAWS上のアプリケーションを保護するマネージド型DDoS保護サービスです。ネットワークトラフィックを継続的に監視し、既知の攻撃パターンを自動的に検知・軽減することで、ウェブサイトやAPIなどの可用性を維持します。例えば、ゲームやeコマースサイトのように、常に高い可用性が求められるサービスにおいて、突然のトラフィック急増や悪意のある攻撃によるサービス停止を防ぐのに役立ちます。AWS Shield Advancedにアップグレードすれば、より高度な保護機能や、攻撃発生時の専門家によるサポートも利用可能です。
 
 🔗 https://aws.amazon.com/jp/shield/?did=ft_card2&trk=ft_shield
 
+
+---
 
 ### AWS WAF Bot Control
 
@@ -150,6 +184,8 @@ AWS WAF Bot Controlは、不正なウェブボットの活動を検知・ブロ�
 
 ## 📊 データ分析
 
+---
+
 ### Amazon DataZone
 
 Amazon DataZoneは、組織内外のデータサイエンティストやアナリストが、アクセス許可を管理しつつ、容易にデータを見つけ、共有し、活用できるセルフサービス型のデータカタログおよびデータガバナンスサービスです。例えば、マーケティング部門が顧客データを分析する際に、個人情報保護の観点からアクセスを制限しつつ、分析に必要なデータセットをデータサイエンティストに提供するといったユースケースで、コンプライアンスを維持しながらデータ活用を促進します。これにより、サイロ化されがちなデータを統合し、組織全体のデータドリブンな意思決定を加速させることが可能になります。
@@ -157,12 +193,16 @@ Amazon DataZoneは、組織内外のデータサイエンティストやアナ�
 🔗 https://aws.amazon.com/jp/datazone/?did=ft_card2&trk=ft_datazone
 
 
+---
+
 ### Amazon OpenSearch Service
 
 Amazon OpenSearch Service は、ログ分析、アプリケーションモニタリング、ウェブサイト検索などを容易に実現できるマネージドサービスです。このサービスを利用することで、膨大なログデータからリアルタイムにインサイトを抽出し、アプリケーションのパフォーマンスを継続的に監視することが可能になります。例えば、ウェブサイトの検索機能では、ユーザーが求める情報を迅速かつ正確に提供するために、OpenSearch の強力な検索能力が活用されます。また、システム障害発生時の原因究明や、ユーザー行動分析によるサービス改善にも役立ちます。AWS がインフラストラクチャの運用を管理するため、ユーザーは分析や監視に集中できます。
 
 🔗 https://aws.amazon.com/jp/opensearch-service/?did=ft_card2&trk=ft_opensearch
 
+
+---
 
 ### AWS Glue
 
@@ -173,12 +213,16 @@ AWS Glueは、ETL（Extract, Transform, Load）処理を容易にするサーバ
 
 ## 🤖 AI
 
+---
+
 ### Amazon Q Developer
 
 Amazon Q Developerは、ソフトウェア開発のあらゆる段階で開発者の生産性を劇的に向上させる、生成AI搭載のインテリジェントアシスタントです。コードの生成やレビュー、デバッグ、セキュリティ脆弱性の特定、さらには既存のコードベースの理解を深め、リファクタリングを支援するなど、多岐にわたるタスクをこなします。例えば、新しい機能の実装に必要なコードスニペットの生成、複雑なバグの原因究明、AWSサービスの設定や利用方法に関する疑問の解消といった作業を迅速かつ正確に行うことで、開発者はより創造的で価値の高い業務に集中できるようになります。
 
 🔗 https://aws.amazon.com/jp/q/developer/?did=ft_card2&trk=ft_q
 
+
+---
 
 ### AWS HealthLake
 
@@ -189,6 +233,8 @@ AWS HealthLakeは、ヘルスケアおよびライフサイエンス分野の組
 
 ## 🛠️ 開発者ツール
 
+---
+
 ### Amazon CodeCatalyst
 
 Amazon CodeCatalystは、AWS上でアプリケーションを大規模かつ迅速に構築・配信するための統合開発環境です。継続的インテグレーション（CI）と継続的デリバリー（CD）のワークフローを簡素化し、開発チームがコードの記述に集中できるよう支援します。例えば、新機能の迅速なリリース、デプロイメントパイプラインの自動化、開発環境の迅速なプロビジョニングといったユースケースで、開発ライフサイクルの加速に貢献します。
@@ -196,12 +242,16 @@ Amazon CodeCatalystは、AWS上でアプリケーションを大規模かつ迅�
 🔗 https://aws.amazon.com/jp/codecatalyst/?did=ft_card2&trk=ft_codecatalyst
 
 
+---
+
 ### AWS CodeArtifact
 
 AWS CodeArtifactは、ソフトウェア開発における依存関係管理を効率化するマネージド型のアーティファクトリポジトリサービスです。Maven、npm、PyPIなどの主要なパッケージマネージャーに対応しており、開発チームは内部ライブラリやサードパーティ製パッケージをセキュアなリポジトリに集約・管理できます。これにより、ビルドの再現性を高め、依存関係の解決時間を短縮し、不正なパッケージの混入リスクを低減することが可能です。例えば、自社開発のライブラリをCodeArtifactに公開することで、複数のプロジェクトで安全かつ容易に再利用できるようになり、開発効率が向上します。
 
 🔗 https://aws.amazon.com/jp/codeartifact/?did=ft_card2&trk=ft_codeartifact
 
+
+---
 
 ### AWS CodePipeline
 
@@ -212,12 +262,16 @@ AWS CodePipelineは、ソフトウェアのビルド、テスト、デプロイ�
 
 ## 📋 管理とガバナンス
 
+---
+
 ### Amazon CloudWatch
 
 Amazon CloudWatchは、AWSのクラウドリソースとアプリケーションのパフォーマンスを包括的に監視するためのサービスです。EC2インスタンスのCPU使用率やディスクI/O、Lambda関数の実行回数やエラー率などのメトリクスを収集・追跡し、異常を検知した際にはアラームを設定して通知することができます。これにより、システム障害の早期発見やパフォーマンスチューニング、リソース使用状況の把握などが可能となり、例えばウェブサイトへのトラフィック急増時に自動的にEC2インスタンスをスケールアウトさせるような運用を実現できます。また、アプリケーションのログを収集・分析してデバッグやトラブルシューティングに活用することもできます。
 
 🔗 https://aws.amazon.com/jp/cloudwatch/?did=ft_card2&trk=ft_cloudwatch
 
+
+---
 
 ### Amazon Managed Service for Prometheus
 
@@ -226,12 +280,16 @@ Amazon Managed Service for Prometheusは、Prometheus互換のフルマネージ
 🔗 https://aws.amazon.com/jp/prometheus/?did=ft_card2&trk=ft_msfp
 
 
+---
+
 ### AWS CloudFormation
 
 AWS CloudFormationは、JSONまたはYAML形式のテンプレートを用いて、AWSリソースのプロビジョニングと管理を自動化するサービスです。これにより、サーバー、データベース、ネットワークなどのインフラストラクチャをコードとして定義し、一貫性のある環境を迅速に展開・更新することが可能になります。例えば、本番環境、ステージング環境、開発環境など、複数の環境で同じ構成のAWSリソースを容易に作成・管理したい場合に役立ちます。また、インフラストラクチャの変更履歴を追跡し、必要に応じてロールバックできるため、運用の効率化と安定化に貢献します。
 
 🔗 https://aws.amazon.com/jp/cloudformation/?did=ft_card2&trk=ft_cloudformation
 
+
+---
 
 ### AWS CloudTrail
 
@@ -240,12 +298,16 @@ AWS CloudTrailは、AWSアカウント内のユーザーアクティビティと
 🔗 https://aws.amazon.com/jp/cloudtrail/?did=ft_card2&trk=ft_cloudtrail
 
 
+---
+
 ### AWS Control Tower
 
 AWS Control Towerは、セキュアで管理されたマルチアカウントAWS環境を迅速に構築・運用できるサービスです。組織全体でAWSリソースのガバナンスを確立し、セキュリティとコンプライアンス要件を満たすための基盤を提供します。例えば、新規プロジェクトごとにアカウントを分離し、中央集権的な管理と監査を可能にすることで、セキュリティインシデントのリスクを低減し、コスト管理を容易にするといったユースケースで活用されます。これにより、企業はAWSの利用を拡大する際に、セキュリティやガバナンスに関する複雑な設定に時間を費やすことなく、ビジネス価値の創出に集中できます。
 
 🔗 https://aws.amazon.com/jp/controltower/?did=ft_card2&trk=ft_controltower
 
+
+---
 
 ### AWS License Manager
 
@@ -254,12 +316,16 @@ AWS License Managerは、AWS環境やオンプレミス環境で利用するサ�
 🔗 https://aws.amazon.com/jp/license-manager/?did=ft_card2&trk=ft_license-manager
 
 
+---
+
 ### AWS re:Post
 
 AWS re:Postは、AWSの利用者が技術的な課題を解決するためのコミュニティ主導の質疑応答プラットフォームです。ここでは、AWSの専門家や経験豊富なユーザーに質問を投げかけ、回答を得ることができます。例えば、特定のサービスの設定方法が分からない場合や、エラーメッセージの原因を特定したい場合などに活用できます。また、過去の質問と回答を検索することで、同様の悩みを抱える他のユーザーがどのように解決したかを知ることもでき、学習やトラブルシューティングに役立ちます。
 
 🔗 https://www.repost.aws/jp/?did=ft_card2&trk=ft_repost
 
+
+---
 
 ### AWS Resource Explorer
 
@@ -268,12 +334,16 @@ AWS Resource Explorer は、AWS リージョン全体に散らばるリソース
 🔗 https://aws.amazon.com/jp/resourceexplorer/?did=ft_card2&trk=ft_resourceexplorer
 
 
+---
+
 ### AWS Service Catalog
 
 AWS Service Catalogは、組織内で承認済みのITサービス（Amazon EC2インスタンス、S3バケット、RDSデータベースなど）のカタログを作成・管理できるサービスです。これにより、ユーザーはIT部門が事前に定義し、承認したサービスのみを簡単にデプロイできるようになります。例えば、開発チームは必要に応じて標準化された開発環境を迅速にプロビジョニングでき、セキュリティチームはコンプライアンス要件を満たす構成のみが展開されることを保証できます。結果として、ITガバナンスを強化し、デプロイメントの迅速化と標準化を実現します。
 
 🔗 https://aws.amazon.com/jp/servicecatalog/?did=ft_card2&trk=ft_servicecatalog
 
+
+---
 
 ### AWS Systems Manager
 
@@ -284,6 +354,8 @@ AWS Systems Managerは、AWSインフラストラクチャ全体の運用を効�
 
 ## 🚚 移行
 
+---
+
 ### AWS Application Discovery Service
 
 AWS Application Discovery Serviceは、オンプレミスのIT資産を棚卸し、アプリケーションの依存関係を可視化することで、AWSへの合理的な移行計画策定を支援するサービスです。例えば、多数のサーバーで構成される基幹システムをAWSへ移行する際に、どのサーバーがどのアプリケーションに紐づき、どのようなネットワーク通信が発生しているかを把握することで、移行漏れや移行後の予期せぬ障害を防ぎ、ダウンタイムを最小限に抑えることが可能になります。これにより、移行リスクを低減し、効率的かつ確実なクラウド移行を実現できます。
@@ -291,12 +363,16 @@ AWS Application Discovery Serviceは、オンプレミスのIT資産を棚卸し
 🔗 https://aws.amazon.com/jp/application-discovery/?did=ft_card2&trk=ft_appdiscovery
 
 
+---
+
 ### AWS Migration Hub
 
 AWS Migration Hubは、オンプレミスからAWSへの、あるいはAWS内の異なる環境へのサーバー移行を、一元的に追跡・管理できるサービスです。これにより、組織は複数の移行プロジェクトの進捗状況を可視化し、移行計画の立案、実行、完了までの全体像を把握できます。例えば、データセンターの刷新やアプリケーションのモダナイゼーションに伴う大規模な移行において、各サーバーの移行ステータスや依存関係を横断的に確認することで、移行作業の遅延やリスクを早期に発見し、迅速な意思決定を支援します。Migration Hubは、TerraformなどのIaCツールとも連携し、効率的で確実なクラウド移行を実現するための強力な統合ハブとなります。
 
 🔗 https://aws.amazon.com/jp/migration-hub/?did=ft_card2&trk=ft_migrathub
 
+
+---
 
 ### Migration Evaluator
 
@@ -306,7 +382,7 @@ Migration Evaluator は、オンプレミス環境の資産を AWS で稼働さ�
 
 
 
----
+
 
 ## あとがき
 
@@ -316,7 +392,6 @@ AWS の常時無料サービス(Always Free Services) は、個人開発や学�
 **※利用前には必ず[公式のAWS無料利用枠ページ](https://aws.amazon.com/jp/free/?nc2=h_pr_ft&refid=ft_dsql&ams%23interactive-card-vertical%23pattern-data--681284034.filters=((id:GLOBAL%23local-tags-free-tier-products-plan-type.and,value:(always-free))))の最新情報を確認してください。**
 
 
----
 
 ## 関連リンク：他クラウドの常時無料枠まとめ
 
