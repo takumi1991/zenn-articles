@@ -1,0 +1,72 @@
+name: Update AWS Always Free Article (EN)
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 1 * *"
+
+env:
+  APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+  APIFY_ACTOR_ID_AWS_EN: ${{ secrets.APIFY_ACTOR_ID_AWS_EN }}
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+jobs:
+  update-en:
+    runs-on: ubuntu-latest
+
+    steps:
+      # -----------------------------
+      # Checkout
+      # -----------------------------
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      # -----------------------------
+      # Apify Actor（EN専用）
+      # -----------------------------
+      - name: Run Apify Actor (EN)
+        run: |
+          echo "▶ Running Apify Actor (EN)"
+
+          curl -s -X POST \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $APIFY_TOKEN" \
+            "https://api.apify.com/v2/acts/$APIFY_ACTOR_ID_AWS_EN/run-sync-get-dataset-items?token=$APIFY_TOKEN&format=json" \
+            -o data.json
+
+          echo "Saved data.json:"
+          head -n 20 data.json
+
+      # -----------------------------
+      # Node.js
+      # -----------------------------
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install deps
+        run: npm install
+
+      # -----------------------------
+      # Markdown生成（EN）
+      # -----------------------------
+      - name: Generate EN article
+        run: node scripts/update-aws-en.js
+
+      # -----------------------------
+      # Commit & Push
+      # -----------------------------
+      - name: Commit & Push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add articles/aws-always-free-en.md
+          git add scripts/cache/aws_cache_en.json
+
+          git commit -m "Update AWS Always Free article (EN)" || echo "No changes"
+          git push
