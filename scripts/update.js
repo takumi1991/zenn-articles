@@ -103,6 +103,14 @@ function getCategoryIcon(name) {
   return MAP[name] || "📦";
 }
 
+//AWSサービスアイコンパス取得
+function getIconPath(name) {
+  const key = ICON_MAP[name];
+  return key
+    ? `https://raw.githubusercontent.com/あなたのrepo/main/images/services/${key}.png`
+    : null;
+}
+
 /* ======================================
    ▼ メイン処理
    ====================================== */
@@ -210,7 +218,13 @@ const CATEGORY_ORDER = [
       
         list.forEach((item, index) => {
       
-          md += `### ${item.title_ja}\n\n`;
+          const icon = getIconPath(item.title_ja);
+
+            if (icon) {
+              md += `### ![](${icon}) ${item.title_ja}\n\n`;
+            } else {
+              md += `### ${item.title_ja}\n\n`;
+            }
       
           const generated = cache[item.title_ja]?.text;
           md += `${generated || item.description_ja || ""}\n\n`;
