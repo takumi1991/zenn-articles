@@ -39,8 +39,10 @@ function isExpired(entry) {
 /* ======================================
    ▼ Gemini（英語版）
    ====================================== */
-async function generateDescription(title, description) {
-  const prompt = `
+async function generateDescription(title, description, retries = 5) {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const prompt = `
 Write a concise explanation (~150 words) of the following AWS service in English.
 
 # Service
@@ -49,15 +51,27 @@ ${title}
 # Description
 ${description}
 
-# Requirements
 - First sentence: what it does
 - Include use cases
 - No bullet points
-- Avoid redundancy
 `;
 
-  const result = await model.generateContent(prompt);
-  return (await result.response).text().trim();
+      const result = await model.generateContent(prompt);
+      return (await result.response).text().trim();
+
+    } catch (e) {
+      console.warn(`⚠️ Retry ${i + 1} failed:`, e.status);
+
+      // 503 or rate limitだけリトライ
+      if (i === retries - 1) break;
+
+      await new Promise(r => setTimeout(r, 2000 * (i + 1)));
+    }
+  }
+
+  // 🔥 フォールバック（これが重要）
+  console.warn(`❌ fallback used: ${title}`);
+  return description; // 元の説明使う
 }
 
 /* ======================================
