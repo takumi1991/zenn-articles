@@ -25,7 +25,7 @@ AWS Lambdaは、サーバーのプロビジョニングや管理なしにコー�
 
 🔗 https://aws.amazon.com/jp/lambda/?did=ft_card2&trk=ft_lambda
 
-<br><br><br>
+<br><br>
 ## 🗄️ ストレージ
 
 ### Amazon SimpleDB
@@ -34,7 +34,7 @@ Amazon SimpleDB は、Webアプリケーションなどのデータ保存を容�
 
 🔗 https://aws.amazon.com/jp/simpledb/?did=ft_card2&trk=ft_simpledb
 
-<br><br><br>
+<br><br>
 ## 🧱 データベース
 
 ### Amazon Aurora DSQL
@@ -43,7 +43,7 @@ Amazon Aurora DSQL は、高可用性とスケーラビリティが求められ�
 
 🔗 https://aws.amazon.com/jp/rds/aurora/dsql/?did=ft_card2&trk=ft_dsql
 
-<br>
+---
 
 ### Amazon DynamoDB
 
@@ -51,8 +51,8 @@ Amazon DynamoDBは、AWSが提供する、フルマネージドでスケーラ�
 
 🔗 https://aws.amazon.com/jp/dynamodb/?did=ft_card2&trk=ft_dynamodb
 
-<br><br><br>
-## 🔗 アプリケーション統合
+<br><br>
+## 🧩 アプリケーション統合
 
 ### Amazon EventBridge
 
@@ -60,7 +60,7 @@ Amazon EventBridgeは、AWSサービス、自社システム、SaaSアプリケ�
 
 🔗 https://aws.amazon.com/jp/eventbridge/?did=ft_card2&trk=ft_eventbridge
 
-<br>
+---
 
 ### Amazon SNS
 
@@ -68,7 +68,7 @@ Amazon SNSは、アプリケーションからエンドポイントへのメッ�
 
 🔗 https://aws.amazon.com/jp/sns/?did=ft_card2&trk=ft_sns
 
-<br>
+---
 
 ### Amazon SQS
 
@@ -76,7 +76,7 @@ Amazon SQSは、アプリケーションコンポーネント間でやり取り�
 
 🔗 https://aws.amazon.com/jp/sqs/?did=ft_card2&trk=ft_sqs
 
-<br>
+---
 
 ### Amazon SWF
 
@@ -84,7 +84,7 @@ Amazon Simple Workflow Service (SWF) は、クラウドアプリケーション�
 
 🔗 https://aws.amazon.com/jp/swf/?did=ft_card2&trk=ft_swf
 
-<br>
+---
 
 ### AWS Step Functions
 
@@ -92,7 +92,7 @@ AWS Step Functionsは、分散アプリケーションのコンポーネント�
 
 🔗 https://aws.amazon.com/jp/step-functions/?did=ft_card2&trk=ft_stepfunctions
 
-<br><br><br>
+<br><br>
 ## 🌐 ネットワーク
 
 ### Amazon CloudFront
@@ -101,7 +101,7 @@ Amazon CloudFrontは、世界中のエッジロケーションにコンテンツ
 
 🔗 https://aws.amazon.com/jp/cloudfront/?did=ft_card2&trk=ft_cloudfront
 
-<br>
+---
 
 ### Amazon Route 53
 
@@ -109,7 +109,7 @@ Amazon Route 53 は、インターネット上のドメイン名とIPアドレ�
 
 🔗 https://aws.amazon.com/jp/route53/?did=ft_card2&trk=ft_route53
 
-<br><br><br>
+<br><br>
 ## 🔐 セキュリティ
 
 ### Amazon Cognito
@@ -118,7 +118,7 @@ Amazon Cognitoは、Webアプリケーションやモバイルアプリケーシ
 
 🔗 https://aws.amazon.com/jp/cognito/?did=ft_card2&trk=ft_cognito
 
-<br>
+---
 
 ### AWS Certificate Manager
 
@@ -126,7 +126,7 @@ AWS Certificate Manager (ACM) は、AWS、ハイブリッド、マルチクラ�
 
 🔗 https://aws.amazon.com/jp/certificate-manager/?did=ft_card2&trk=ft_certmanager
 
-<br>
+---
 
 ### AWS Key Management Service
 
@@ -134,7 +134,7 @@ AWS Key Management Service (KMS) は、AWSサービスやアプリケーショ�
 
 🔗 https://aws.amazon.com/jp/kms/?did=ft_card2&trk=ft_kms
 
-<br>
+---
 
 ### AWS Resource Access Manager
 
@@ -142,7 +142,7 @@ AWS Resource Access Manager (RAM) は、AWS アカウント間や組織内で S3
 
 🔗 https://aws.amazon.com/jp/ram/?did=ft_card2&trk=ft_resourceaccess
 
-<br>
+---
 
 ### AWS Shield
 
@@ -150,7 +150,7 @@ AWS Shieldは、DDoS攻撃からお客様のAWS上のアプリケーションを
 
 🔗 https://aws.amazon.com/jp/shield/?did=ft_card2&trk=ft_shield
 
-<br>
+---
 
 ### AWS WAF Bot Control
 
@@ -158,7 +158,7 @@ AWS WAF Bot Controlは、不正なウェブボットの活動を検知・ブロ�
 
 🔗 https://aws.amazon.com/jp/waf/features/bot-control/?did=ft_card2&trk=ft_WAFbc
 
-<br><br><br>
+<br><br>
 ## 📊 データ分析
 
 ### Amazon DataZone
@@ -167,7 +167,7 @@ Amazon DataZoneは、組織内外のデータサイエンティストやアナ�
 
 🔗 https://aws.amazon.com/jp/datazone/?did=ft_card2&trk=ft_datazone
 
-<br>
+---
 
 ### Amazon OpenSearch Service
 
@@ -175,7 +175,7 @@ Amazon OpenSearch Service は、ログ分析、アプリケーションモニタ
 
 🔗 https://aws.amazon.com/jp/opensearch-service/?did=ft_card2&trk=ft_opensearch
 
-<br>
+---
 
 ### AWS Glue
 
@@ -183,7 +183,7 @@ AWS Glueは、ETL（Extract, Transform, Load）処理を容易にするサーバ
 
 🔗 https://aws.amazon.com/jp/glue/?did=ft_card2&trk=ft_glue
 
-<br><br><br>
+<br><br>
 ## 🤖 AI
 
 ### Amazon Q Developer
@@ -192,7 +192,7 @@ Amazon Q Developerは、ソフトウェア開発のあらゆる段階で開発�
 
 🔗 https://aws.amazon.com/jp/q/developer/?did=ft_card2&trk=ft_q
 
-<br>
+---
 
 ### AWS HealthLake
 
@@ -200,7 +200,7 @@ AWS HealthLakeは、ヘルスケアおよびライフサイエンス分野の組
 
 🔗 https://aws.amazon.com/jp/healthlake?did=ft_card2&trk=ft_healthlake
 
-<br><br><br>
+<br><br>
 ## 🛠️ 開発者ツール
 
 ### Amazon CodeCatalyst
@@ -209,7 +209,7 @@ Amazon CodeCatalystは、AWS上でアプリケーションを大規模かつ迅�
 
 🔗 https://aws.amazon.com/jp/codecatalyst/?did=ft_card2&trk=ft_codecatalyst
 
-<br>
+---
 
 ### AWS CodeArtifact
 
@@ -217,7 +217,7 @@ AWS CodeArtifactは、ソフトウェア開発における依存関係管理を�
 
 🔗 https://aws.amazon.com/jp/codeartifact/?did=ft_card2&trk=ft_codeartifact
 
-<br>
+---
 
 ### AWS CodePipeline
 
@@ -225,8 +225,8 @@ AWS CodePipelineは、ソフトウェアのビルド、テスト、デプロイ�
 
 🔗 https://aws.amazon.com/jp/codepipeline/?did=ft_card2&trk=ft_codepipeline
 
-<br><br><br>
-## 📋 管理とガバナンス
+<br><br>
+## 🏛️ 管理とガバナンス
 
 ### Amazon CloudWatch
 
@@ -234,7 +234,7 @@ Amazon CloudWatchは、AWSのクラウドリソースとアプリケーション
 
 🔗 https://aws.amazon.com/jp/cloudwatch/?did=ft_card2&trk=ft_cloudwatch
 
-<br>
+---
 
 ### Amazon Managed Service for Prometheus
 
@@ -242,7 +242,7 @@ Amazon Managed Service for Prometheusは、Prometheus互換のフルマネージ
 
 🔗 https://aws.amazon.com/jp/prometheus/?did=ft_card2&trk=ft_msfp
 
-<br>
+---
 
 ### AWS CloudFormation
 
@@ -250,7 +250,7 @@ AWS CloudFormationは、JSONまたはYAML形式のテンプレートを用いて
 
 🔗 https://aws.amazon.com/jp/cloudformation/?did=ft_card2&trk=ft_cloudformation
 
-<br>
+---
 
 ### AWS CloudTrail
 
@@ -258,7 +258,7 @@ AWS CloudTrailは、AWSアカウント内のユーザーアクティビティと
 
 🔗 https://aws.amazon.com/jp/cloudtrail/?did=ft_card2&trk=ft_cloudtrail
 
-<br>
+---
 
 ### AWS Control Tower
 
@@ -266,7 +266,7 @@ AWS Control Towerは、セキュアで管理されたマルチアカウントAWS
 
 🔗 https://aws.amazon.com/jp/controltower/?did=ft_card2&trk=ft_controltower
 
-<br>
+---
 
 ### AWS License Manager
 
@@ -274,7 +274,7 @@ AWS License Managerは、AWS環境やオンプレミス環境で利用するサ�
 
 🔗 https://aws.amazon.com/jp/license-manager/?did=ft_card2&trk=ft_license-manager
 
-<br>
+---
 
 ### AWS re:Post
 
@@ -282,7 +282,7 @@ AWS re:Postは、AWSの利用者が技術的な課題を解決するためのコ
 
 🔗 https://www.repost.aws/jp/?did=ft_card2&trk=ft_repost
 
-<br>
+---
 
 ### AWS Resource Explorer
 
@@ -290,7 +290,7 @@ AWS Resource Explorer は、AWS リージョン全体に散らばるリソース
 
 🔗 https://aws.amazon.com/jp/resourceexplorer/?did=ft_card2&trk=ft_resourceexplorer
 
-<br>
+---
 
 ### AWS Service Catalog
 
@@ -298,7 +298,7 @@ AWS Service Catalogは、組織内で承認済みのITサービス（Amazon EC2�
 
 🔗 https://aws.amazon.com/jp/servicecatalog/?did=ft_card2&trk=ft_servicecatalog
 
-<br>
+---
 
 ### AWS Systems Manager
 
@@ -306,7 +306,7 @@ AWS Systems Managerは、AWSインフラストラクチャ全体の運用を効�
 
 🔗 https://aws.amazon.com/jp/systems-manager/?did=ft_card2&trk=ft_systemsmanager
 
-<br><br><br>
+<br><br>
 ## 🚚 移行
 
 ### AWS Application Discovery Service
@@ -315,7 +315,7 @@ AWS Application Discovery Serviceは、オンプレミスのIT資産を棚卸し
 
 🔗 https://aws.amazon.com/jp/application-discovery/?did=ft_card2&trk=ft_appdiscovery
 
-<br>
+---
 
 ### AWS Migration Hub
 
@@ -323,7 +323,7 @@ AWS Migration Hubは、オンプレミスからAWSへの、あるいはAWS内の
 
 🔗 https://aws.amazon.com/jp/migration-hub/?did=ft_card2&trk=ft_migrathub
 
-<br>
+---
 
 ### Migration Evaluator
 
@@ -331,7 +331,7 @@ Migration Evaluator は、オンプレミス環境の資産を AWS で稼働さ�
 
 🔗 https://aws.amazon.com/jp/migration-evaluator/?did=ft_card2&trk=ft_migeval
 
-<br><br><br>
+<br><br>
 
 
 
