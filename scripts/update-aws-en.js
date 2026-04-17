@@ -74,6 +74,24 @@ ${description}
   return description; // 元の説明使う
 }
 
+function getCategoryIcon(name) {
+  const MAP = {
+    "Compute": "💻",
+    "Storage": "🗄️",
+    "Database": "🧱",
+    "Networking": "🌐",
+    "Security": "🔐",
+    "Analytics": "📊",
+    "AI": "🧠",
+    "Developer Tools": "🛠️",
+    "Management & Governance": "🏛️",
+    "Application Integration": "🧩",
+    "Migration": "✈️"
+  };
+
+  return MAP[name] || "📦";
+}
+
 /* ======================================
    ▼ アイコン
    ====================================== */
@@ -160,7 +178,7 @@ This article lists AWS services that are included in the Always Free tier.
       const list = grouped[category];
       if (!list) continue;
 
-      md += `## ${category}\n\n`;
+      md += `## ${getCategoryIcon(category)} ${category}\n\n`;
 
       list.forEach((item, index) => {
 
