@@ -223,7 +223,7 @@ const CATEGORY_ORDER = [
             md += `---\n\n`;
           } else {
             // 👇 最後だけn行余白
-            md += `\n\n\n`;
+            md += `  \n\n\n\n\n`;
     }
         });
       }
