@@ -86,12 +86,7 @@ This article lists only the services that are available under the Always Free ti
   // footer（EN）
   // =========================
   const footer = `
----
 
-## Notes
-
-Always Free services have usage limits.  
-Charges may apply if you exceed these limits, so always check the official documentation.
 
 ## Related Articles
 
