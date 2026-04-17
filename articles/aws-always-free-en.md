@@ -10,6 +10,15 @@ published: true
 
 This article lists AWS services that are included in the Always Free tier.
 
+## 💻 Compute
+
+### AWS Lambda
+
+AWS Lambda is a serverless compute service that lets you run code without provisioning or managing servers. You simply upload your code, and Lambda automatically handles the underlying infrastructure, scaling it up or down to match incoming requests. This means you only pay for the compute time you actually consume, making it highly cost-effective. Lambda is ideal for a wide range of applications, including building event-driven architectures, processing data streams, creating backend APIs for web and mobile apps, and automating IT tasks. Its ability to trigger code in response to various AWS events, like changes in an S3 bucket or an API Gateway request, makes it incredibly flexible for modern cloud development.
+
+🔗 https://aws.amazon.com/lambda/?did=ft_card2&trk=ft_lambda
+
+<br><br>
 ## 🗄️ Storage
 
 ### Amazon SimpleDB
@@ -75,14 +84,6 @@ Amazon Simple Queue Service (SQS) is a fully managed message queuing service tha
 Amazon Simple Workflow Service (SWF) is a cloud-based orchestration service that helps developers coordinate distributed components in applications. SWF tracks the execution of tasks and manages their state, ensuring that complex workflows proceed reliably. It's ideal for building applications that require multiple steps, such as order processing systems, financial transactions, or batch data processing, where ensuring each step completes successfully and in the correct order is crucial. By abstracting away the complexities of managing task flow, retries, and error handling, SWF allows developers to focus on the core business logic of their applications.
 
 🔗 https://aws.amazon.com/swf/?did=ft_card2&trk=ft_swf
-
----
-
-### AWS Lambda
-
-AWS Lambda is a serverless compute service that lets you run code without provisioning or managing servers. You simply upload your code, and Lambda automatically handles the underlying infrastructure, scaling it up or down to match incoming requests. This means you only pay for the compute time you actually consume, making it highly cost-effective. Lambda is ideal for a wide range of applications, including building event-driven architectures, processing data streams, creating backend APIs for web and mobile apps, and automating IT tasks. Its ability to trigger code in response to various AWS events, like changes in an S3 bucket or an API Gateway request, makes it incredibly flexible for modern cloud development.
-
-🔗 https://aws.amazon.com/lambda/?did=ft_card2&trk=ft_lambda
 
 ---
 
