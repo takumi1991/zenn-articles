@@ -16,16 +16,15 @@ const TTL_DAYS = 30;
 const TTL_MS = TTL_DAYS * 24 * 60 * 60 * 1000;
 
 /* ======================================
-   ▼ キャッシュ処理（安全版）
+   ▼ キャッシュ処理
    ====================================== */
 function loadCache() {
   if (!fs.existsSync(CACHE_PATH)) return {};
-
   try {
     const text = fs.readFileSync(CACHE_PATH, 'utf8');
     if (!text.trim()) return {};
     return JSON.parse(text);
-  } catch (e) {
+  } catch {
     console.warn('⚠️ cache broken, reset');
     return {};
   }
@@ -61,12 +60,12 @@ ${description}
 `;
 
   const result = await model.generateContent(prompt);
-  const response = await result.response;
-
-  return response.text().trim();
+  return (await result.response).text().trim();
 }
 
-// カテゴリマップ
+/* ======================================
+   ▼ カテゴリ
+   ====================================== */
 function toJapaneseCategory(name) {
   const MAP = {
     "Compute": "コンピューティング",
@@ -81,7 +80,6 @@ function toJapaneseCategory(name) {
     "Application Integration": "アプリケーション統合",
     "Migration": "移行"
   };
-
   return MAP[name] || name;
 }
 
@@ -99,42 +97,55 @@ function getCategoryIcon(name) {
     "Application Integration": "🧩",
     "Migration": "✈️"
   };
-
   return MAP[name] || "📦";
 }
 
-//AWSサービスアイコンパス取得
+/* ======================================
+   ▼ アイコン取得（修正版）
+   ====================================== */
 function getIconPath(name) {
-  const key = ICON_MAP[name];
-  return key
-    ? `https://github.com/takumi1991/zenn-articles/main/images/services/${key}.png`
-    : null;
+  let key = ICON_MAP[name];
+
+  console.log("🔍 ICON_LOOKUP:", name, "→", key);
+
+  // fallback（Aurora DSQL対策含む）
+  if (!key) {
+    key = name
+      .replace(/^Amazon |^AWS /, "")
+      .toLowerCase()
+      .replace(/\s+/g, "-");
+
+    console.log("⚠️ fallback:", name, "→", key);
+  }
+
+  const url = `https://raw.githubusercontent.com/takumi1991/zenn-articles/main/images/services/${key}.png`;
+
+  console.log("🖼️ ICON_URL:", url);
+
+  return url;
 }
 
 /* ======================================
-   ▼ メイン処理
+   ▼ メイン
    ====================================== */
 async function main() {
   try {
-    const raw = fs.readFileSync('data.json', 'utf8');
-    const items = JSON.parse(raw);
-
+    const items = JSON.parse(fs.readFileSync('data.json', 'utf8'));
     const cache = loadCache();
 
     console.log(`📦 Loaded items: ${items.length}`);
 
-    /* ===== Gemini生成（バッチ処理） ===== */
+    /* ===== Gemini生成 ===== */
     for (let i = 0; i < items.length; i += BATCH_SIZE) {
       const batch = items.slice(i, i + BATCH_SIZE);
 
-      console.log(`🚀 Batch ${i} - ${i + batch.length}`);
+      console.log(`🚀 Batch ${i}`);
 
       await Promise.all(
         batch.map(async (item) => {
           const key = item.title_ja;
           const entry = cache[key];
 
-          // TTLチェック
           if (entry && !isExpired(entry)) {
             console.log(`⚡ cache hit: ${key}`);
             return;
@@ -147,15 +158,9 @@ async function main() {
             item.description_ja
           );
 
-          cache[key] = {
-            text,
-            updatedAt: Date.now(),
-          };
-
-          // 保存（途中落ち対策）
+          cache[key] = { text, updatedAt: Date.now() };
           saveCache(cache);
 
-          // 軽いレート制御
           await new Promise(r => setTimeout(r, 1000));
         })
       );
@@ -172,102 +177,43 @@ published: true
 
 # AWS 常時無料サービス 一覧 (Always Free Services)
 
-Amazon Web Services の常時無料枠(Always Free Services) はアカウント作成後の12ヵ月間だけ利用できる無料利用枠(Free Tier)とは異なり、12ヶ月を超えても **特定の使用量まではずっと無料で使えるサービス群** です。
-
-完全に無制限で無料というわけではなく、各サービスの無料枠（リクエスト数、GB、クォータなど）を超えた部分は通常の従量課金が発生します。
-
-本記事では AWS が公開している Always Free 対象サービスを一覧でまとめています。  
-クラウドサービスの学習、個人開発、コスト最適化の参考にぜひご活用ください。
-※なお、リージョンごとに常時無料対象のサービスが異なることがあります。本記事は日本リージョンを対象としています。
-
-
 `;
 
-// ===== カテゴリごとにグループ化 =====
-const grouped = {};
+    const grouped = {};
+    items.forEach(i => {
+      grouped[i.category] ??= [];
+      grouped[i.category].push(i);
+    });
 
-for (const item of items) {
-  if (!grouped[item.category]) {
-    grouped[item.category] = [];
-  }
-  grouped[item.category].push(item);
-}
+    const CATEGORY_ORDER = [
+      "Compute","Storage","Database","Application Integration",
+      "Networking","Security","Analytics","AI",
+      "Developer Tools","Management & Governance","Migration"
+    ];
 
-// ===== カテゴリ順 =====
-const CATEGORY_ORDER = [
-  "Compute",
-  "Storage",
-  "Database",
-  "Application Integration",
-  "Networking",
-  "Security",
-  "Analytics",
-  "AI",
-  "Developer Tools",
-  "Management & Governance",
-  "Migration"
-];
+    for (const category of CATEGORY_ORDER) {
+      const list = grouped[category];
+      if (!list) continue;
 
-      // ===== カテゴリ単位で出力 =====
-      for (const category of CATEGORY_ORDER) {
-        const list = grouped[category];
-        if (!list) continue;
-      
-        // カテゴリ見出し
-        md += `## ${getCategoryIcon(category)} ${toJapaneseCategory(category)}\n\n`;
-      
-        list.forEach((item, index) => {
-      
-          const icon = getIconPath(item.title_ja);
+      md += `## ${getCategoryIcon(category)} ${toJapaneseCategory(category)}\n\n`;
 
-            if (icon) {
-              md += `### ![](${icon}) ${item.title_ja}\n\n`;
-            } else {
-              md += `### ${item.title_ja}\n\n`;
-            }
-      
-          const generated = cache[item.title_ja]?.text;
-          md += `${generated || item.description_ja || ""}\n\n`;
-      
-          if (item.link) {
-            md += `🔗 ${item.link}\n\n`;
-          }
-      
-          // 👇 最後以外だけ区切り線
-          if (index !== list.length - 1) {
-            md += `---\n\n`;
-          } else {
-            // 👇 最後だけn行余白
-            md += `<br><br>\n`;
+      list.forEach((item, index) => {
+        const icon = getIconPath(item.title_ja);
+
+        md += `### ![](${icon}) ${item.title_ja}\n\n`;
+
+        const generated = cache[item.title_ja]?.text;
+        md += `${generated || item.description_ja || ""}\n\n`;
+
+        if (item.link) {
+          md += `🔗 ${item.link}\n\n`;
+        }
+
+        md += index !== list.length - 1 ? `---\n\n` : `<br><br>\n`;
+      });
     }
-        });
-      }
-
-     const awsFreeTierUrl = "https://aws.amazon.com/jp/free/?nc2=h_pr_ft&refid=ft_dsql&ams%23interactive-card-vertical%23pattern-data--681284034.filters=((id:GLOBAL%23local-tags-free-tier-products-plan-type.and,value:(always-free)))";
-
-    md += `
-
-
-## あとがき
-
-AWS の常時無料サービス(Always Free Services) は、個人開発や学習に役立つと思います。  
-ただ、無料枠には毎月の上限があり、超過した場合は課金が発生しますのでご注意を。
-
-**※利用前には必ず[公式のAWS無料利用枠ページ](${awsFreeTierUrl})の最新情報を確認してください。**
-
-
-
-## 関連リンク：他クラウドの常時無料枠まとめ
-
-Google Cloud の上限付きの永久無料枠
-👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
-
-Azure の上限付きの常時無料枠 (Always Free Services)
-👉 https://zenn.dev/good_sleeper/articles/azure-always-free
-`;
 
     fs.writeFileSync('articles/aws-always-free.md', md);
-
     console.log('📄 Markdown updated!');
 
   } catch (err) {
