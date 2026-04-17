@@ -199,6 +199,23 @@ This article provides a complete list of AWS Always Free services for learning, 
       });
     }
 
+   md += `
+   
+   ---
+   
+   ## Notes
+   
+   The AWS Always Free tier is useful for learning and small-scale development, but each service has specific monthly limits. 
+   Exceeding those limits will result in standard pay-as-you-go charges. Always check the official AWS pricing page before using these services in production.
+   
+   
+   ## Related: Always Free tiers in other clouds
+   
+   Azure Always Free
+   👉 https://zenn.dev/good_sleeper/articles/azure-always-free-en
+   
+   `;
+
     fs.writeFileSync('articles/aws-always-free-en.md', md);
     console.log('📄 EN Markdown updated!');
 
