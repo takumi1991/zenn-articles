@@ -220,7 +220,7 @@ const CATEGORY_ORDER = [
       
           // 👇 最後以外だけ区切り線
           if (index !== list.length - 1) {
-            md += `<br>\n\n`;
+            md += `---\n\n`;
           } else {
             // 👇 最後だけn行余白
             md += `<br><br>\n`;
