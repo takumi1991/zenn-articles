@@ -158,7 +158,11 @@ published: true
 
 # AWS Always Free Services (Complete List)
 
-This article lists AWS services that are included in the Always Free tier.
+AWS offers a set of services under the **Always Free tier**, which allows you to use certain resources within defined limits at no cost indefinitely. Unlike the standard Free Tier that expires after 12 months, these services remain available beyond the initial period.
+
+Each service has usage limits (e.g., requests, storage, compute), and exceeding them results in pay-as-you-go charges.
+
+This article provides a complete list of AWS Always Free services for learning, prototyping, and cost-efficient development.
 
 `;
 
