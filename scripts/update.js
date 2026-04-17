@@ -208,6 +208,7 @@ const CATEGORY_ORDER = [
         md += `## ${getCategoryIcon(category)} ${toJapaneseCategory(category)}\n\n`;
       
         for (const item of list) {
+          md += `---\n\n`;
           md += `### ${item.title_ja}\n\n`;
       
           const generated = cache[item.title_ja]?.text;
@@ -222,7 +223,7 @@ const CATEGORY_ORDER = [
      const awsFreeTierUrl = "https://aws.amazon.com/jp/free/?nc2=h_pr_ft&refid=ft_dsql&ams%23interactive-card-vertical%23pattern-data--681284034.filters=((id:GLOBAL%23local-tags-free-tier-products-plan-type.and,value:(always-free)))";
 
     md += `
----
+
 
 ## あとがき
 
@@ -232,7 +233,6 @@ AWS の常時無料サービス(Always Free Services) は、個人開発や学�
 **※利用前には必ず[公式のAWS無料利用枠ページ](${awsFreeTierUrl})の最新情報を確認してください。**
 
 
----
 
 ## 関連リンク：他クラウドの常時無料枠まとめ
 
