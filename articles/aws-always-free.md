@@ -25,11 +25,7 @@ AWS Lambdaは、サーバーのプロビジョニングや管理なしにコー�
 
 🔗 https://aws.amazon.com/jp/lambda/?did=ft_card2&trk=ft_lambda
 
-  
-
-
-
-
+<br><br><br>
 ## 🗄️ ストレージ
 
 ### Amazon SimpleDB
@@ -38,11 +34,7 @@ Amazon SimpleDB は、Webアプリケーションなどのデータ保存を容�
 
 🔗 https://aws.amazon.com/jp/simpledb/?did=ft_card2&trk=ft_simpledb
 
-  
-
-
-
-
+<br><br><br>
 ## 🧱 データベース
 
 ### Amazon Aurora DSQL
@@ -59,11 +51,7 @@ Amazon DynamoDBは、AWSが提供する、フルマネージドでスケーラ�
 
 🔗 https://aws.amazon.com/jp/dynamodb/?did=ft_card2&trk=ft_dynamodb
 
-  
-
-
-
-
+<br><br><br>
 ## 🔗 アプリケーション統合
 
 ### Amazon EventBridge
@@ -104,11 +92,7 @@ AWS Step Functionsは、分散アプリケーションのコンポーネント�
 
 🔗 https://aws.amazon.com/jp/step-functions/?did=ft_card2&trk=ft_stepfunctions
 
-  
-
-
-
-
+<br><br><br>
 ## 🌐 ネットワーク
 
 ### Amazon CloudFront
@@ -125,11 +109,7 @@ Amazon Route 53 は、インターネット上のドメイン名とIPアドレ�
 
 🔗 https://aws.amazon.com/jp/route53/?did=ft_card2&trk=ft_route53
 
-  
-
-
-
-
+<br><br><br>
 ## 🔐 セキュリティ
 
 ### Amazon Cognito
@@ -178,11 +158,7 @@ AWS WAF Bot Controlは、不正なウェブボットの活動を検知・ブロ�
 
 🔗 https://aws.amazon.com/jp/waf/features/bot-control/?did=ft_card2&trk=ft_WAFbc
 
-  
-
-
-
-
+<br><br><br>
 ## 📊 データ分析
 
 ### Amazon DataZone
@@ -207,11 +183,7 @@ AWS Glueは、ETL（Extract, Transform, Load）処理を容易にするサーバ
 
 🔗 https://aws.amazon.com/jp/glue/?did=ft_card2&trk=ft_glue
 
-  
-
-
-
-
+<br><br><br>
 ## 🤖 AI
 
 ### Amazon Q Developer
@@ -228,11 +200,7 @@ AWS HealthLakeは、ヘルスケアおよびライフサイエンス分野の組
 
 🔗 https://aws.amazon.com/jp/healthlake?did=ft_card2&trk=ft_healthlake
 
-  
-
-
-
-
+<br><br><br>
 ## 🛠️ 開発者ツール
 
 ### Amazon CodeCatalyst
@@ -257,11 +225,7 @@ AWS CodePipelineは、ソフトウェアのビルド、テスト、デプロイ�
 
 🔗 https://aws.amazon.com/jp/codepipeline/?did=ft_card2&trk=ft_codepipeline
 
-  
-
-
-
-
+<br><br><br>
 ## 📋 管理とガバナンス
 
 ### Amazon CloudWatch
@@ -342,11 +306,7 @@ AWS Systems Managerは、AWSインフラストラクチャ全体の運用を効�
 
 🔗 https://aws.amazon.com/jp/systems-manager/?did=ft_card2&trk=ft_systemsmanager
 
-  
-
-
-
-
+<br><br><br>
 ## 🚚 移行
 
 ### AWS Application Discovery Service
@@ -371,11 +331,7 @@ Migration Evaluator は、オンプレミス環境の資産を AWS で稼働さ�
 
 🔗 https://aws.amazon.com/jp/migration-evaluator/?did=ft_card2&trk=ft_migeval
 
-  
-
-
-
-
+<br><br><br>
 
 
 
