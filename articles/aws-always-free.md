@@ -19,8 +19,6 @@ Amazon Web Services の常時無料枠(Always Free Services) はアカウント�
 
 ## 💻 コンピューティング
 
----
-
 ### AWS Lambda
 
 AWS Lambdaは、サーバーのプロビジョニングや管理なしにコードを実行できるサーバーレスコンピューティングサービスです。特定のイベント、例えばS3バケットへのファイルアップロードやDynamoDBテーブルへのデータ変更などをトリガーとして、Python, Node.js, Javaなどの様々な言語で記述されたコードを自動的に実行できます。これにより、Webアプリケーションのバックエンド処理、データ処理パイプラインの構築、IoTデバイスからのデータ集約など、多様なユースケースでインフラ管理の手間を省き、開発に集中することが可能になります。
@@ -28,9 +26,9 @@ AWS Lambdaは、サーバーのプロビジョニングや管理なしにコー�
 🔗 https://aws.amazon.com/jp/lambda/?did=ft_card2&trk=ft_lambda
 
 
-## 🗄️ ストレージ
-
 ---
+
+## 🗄️ ストレージ
 
 ### Amazon SimpleDB
 
@@ -39,9 +37,9 @@ Amazon SimpleDB は、Webアプリケーションなどのデータ保存を容�
 🔗 https://aws.amazon.com/jp/simpledb/?did=ft_card2&trk=ft_simpledb
 
 
-## 🧱 データベース
-
 ---
+
+## 🧱 データベース
 
 ### Amazon Aurora DSQL
 
@@ -59,9 +57,9 @@ Amazon DynamoDBは、AWSが提供する、フルマネージドでスケーラ�
 🔗 https://aws.amazon.com/jp/dynamodb/?did=ft_card2&trk=ft_dynamodb
 
 
-## 🔗 アプリケーション統合
-
 ---
+
+## 🔗 アプリケーション統合
 
 ### Amazon EventBridge
 
@@ -106,9 +104,9 @@ AWS Step Functionsは、分散アプリケーションのコンポーネント�
 🔗 https://aws.amazon.com/jp/step-functions/?did=ft_card2&trk=ft_stepfunctions
 
 
-## 🌐 ネットワーク
-
 ---
+
+## 🌐 ネットワーク
 
 ### Amazon CloudFront
 
@@ -126,9 +124,9 @@ Amazon Route 53 は、インターネット上のドメイン名とIPアドレ�
 🔗 https://aws.amazon.com/jp/route53/?did=ft_card2&trk=ft_route53
 
 
-## 🔐 セキュリティ
-
 ---
+
+## 🔐 セキュリティ
 
 ### Amazon Cognito
 
@@ -182,9 +180,9 @@ AWS WAF Bot Controlは、不正なウェブボットの活動を検知・ブロ�
 🔗 https://aws.amazon.com/jp/waf/features/bot-control/?did=ft_card2&trk=ft_WAFbc
 
 
-## 📊 データ分析
-
 ---
+
+## 📊 データ分析
 
 ### Amazon DataZone
 
@@ -211,9 +209,9 @@ AWS Glueは、ETL（Extract, Transform, Load）処理を容易にするサーバ
 🔗 https://aws.amazon.com/jp/glue/?did=ft_card2&trk=ft_glue
 
 
-## 🤖 AI
-
 ---
+
+## 🤖 AI
 
 ### Amazon Q Developer
 
@@ -231,9 +229,9 @@ AWS HealthLakeは、ヘルスケアおよびライフサイエンス分野の組
 🔗 https://aws.amazon.com/jp/healthlake?did=ft_card2&trk=ft_healthlake
 
 
-## 🛠️ 開発者ツール
-
 ---
+
+## 🛠️ 開発者ツール
 
 ### Amazon CodeCatalyst
 
@@ -260,9 +258,9 @@ AWS CodePipelineは、ソフトウェアのビルド、テスト、デプロイ�
 🔗 https://aws.amazon.com/jp/codepipeline/?did=ft_card2&trk=ft_codepipeline
 
 
-## 📋 管理とガバナンス
-
 ---
+
+## 📋 管理とガバナンス
 
 ### Amazon CloudWatch
 
@@ -352,9 +350,9 @@ AWS Systems Managerは、AWSインフラストラクチャ全体の運用を効�
 🔗 https://aws.amazon.com/jp/systems-manager/?did=ft_card2&trk=ft_systemsmanager
 
 
-## 🚚 移行
-
 ---
+
+## 🚚 移行
 
 ### AWS Application Discovery Service
 
@@ -380,6 +378,8 @@ Migration Evaluator は、オンプレミス環境の資産を AWS で稼働さ�
 
 🔗 https://aws.amazon.com/jp/migration-evaluator/?did=ft_card2&trk=ft_migeval
 
+
+---
 
 
 
