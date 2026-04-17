@@ -92,11 +92,11 @@ function getCategoryIcon(name) {
     "Networking": "🌐",
     "Security": "🔐",
     "Analytics": "📊",
-    "AI": "🤖",
+    "AI": "🧠",
     "Developer Tools": "🛠️",
     "Management & Governance": "🏛️",
     "Application Integration": "🧩",
-    "Migration": "🚚"
+    "Migration": "✈️"
   };
 
   return MAP[name] || "📦";
