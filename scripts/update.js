@@ -200,7 +200,11 @@ published: true
       list.forEach((item, index) => {
         const icon = getIconPath(item.title_ja);
 
-        md += `\n<h3><img src="${icon}" width="20" style="vertical-align:middle;margin-right:6px;">${item.title_ja}</h3>\n\n`;
+         if (icon) {
+           md += `![](${icon})\n`;
+         }
+         
+         md += `### ${item.title_ja}\n\n`;
 
         const generated = cache[item.title_ja]?.text;
         md += `${generated || item.description_ja || ""}\n\n`;
