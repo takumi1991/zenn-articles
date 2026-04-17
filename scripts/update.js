@@ -198,16 +198,14 @@ published: true
       md += `## ${getCategoryIcon(category)} ${toJapaneseCategory(category)}\n\n`;
 
       list.forEach((item, index) => {
-        const icon = getIconPath(item.title_ja);
 
+         const icon = getIconPath(item.title_ja);
+         
          if (icon) {
-           md += `<div style="margin-bottom:-8px;">\n`;
-           md += `![](${icon})\n`;
-           md += `</div>\n`;
+           md += `<img src="${icon}" width="20" style="display:block;margin:0;">\n`;
          }
          
-         md += `### ${item.title_ja}\n`;
-         md += `\n`;
+         md += `### ${item.title_ja}\n\n`;
 
         const generated = cache[item.title_ja]?.text;
         md += `${generated || item.description_ja || ""}\n\n`;
