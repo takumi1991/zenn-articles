@@ -1,6 +1,6 @@
 ---
 title: "Microsoft Azure Always Free Services"
-emoji: "🔵"
+emoji: "🟦"
 type: "tech"
 topics: ["azure", "free-tier", "cloud"]
 published: true
@@ -8,7 +8,7 @@ published: true
 
 # Microsoft Azure Always Free Services
 
-Last updated: 2026-04-15 08:25:54 UTC
+Last updated: 2026-04-17 17:24:39 UTC
 
 Azure provides a set of "Always Free" services, similar to AWS and Google Cloud.  
 These services allow you to build applications, run workloads, and experiment with cloud technologies at no cost within defined limits.
@@ -618,7 +618,7 @@ Charges may apply if you exceed these limits, so always check the official docum
 ## Related Articles
 
 AWS Always Free Services  
-👉 https://zenn.dev/good_sleeper/articles/aws-always-free  
+👉 https://zenn.dev/good_sleeper/articles/aws-always-free-en
 
 Google Cloud Always Free Services  
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free  
