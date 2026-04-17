@@ -25,6 +25,8 @@ AWS Lambdaは、サーバーのプロビジョニングや管理なしにコー�
 
 🔗 https://aws.amazon.com/jp/lambda/?did=ft_card2&trk=ft_lambda
 
+  
+
 
 
 
@@ -35,6 +37,8 @@ AWS Lambdaは、サーバーのプロビジョニングや管理なしにコー�
 Amazon SimpleDB は、Webアプリケーションなどのデータ保存を容易にする、柔軟でスケーラブルな NoSQL データベースサービスです。データベース管理の複雑さを気にすることなく、構造化されたデータを保存、取得、クエリできます。例えば、ユーザープロフィール、商品カタログ、設定情報など、多様なユースケースで活用できます。SimpleDB は、面倒なインフラストラクチャの管理やパッチ適用、バックアップといった作業から解放されるため、開発者はアプリケーション開発そのものに集中できます。
 
 🔗 https://aws.amazon.com/jp/simpledb/?did=ft_card2&trk=ft_simpledb
+
+  
 
 
 
@@ -54,6 +58,8 @@ Amazon Aurora DSQL は、高可用性とスケーラビリティが求められ�
 Amazon DynamoDBは、AWSが提供する、フルマネージドでスケーラブルなNoSQLデータベースサービスです。これにより、JSONドキュメントやキーバリュー形式でデータを保存・取得でき、アプリケーションのパフォーマンスや可用性を損なうことなく、トラフィックの増減に自動的に対応できます。ゲームのリーダーボード、IoTデバイスのデータ保存、リアルタイムのパーソナライゼーションなど、高スループットと低レイテンシーが求められる様々なユースケースで利用されています。サーバーの管理や運用から解放され、開発者はアプリケーション開発に集中できます。
 
 🔗 https://aws.amazon.com/jp/dynamodb/?did=ft_card2&trk=ft_dynamodb
+
+  
 
 
 
@@ -98,6 +104,8 @@ AWS Step Functionsは、分散アプリケーションのコンポーネント�
 
 🔗 https://aws.amazon.com/jp/step-functions/?did=ft_card2&trk=ft_stepfunctions
 
+  
+
 
 
 
@@ -116,6 +124,8 @@ Amazon CloudFrontは、世界中のエッジロケーションにコンテンツ
 Amazon Route 53 は、インターネット上のドメイン名とIPアドレスを紐づける、高可用性かつスケーラブルなクラウドDNSウェブサービスです。ウェブサイトやアプリケーションへのアクセスを、世界中のどこからでも正しく誘導する役割を担います。例えば、ECサイトのドメイン名を指定した際に、適切なサーバーに接続させることで、ユーザーはスムーズに商品ページにアクセスできます。また、トラフィックを複数のサーバーに分散させることで、負荷を軽減し、ウェブサイトの安定稼働を実現します。さらに、DNSレベルでのヘルスチェック機能も提供し、障害発生時には自動的にトラフィックを正常なサーバーへ切り替えることで、サービス停止時間を最小限に抑えます。
 
 🔗 https://aws.amazon.com/jp/route53/?did=ft_card2&trk=ft_route53
+
+  
 
 
 
@@ -168,6 +178,8 @@ AWS WAF Bot Controlは、不正なウェブボットの活動を検知・ブロ�
 
 🔗 https://aws.amazon.com/jp/waf/features/bot-control/?did=ft_card2&trk=ft_WAFbc
 
+  
+
 
 
 
@@ -195,6 +207,8 @@ AWS Glueは、ETL（Extract, Transform, Load）処理を容易にするサーバ
 
 🔗 https://aws.amazon.com/jp/glue/?did=ft_card2&trk=ft_glue
 
+  
+
 
 
 
@@ -213,6 +227,8 @@ Amazon Q Developerは、ソフトウェア開発のあらゆる段階で開発�
 AWS HealthLakeは、ヘルスケアおよびライフサイエンス分野の組織が、患者の健康記録などの機密性の高いヘルスデータを安全に保存、変換、取引、分析できるマネージドサービスです。このサービスを利用することで、組織はFHIR（Fast Healthcare Interoperability Resources）形式でデータを構造化し、容易にアクセス・分析できるようになるため、例えば、臨床研究の加速や、患者ケアの質向上に繋がる洞察の発見、さらにはリアルタイムでの疾患監視といったユースケースを実現できます。HealthLakeは、データの取り込みから分析までのプロセスを大幅に簡素化し、規制遵守を維持しながら、ヘルスケアのイノベーションを促進します。
 
 🔗 https://aws.amazon.com/jp/healthlake?did=ft_card2&trk=ft_healthlake
+
+  
 
 
 
@@ -240,6 +256,8 @@ AWS CodeArtifactは、ソフトウェア開発における依存関係管理を�
 AWS CodePipelineは、ソフトウェアのビルド、テスト、デプロイといったリリースプロセス全体を自動化し、継続的デリバリー（CD）を実現するサービスです。開発者はCodePipelineを設定することで、コードの変更を自動的に検知し、定義されたパイプラインに沿って一連のステージを順次実行させることができます。例えば、GitHubにコードをプッシュすると、CodePipelineがそれを検知してCodeBuildでビルドとテストを実行し、成功すればCodeDeployを使ってEC2インスタンスやLambda関数へ自動的にデプロイするといったワークフローを構築できます。これにより、手作業によるミスを減らし、より迅速かつ信頼性の高いソフトウェアリリースが可能になります。
 
 🔗 https://aws.amazon.com/jp/codepipeline/?did=ft_card2&trk=ft_codepipeline
+
+  
 
 
 
@@ -324,6 +342,8 @@ AWS Systems Managerは、AWSインフラストラクチャ全体の運用を効�
 
 🔗 https://aws.amazon.com/jp/systems-manager/?did=ft_card2&trk=ft_systemsmanager
 
+  
+
 
 
 
@@ -350,6 +370,8 @@ AWS Migration Hubは、オンプレミスからAWSへの、あるいはAWS内の
 Migration Evaluator は、オンプレミス環境の資産を AWS で稼働させた場合の予測コストを迅速に把握できるサービスです。たとえば、既存のデータセンターにあるサーバーやアプリケーションの構成情報をインポートすることで、AWS 上での利用料金を試算し、TCO（総所有コスト）削減効果を可視化します。これにより、クラウド移行の検討段階において、予算策定や意思決定の迅速化に貢献します。IT部門は、このサービスを利用して、設備投資や運用コストの削減目標を設定し、移行計画を具体化することが可能です。
 
 🔗 https://aws.amazon.com/jp/migration-evaluator/?did=ft_card2&trk=ft_migeval
+
+  
 
 
 
