@@ -20,13 +20,13 @@ const model = genAI.getGenerativeModel({
 });
 
 /* ========================= */
-// normalize（強化版）
+// normalize
 const normalize = (s) =>
   s?.toLowerCase()
     .replace(/azure|microsoft/g, "")
     .replace(/\(.*?\)/g, "")
     .replace(/[（）]/g, "")
-    .replace(/[^a-z0-9]/g, "") // ←重要：完全キー化
+    .replace(/[^a-z0-9]/g, "")
     .trim();
 
 /* ========================= */
@@ -63,7 +63,7 @@ ${title}
 # ルール
 ・本文のみ
 ・見出し禁止
-・ラベル禁止（サービス名など出さない）
+・ラベル禁止
 ・最初の1文で機能説明
 ・ユースケース含む
 ・同じ文を繰り返さない
@@ -74,23 +74,20 @@ ${title}
 }
 
 /* ========================= */
-// 🔥 clean（最強版）
+// clean
 function cleanGenerated(text, title) {
   if (!text) return text;
 
   const name = title.trim();
   let t = text.trim();
 
-  // 1. ラベル削除
   t = t
     .replace(/サービス名[:：]?/g, "")
     .replace(/説明文[:：]?/g, "")
     .replace(/拡張された説明文[:：]?/g, "");
 
-  // 2. 行分解
   let lines = t.split("\n").map(l => l.trim());
 
-  // 3. ゴミ行削除
   lines = lines.filter(l => {
     if (!l) return false;
     if (l === name) return false;
@@ -98,7 +95,6 @@ function cleanGenerated(text, title) {
     return true;
   });
 
-  // 4. 完全重複削除（重要）
   const seen = new Set();
   lines = lines.filter(l => {
     if (seen.has(l)) return false;
@@ -106,7 +102,6 @@ function cleanGenerated(text, title) {
     return true;
   });
 
-  // 5. 先頭タイトル潰し（保険）
   while (lines.length && lines[0] === name) {
     lines.shift();
   }
@@ -115,23 +110,19 @@ function cleanGenerated(text, title) {
 }
 
 /* ========================= */
-// 🔥 重複排除（完全版）
+// dedupe
 function prepare(items) {
   const map = new Map();
 
   for (const i of items) {
     const key = normalize(i.title);
-
-    // always優先
     if (!map.has(key) || i.period === "always") {
       map.set(key, i);
     }
   }
 
-  const result = Array.from(map.values())
+  return Array.from(map.values())
     .filter(i => i.period === "always");
-
-  return result;
 }
 
 /* ========================= */
@@ -156,7 +147,7 @@ function buildFooter() {
 
 ## 関連記事
 
-🌈 GCP  
+🌈 Google Cloud Platform  
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
 
 🟧 AWS  
@@ -168,9 +159,7 @@ function buildFooter() {
 async function main() {
   const raw = JSON.parse(fs.readFileSync(INPUT, "utf8"));
   const items = prepare(raw);
-
-  // ⚠️ キャッシュ削除推奨
-  let cache = loadCache();
+  const cache = loadCache();
 
   console.log("📦 items:", items.length);
 
@@ -196,7 +185,27 @@ async function main() {
     await new Promise(r => setTimeout(r, 800));
   }
 
-  let md = `# Azure常時無料サービス一覧\n\n`;
+  /* ========================= */
+  // 🔥 FrontMatter（これが今回の本質）
+  const updatedAt = new Date().toLocaleString("ja-JP", {
+    timeZone: "Asia/Tokyo",
+  });
+
+  let md = `---
+title: "Microsoft Azure 常時無料サービス一覧 (Always Free Services)"
+emoji: "🔵"
+type: "tech"
+topics: ["azure", "free-tier", "cloud"]
+published: true
+---
+
+# Azure常時無料サービス一覧
+
+最終更新日: ${updatedAt}
+
+Azureには常時無料で利用できるサービスが多数用意されています。本記事ではそれらを一覧で整理しています。
+
+`;
 
   items.forEach(i => {
     md += formatItem(i, cache) + "\n---\n\n";
