@@ -68,5 +68,6 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git add articles/azure-always-free.md
+          git add articles/azure-always-free.md scripts/cache/azure_cache_jp.json
           git commit -m "Update Azure Free Services article" || echo "No changes"
           git push
