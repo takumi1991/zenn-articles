@@ -110,7 +110,7 @@ function isExpired(entry) {
 // Gemini
 async function generateDescription(title) {
   const prompt = `
-Azureサービスの説明を日本語で280文字前後で書いてください。
+Azureサービスの説明を日本語で320文字前後で書いてください。
 
 # サービス名
 ${title}
