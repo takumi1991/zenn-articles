@@ -8,11 +8,12 @@ published: true
 
 # Azure常時無料サービス一覧
 
-最終更新日: 2026/4/18 11:25:06
+最終更新日: 2026/4/18 11:28:59
 
 AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されています。
 
 👉 English version: https://zenn.dev/good_sleeper/articles/azure-always-free-en
+
 
 ## 🧠 AI + 機械学習（5件）
 
@@ -65,6 +66,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-immersive-reader/
 
 
+
 ## 📊 分析（2件）
 
 ### Data Factory
@@ -84,6 +86,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 **毎月の上限：** ユーザー数無制限
 
 🔗 https://azure.microsoft.com/ja-jp/products/data-catalog/
+
 
 
 ## 🖥️ コンピューティング（3件）
@@ -117,6 +120,7 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 🔗 https://azure.microsoft.com/ja-jp/products/image-builder/
 
 
+
 ## 📦 コンテナー（2件）
 
 ### Azure Kubernetes Service (AKS)
@@ -138,6 +142,7 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 🔗 https://azure.microsoft.com/ja-jp/products/container-apps/
 
 
+
 ## 🗄️ データベース（2件）
 
 ### Azure Cosmos DB
@@ -157,6 +162,7 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 **毎月の上限：** 最大 10 個のデータベースを、それぞれ 100,000 vCore 秒のサーバーレス レベルと 32 GB のストレージを利用可能
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-sql/database/
+
 
 
 ## 🛠️ 開発者ツール（3件）
@@ -190,6 +196,7 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 🔗 https://azure.microsoft.com/ja-jp/products/deployment-environments/
 
 
+
 ## ⚙️ DevOps（1件）
 
 ### Azure DevOps
@@ -199,6 +206,7 @@ Git Repos、CI/CD、ビルドとリリースのオートメーションを使用
 **毎月の上限：** 5 人のユーザーと無制限のプライベート Git Repos
 
 🔗 https://azure.microsoft.com/ja-jp/products/devops/
+
 
 
 ## 🌐 ハイブリッド + マルチクラウド（2件）
@@ -222,6 +230,7 @@ Azure の管理とサービスを拡張します。
 🔗 https://azure.microsoft.com/ja-jp/products/azure-arc/
 
 
+
 ## 🔐 ID（1件）
 
 ### Microsoft Entra ID (旧称 Azure AD)
@@ -231,6 +240,7 @@ Azure の管理とサービスを拡張します。
 **毎月の上限：** すべてのクラウド アプリへのシングル サインオン (SSO) を備えた 50,000 個の保存オブジェクト
 
 🔗 https://www.microsoft.com/ja-jp/security/business/identity-access/microsoft-entra-id
+
 
 
 ## 🔗 統合（5件）
@@ -284,6 +294,7 @@ Web アプリやモバイル アプリにリアルタイムの双方向通信を
 🔗 https://azure.microsoft.com/ja-jp/products/web-pubsub/
 
 
+
 ## 📡 モノのインターネット (IoT)（2件）
 
 ### IoT Edge
@@ -303,6 +314,7 @@ Web アプリやモバイル アプリにリアルタイムの双方向通信を
 **毎月の上限：** 無料版では、1 日あたり 8,000 件のメッセージと 0.5 KB のメッセージ メーター サイズ
 
 🔗 https://azure.microsoft.com/ja-jp/products/iot-hub/
+
 
 
 ## 📋 管理とガバナンス（9件）
@@ -396,6 +408,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 🔗 https://azure.microsoft.com/ja-jp/products/resource-mover/
 
 
+
 ## ✈️ 移行（3件）
 
 ### Database Migration Service
@@ -425,6 +438,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/storage-mover#Azure-storage-mover
+
 
 
 ## 🌍 ネットワーク（4件）
@@ -466,6 +480,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 **毎月の上限：** 特定のマッピングおよび位置情報分析機能のトランザクション数は 1,000 ～ 5,000 件
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-maps/
+
 
 
 ## 🌎 Web（4件）
@@ -687,3 +702,13 @@ Azure リソースのセキュリティに対する可視性と制御を強化�
 ## 注意
 
 常時無料枠には上限があります。超過すると課金されます。
+
+---
+
+## 関連記事：他クラウドの常時無料枠まとめ
+
+🌈 Google Cloud Platform の常時無料枠  
+👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
+
+🟧 AWS の常時無料枠  
+👉 https://zenn.dev/good_sleeper/articles/aws-always-free
