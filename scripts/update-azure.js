@@ -56,7 +56,7 @@ function isExpired(entry) {
 
 /* ========================= */
 // Gemini
-async function generateDescription(title, description) {
+async function generateDescription(title) {
   const prompt = `
 Azureサービスの説明を日本語で約280文字で書いてください。
 
@@ -76,52 +76,56 @@ ${title}
 }
 
 /* ========================= */
-// タイトル除去（重要）
-function stripTitle(text, title) {
-  if (!text) return text;
-
-  let t = text.trim();
-  const name = title.trim();
-
-  // 先頭にタイトルが連続する限り削除
-  while (t.startsWith(name)) {
-    t = t.slice(name.length).trim();
-  }
-
-  return t;
-}
-
-/* ========================= */
-// clean（最終版）
+// 🔥 完全clean（最重要）
 function cleanGenerated(text, title) {
   if (!text) return text;
 
-  let t = stripTitle(text, title);
+  const name = title.trim();
+  let t = text.trim();
 
-  t = t
-    .replace(/サービス名/g, "")
-    .replace(/拡張された説明文/g, "")
-    .replace(/説明文/g, "");
+  // ① 行配列化
+  let lines = t.split("\n").map(l => l.trim());
 
-  // 行整理
-  t = t
-    .split("\n")
-    .map(l => l.trim())
-    .filter(Boolean)
-    .join("\n\n");
+  // ② タイトル・ラベル完全削除
+  lines = lines.filter(l => {
+    if (!l) return false;
+    if (l === name) return false;
+    if (/^(サービス名|説明文|拡張された説明文)$/.test(l)) return false;
+    return true;
+  });
 
-  return t;
+  // ③ 先頭にまだタイトルが残るパターン対策（再帰的）
+  while (lines.length && lines[0] === name) {
+    lines.shift();
+  }
+
+  // ④ 連続重複行削除（←これが効く）
+  const dedup = [];
+  for (const l of lines) {
+    if (dedup[dedup.length - 1] !== l) {
+      dedup.push(l);
+    }
+  }
+
+  return dedup.join("\n\n").trim();
 }
 
 /* ========================= */
-// 重複除去（最重要）
-function uniqueByTitle(items) {
-  const map = {};
+// 🔥 正しい重複排除（always優先）
+function prepare(items) {
+  const map = new Map();
+
   for (const i of items) {
     const key = normalize(i.title);
-    if (!map[key]) map[key] = i;
+
+    // alwaysを優先して上書き
+    if (!map.has(key) || i.period === "always") {
+      map.set(key, i);
+    }
   }
-  return Object.values(map);
+
+  return Array.from(map.values())
+    .filter(i => i.period === "always");
 }
 
 /* ========================= */
@@ -155,15 +159,13 @@ function buildFooter() {
 
 /* ========================= */
 async function main() {
-  const data = JSON.parse(fs.readFileSync(INPUT, "utf8"));
-  const filtered = data.filter(d => d.period === "always");
-  const unique = uniqueByTitle(filtered);
+  const raw = JSON.parse(fs.readFileSync(INPUT, "utf8"));
+  const items = prepare(raw);
   const cache = loadCache();
 
-  console.log("📦 unique:", unique.length);
+  console.log("📦 items:", items.length);
 
-  // 生成（逐次）
-  for (const item of unique) {
+  for (const item of items) {
     const key = normalize(item.title);
 
     if (cache[key] && !isExpired(cache[key])) {
@@ -174,7 +176,7 @@ async function main() {
     let text;
     try {
       console.log("🤖 gen:", item.title);
-      text = await generateDescription(item.title, item.description);
+      text = await generateDescription(item.title);
     } catch {
       text = item.description;
     }
@@ -185,10 +187,9 @@ async function main() {
     await new Promise(r => setTimeout(r, 800));
   }
 
-  // Markdown
   let md = `# Azure常時無料サービス一覧\n\n`;
 
-  unique.forEach(i => {
+  items.forEach(i => {
     md += formatItem(i, cache) + "\n---\n\n";
   });
 
