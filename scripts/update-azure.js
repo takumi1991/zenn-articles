@@ -130,7 +130,7 @@ published: true
 
 最終更新日: ${updatedAt}
 
-AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が${filtered.length}用意されています。
+AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が${filtered.length}件ほど用意されています。
 
 👉 English version: https://zenn.dev/good_sleeper/articles/azure-always-free-en
 `;
