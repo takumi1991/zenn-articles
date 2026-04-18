@@ -95,6 +95,15 @@ is a cloud-based service that automatically translates text between many differe
 🔗 https://azure.microsoft.com/en-us/products/ai-foundry/tools/translator
 
 
+### Face
+
+Azure  is a service that can detect and analyze human faces in images. It helps your applications understand what's in a picture by identifying faces and their attributes. For example, you could use it to build a system that automatically tags people in photos uploaded by users, making them easier to search and organize. The service can find faces, estimate their age and gender, and even detect emotions like happiness or surprise. It's designed to be easy to integrate into your own software.
+
+**Free tier:** 30,000 transactions of Free instance
+
+🔗 https://azure.microsoft.com/en-us/products/cognitive-services/face/
+
+
 ### Machine Learning
 
 Azure  is a cloud-based service that helps you build, train, and deploy machine learning models. Think of it as a toolkit for making computers learn from data. You can use it to analyze vast amounts of information and uncover patterns that would be impossible for humans to find. This allows you to create smart applications that can make predictions or decisions. For example, businesses can use Azure Machine Learning to predict which customers are most likely to buy a product, enabling them to target their marketing more effectively. It simplifies the complex process of creating intelligent software, making advanced AI capabilities accessible to more people.
@@ -209,6 +218,17 @@ Azure  lets you run applications packaged as containers without managing servers
 **Free tier:** 180,000 vCPU seconds, 360,000 GiB seconds, and 2 million requests
 
 🔗 https://azure.microsoft.com/en-us/products/container-apps/
+
+
+### Service Fabric
+
+is a platform for building and managing scalable, reliable applications. It helps developers create microservices, which are small, independent pieces of software that work together. These microservices can be updated or scaled individually without affecting the rest of the application. This makes it easier to manage complex systems and ensure they are always available.
+
+For example, a large e-commerce website could use Service Fabric. Each part of the website, like the product catalog, customer accounts, and checkout process, could be a separate microservice. This allows the product catalog to be updated without taking the entire site offline for maintenance. It also means that during busy shopping periods, only the checkout service needs to be scaled up to handle more customers, saving resources.
+
+**Free tier:** Free
+
+🔗 https://azure.microsoft.com/en-us/products/service-fabric/
 
 <br><br>
 
@@ -498,6 +518,15 @@ helps you move your resources between different Azure regions. Think of it like 
 🔗 https://azure.microsoft.com/en-us/products/resource-mover/
 
 
+### Azure Update Manager
+
+helps you manage software updates across your computers. It lets you schedule when updates install, so your systems stay secure without interrupting your work.  You can see the status of updates for all your machines in one place.  For example, a company could use it to automatically install security patches on their office computers every Tuesday evening, ensuring everyone has the latest protections. This service automates a crucial task, keeping your software current and reducing the risk of security problems.
+
+**Free tier:** Free for Azure resources (charged for Arc-enabled servers) – see pricing page for details
+
+🔗 https://azure.microsoft.com/en-us/products/azure-update-management-center/
+
+
 ### Cloud Shell
 
 Azure  is a powerful, browser-based command-line experience. It gives you interactive access to cloud resources without needing to install any tools on your computer.  You can run commands to manage your Azure services from anywhere.  For example, you could use Cloud Shell to quickly create a new virtual machine to test an application. It comes with popular tools already installed, so you can start working right away. This makes it an easy way to get started with managing your cloud infrastructure.
@@ -623,26 +652,6 @@ is a fully managed service that helps you build real-time web applications.  It 
 
 ## 📁 Other
 
-### Face
-
-Azure  is a service that can detect and analyze human faces in images. It helps your applications understand what's in a picture by identifying faces and their attributes. For example, you could use it to build a system that automatically tags people in photos uploaded by users, making them easier to search and organize. The service can find faces, estimate their age and gender, and even detect emotions like happiness or surprise. It's designed to be easy to integrate into your own software.
-
-**Free tier:** 30,000 transactions of Free instance
-
-🔗 https://azure.microsoft.com/en-us/products/cognitive-services/face/
-
-
-### Service Fabric
-
-is a platform for building and managing scalable, reliable applications. It helps developers create microservices, which are small, independent pieces of software that work together. These microservices can be updated or scaled individually without affecting the rest of the application. This makes it easier to manage complex systems and ensure they are always available.
-
-For example, a large e-commerce website could use Service Fabric. Each part of the website, like the product catalog, customer accounts, and checkout process, could be a separate microservice. This allows the product catalog to be updated without taking the entire site offline for maintenance. It also means that during busy shopping periods, only the checkout service needs to be scaled up to handle more customers, saving resources.
-
-**Free tier:** Free
-
-🔗 https://azure.microsoft.com/en-us/products/service-fabric/
-
-
 ### Azure Active Directory B2C
 
 , or Azure AD B2C, is a service for managing customer identities and access to your applications. It allows you to provide a secure and personalized sign-up and sign-in experience for your customers. Think of it as a customer-facing identity provider.
@@ -661,15 +670,6 @@ Azure Managed Applications, and its accompanying Service Catalog, let organizati
 **Free tier:** Free publishing
 
 🔗 https://azure.microsoft.com/en-us/products/managed-applications/
-
-
-### Azure Update Manager
-
-helps you manage software updates across your computers. It lets you schedule when updates install, so your systems stay secure without interrupting your work.  You can see the status of updates for all your machines in one place.  For example, a company could use it to automatically install security patches on their office computers every Tuesday evening, ensuring everyone has the latest protections. This service automates a crucial task, keeping your software current and reducing the risk of security problems.
-
-**Free tier:** Free for Azure resources (charged for Arc-enabled servers) – see pricing page for details
-
-🔗 https://azure.microsoft.com/en-us/products/azure-update-management-center/
 
 <br><br>
 
