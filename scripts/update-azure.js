@@ -154,7 +154,6 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
     const emoji = CATEGORY_META[category] || "📁";
 
     body += `\n## ${emoji} ${category}（${validItems.length}件）\n\n`;
-    body += `Azureの「${category}」カテゴリに属する常時無料サービス一覧です。\n\n`;
 
     for (const item of validItems) {
       body += formatItem(item) + "\n";
