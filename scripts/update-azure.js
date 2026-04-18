@@ -14,7 +14,7 @@ const BATCH_SIZE = 5;
 const TTL_MS = 30 * 24 * 60 * 60 * 1000;
 
 /* =========================
-   ▼ APIキー確認（重要）
+   ▼ APIキー確認
 ========================= */
 if (!process.env.GEMINI_API_KEY) {
   console.error("❌ GEMINI_API_KEY not set");
@@ -56,27 +56,22 @@ const normalizeFreeTier = (t) =>
 ========================= */
 function loadCache() {
   if (!fs.existsSync(CACHE_PATH)) return {};
-
   try {
     const text = fs.readFileSync(CACHE_PATH, "utf8");
-
-    // 空ファイル対策
-    if (!text.trim()) {
-      console.warn("⚠️ cache empty, reset");
-      return {};
-    }
-
+    if (!text.trim()) return {};
     return JSON.parse(text);
-
-  } catch (e) {
-    console.warn("⚠️ cache broken, reset");
+  } catch {
     return {};
   }
 }
 
 function saveCache(cache) {
   fs.mkdirSync(path.dirname(CACHE_PATH), { recursive: true });
-  fs.writeFileSync(CACHE_PATH, JSON.stringify(cache, null, 2));
+
+  // atomic write（壊れ防止）
+  const tmp = CACHE_PATH + ".tmp";
+  fs.writeFileSync(tmp, JSON.stringify(cache, null, 2));
+  fs.renameSync(tmp, CACHE_PATH);
 }
 
 function isExpired(entry) {
@@ -103,7 +98,7 @@ ${description}
 ・ユースケースを含める
 ・箇条書き禁止
 ・見出し禁止
-・本文のみを出力
+・本文のみ出力
 ・300文字前後
 `;
 
@@ -112,16 +107,41 @@ ${description}
 }
 
 /* =========================
-   ▼ サニタイズ（見出し破壊防止）
+   ▼ サニタイズ（強化版）
 ========================= */
-function cleanGenerated(text) {
+function cleanGenerated(text, title) {
   if (!text) return text;
 
-  return text
-    .replace(/サービス名[\s\S]*?\n/g, "")
-    .replace(/拡張された説明文/g, "")
-    .replace(/^\s*\n/gm, "")
-    .trim();
+  let t = text;
+
+  // ラベル削除
+  t = t
+    .replace(/^\s*サービス名.*$/gim, "")
+    .replace(/^\s*拡張された説明文.*$/gim, "")
+    .replace(/^\s*説明文.*$/gim, "");
+
+  // タイトル重複削除
+  const escaped = title?.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  if (escaped) {
+    const re = new RegExp(`^\\s*${escaped}\\s*$`, "gim");
+    t = t.replace(re, "");
+  }
+
+  // 見出しっぽい行削除
+  t = t
+    .split("\n")
+    .filter(line => {
+      const s = line.trim();
+      if (!s) return false;
+
+      if (s.length <= 20 && !/[。．.!?]$/.test(s)) return false;
+      if (/(サービス名|説明文|概要)/.test(s)) return false;
+
+      return true;
+    })
+    .join("\n");
+
+  return t.replace(/\n{3,}/g, "\n\n").trim();
 }
 
 /* =========================
@@ -150,7 +170,7 @@ ${filtered.map(l => `${l.emoji} ${l.name} の常時無料枠
 ========================= */
 function formatItem(item, cache) {
   const key = normalize(item.title);
-  const generated = cleanGenerated(cache[key]?.text);
+  let generated = cleanGenerated(cache[key]?.text, item.title);
 
   return `### ${normalizeTitle(item.title)}
 
@@ -168,41 +188,34 @@ ${generated || item.description}
 async function main() {
   try {
     const data = JSON.parse(fs.readFileSync(INPUT, "utf8"));
-    const categoryMap = JSON.parse(fs.readFileSync(CATEGORY_MAP, "utf8"));
-
     const filtered = data.filter(d => d.period === "always");
     const cache = loadCache();
 
     console.log(`📦 items: ${filtered.length}`);
 
-    /* ===== Gemini生成（落ちない設計）===== */
-    for (let i = 0; i < filtered.length; i += BATCH_SIZE) {
-      const batch = filtered.slice(i, i + BATCH_SIZE);
+    /* ===== 逐次処理（重要：Promise.all禁止）===== */
+    for (const item of filtered) {
+      const key = normalize(item.title);
 
-      await Promise.all(
-        batch.map(async (item) => {
-          const key = normalize(item.title);
+      if (cache[key] && !isExpired(cache[key])) {
+        console.log("⚡ cache:", item.title);
+        continue;
+      }
 
-          if (cache[key] && !isExpired(cache[key])) {
-            console.log("⚡ cache:", item.title);
-            return;
-          }
+      let text;
+      try {
+        console.log("🤖 gen:", item.title);
+        text = await generateDescription(item.title, item.description);
+      } catch {
+        console.warn("⚠️ fallback:", item.title);
+        text = item.description;
+      }
 
-          let text;
-          try {
-            console.log("🤖 gen:", item.title);
-            text = await generateDescription(item.title, item.description);
-          } catch (e) {
-            console.warn("⚠️ fallback:", item.title);
-            text = item.description;
-          }
+      cache[key] = { text, updatedAt: Date.now() };
+      console.log("💾 saving:", key);
+      saveCache(cache);
 
-          cache[key] = { text, updatedAt: Date.now() };
-          saveCache(cache);
-
-          await new Promise(r => setTimeout(r, 1000));
-        })
-      );
+      await new Promise(r => setTimeout(r, 1000));
     }
 
     /* ===== Markdown生成 ===== */
