@@ -56,7 +56,22 @@ const normalizeFreeTier = (t) =>
 ========================= */
 function loadCache() {
   if (!fs.existsSync(CACHE_PATH)) return {};
-  return JSON.parse(fs.readFileSync(CACHE_PATH, "utf8") || "{}");
+
+  try {
+    const text = fs.readFileSync(CACHE_PATH, "utf8");
+
+    // 空ファイル対策
+    if (!text.trim()) {
+      console.warn("⚠️ cache empty, reset");
+      return {};
+    }
+
+    return JSON.parse(text);
+
+  } catch (e) {
+    console.warn("⚠️ cache broken, reset");
+    return {};
+  }
 }
 
 function saveCache(cache) {
