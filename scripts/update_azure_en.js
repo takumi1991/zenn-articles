@@ -21,27 +21,36 @@ const model = genAI.getGenerativeModel({
 });
 
 /* ========================= */
-// normalize
+// 🔥 タイトル補正（誤記対策）
+function sanitizeTitle(title) {
+  if (!title) return title;
+
+  return title
+    .replace(/,\s*Service\s*catalog/i, "") // ←今回の本丸
+    .replace(/\s*\/\s*.*/g, "")
+    .replace(/\s*-\s*preview.*$/i, "")
+    .trim();
+}
+
+/* ========================= */
+// normalize（sanitize統合）
 const normalize = (s) =>
-  s?.toLowerCase()
+  sanitizeTitle(s)
+    ?.toLowerCase()
     .replace(/azure|microsoft/g, "")
     .replace(/\(.*?\)/g, "")
     .replace(/[^a-z0-9]/g, "")
     .trim();
 
 /* ========================= */
-// 🔥 alias（超重要）
+// alias（必要最低限）
 const ALIAS = {
   speechtotext: "speech",
   texttospeech: "speech",
   speechtranslation: "speech",
-
   securitycenter: "defenderforcloud",
-
   activedirectoryb2c: "entraexternalid",
-
   updatemanager: "updatemanagementcenter",
-
   bandwidth: "virtualnetwork",
   datatransfer: "virtualnetwork"
 };
@@ -72,17 +81,14 @@ const CATEGORY_META = {
 const CATEGORY_ORDER = Object.keys(CATEGORY_META);
 
 /* ========================= */
-// index作成（normalize済）
 function buildCategoryIndex(categoryMap) {
   const index = new Map();
 
   for (const [category, services] of Object.entries(categoryMap)) {
     for (const name of services) {
       const key = normalize(name);
-
       index.set(key, category);
 
-      // Azure prefix除去も登録
       const noAzure = key.replace(/^azure/, "");
       index.set(noAzure, category);
     }
@@ -92,11 +98,9 @@ function buildCategoryIndex(categoryMap) {
 }
 
 /* ========================= */
-// resolve（完全一致 only）
 function resolveCategory(title, index) {
   let key = normalize(title);
 
-  // alias適用
   if (ALIAS[key]) {
     key = normalize(ALIAS[key]);
   }
@@ -112,10 +116,8 @@ function resolveCategory(title, index) {
 }
 
 /* ========================= */
-// cache
 function loadCache() {
   if (!fs.existsSync(CACHE_PATH)) return {};
-
   try {
     return JSON.parse(fs.readFileSync(CACHE_PATH, "utf8"));
   } catch {
@@ -133,7 +135,6 @@ function isExpired(entry) {
 }
 
 /* ========================= */
-// Gemini
 async function generateDescription(title) {
   const prompt = `
 Explain this Azure service in about 120 words.
@@ -154,7 +155,6 @@ Rules:
 }
 
 /* ========================= */
-// clean
 function cleanGenerated(text, title) {
   if (!text) return text;
 
@@ -165,14 +165,18 @@ function cleanGenerated(text, title) {
 }
 
 /* ========================= */
-// dedupe
 function prepare(items) {
   const map = new Map();
 
   for (const i of items) {
-    const key = normalize(i.title);
+    const cleanTitle = sanitizeTitle(i.title);
+    const key = normalize(cleanTitle);
+
     if (!map.has(key) || i.period === "always") {
-      map.set(key, i);
+      map.set(key, {
+        ...i,
+        title: cleanTitle
+      });
     }
   }
 
@@ -217,7 +221,6 @@ async function main() {
   const categoryMap = JSON.parse(fs.readFileSync(CATEGORY_MAP, "utf8"));
   const index = buildCategoryIndex(categoryMap);
 
-  /* ===== generate ===== */
   for (const item of items) {
     const key = normalize(item.title);
 
@@ -236,7 +239,6 @@ async function main() {
     await new Promise(r => setTimeout(r, 500));
   }
 
-  /* ===== grouping ===== */
   const grouped = {};
   const unmatched = [];
 
@@ -245,9 +247,7 @@ async function main() {
   for (const item of items) {
     const category = resolveCategory(item.title, index);
 
-    if (category === "Other") {
-      unmatched.push(item.title);
-    }
+    if (category === "Other") unmatched.push(item.title);
 
     grouped[category]?.push(item) ?? grouped["Other"].push(item);
   }
@@ -256,7 +256,6 @@ async function main() {
   console.log(unmatched);
   console.log("=====================\n");
 
-  /* ===== Markdown ===== */
   let md = `---
 title: "Azure Always Free Services"
 emoji: "🟦"
