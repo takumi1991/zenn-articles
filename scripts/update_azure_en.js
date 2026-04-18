@@ -30,6 +30,23 @@ const normalize = (s) =>
     .trim();
 
 /* ========================= */
+// 🔥 alias（超重要）
+const ALIAS = {
+  speechtotext: "speech",
+  texttospeech: "speech",
+  speechtranslation: "speech",
+
+  securitycenter: "defenderforcloud",
+
+  activedirectoryb2c: "entraexternalid",
+
+  updatemanager: "updatemanagementcenter",
+
+  bandwidth: "virtualnetwork",
+  datatransfer: "virtualnetwork"
+};
+
+/* ========================= */
 const CATEGORY_META = {
   "AI + machine learning": "🧠",
   "Analytics": "📊",
@@ -55,17 +72,19 @@ const CATEGORY_META = {
 const CATEGORY_ORDER = Object.keys(CATEGORY_META);
 
 /* ========================= */
-// category index
+// index作成（normalize済）
 function buildCategoryIndex(categoryMap) {
   const index = new Map();
 
   for (const [category, services] of Object.entries(categoryMap)) {
     for (const name of services) {
       const key = normalize(name);
+
       index.set(key, category);
 
-      const simplified = key.replace(/^azure/, "");
-      index.set(simplified, category);
+      // Azure prefix除去も登録
+      const noAzure = key.replace(/^azure/, "");
+      index.set(noAzure, category);
     }
   }
 
@@ -73,46 +92,21 @@ function buildCategoryIndex(categoryMap) {
 }
 
 /* ========================= */
-// category resolve
+// resolve（完全一致 only）
 function resolveCategory(title, index) {
-  const key = normalize(title);
+  let key = normalize(title);
 
-  // ① 完全一致
+  // alias適用
+  if (ALIAS[key]) {
+    key = normalize(ALIAS[key]);
+  }
+
   if (index.has(key)) {
     const cat = index.get(key);
     console.log("✅ EXACT:", title, "→", key, "→", cat);
     return cat;
   }
 
-  // ② 前方一致
-  for (const [k, v] of index.entries()) {
-    if (key.startsWith(k)) {
-      console.log("🟡 PREFIX:", title, "→", key, "≈", k, "→", v);
-      return v;
-    }
-  }
-
-  // ③ 最長部分一致（危険ゾーン）
-  let best = null;
-  let bestLen = 0;
-  let matchedKey = null;
-
-  for (const [k, v] of index.entries()) {
-    if (key.includes(k) || k.includes(key)) {
-      if (k.length > bestLen) {
-        best = v;
-        bestLen = k.length;
-        matchedKey = k;
-      }
-    }
-  }
-
-  if (best) {
-    console.warn("⚠️ PARTIAL:", title, "→", key, "≈", matchedKey, "→", best);
-    return best;
-  }
-
-  // ④ 完全失敗
   console.error("❌ UNMATCHED:", title, "→", key);
   return "Other";
 }
@@ -123,23 +117,15 @@ function loadCache() {
   if (!fs.existsSync(CACHE_PATH)) return {};
 
   try {
-    const c = JSON.parse(fs.readFileSync(CACHE_PATH, "utf8"));
-    console.log("📦 cache loaded:", Object.keys(c).length);
-    return c;
+    return JSON.parse(fs.readFileSync(CACHE_PATH, "utf8"));
   } catch {
-    console.warn("⚠️ cache load failed");
     return {};
   }
 }
 
 function saveCache(cache) {
   fs.mkdirSync(path.dirname(CACHE_PATH), { recursive: true });
-
-  const tmp = CACHE_PATH + ".tmp";
-  fs.writeFileSync(tmp, JSON.stringify(cache, null, 2));
-  fs.renameSync(tmp, CACHE_PATH);
-
-  console.log("💾 cache saved:", Object.keys(cache).length);
+  fs.writeFileSync(CACHE_PATH, JSON.stringify(cache, null, 2));
 }
 
 function isExpired(entry) {
@@ -150,7 +136,7 @@ function isExpired(entry) {
 // Gemini
 async function generateDescription(title) {
   const prompt = `
-Explain this Azure service in about 150 words.
+Explain this Azure service in about 120 words.
 
 Service:
 ${title}
@@ -161,9 +147,6 @@ Rules:
 - Include one concrete use case
 - Avoid repetition
 - Use simple, clear language for beginners
-- Avoid jargon or explain it briefly if used
-- Keep sentences short and direct
-- Assume the reader has no cloud experience
 `;
 
   const r = await model.generateContent(prompt);
@@ -175,28 +158,10 @@ Rules:
 function cleanGenerated(text, title) {
   if (!text) return text;
 
-  let t = text
-    .replace(/service[:：]?/gi, "")
-    .replace(/description[:：]?/gi, "")
+  return text
+    .replace(title, "")
+    .replace(/\n{3,}/g, "\n\n")
     .trim();
-
-  let lines = t.split("\n").map(l => l.trim());
-
-  lines = lines.filter(l => {
-    if (!l) return false;
-    if (l === title) return false;
-    if (l.length < 5) return false;
-    return true;
-  });
-
-  const seen = new Set();
-  lines = lines.filter(l => {
-    if (seen.has(l)) return false;
-    seen.add(l);
-    return true;
-  });
-
-  return lines.join("\n\n").trim();
 }
 
 /* ========================= */
@@ -217,11 +182,6 @@ function prepare(items) {
 /* ========================= */
 function formatItem(item, cache) {
   const key = normalize(item.title);
-
-  if (!cache[key]) {
-    console.warn("❌ cache miss:", item.title, "key:", key);
-  }
-
   const text = cleanGenerated(cache[key]?.text, item.title);
 
   return `### ${item.title}
@@ -254,9 +214,6 @@ async function main() {
   const items = prepare(raw);
   const cache = loadCache();
 
-  console.log("📦 items:", items.length);
-  console.log("📦 cache sample:", Object.keys(cache).slice(0, 10));
-
   const categoryMap = JSON.parse(fs.readFileSync(CATEGORY_MAP, "utf8"));
   const index = buildCategoryIndex(categoryMap);
 
@@ -264,64 +221,43 @@ async function main() {
   for (const item of items) {
     const key = normalize(item.title);
 
-    console.log("🔑", item.title, "→", key);
-
-    if (cache[key] && !isExpired(cache[key])) {
-      console.log("⚡ cache hit:", item.title);
-      continue;
-    }
+    if (cache[key] && !isExpired(cache[key])) continue;
 
     let text;
     try {
-      console.log("🤖 gen:", item.title);
       text = await generateDescription(item.title);
     } catch {
-      console.warn("⚠️ fallback:", item.title);
       text = item.description;
     }
 
     cache[key] = { text, updatedAt: Date.now() };
-
-    console.log("📝 write:", key, "len:", text.length);
-
     saveCache(cache);
 
-    await new Promise(r => setTimeout(r, 800));
+    await new Promise(r => setTimeout(r, 500));
   }
 
   /* ===== grouping ===== */
   const grouped = {};
-  const stats = {
-    exact: 0,
-    prefix: 0,
-    partial: 0,
-    other: 0
-  };
-  
+  const unmatched = [];
+
   for (const c of CATEGORY_ORDER) grouped[c] = [];
-  
+
   for (const item of items) {
     const category = resolveCategory(item.title, index);
-  
-    if (!grouped[category]) {
-      grouped["Other"].push(item);
-      stats.other++;
-    } else {
-      grouped[category].push(item);
+
+    if (category === "Other") {
+      unmatched.push(item.title);
     }
-  
-    console.log("📂 RESULT:", item.title, "→", category);
+
+    grouped[category]?.push(item) ?? grouped["Other"].push(item);
   }
 
-  console.log("\n===== CATEGORY STATS =====");
-for (const [cat, list] of Object.entries(grouped)) {
-  console.log(`${cat}: ${list.length}`);
-}
-console.log("==========================\n");
+  console.log("\n===== UNMATCHED =====");
+  console.log(unmatched);
+  console.log("=====================\n");
 
-
-/* ===== Markdown ===== */
-let md = `---
+  /* ===== Markdown ===== */
+  let md = `---
 title: "Azure Always Free Services"
 emoji: "🟦"
 type: "tech"
@@ -332,45 +268,28 @@ published: true
 # Azure Always Free Services
 
 Azure provides many services that can be used for free within certain limits. This article organizes those services by category.
-
 `;
 
-// 🔥 カテゴリ出力
-for (const category of CATEGORY_ORDER) {
-  const list = grouped[category];
-  if (!list || list.length === 0) continue;
+  for (const category of CATEGORY_ORDER) {
+    const list = grouped[category];
+    if (!list.length) continue;
 
-  const icon = CATEGORY_META[category] || "📁";
+    const icon = CATEGORY_META[category];
 
-  // ✅ 空行を必ず入れる（Zenn崩れ防止）
-  md += `\n## ${icon} ${category}\n\n`;
+    md += `\n## ${icon} ${category}\n\n`;
 
-  list.forEach((item, i) => {
-    md += formatItem(item, cache);
+    list.forEach((item, i) => {
+      md += formatItem(item, cache);
+      md += i !== list.length - 1 ? "\n\n" : "\n<br><br>\n";
+    });
+  }
 
-    // ❌ "---"はZennで崩れる原因 → 削除
-    if (i !== list.length - 1) {
-      md += "\n\n"; 
-    } else {
-      md += "\n<br><br>\n";
-    }
-  });
-}
+  md += buildFooter();
 
-// フッター前にも空行
-md += `\n`;
-md += buildFooter();
+  fs.mkdirSync(path.dirname(OUTPUT), { recursive: true });
+  fs.writeFileSync(OUTPUT, md, "utf8");
 
-/* ===== Debug（必須） ===== */
-console.log("\n===== MARKDOWN PREVIEW =====");
-console.log(md.slice(0, 1200));
-console.log("============================\n");
-
-/* ===== Write ===== */
-fs.mkdirSync(path.dirname(OUTPUT), { recursive: true });
-fs.writeFileSync(OUTPUT, md, "utf8");
-
-console.log("✅ done");
+  console.log("✅ done");
 }
 
 main();
