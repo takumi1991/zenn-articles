@@ -251,7 +251,7 @@ async function main() {
 
   /* ===== Markdown ===== */
   let md = `---
-title: "Azure常時無料サービス一覧"
+title: "Azure常時無料サービス一覧(Always Free Services)"
 emoji: "🟦"
 type: "tech"
 topics: ["azure", "cloud", "free-tier"]
@@ -260,7 +260,7 @@ published: true
 
 # Azure常時無料サービス一覧
 
-Azureには常時無料で利用できるサービスが多数存在します。本記事ではカテゴリごとに整理しています。
+Azureには常時無料で利用できるサービスが多数存在しており、各サービス一定の上限までは課金されずに利用できます。本記事ではカテゴリごとにそれら常時無料サービス整理しています。
 
 `;
 
@@ -274,7 +274,7 @@ Azureには常時無料で利用できるサービスが多数存在します。
     if (i !== list.length - 1) {
       md += "\n---\n\n";
     } else {
-      md += "\n\n";
+      md += "\n<br><br>\n";
     }
   });
   }
