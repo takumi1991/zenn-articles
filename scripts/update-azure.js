@@ -30,6 +30,29 @@ const normalize = (s) =>
     .replace(/[^a-z0-9]/g, "")
     .trim();
 
+const CATEGORY_META = {
+  "AI + 機械学習": "🧠",
+  "分析": "📊",
+  "コンピューティング": "🖥️",
+  "コンテナー": "📦",
+  "データベース": "🗄️",
+  "開発者ツール": "🛠️",
+  "DevOps": "⚙️",
+  "ハイブリッド+マルチクラウド": "🌐",
+  "ID": "🔐",
+  "統合": "🧩",
+  "モノのインターネット (IoT)": "📡",
+  "管理とガバナンス": "📋",
+  "移行": "✈️",
+  "ネットワーク": "🌍",
+  "セキュリティ": "🛡️",
+  "ストレージ": "💾",
+  "仮想デスクトップ インフラストラクチャ": "🖥️",
+  "Web": "🌎",
+  "その他": "📁"
+
+};
+
 /* ========================= */
 // 🔥 category index生成（これが正解）
 function buildCategoryIndex(categoryMap) {
@@ -172,10 +195,10 @@ function buildFooter() {
 
 ## 関連記事
 
-🌈 GCP  
+🌈 Google Cloud Platform の常時無料枠(Always Free Services)  
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
 
-🟧 AWS  
+🟧 AWS の常時無料枠(Always Free Services)
 👉 https://zenn.dev/good_sleeper/articles/aws-always-free
 `;
 }
