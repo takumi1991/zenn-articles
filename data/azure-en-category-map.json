@@ -12,7 +12,7 @@
     "Azure Open Datasets",
     "Open Datasets",
     "Face",
-    "Azure Face"
+    "Azure Face",
 
     "Azure Language",
     "Azure Language in Foundry Tools",
@@ -59,7 +59,7 @@
     "Azure App Service",
 
         "Service Fabric",
-    "Azure Service Fabric"
+    "Azure Service Fabric",
 
     "Azure Kubernetes Service",
     "Azure Kubernetes Service (AKS)",
@@ -138,9 +138,8 @@
 
     "Azure Active Directory B2C",
     "Azure AD B2C",
-    "Active Directory B2C",
+    "Active Directory B2C"
 
-    
   ],
 
   "Integration": [
@@ -209,7 +208,6 @@
 
     "Network Watcher",
     "Azure Network Watcher",
-        "Azure Managed Applications",
 
     "Managed Applications",
 
@@ -218,8 +216,6 @@
     "Azure Service Catalog",
 
     "Azure Update Manager",
-
-    "Update Manager",
 
     "Update management center"
   ],
