@@ -8,7 +8,7 @@ published: true
 
 # Azure常時無料サービス一覧
 
-最終更新日: 2026/4/18 11:49:44
+最終更新日: 2026/4/18 11:54:00
 
 AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されています。
 
@@ -169,6 +169,29 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 
 
 
+## 📊 分析（2件）
+
+### Data Catalog
+
+エンタープライズ データ資産からより多くの価値を取得します。
+
+**毎月の上限：** ユーザー数無制限
+
+🔗 https://azure.microsoft.com/ja-jp/products/data-catalog/
+
+---
+
+### Data Factory
+
+データ サービスを大規模に作成し、管理しますます。
+
+**毎月の上限：** 5 つの低頻度アクティビティ
+
+🔗 https://azure.microsoft.com/ja-jp/products/data-factory/
+
+
+
+
 ## 📦 コンテナー（4件）
 
 ### Azure Kubernetes Service (AKS)
@@ -212,7 +235,7 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 
 
 
-## 🖥️ コンピューティング（4件）
+## 🖥️ コンピューティング（5件）
 
 ### App Service
 
@@ -251,6 +274,16 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/service-fabric/
+
+---
+
+### Functions
+
+サーバー不要のコード アーキテクチャを使用してイベントを処理します。
+
+**毎月の上限：** 100 万回のリクエスト
+
+🔗 https://azure.microsoft.com/ja-jp/products/functions/
 
 
 
@@ -304,6 +337,65 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 **毎月の上限：** 最大 10 個のデータベースを、それぞれ 100,000 vCore 秒のサーバーレス レベルと 32 GB のストレージを利用可能
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-sql/database/
+
+
+
+
+## 🛠️ 開発者ツール（3件）
+
+### Azure Deployment Environments
+
+プロジェクトベースのテンプレートを使用して、アプリ インフラストラクチャ環境を迅速に立ち上げます。
+
+**毎月の上限：** Azure Deployment Environments は、現在、無料のサービスです。ただし、サービスを通じてデプロイされた環境に作成されるコンピューティング、ストレージ、ネットワークなどの他の Azure リソースに対しては料金が発生します
+
+🔗 https://azure.microsoft.com/ja-jp/products/deployment-environments/
+
+---
+
+### DevTest Labs
+
+高速で簡単な、無駄のない開発およびテスト環境を実現します。
+
+**毎月の上限：** なし
+
+🔗 https://azure.microsoft.com/ja-jp/products/devtest-lab/
+
+---
+
+### Visual Studio Code
+
+クラウド開発用の強力で軽量なコード エディターを使用して生産性を向上します。
+
+**毎月の上限：** なし
+
+🔗 https://azure.microsoft.com/ja-jp/products/visual-studio-code/
+
+
+
+
+## ⚙️ DevOps（1件）
+
+### Azure DevOps
+
+Git Repos、CI/CD、ビルドとリリースのオートメーションを使用して、任意の言語でアプリをビルドします。
+
+**毎月の上限：** 5 人のユーザーと無制限のプライベート Git Repos
+
+🔗 https://azure.microsoft.com/ja-jp/products/devops/
+
+
+
+
+## 🌐 ハイブリッド + マルチクラウド（1件）
+
+### Azure Arc
+
+Azure の管理とサービスを拡張します。
+
+**毎月の上限：** Azure 外部のリソース向けの無料の Azure コントロール プレーン機能、Azure Arc 対応リソースの検索とインデックス作成する
+
+🔗 https://azure.microsoft.com/ja-jp/products/azure-arc/
 
 
 
@@ -818,89 +910,6 @@ Web アプリケーションにリアルタイム通信を追加します。
 **毎月の上限：** ユニットあたり 20 の同時接続と 20,000 件のメッセージ
 
 🔗 https://azure.microsoft.com/ja-jp/products/signalr-service/
-
-
-
-
-## 🧩 その他（8件）
-
-### Data Catalog
-
-エンタープライズ データ資産からより多くの価値を取得します。
-
-**毎月の上限：** ユーザー数無制限
-
-🔗 https://azure.microsoft.com/ja-jp/products/data-catalog/
-
----
-
-### Data Factory
-
-データ サービスを大規模に作成し、管理しますます。
-
-**毎月の上限：** 5 つの低頻度アクティビティ
-
-🔗 https://azure.microsoft.com/ja-jp/products/data-factory/
-
----
-
-### Functions
-
-サーバー不要のコード アーキテクチャを使用してイベントを処理します。
-
-**毎月の上限：** 100 万回のリクエスト
-
-🔗 https://azure.microsoft.com/ja-jp/products/functions/
-
----
-
-### Azure Deployment Environments
-
-プロジェクトベースのテンプレートを使用して、アプリ インフラストラクチャ環境を迅速に立ち上げます。
-
-**毎月の上限：** Azure Deployment Environments は、現在、無料のサービスです。ただし、サービスを通じてデプロイされた環境に作成されるコンピューティング、ストレージ、ネットワークなどの他の Azure リソースに対しては料金が発生します
-
-🔗 https://azure.microsoft.com/ja-jp/products/deployment-environments/
-
----
-
-### Azure DevOps
-
-Git Repos、CI/CD、ビルドとリリースのオートメーションを使用して、任意の言語でアプリをビルドします。
-
-**毎月の上限：** 5 人のユーザーと無制限のプライベート Git Repos
-
-🔗 https://azure.microsoft.com/ja-jp/products/devops/
-
----
-
-### DevTest Labs
-
-高速で簡単な、無駄のない開発およびテスト環境を実現します。
-
-**毎月の上限：** なし
-
-🔗 https://azure.microsoft.com/ja-jp/products/devtest-lab/
-
----
-
-### Visual Studio Code
-
-クラウド開発用の強力で軽量なコード エディターを使用して生産性を向上します。
-
-**毎月の上限：** なし
-
-🔗 https://azure.microsoft.com/ja-jp/products/visual-studio-code/
-
----
-
-### Azure Arc
-
-Azure の管理とサービスを拡張します。
-
-**毎月の上限：** Azure 外部のリソース向けの無料の Azure コントロール プレーン機能、Azure Arc 対応リソースの検索とインデックス作成する
-
-🔗 https://azure.microsoft.com/ja-jp/products/azure-arc/
 
 
 
