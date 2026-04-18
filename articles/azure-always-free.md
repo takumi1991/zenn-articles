@@ -1,5 +1,5 @@
 ---
-title: "Azure常時無料サービス一覧"
+title: "Azure常時無料サービス一覧(Always Free Services)"
 emoji: "🟦"
 type: "tech"
 topics: ["azure", "cloud", "free-tier"]
@@ -8,7 +8,7 @@ published: true
 
 # Azure常時無料サービス一覧
 
-Azureには常時無料で利用できるサービスが多数存在します。本記事ではカテゴリごとに整理しています。
+Azureには常時無料で利用できるサービスが多数存在しており、各サービス一定の上限までは課金されずに利用できます。本記事ではカテゴリごとにそれら常時無料サービス整理しています。
 
 ## 🧠 AI + 機械学習
 
@@ -90,7 +90,7 @@ Content Safetyは、AzureのAIを活用したサービスで、テキストや�
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-content-safety/
 
-
+<br><br>
 ## 📦 コンテナー
 
 ### Azure コンテナー ストレージ
@@ -121,7 +121,7 @@ Azure Container Appsは、コンテナ化されたアプリケーションを簡
 
 🔗 https://azure.microsoft.com/ja-jp/products/container-apps/
 
-
+<br><br>
 ## 📊 分析
 
 ### Data Catalog
@@ -142,7 +142,7 @@ Data Factoryは、Azure上でデータ統合とETL（Extract, Transform, Load）
 
 🔗 https://azure.microsoft.com/ja-jp/products/data-factory/
 
-
+<br><br>
 ## 🖥️ コンピューティング
 
 ### App Service
@@ -193,7 +193,7 @@ Service Fabricは、マイクロサービスアーキテクチャを構築・実
 
 🔗 https://azure.microsoft.com/ja-jp/products/service-fabric/
 
-
+<br><br>
 ## 🌎 Web
 
 ### Static Web Apps
@@ -234,7 +234,7 @@ Azure SignalR Serviceは、リアルタイムWebアプリケーションの構�
 
 🔗 https://azure.microsoft.com/ja-jp/products/signalr-service/
 
-
+<br><br>
 ## 🗄️ データベース
 
 ### Azure Cosmos DB
@@ -265,7 +265,7 @@ SQL Databaseは、Azureが提供するフルマネージドなリレーショナ
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-sql/database/
 
-
+<br><br>
 ## ✈️ 移行
 
 ### Database Migration Service
@@ -296,7 +296,7 @@ Azure Storage Moverは、オンプレミスやその他のクラウドストレ�
 
 🔗 https://azure.microsoft.com/ja-jp/products/storage-mover#Azure-storage-mover
 
-
+<br><br>
 ## 🛠️ 開発者ツール
 
 ### Azure Deployment Environments
@@ -327,7 +327,7 @@ Visual Studio Codeは、Microsoftが開発する軽量でパワフルなソー�
 
 🔗 https://azure.microsoft.com/ja-jp/products/visual-studio-code/
 
-
+<br><br>
 ## ⚙️ DevOps
 
 ### Azure DevOps
@@ -338,7 +338,7 @@ Azure DevOpsは、開発チームがアプリケーションを計画、開発�
 
 🔗 https://azure.microsoft.com/ja-jp/products/devops/
 
-
+<br><br>
 ## 📁 ハイブリッド + マルチクラウド
 
 ### Azure Arc
@@ -349,7 +349,7 @@ Azure Arc は、Azure の管理とガバナンスを、オンプレミス、マ�
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-arc/
 
-
+<br><br>
 ## 🔐 ID
 
 ### Azure Active Directory B2C
@@ -370,7 +370,7 @@ Microsoft Entra ID（旧称 Azure AD）は、クラウドベースのIDおよび
 
 🔗 https://www.microsoft.com/ja-jp/security/business/identity-access/microsoft-entra-id
 
-
+<br><br>
 ## 🧩 統合
 
 ### API Management
@@ -421,7 +421,7 @@ Web PubSubは、リアルタイムのWebアプリケーションを容易に構�
 
 🔗 https://azure.microsoft.com/ja-jp/products/web-pubsub/
 
-
+<br><br>
 ## 🌍 ネットワーク
 
 ### Azure Maps
@@ -472,7 +472,7 @@ Azure Virtual Network (VNet) は、Azureクラウド上で構築されるプラ�
 
 🔗 https://azure.microsoft.com/ja-jp/products/virtual-network/
 
-
+<br><br>
 ## 📡 モノのインターネット (IoT)
 
 ### IoT Edge
@@ -493,7 +493,7 @@ IoT Hubは、IoTデバイスとAzure間の双方向通信を容易にする、�
 
 🔗 https://azure.microsoft.com/ja-jp/products/iot-hub/
 
-
+<br><br>
 ## 📋 管理とガバナンス
 
 ### Advisor
@@ -614,7 +614,7 @@ Azure Resource Manager (ARM) は、Azure リソースのデプロイ、管理、
 
 🔗 https://azure.microsoft.com/ja-jp/get-started/azure-portal/resource-manager/
 
-
+<br><br>
 ## 🛡️ セキュリティ
 
 ### Azure Attestation
@@ -635,7 +635,7 @@ Azure Security Centerは、オンプレミスやクラウド全体にわたる�
 
 🔗 https://azure.microsoft.com/ja-jp/products/defender-for-cloud/
 
-
+<br><br>
 
 
 ## 関連記事
