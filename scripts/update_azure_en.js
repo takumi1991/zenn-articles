@@ -204,11 +204,11 @@ function buildFooter() {
 
 ## Related Articles
 
+🟧 AWS  
+👉 https://zenn.dev/good_sleeper/articles/aws-always-free-en
+
 🟦 Azure (JP)  
 👉 https://zenn.dev/good_sleeper/articles/azure-always-free
-
-🟧 AWS  
-👉 https://zenn.dev/good_sleeper/articles/aws-always-free
 `;
 }
 
