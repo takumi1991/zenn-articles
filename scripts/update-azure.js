@@ -20,24 +20,21 @@ const model = genAI.getGenerativeModel({
 });
 
 /* ========================= */
-// 正規化
+// normalize（強化版）
 const normalize = (s) =>
   s?.toLowerCase()
-    .replace(/azure\s*/g, "")
-    .replace(/microsoft\s*/g, "")
+    .replace(/azure|microsoft/g, "")
     .replace(/\(.*?\)/g, "")
     .replace(/[（）]/g, "")
-    .replace(/\s+/g, "")
+    .replace(/[^a-z0-9]/g, "") // ←重要：完全キー化
     .trim();
 
 /* ========================= */
-// キャッシュ
+// cache
 function loadCache() {
   if (!fs.existsSync(CACHE_PATH)) return {};
   try {
-    const t = fs.readFileSync(CACHE_PATH, "utf8");
-    if (!t.trim()) return {};
-    return JSON.parse(t);
+    return JSON.parse(fs.readFileSync(CACHE_PATH, "utf8"));
   } catch {
     return {};
   }
@@ -58,17 +55,18 @@ function isExpired(entry) {
 // Gemini
 async function generateDescription(title) {
   const prompt = `
-Azureサービスの説明を日本語で約280文字で書いてください。
+Azureサービスの説明を日本語で280文字前後で書いてください。
 
 # サービス名
 ${title}
 
-# 条件
+# ルール
 ・本文のみ
 ・見出し禁止
+・ラベル禁止（サービス名など出さない）
 ・最初の1文で機能説明
 ・ユースケース含む
-・箇条書き禁止
+・同じ文を繰り返さない
 `;
 
   const r = await model.generateContent(prompt);
@@ -76,62 +74,71 @@ ${title}
 }
 
 /* ========================= */
-// 🔥 完全clean（最重要）
+// 🔥 clean（最強版）
 function cleanGenerated(text, title) {
   if (!text) return text;
 
   const name = title.trim();
   let t = text.trim();
 
-  // ① 行配列化
+  // 1. ラベル削除
+  t = t
+    .replace(/サービス名[:：]?/g, "")
+    .replace(/説明文[:：]?/g, "")
+    .replace(/拡張された説明文[:：]?/g, "");
+
+  // 2. 行分解
   let lines = t.split("\n").map(l => l.trim());
 
-  // ② タイトル・ラベル完全削除
+  // 3. ゴミ行削除
   lines = lines.filter(l => {
     if (!l) return false;
     if (l === name) return false;
-    if (/^(サービス名|説明文|拡張された説明文)$/.test(l)) return false;
+    if (l.length < 5) return false;
     return true;
   });
 
-  // ③ 先頭にまだタイトルが残るパターン対策（再帰的）
+  // 4. 完全重複削除（重要）
+  const seen = new Set();
+  lines = lines.filter(l => {
+    if (seen.has(l)) return false;
+    seen.add(l);
+    return true;
+  });
+
+  // 5. 先頭タイトル潰し（保険）
   while (lines.length && lines[0] === name) {
     lines.shift();
   }
 
-  // ④ 連続重複行削除（←これが効く）
-  const dedup = [];
-  for (const l of lines) {
-    if (dedup[dedup.length - 1] !== l) {
-      dedup.push(l);
-    }
-  }
-
-  return dedup.join("\n\n").trim();
+  return lines.join("\n\n").trim();
 }
 
 /* ========================= */
-// 🔥 正しい重複排除（always優先）
+// 🔥 重複排除（完全版）
 function prepare(items) {
   const map = new Map();
 
   for (const i of items) {
     const key = normalize(i.title);
 
-    // alwaysを優先して上書き
+    // always優先
     if (!map.has(key) || i.period === "always") {
       map.set(key, i);
     }
   }
 
-  return Array.from(map.values())
+  const result = Array.from(map.values())
     .filter(i => i.period === "always");
+
+  return result;
 }
 
 /* ========================= */
 function formatItem(item, cache) {
   const key = normalize(item.title);
-  const text = cleanGenerated(cache[key]?.text, item.title);
+  const raw = cache[key]?.text;
+  const text = cleanGenerated(raw, item.title);
 
   return `### ${item.title}
 
@@ -161,7 +168,9 @@ function buildFooter() {
 async function main() {
   const raw = JSON.parse(fs.readFileSync(INPUT, "utf8"));
   const items = prepare(raw);
-  const cache = loadCache();
+
+  // ⚠️ キャッシュ削除推奨
+  let cache = loadCache();
 
   console.log("📦 items:", items.length);
 
