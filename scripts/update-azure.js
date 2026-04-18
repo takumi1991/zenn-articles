@@ -265,6 +265,8 @@ published: true
 Azureには常時無料で利用できるサービスが多数存在しており、各サービス一定の上限までは課金されずに利用できます。
 本記事ではカテゴリごとにそれらの常時無料サービスを整理しています。
 
+👉 English version: https://zenn.dev/good_sleeper/articles/azure-always-free-en
+
 `;
 
   for (const [category, list] of Object.entries(grouped)) {
