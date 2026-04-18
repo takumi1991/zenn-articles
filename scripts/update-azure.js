@@ -268,9 +268,15 @@ Azureには常時無料で利用できるサービスが多数存在します。
     const icon = CATEGORY_META[category] || "📁";
     md += `## ${icon} ${category}\n\n`;
 
-    for (const item of list) {
-      md += formatItem(item, cache) + "\n---\n\n";
+  list.forEach((item, i) => {
+    md += formatItem(item, cache);
+  
+    if (i !== list.length - 1) {
+      md += "\n---\n\n";
+    } else {
+      md += "\n\n";
     }
+  });
   }
 
   md += buildFooter();
