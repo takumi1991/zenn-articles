@@ -6,6 +6,30 @@ const OUTPUT = "./articles/azure-always-free.md";
 const CATEGORY_MAP = "./data/azure-jp-category-map.json";
 
 // =========================
+// カテゴリ絵文字
+// =========================
+const CATEGORY_META = {
+  "AI + 機械学習": "🧠",
+  "分析": "📊",
+  "コンピューティング": "🖥️",
+  "コンテナー": "📦",
+  "データベース": "🗄️",
+  "開発者ツール": "🛠️",
+  "DevOps": "⚙️",
+  "ハイブリッド + マルチクラウド": "🌐",
+  "ID": "🔐",
+  "統合": "🔗",
+  "モノのインターネット (IoT)": "📡",
+  "管理とガバナンス": "📋",
+  "移行": "✈️",
+  "ネットワーク": "🌍",
+  "セキュリティ": "🛡️",
+  "ストレージ": "💾",
+  "仮想デスクトップ インフラストラクチャ": "🖥️",
+  "Web": "🌎"
+};
+
+// =========================
 // タイトル補正
 // =========================
 const normalizeTitle = (title) => {
@@ -50,7 +74,7 @@ async function main() {
     fs.readFileSync(CATEGORY_MAP, "utf8")
   );
 
-  if (!data.length) {
+  if (!Array.isArray(data) || data.length === 0) {
     console.error("❌ data empty");
     process.exit(1);
   }
@@ -61,7 +85,7 @@ async function main() {
   const filtered = data.filter(d => d.period === "always");
 
   // =========================
-  // タイトル→データの辞書化
+  // タイトル→データ辞書
   // =========================
   const itemMap = {};
   for (const item of filtered) {
@@ -105,18 +129,26 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
 `;
 
   // =========================
-  // body（カテゴリ順そのまま）
+  // body
   // =========================
   let body = "";
 
   for (const [category, services] of Object.entries(categoryMap)) {
+
+    // ← ここが今回のバグ対策
+    if (!Array.isArray(services)) continue;
+
     const validItems = services
       .map(name => itemMap[name])
       .filter(Boolean);
 
     if (validItems.length === 0) continue;
 
-    body += `\n## ${category}（${validItems.length}件）\n\n`;
+    const emoji = CATEGORY_META[category] || "📁";
+
+    // SEO用の1文も追加
+    body += `\n## ${emoji} ${category}（${validItems.length}件）\n\n`;
+    body += `Azureの「${category}」カテゴリに属する常時無料サービス一覧です。\n\n`;
 
     for (const item of validItems) {
       body += formatItem(item) + "\n";
