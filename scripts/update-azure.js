@@ -152,7 +152,7 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
 
     const emoji = CATEGORY_META[category] || "📁";
 
-    body += `\n## ${emoji} ${category}（${validItems.length}件）\n\n`;
+    body += `\n\n## ${emoji} ${category}（${validItems.length}件）\n\n`;
 
     validItems.forEach((item, i) => {
       body += formatItem(item);
@@ -192,12 +192,22 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
   // =========================
   // footer
   // =========================
-  const footer = `
+const footer = `
 ---
 
 ## 注意
 
 常時無料枠には上限があります。超過すると課金されます。
+
+---
+
+## 関連記事：他クラウドの常時無料枠まとめ
+
+🌈 Google Cloud Platform の常時無料枠  
+👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
+
+🟧 AWS の常時無料枠  
+👉 https://zenn.dev/good_sleeper/articles/aws-always-free
 `;
 
   const markdown = header + body + footer;
