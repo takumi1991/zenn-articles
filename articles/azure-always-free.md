@@ -656,8 +656,8 @@ Azure Security Centerは、オンプレミスやクラウド全体にわたる�
 
 ## 関連記事
 
-🌈 GCP  
+🌈 Google Cloud Platform の常時無料枠(Always Free Services)  
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
 
-🟧 AWS  
+🟧 AWS の常時無料枠(Always Free Services)
 👉 https://zenn.dev/good_sleeper/articles/aws-always-free
