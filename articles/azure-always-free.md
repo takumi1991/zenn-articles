@@ -8,11 +8,12 @@ published: true
 
 # Azure常時無料サービス一覧
 
-最終更新日: 2026/4/18 11:28:59
+最終更新日: 2026/4/18 11:32:54
 
 AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されています。
 
 👉 English version: https://zenn.dev/good_sleeper/articles/azure-always-free-en
+
 
 
 ## 🧠 AI + 機械学習（5件）
@@ -67,6 +68,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 
 
 
+
 ## 📊 分析（2件）
 
 ### Data Factory
@@ -86,6 +88,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 **毎月の上限：** ユーザー数無制限
 
 🔗 https://azure.microsoft.com/ja-jp/products/data-catalog/
+
 
 
 
@@ -121,6 +124,7 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 
 
 
+
 ## 📦 コンテナー（2件）
 
 ### Azure Kubernetes Service (AKS)
@@ -143,6 +147,7 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 
 
 
+
 ## 🗄️ データベース（2件）
 
 ### Azure Cosmos DB
@@ -162,6 +167,7 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 **毎月の上限：** 最大 10 個のデータベースを、それぞれ 100,000 vCore 秒のサーバーレス レベルと 32 GB のストレージを利用可能
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-sql/database/
+
 
 
 
@@ -197,6 +203,7 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 
 
 
+
 ## ⚙️ DevOps（1件）
 
 ### Azure DevOps
@@ -206,6 +213,7 @@ Git Repos、CI/CD、ビルドとリリースのオートメーションを使用
 **毎月の上限：** 5 人のユーザーと無制限のプライベート Git Repos
 
 🔗 https://azure.microsoft.com/ja-jp/products/devops/
+
 
 
 
@@ -231,6 +239,7 @@ Azure の管理とサービスを拡張します。
 
 
 
+
 ## 🔐 ID（1件）
 
 ### Microsoft Entra ID (旧称 Azure AD)
@@ -240,6 +249,7 @@ Azure の管理とサービスを拡張します。
 **毎月の上限：** すべてのクラウド アプリへのシングル サインオン (SSO) を備えた 50,000 個の保存オブジェクト
 
 🔗 https://www.microsoft.com/ja-jp/security/business/identity-access/microsoft-entra-id
+
 
 
 
@@ -295,6 +305,7 @@ Web アプリやモバイル アプリにリアルタイムの双方向通信を
 
 
 
+
 ## 📡 モノのインターネット (IoT)（2件）
 
 ### IoT Edge
@@ -314,6 +325,7 @@ Web アプリやモバイル アプリにリアルタイムの双方向通信を
 **毎月の上限：** 無料版では、1 日あたり 8,000 件のメッセージと 0.5 KB のメッセージ メーター サイズ
 
 🔗 https://azure.microsoft.com/ja-jp/products/iot-hub/
+
 
 
 
@@ -409,6 +421,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 
 
 
+
 ## ✈️ 移行（3件）
 
 ### Database Migration Service
@@ -438,6 +451,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/storage-mover#Azure-storage-mover
+
 
 
 
@@ -483,6 +497,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 
 
 
+
 ## 🌎 Web（4件）
 
 ### Static Web Apps
@@ -524,9 +539,9 @@ Web アプリケーションにリアルタイム通信を追加します。
 🔗 https://azure.microsoft.com/ja-jp/products/signalr-service/
 
 
-## 🧩 その他（17件）
 
-分類に含まれていないサービスです。
+
+## 🧩 その他（17件）
 
 ### Azure Language
 
@@ -696,12 +711,6 @@ Azure リソースのセキュリティに対する可視性と制御を強化�
 
 🔗 https://azure.microsoft.com/ja-jp/products/defender-for-cloud/
 
-
----
-
-## 注意
-
-常時無料枠には上限があります。超過すると課金されます。
 
 ---
 
