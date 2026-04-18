@@ -31,6 +31,37 @@ const normalize = (s) =>
     .trim();
 
 /* ========================= */
+// 🔥 category index生成（これが正解）
+function buildCategoryIndex(categoryMap) {
+  const index = new Map();
+
+  for (const [category, services] of Object.entries(categoryMap)) {
+    for (const name of services) {
+      const key = normalize(name);
+      index.set(key, category);
+    }
+  }
+
+  return index;
+}
+
+function resolveCategory(title, index) {
+  const key = normalize(title);
+
+  // 完全一致
+  if (index.has(key)) return index.get(key);
+
+  // 部分一致（保険）
+  for (const [k, v] of index.entries()) {
+    if (key.includes(k) || k.includes(key)) {
+      return v;
+    }
+  }
+
+  return "その他";
+}
+
+/* ========================= */
 // cache
 function loadCache() {
   if (!fs.existsSync(CACHE_PATH)) return {};
@@ -79,12 +110,12 @@ function cleanGenerated(text, title) {
   if (!text) return text;
 
   const name = title.trim();
-  let t = text.trim();
 
-  t = t
+  let t = text
     .replace(/サービス名[:：]?/g, "")
     .replace(/説明文[:：]?/g, "")
-    .replace(/拡張された説明文[:：]?/g, "");
+    .replace(/拡張された説明文[:：]?/g, "")
+    .trim();
 
   let lines = t.split("\n").map(l => l.trim());
 
@@ -118,22 +149,6 @@ function prepare(items) {
   }
 
   return Array.from(map.values()).filter(i => i.period === "always");
-}
-
-/* ========================= */
-// 🔥 カテゴリ分け
-function groupByCategory(items, categoryMap) {
-  const grouped = {};
-
-  for (const item of items) {
-    const key = normalize(item.title);
-    const category = categoryMap[key] || "その他";
-
-    if (!grouped[category]) grouped[category] = [];
-    grouped[category].push(item);
-  }
-
-  return grouped;
 }
 
 /* ========================= */
@@ -171,13 +186,12 @@ async function main() {
   const items = prepare(raw);
   const cache = loadCache();
 
-  const categoryMap = fs.existsSync(CATEGORY_MAP)
-    ? JSON.parse(fs.readFileSync(CATEGORY_MAP, "utf8"))
-    : {};
+  const categoryMap = JSON.parse(fs.readFileSync(CATEGORY_MAP, "utf8"));
+  const index = buildCategoryIndex(categoryMap);
 
   console.log("📦 items:", items.length);
 
-  // 生成
+  /* ===== 生成 ===== */
   for (const item of items) {
     const key = normalize(item.title);
 
@@ -200,10 +214,19 @@ async function main() {
     await new Promise(r => setTimeout(r, 800));
   }
 
-  // 🔥 カテゴリ適用
-  const grouped = groupByCategory(items, categoryMap);
+  /* ===== カテゴリ分類 ===== */
+  const grouped = {};
 
-  // 🔥 FrontMatter必須
+  for (const item of items) {
+    const category = resolveCategory(item.title, index);
+
+    if (!grouped[category]) grouped[category] = [];
+    grouped[category].push(item);
+
+    console.log("📂", item.title, "→", category);
+  }
+
+  /* ===== Markdown ===== */
   let md = `---
 title: "Azure常時無料サービス一覧"
 emoji: "🟦"
@@ -214,7 +237,7 @@ published: true
 
 # Azure常時無料サービス一覧
 
-Azureには常時無料で利用できるサービスが多数存在します。本記事ではそれらをカテゴリごとに整理しています。
+Azureには常時無料で利用できるサービスが多数存在します。本記事ではカテゴリごとに整理しています。
 
 `;
 
