@@ -77,21 +77,44 @@ function buildCategoryIndex(categoryMap) {
 function resolveCategory(title, index) {
   const key = normalize(title);
 
-  if (index.has(key)) return index.get(key);
+  // ① 完全一致
+  if (index.has(key)) {
+    const cat = index.get(key);
+    console.log("✅ EXACT:", title, "→", key, "→", cat);
+    return cat;
+  }
 
+  // ② 前方一致
+  for (const [k, v] of index.entries()) {
+    if (key.startsWith(k)) {
+      console.log("🟡 PREFIX:", title, "→", key, "≈", k, "→", v);
+      return v;
+    }
+  }
+
+  // ③ 最長部分一致（危険ゾーン）
   let best = null;
   let bestLen = 0;
+  let matchedKey = null;
 
   for (const [k, v] of index.entries()) {
     if (key.includes(k) || k.includes(key)) {
       if (k.length > bestLen) {
         best = v;
         bestLen = k.length;
+        matchedKey = k;
       }
     }
   }
 
-  return best || "Other";
+  if (best) {
+    console.warn("⚠️ PARTIAL:", title, "→", key, "≈", matchedKey, "→", best);
+    return best;
+  }
+
+  // ④ 完全失敗
+  console.error("❌ UNMATCHED:", title, "→", key);
+  return "Other";
 }
 
 /* ========================= */
