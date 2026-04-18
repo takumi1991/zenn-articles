@@ -8,15 +8,13 @@ published: true
 
 # Azure常時無料サービス一覧
 
-最終更新日: 2026/4/18 11:03:25
+最終更新日: 2026/4/18 11:25:06
 
 AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されています。
 
 👉 English version: https://zenn.dev/good_sleeper/articles/azure-always-free-en
 
 ## 🧠 AI + 機械学習（5件）
-
-Azureの「AI + 機械学習」カテゴリに属する常時無料サービス一覧です。
 
 ### AI Bot Service
 
@@ -26,6 +24,8 @@ Azureの「AI + 機械学習」カテゴリに属する常時無料サービス�
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-bot-service/
 
+---
+
 ### Azure AI Search
 
 Web およびモバイル アプリケーションにクラウド検索サービスを組み込むことができます。
@@ -33,6 +33,8 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 **毎月の上限：** サービスごとに 10,000 件のホスト ドキュメントと 3 つのインデックスを保存できる 50 MB のストレージ
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-search/
+
+---
 
 ### Machine Learning
 
@@ -42,6 +44,8 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 
 🔗 https://azure.microsoft.com/ja-jp/products/machine-learning/
 
+---
+
 ### Open Datasets
 
 キュレーションされたデータセットで機械学習を加速します。
@@ -49,6 +53,8 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 **毎月の上限：** 無料 (エグレスの料金が適用される場合あり)
 
 🔗 https://azure.microsoft.com/ja-jp/products/open-datasets/
+
+---
 
 ### AI Immersive Reader
 
@@ -61,8 +67,6 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 
 ## 📊 分析（2件）
 
-Azureの「分析」カテゴリに属する常時無料サービス一覧です。
-
 ### Data Factory
 
 データ サービスを大規模に作成し、管理しますます。
@@ -70,6 +74,8 @@ Azureの「分析」カテゴリに属する常時無料サービス一覧です
 **毎月の上限：** 5 つの低頻度アクティビティ
 
 🔗 https://azure.microsoft.com/ja-jp/products/data-factory/
+
+---
 
 ### Data Catalog
 
@@ -82,8 +88,6 @@ Azureの「分析」カテゴリに属する常時無料サービス一覧です
 
 ## 🖥️ コンピューティング（3件）
 
-Azureの「コンピューティング」カテゴリに属する常時無料サービス一覧です。
-
 ### App Service
 
 フル マネージドのサービスとしてのプラットフォーム (PaaS) を活用して、Web アプリと API をグローバルかつ迅速に構築、デプロイ、スケーリングできます。
@@ -92,6 +96,8 @@ Azureの「コンピューティング」カテゴリに属する常時無料サ
 
 🔗 https://azure.microsoft.com/ja-jp/products/app-service/
 
+---
+
 ### Batch
 
 HPC アプリケーションのジョブ オーケストレーションとスケジューリングを使用して、クラウドでアプリケーションを拡張します。
@@ -99,6 +105,8 @@ HPC アプリケーションのジョブ オーケストレーションとスケ
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/batch/
+
+---
 
 ### Azure VM Image Builder
 
@@ -111,8 +119,6 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 
 ## 📦 コンテナー（2件）
 
-Azureの「コンテナー」カテゴリに属する常時無料サービス一覧です。
-
 ### Azure Kubernetes Service (AKS)
 
 使い慣れたツールでコンテナーを配置し、管理します。
@@ -120,6 +126,8 @@ Azureの「コンテナー」カテゴリに属する常時無料サービス一
 **毎月の上限：** AKS クラスターの管理は無料です。ノードによって消費されるリソースに対して料金が発生する
 
 🔗 https://azure.microsoft.com/ja-jp/products/kubernetes-service/
+
+---
 
 ### Container Apps
 
@@ -132,8 +140,6 @@ Azureの「コンテナー」カテゴリに属する常時無料サービス一
 
 ## 🗄️ データベース（2件）
 
-Azureの「データベース」カテゴリに属する常時無料サービス一覧です。
-
 ### Azure Cosmos DB
 
 オープン API を備えた高速 NoSQL データベースを使用して、あらゆるスケールの最新アプリを構築できます。
@@ -141,6 +147,8 @@ Azureの「データベース」カテゴリに属する常時無料サービス
 **毎月の上限：** 1,000 要求ユニット/秒のプロビジョニング済みスループット、25 GB のストレージ
 
 🔗 https://azure.microsoft.com/ja-jp/products/cosmos-db/
+
+---
 
 ### SQL Database
 
@@ -153,8 +161,6 @@ Azureの「データベース」カテゴリに属する常時無料サービス
 
 ## 🛠️ 開発者ツール（3件）
 
-Azureの「開発者ツール」カテゴリに属する常時無料サービス一覧です。
-
 ### DevTest Labs
 
 高速で簡単な、無駄のない開発およびテスト環境を実現します。
@@ -163,6 +169,8 @@ Azureの「開発者ツール」カテゴリに属する常時無料サービス
 
 🔗 https://azure.microsoft.com/ja-jp/products/devtest-lab/
 
+---
+
 ### Visual Studio Code
 
 クラウド開発用の強力で軽量なコード エディターを使用して生産性を向上します。
@@ -170,6 +178,8 @@ Azureの「開発者ツール」カテゴリに属する常時無料サービス
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/visual-studio-code/
+
+---
 
 ### Azure Deployment Environments
 
@@ -182,8 +192,6 @@ Azureの「開発者ツール」カテゴリに属する常時無料サービス
 
 ## ⚙️ DevOps（1件）
 
-Azureの「DevOps」カテゴリに属する常時無料サービス一覧です。
-
 ### Azure DevOps
 
 Git Repos、CI/CD、ビルドとリリースのオートメーションを使用して、任意の言語でアプリをビルドします。
@@ -195,8 +203,6 @@ Git Repos、CI/CD、ビルドとリリースのオートメーションを使用
 
 ## 🌐 ハイブリッド + マルチクラウド（2件）
 
-Azureの「ハイブリッド + マルチクラウド」カテゴリに属する常時無料サービス一覧です。
-
 ### Functions
 
 サーバー不要のコード アーキテクチャを使用してイベントを処理します。
@@ -204,6 +210,8 @@ Azureの「ハイブリッド + マルチクラウド」カテゴリに属する
 **毎月の上限：** 100 万回のリクエスト
 
 🔗 https://azure.microsoft.com/ja-jp/products/functions/
+
+---
 
 ### Azure Arc
 
@@ -216,8 +224,6 @@ Azure の管理とサービスを拡張します。
 
 ## 🔐 ID（1件）
 
-Azureの「ID」カテゴリに属する常時無料サービス一覧です。
-
 ### Microsoft Entra ID (旧称 Azure AD)
 
 クラウドの ID とアクセス管理を有効にします。
@@ -229,8 +235,6 @@ Azureの「ID」カテゴリに属する常時無料サービス一覧です。
 
 ## 🔗 統合（5件）
 
-Azureの「統合」カテゴリに属する常時無料サービス一覧です。
-
 ### API Management
 
 ハイブリッド マルチクラウド プラットフォームを使用して、すべてのプラットフォームにわたって API を管理します。
@@ -238,6 +242,8 @@ Azureの「統合」カテゴリに属する常時無料サービス一覧です
 **毎月の上限：** 従量課金レベルで毎月 100 万通話無料
 
 🔗 https://azure.microsoft.com/ja-jp/products/api-management/
+
+---
 
 ### Health Data Services
 
@@ -247,6 +253,8 @@ Azureの「統合」カテゴリに属する常時無料サービス一覧です
 
 🔗 https://azure.microsoft.com/ja-jp/products/health-data-services/
 
+---
+
 ### Event Grid
 
 信頼性の高い大規模イベント配信をします。
@@ -255,6 +263,8 @@ Azureの「統合」カテゴリに属する常時無料サービス一覧です
 
 🔗 https://azure.microsoft.com/ja-jp/products/event-grid/
 
+---
+
 ### Logic Apps
 
 クラウドとオンプレミスのシステム全体にわたる自動化された統合ソリューションをビルドします。
@@ -262,6 +272,8 @@ Azureの「統合」カテゴリに属する常時無料サービス一覧です
 **毎月の上限：** 4,000 件の組み込みアクションと従量課金プラン
 
 🔗 https://azure.microsoft.com/ja-jp/products/logic-apps/
+
+---
 
 ### Web PubSub
 
@@ -274,8 +286,6 @@ Web アプリやモバイル アプリにリアルタイムの双方向通信を
 
 ## 📡 モノのインターネット (IoT)（2件）
 
-Azureの「モノのインターネット (IoT)」カテゴリに属する常時無料サービス一覧です。
-
 ### IoT Edge
 
 クラウドのインテリジェンスと分析を IoT エッジ デバイスまで拡張します。
@@ -283,6 +293,8 @@ Azureの「モノのインターネット (IoT)」カテゴリに属する常時
 **毎月の上限：** 無料のオープンソース エッジ ランタイム
 
 🔗 https://azure.microsoft.com/ja-jp/products/iot-edge/
+
+---
 
 ### IoT Hub
 
@@ -295,8 +307,6 @@ Azureの「モノのインターネット (IoT)」カテゴリに属する常時
 
 ## 📋 管理とガバナンス（9件）
 
-Azureの「管理とガバナンス」カテゴリに属する常時無料サービス一覧です。
-
 ### Monitor
 
 アプリケーション、インフラストラクチャ、ネットワークを完全に監視します。
@@ -304,6 +314,8 @@ Azureの「管理とガバナンス」カテゴリに属する常時無料サー
 **毎月の上限：** 機能ごとの無料利用額については、Azure Monitor の料金詳細を参照する
 
 🔗 https://azure.microsoft.com/ja-jp/products/monitor/
+
+---
 
 ### Automation
 
@@ -313,6 +325,8 @@ Azureの「管理とガバナンス」カテゴリに属する常時無料サー
 
 🔗 https://azure.microsoft.com/ja-jp/products/automation/
 
+---
+
 ### Advisor
 
 Azure のパーソナライズされた推奨事項と成功事例を取得します。
@@ -320,6 +334,8 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 **毎月の上限：** 無制限
 
 🔗 https://azure.microsoft.com/ja-jp/products/advisor/
+
+---
 
 ### Azure Lighthouse
 
@@ -329,6 +345,8 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-lighthouse/
 
+---
+
 ### Azure Policy
 
 一貫したリソース ガバナンスにより、大規模なリアルタイムのクラウド コンプライアンスを実現します。
@@ -336,6 +354,8 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 **毎月の上限：** 構成および変更追跡機能への無料アクセス
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-policy/
+
+---
 
 ### Resource Manager
 
@@ -345,6 +365,8 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 
 🔗 https://azure.microsoft.com/ja-jp/get-started/azure-portal/resource-manager/
 
+---
+
 ### Cloud Shell
 
 一般的なコマンドライン ツールとプログラミング言語を使用して、ブラウザーベースのシェルで Azure リソースを管理します。
@@ -353,6 +375,8 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 
 🔗 https://azure.microsoft.com/ja-jp/get-started/azure-portal/cloud-shell/
 
+---
+
 ### Azure Automanage
 
 自動化された操作で IT 管理を簡素化および最適化できます。
@@ -360,6 +384,8 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 **毎月の上限：** Automanage 固有の料金は発生しません。Automanage を通じてオンボードされた Azure サービスは、個別に課金されます
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-automanage/
+
+---
 
 ### Azure Resource Mover
 
@@ -372,8 +398,6 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 
 ## ✈️ 移行（3件）
 
-Azureの「移行」カテゴリに属する常時無料サービス一覧です。
-
 ### Database Migration Service
 
 オンプレミスからクラウドへのデータベースの移行をシンプルにします。
@@ -382,6 +406,8 @@ Azureの「移行」カテゴリに属する常時無料サービス一覧です
 
 🔗 https://azure.microsoft.com/ja-jp/products/database-migration/
 
+---
+
 ### Azure Migrate
 
 オンプレミスの仮想マシンを検出し、評価し、適切なサイズに調整し、Azure に移行します。
@@ -389,6 +415,8 @@ Azureの「移行」カテゴリに属する常時無料サービス一覧です
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-migrate/
+
+---
 
 ### Azure Storage Mover
 
@@ -401,8 +429,6 @@ Azureの「移行」カテゴリに属する常時無料サービス一覧です
 
 ## 🌍 ネットワーク（4件）
 
-Azureの「ネットワーク」カテゴリに属する常時無料サービス一覧です。
-
 ### Network Watcher
 
 ネットワークのパフォーマンスと健全性を監視、診断し、分析情報を得ます。
@@ -410,6 +436,8 @@ Azureの「ネットワーク」カテゴリに属する常時無料サービス
 **毎月の上限：** 1,000 件のチェック、10 件のテスト、10 件の接続メトリックを含む 5 GB のストレージ
 
 🔗 https://azure.microsoft.com/ja-jp/products/network-watcher/
+
+---
 
 ### Private Link
 
@@ -419,6 +447,8 @@ Azureの「ネットワーク」カテゴリに属する常時無料サービス
 
 🔗 https://azure.microsoft.com/ja-jp/products/private-link/
 
+---
+
 ### Virtual Network
 
 プライベート ネットワークをプロビジョニングし、オンプレミスのデータセンターに接続します。
@@ -426,6 +456,8 @@ Azureの「ネットワーク」カテゴリに属する常時無料サービス
 **毎月の上限：** 50 仮想ネットワーク
 
 🔗 https://azure.microsoft.com/ja-jp/products/virtual-network/
+
+---
 
 ### Azure Maps
 
@@ -438,8 +470,6 @@ Azureの「ネットワーク」カテゴリに属する常時無料サービス
 
 ## 🌎 Web（4件）
 
-Azureの「Web」カテゴリに属する常時無料サービス一覧です。
-
 ### Static Web Apps
 
 ソース コードからグローバルな高可用性まで、フルスタック開発を合理化します。
@@ -447,6 +477,8 @@ Azureの「Web」カテゴリに属する常時無料サービス一覧です。
 **毎月の上限：** サブスクリプションあたり 100 GBの帯域幅、2 つのカスタム ドメイン、アプリあたり 0.5 GB のストレージ
 
 🔗 https://azure.microsoft.com/ja-jp/products/app-service/static/
+
+---
 
 ### App Configuration
 
@@ -456,6 +488,8 @@ Azureの「Web」カテゴリに属する常時無料サービス一覧です。
 
 🔗 https://azure.microsoft.com/ja-jp/products/app-configuration/
 
+---
+
 ### Notification Hubs
 
 どのバックエンドからでもあらゆるプラットフォームにプッシュ通知を送信します。
@@ -463,6 +497,8 @@ Azureの「Web」カテゴリに属する常時無料サービス一覧です。
 **毎月の上限：** 100 万件のプッシュ通知と無料の名前空間
 
 🔗 https://azure.microsoft.com/ja-jp/products/notification-hubs/
+
+---
 
 ### Azure SignalR Service
 
@@ -485,6 +521,8 @@ Web アプリケーションにリアルタイム通信を追加します。
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-foundry/tools/language
 
+---
+
 ### 音声テキスト変換
 
 オーディオをテキストに変換できます。
@@ -492,6 +530,8 @@ Web アプリケーションにリアルタイム通信を追加します。
 **毎月の上限：** リアルタイム音声テキスト変換を毎月 5 時間分の音声に使用可能
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-foundry/tools/speech
+
+---
 
 ### テキスト読み上げ
 
@@ -501,6 +541,8 @@ Web アプリケーションにリアルタイム通信を追加します。
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-foundry/tools/speech
 
+---
+
 ### 音声翻訳
 
 話し声をテキストや他言語の音声に翻訳できます。
@@ -508,6 +550,8 @@ Web アプリケーションにリアルタイム通信を追加します。
 **毎月の上限：** リアルタイム音声翻訳 (標準音声) を毎月 5 時間分の音声に使用可能
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-foundry/tools/speech
+
+---
 
 ### 翻訳ツール
 
@@ -517,6 +561,8 @@ Web アプリケーションにリアルタイム通信を追加します。
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-foundry/tools/translator
 
+---
+
 ### Face
 
 画像に含まれる顔の検出、人物の特定、分析、整理を行い、タグを付けることができます。
@@ -524,6 +570,8 @@ Web アプリケーションにリアルタイム通信を追加します。
 **毎月の上限：** Free インスタンスの 30,000 トランザクション
 
 🔗 https://azure.microsoft.com/ja-jp/products/cognitive-services/face/
+
+---
 
 ### Content Safety
 
@@ -533,6 +581,8 @@ Web アプリケーションにリアルタイム通信を追加します。
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-content-safety/
 
+---
+
 ### Azure コンテナー ストレージ
 
 ステートフル コンテナー アプリケーションの永続ストレージ ボリュームを管理できます。​
@@ -540,6 +590,8 @@ Web アプリケーションにリアルタイム通信を追加します。
 **毎月の上限：** このサービスでは、ストレージ プール容量 5 TiB 未満のデプロイ向けに Free レベルが提供されます
 
 🔗 https://azure.microsoft.com/ja-jp/products/container-storage/
+
+---
 
 ### Service Fabric
 
@@ -549,6 +601,8 @@ Web アプリケーションにリアルタイム通信を追加します。
 
 🔗 https://azure.microsoft.com/ja-jp/products/service-fabric/
 
+---
+
 ### Azure Cosmos DB for MongoDB
 
 フル マネージドの MongoDB 互換データベース サービスを使用して、大規模な最新アプリを構築できます。
@@ -556,6 +610,8 @@ Web アプリケーションにリアルタイム通信を追加します。
 **毎月の上限：** 32 GB のストレージを備えた専用の MongoDB クラスター
 
 🔗 https://azure.microsoft.com/ja-jp/products/cosmos-db/
+
+---
 
 ### Azure Active Directory B2C
 
@@ -565,6 +621,8 @@ Web アプリケーションにリアルタイム通信を追加します。
 
 🔗 https://www.microsoft.com/ja-jp/security/business/identity-access/microsoft-entra-id
 
+---
+
 ### Azure Managed Applications
 
 承認されたクラウド オファリングのカタログを使用して、サービスを取得しやすくなります。
@@ -572,6 +630,8 @@ Web アプリケーションにリアルタイム通信を追加します。
 **毎月の上限：** 無料公開
 
 🔗 https://azure.microsoft.com/ja-jp/products/managed-applications/
+
+---
 
 ### Azure Update Manager
 
@@ -581,6 +641,8 @@ Web アプリケーションにリアルタイム通信を追加します。
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-update-management-center/
 
+---
+
 ### Cost Management
 
 透明性、正確性、効率性を備え、クラウド コストを監視、割り当て、最適化します。
@@ -588,6 +650,8 @@ Web アプリケーションにリアルタイム通信を追加します。
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/cost-management/
+
+---
 
 ### Bandwidth (データ転送)
 
@@ -597,6 +661,8 @@ Web アプリケーションにリアルタイム通信を追加します。
 
 🔗 https://azure.microsoft.com/ja-jp/products/virtual-network/
 
+---
+
 ### Azure Attestation
 
 信頼できるプラットフォーム モジュールと信頼できる実行環境の ID とセキュリティ体制を検証します。
@@ -604,6 +670,8 @@ Web アプリケーションにリアルタイム通信を追加します。
 **毎月の上限：** なし
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-attestation/
+
+---
 
 ### Security Center
 
