@@ -30,7 +30,7 @@ const CATEGORY_META = {
 };
 
 // =========================
-// 正規化（超重要）
+// 正規化（マッピング用キー）
 // =========================
 const normalize = (s) =>
   s
@@ -96,7 +96,7 @@ async function main() {
   const filtered = data.filter(d => d.period === "always");
 
   // =========================
-  // 正規化マップ作成
+  // 正規化マップ
   // =========================
   const itemMap = {};
   for (const item of filtered) {
@@ -108,8 +108,7 @@ async function main() {
   // =========================
   // 日本時間
   // =========================
-  const now = new Date();
-  const updatedAt = now.toLocaleString("ja-JP", {
+  const updatedAt = new Date().toLocaleString("ja-JP", {
     timeZone: "Asia/Tokyo",
   });
 
@@ -155,15 +154,16 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
 
     body += `\n## ${emoji} ${category}（${validItems.length}件）\n\n`;
 
-    for (const item of validItems) {
-      body += formatItem(item) + "\n";
-        // 最後以外だけ区切り線
-        if (i !== validItems.length - 1) {
-          body += "\n---\n\n";
-        } else {
-          body += "\n";
-  }
-    }
+    validItems.forEach((item, i) => {
+      body += formatItem(item);
+
+      // 最後以外に区切り線
+      if (i !== validItems.length - 1) {
+        body += "\n---\n\n";
+      } else {
+        body += "\n";
+      }
+    });
   }
 
   // =========================
@@ -175,16 +175,16 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
     body += `\n## 🧩 その他（${others.length}件）\n\n`;
     body += `分類に含まれていないサービスです。\n\n`;
 
-    for (const item of others) {
-      body += formatItem(item) + "\n";
+    others.forEach((item, i) => {
+      body += formatItem(item);
+
       if (i !== others.length - 1) {
         body += "\n---\n\n";
       } else {
         body += "\n";
       }
-    }
+    });
 
-    // デバッグログ
     console.log("⚠️ 未マッチ:");
     others.forEach(o => console.log("-", o.title));
   }
@@ -202,6 +202,9 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
 
   const markdown = header + body + footer;
 
+  // =========================
+  // 出力
+  // =========================
   const dir = path.dirname(OUTPUT);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
