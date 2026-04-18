@@ -315,8 +315,9 @@ for (const [cat, list] of Object.entries(grouped)) {
 }
 console.log("==========================\n");
 
-  /* ===== Markdown ===== */
-  let md = `---
+
+/* ===== Markdown ===== */
+let md = `---
 title: "Azure Always Free Services"
 emoji: "🟦"
 type: "tech"
@@ -330,31 +331,42 @@ Azure provides many services that can be used for free within certain limits. Th
 
 `;
 
-  for (const category of CATEGORY_ORDER) {
-    const list = grouped[category];
-    if (!list.length) continue;
+// 🔥 カテゴリ出力
+for (const category of CATEGORY_ORDER) {
+  const list = grouped[category];
+  if (!list || list.length === 0) continue;
 
-    const icon = CATEGORY_META[category] || "📁";
+  const icon = CATEGORY_META[category] || "📁";
 
-    md += `## ${icon} ${category}\n\n`;
+  // ✅ 空行を必ず入れる（Zenn崩れ防止）
+  md += `\n## ${icon} ${category}\n\n`;
 
-    list.forEach((item, i) => {
-      md += formatItem(item, cache);
+  list.forEach((item, i) => {
+    md += formatItem(item, cache);
 
-      if (i !== list.length - 1) {
-        md += "\n---\n\n";
-      } else {
-        md += "\n<br><br>\n";
-      }
-    });
-  }
+    // ❌ "---"はZennで崩れる原因 → 削除
+    if (i !== list.length - 1) {
+      md += "\n\n"; 
+    } else {
+      md += "\n<br><br>\n";
+    }
+  });
+}
 
-  md += buildFooter();
+// フッター前にも空行
+md += `\n`;
+md += buildFooter();
 
-  fs.mkdirSync(path.dirname(OUTPUT), { recursive: true });
-  fs.writeFileSync(OUTPUT, md, "utf8");
+/* ===== Debug（必須） ===== */
+console.log("\n===== MARKDOWN PREVIEW =====");
+console.log(md.slice(0, 1200));
+console.log("============================\n");
 
-  console.log("✅ done");
+/* ===== Write ===== */
+fs.mkdirSync(path.dirname(OUTPUT), { recursive: true });
+fs.writeFileSync(OUTPUT, md, "utf8");
+
+console.log("✅ done");
 }
 
 main();
