@@ -673,8 +673,8 @@ is a fully managed service that helps you build real-time web applications.  It 
 
 ## Related Articles
 
+🟧 AWS  
+👉 https://zenn.dev/good_sleeper/articles/aws-always-free-en
+
 🟦 Azure (JP)  
 👉 https://zenn.dev/good_sleeper/articles/azure-always-free
-
-🟧 AWS  
-👉 https://zenn.dev/good_sleeper/articles/aws-always-free
