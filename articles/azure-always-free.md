@@ -8,7 +8,7 @@ published: true
 
 # Azure常時無料サービス一覧
 
-最終更新日: 2026/04/18 10:45:39
+最終更新日: 2026/04/18 10:50:30
 
 AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されています。それらと比較して対象サービス数も多く、AI・データ・アプリ基盤まで幅広く常時無料枠が揃っているため、個人開発でも多様な構成をコストを抑えて実現できます。
 
@@ -16,7 +16,9 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
 
 👉 English version: https://zenn.dev/good_sleeper/articles/azure-always-free-en
 
-## AI + 機械学習（1件）
+## 🧠 AI + 機械学習（1件）
+
+Azureの「AI + 機械学習」カテゴリに属する常時無料サービス一覧です。
 
 ### Azure AI Search
 
@@ -27,7 +29,9 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-search/
 
 
-## 分析（1件）
+## 📊 分析（1件）
+
+Azureの「分析」カテゴリに属する常時無料サービス一覧です。
 
 ### Data Catalog
 
@@ -38,7 +42,9 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 🔗 https://azure.microsoft.com/ja-jp/products/data-catalog/
 
 
-## コンピューティング（3件）
+## 🖥️ コンピューティング（3件）
+
+Azureの「コンピューティング」カテゴリに属する常時無料サービス一覧です。
 
 ### App Service
 
@@ -65,7 +71,9 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 🔗 https://azure.microsoft.com/ja-jp/products/image-builder/
 
 
-## コンテナー（1件）
+## 📦 コンテナー（1件）
+
+Azureの「コンテナー」カテゴリに属する常時無料サービス一覧です。
 
 ### Azure Kubernetes Service (AKS)
 
@@ -76,7 +84,9 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 🔗 https://azure.microsoft.com/ja-jp/products/kubernetes-service/
 
 
-## データベース（1件）
+## 🗄️ データベース（1件）
+
+Azureの「データベース」カテゴリに属する常時無料サービス一覧です。
 
 ### Azure Cosmos DB
 
@@ -87,7 +97,9 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 🔗 https://azure.microsoft.com/ja-jp/products/cosmos-db/
 
 
-## 開発者ツール（2件）
+## 🛠️ 開発者ツール（2件）
+
+Azureの「開発者ツール」カテゴリに属する常時無料サービス一覧です。
 
 ### Visual Studio Code
 
@@ -106,7 +118,9 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 🔗 https://azure.microsoft.com/ja-jp/products/deployment-environments/
 
 
-## DevOps（1件）
+## ⚙️ DevOps（1件）
+
+Azureの「DevOps」カテゴリに属する常時無料サービス一覧です。
 
 ### Azure DevOps
 
@@ -117,7 +131,9 @@ Git Repos、CI/CD、ビルドとリリースのオートメーションを使用
 🔗 https://azure.microsoft.com/ja-jp/products/devops/
 
 
-## ハイブリッド + マルチクラウド（1件）
+## 🌐 ハイブリッド + マルチクラウド（1件）
+
+Azureの「ハイブリッド + マルチクラウド」カテゴリに属する常時無料サービス一覧です。
 
 ### Azure Arc
 
@@ -128,7 +144,9 @@ Azure の管理とサービスを拡張します。
 🔗 https://azure.microsoft.com/ja-jp/products/azure-arc/
 
 
-## 統合（3件）
+## 🔗 統合（3件）
+
+Azureの「統合」カテゴリに属する常時無料サービス一覧です。
 
 ### API Management
 
@@ -155,7 +173,9 @@ Azure の管理とサービスを拡張します。
 🔗 https://azure.microsoft.com/ja-jp/products/logic-apps/
 
 
-## 管理とガバナンス（6件）
+## 📋 管理とガバナンス（6件）
+
+Azureの「管理とガバナンス」カテゴリに属する常時無料サービス一覧です。
 
 ### Automation
 
@@ -206,7 +226,9 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 🔗 https://azure.microsoft.com/ja-jp/products/resource-mover/
 
 
-## 移行（2件）
+## ✈️ 移行（2件）
+
+Azureの「移行」カテゴリに属する常時無料サービス一覧です。
 
 ### Azure Migrate
 
@@ -225,7 +247,9 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 🔗 https://azure.microsoft.com/ja-jp/products/storage-mover#Azure-storage-mover
 
 
-## ネットワーク（1件）
+## 🌍 ネットワーク（1件）
+
+Azureの「ネットワーク」カテゴリに属する常時無料サービス一覧です。
 
 ### Azure Maps
 
@@ -236,7 +260,9 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 🔗 https://azure.microsoft.com/ja-jp/products/azure-maps/
 
 
-## Web（4件）
+## 🌎 Web（4件）
+
+Azureの「Web」カテゴリに属する常時無料サービス一覧です。
 
 ### Static Web Apps
 
