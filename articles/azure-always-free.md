@@ -90,7 +90,6 @@ Content Safetyは、AzureのAIを活用したサービスで、テキストや�
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-content-safety/
 
----
 
 ## 📦 コンテナー
 
@@ -122,7 +121,6 @@ Azure Container Appsは、コンテナ化されたアプリケーションを簡
 
 🔗 https://azure.microsoft.com/ja-jp/products/container-apps/
 
----
 
 ## 📊 分析
 
@@ -144,7 +142,6 @@ Data Factoryは、Azure上でデータ統合とETL（Extract, Transform, Load）
 
 🔗 https://azure.microsoft.com/ja-jp/products/data-factory/
 
----
 
 ## 🖥️ コンピューティング
 
@@ -196,7 +193,6 @@ Service Fabricは、マイクロサービスアーキテクチャを構築・実
 
 🔗 https://azure.microsoft.com/ja-jp/products/service-fabric/
 
----
 
 ## 🌎 Web
 
@@ -238,7 +234,6 @@ Azure SignalR Serviceは、リアルタイムWebアプリケーションの構�
 
 🔗 https://azure.microsoft.com/ja-jp/products/signalr-service/
 
----
 
 ## 🗄️ データベース
 
@@ -270,7 +265,6 @@ SQL Databaseは、Azureが提供するフルマネージドなリレーショナ
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-sql/database/
 
----
 
 ## ✈️ 移行
 
@@ -302,7 +296,6 @@ Azure Storage Moverは、オンプレミスやその他のクラウドストレ�
 
 🔗 https://azure.microsoft.com/ja-jp/products/storage-mover#Azure-storage-mover
 
----
 
 ## 🛠️ 開発者ツール
 
@@ -334,7 +327,6 @@ Visual Studio Codeは、Microsoftが開発する軽量でパワフルなソー�
 
 🔗 https://azure.microsoft.com/ja-jp/products/visual-studio-code/
 
----
 
 ## ⚙️ DevOps
 
@@ -346,7 +338,6 @@ Azure DevOpsは、開発チームがアプリケーションを計画、開発�
 
 🔗 https://azure.microsoft.com/ja-jp/products/devops/
 
----
 
 ## 📁 ハイブリッド + マルチクラウド
 
@@ -358,7 +349,6 @@ Azure Arc は、Azure の管理とガバナンスを、オンプレミス、マ�
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-arc/
 
----
 
 ## 🔐 ID
 
@@ -380,7 +370,6 @@ Microsoft Entra ID（旧称 Azure AD）は、クラウドベースのIDおよび
 
 🔗 https://www.microsoft.com/ja-jp/security/business/identity-access/microsoft-entra-id
 
----
 
 ## 🧩 統合
 
@@ -432,7 +421,6 @@ Web PubSubは、リアルタイムのWebアプリケーションを容易に構�
 
 🔗 https://azure.microsoft.com/ja-jp/products/web-pubsub/
 
----
 
 ## 🌍 ネットワーク
 
@@ -484,7 +472,6 @@ Azure Virtual Network (VNet) は、Azureクラウド上で構築されるプラ�
 
 🔗 https://azure.microsoft.com/ja-jp/products/virtual-network/
 
----
 
 ## 📡 モノのインターネット (IoT)
 
@@ -506,7 +493,6 @@ IoT Hubは、IoTデバイスとAzure間の双方向通信を容易にする、�
 
 🔗 https://azure.microsoft.com/ja-jp/products/iot-hub/
 
----
 
 ## 📋 管理とガバナンス
 
@@ -628,7 +614,6 @@ Azure Resource Manager (ARM) は、Azure リソースのデプロイ、管理、
 
 🔗 https://azure.microsoft.com/ja-jp/get-started/azure-portal/resource-manager/
 
----
 
 ## 🛡️ セキュリティ
 
@@ -650,7 +635,6 @@ Azure Security Centerは、オンプレミスやクラウド全体にわたる�
 
 🔗 https://azure.microsoft.com/ja-jp/products/defender-for-cloud/
 
----
 
 
 
