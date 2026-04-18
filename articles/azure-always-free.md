@@ -8,9 +8,9 @@ published: true
 
 # Azure常時無料サービス一覧
 
-最終更新日: 2026/4/18 11:57:13
+最終更新日: 2026/4/18 11:58:45
 
-AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が65用意されています。
+AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が65件ほど用意されています。
 
 👉 English version: https://zenn.dev/good_sleeper/articles/azure-always-free-en
 
