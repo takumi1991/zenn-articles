@@ -1,4 +1,16 @@
+---
+title: "Microsoft Azure 常時無料サービス一覧 (Always Free Services)"
+emoji: "🔵"
+type: "tech"
+topics: ["azure", "free-tier", "cloud"]
+published: true
+---
+
 # Azure常時無料サービス一覧
+
+最終更新日: 2026/4/18 16:28:59
+
+Azureには常時無料で利用できるサービスが多数用意されています。本記事ではそれらを一覧で整理しています。
 
 ### Azure AI Search
 
@@ -614,7 +626,7 @@ Web PubSubは、リアルタイムのWebアプリケーションを容易に構�
 
 ## 関連記事
 
-🌈 GCP  
+🌈 Google Cloud Platform  
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
 
 🟧 AWS  
