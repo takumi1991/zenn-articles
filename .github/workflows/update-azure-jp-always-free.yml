@@ -11,6 +11,7 @@ on:
 env:
   APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
   APIFY_ACTOR_ID_AZURE: ${{ secrets.APIFY_ACTOR_ID_AZURE }}
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
 jobs:
   update:
