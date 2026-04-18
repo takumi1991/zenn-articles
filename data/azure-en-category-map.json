@@ -135,10 +135,12 @@
     "Microsoft Entra ID",
     "Microsoft Entra ID (formerly Azure AD)",
     "Azure AD",
-
     "Azure Active Directory B2C",
     "Azure AD B2C",
-    "Active Directory B2C"
+    "Active Directory B2C",
+    "Microsoft Entra External ID",
+    "Entra External ID"
+    
 
   ],
 
