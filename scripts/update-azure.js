@@ -1,13 +1,29 @@
 import fs from "fs";
 import path from "path";
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
+/* =========================
+   ▼ 設定
+========================= */
 const INPUT = "./data.json";
 const OUTPUT = "./articles/azure-always-free.md";
 const CATEGORY_MAP = "./data/azure-jp-category-map.json";
 
-// =========================
-// カテゴリ絵文字
-// =========================
+const CACHE_PATH = "./scripts/cache/azure_cache_jp.json";
+const BATCH_SIZE = 5;
+const TTL_MS = 30 * 24 * 60 * 60 * 1000;
+
+/* =========================
+   ▼ Gemini
+========================= */
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const model = genAI.getGenerativeModel({
+  model: "models/gemini-2.5-flash-lite"
+});
+
+/* =========================
+   ▼ カテゴリ絵文字
+========================= */
 const CATEGORY_META = {
   "AI + 機械学習": "🧠",
   "分析": "📊",
@@ -29,9 +45,9 @@ const CATEGORY_META = {
   "Web": "🌎"
 };
 
-// =========================
-// 正規化（強化版）
-// =========================
+/* =========================
+   ▼ 正規化（超重要）
+========================= */
 const normalize = (s) =>
   s
     ?.toLowerCase()
@@ -42,29 +58,71 @@ const normalize = (s) =>
     .replace(/\s+/g, "")
     .trim();
 
-// =========================
-// タイトル補正
-// =========================
-const normalizeTitle = (title) => {
-  if (!title) return title;
-  return title.replace("、サービス カタログ", "");
-};
+/* =========================
+   ▼ 軽微整形
+========================= */
+const normalizeTitle = (title) =>
+  title?.replace("、サービス カタログ", "");
 
-// =========================
-// Free Tier補正
-// =========================
-const normalizeFreeTier = (text) => {
-  if (!text) return text;
-  return text.trim() === "無料" ? "なし" : text;
-};
+const normalizeFreeTier = (text) =>
+  text?.trim() === "無料" ? "なし" : text;
 
-// =========================
-// フォーマット
-// =========================
-function formatItem(item) {
+/* =========================
+   ▼ キャッシュ
+========================= */
+function loadCache() {
+  if (!fs.existsSync(CACHE_PATH)) return {};
+  try {
+    return JSON.parse(fs.readFileSync(CACHE_PATH, "utf8") || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function saveCache(cache) {
+  fs.writeFileSync(CACHE_PATH, JSON.stringify(cache, null, 2));
+}
+
+function isExpired(entry) {
+  return !entry || Date.now() - entry.updatedAt > TTL_MS;
+}
+
+/* =========================
+   ▼ Gemini生成
+========================= */
+async function generateDescription(title, description) {
+  const prompt = `
+以下のAzureサービスの説明文を、日本語で約300文字に膨らませてください。
+
+# サービス名
+${title}
+
+# 元の説明文
+${description}
+
+# 条件
+・元の内容をベースにする（創作しない）
+・最初の1文で何ができるか明確にする
+・ユースケースを自然に補足する
+・冗長な表現は禁止
+・箇条書き禁止
+・300文字前後に調整
+`;
+
+  const result = await model.generateContent(prompt);
+  return (await result.response).text().trim();
+}
+
+/* =========================
+   ▼ Markdown整形
+========================= */
+function formatItem(item, cache) {
+  const key = normalize(item.title);
+  const generated = cache[key]?.text;
+
   return `### ${normalizeTitle(item.title)}
 
-${item.description}
+${generated || item.description}
 
 **毎月の上限：** ${normalizeFreeTier(item.free_tier)}
 
@@ -72,53 +130,75 @@ ${item.description}
 `;
 }
 
-// =========================
-// メイン
-// =========================
+/* =========================
+   ▼ メイン
+========================= */
 async function main() {
-  const data = JSON.parse(fs.readFileSync(INPUT, "utf8"));
-  const categoryMap = JSON.parse(fs.readFileSync(CATEGORY_MAP, "utf8"));
+  try {
+    const data = JSON.parse(fs.readFileSync(INPUT, "utf8"));
+    const categoryMap = JSON.parse(fs.readFileSync(CATEGORY_MAP, "utf8"));
 
-  if (!Array.isArray(data) || data.length === 0) {
-    console.error("❌ data empty");
-    process.exit(1);
-  }
+    const filtered = data.filter(d => d.period === "always");
+    const cache = loadCache();
 
-  // alwaysのみ
-  const filtered = data.filter(d => d.period === "always");
+    console.log(`📦 items: ${filtered.length}`);
 
-  // =========================
-  // itemMap
-  // =========================
-  const itemMap = {};
-  for (const item of filtered) {
-    itemMap[normalize(item.title)] = item;
-  }
+    /* ===== Gemini生成 ===== */
+    for (let i = 0; i < filtered.length; i += BATCH_SIZE) {
+      const batch = filtered.slice(i, i + BATCH_SIZE);
 
-  // =========================
-  // 部分一致検索（超重要）
-  // =========================
-  const findItem = (name) => {
-    const key = normalize(name);
+      console.log(`🚀 batch ${i}`);
 
-    // 完全一致
-    if (itemMap[key]) return itemMap[key];
+      await Promise.all(
+        batch.map(async (item) => {
+          const key = normalize(item.title);
 
-    // 部分一致（双方向）
-    const found = Object.entries(itemMap).find(([k]) =>
-      k.includes(key) || key.includes(k)
-    );
+          if (cache[key] && !isExpired(cache[key])) {
+            console.log(`⚡ cache: ${item.title}`);
+            return;
+          }
 
-    return found?.[1];
-  };
+          console.log(`🤖 gen: ${item.title}`);
 
-  const used = new Set();
+          const text = await generateDescription(
+            item.title,
+            item.description
+          );
 
-  const updatedAt = new Date().toLocaleString("ja-JP", {
-    timeZone: "Asia/Tokyo",
-  });
+          cache[key] = {
+            text,
+            updatedAt: Date.now()
+          };
 
-  const header = `---
+          saveCache(cache);
+          await new Promise(r => setTimeout(r, 1000));
+        })
+      );
+    }
+
+    /* ===== itemMap ===== */
+    const itemMap = {};
+    for (const item of filtered) {
+      itemMap[normalize(item.title)] = item;
+    }
+
+    const findItem = (name) => {
+      const key = normalize(name);
+      if (itemMap[key]) return itemMap[key];
+
+      const found = Object.entries(itemMap).find(([k]) =>
+        k.includes(key) || key.includes(k)
+      );
+      return found?.[1];
+    };
+
+    const used = new Set();
+
+    const updatedAt = new Date().toLocaleString("ja-JP", {
+      timeZone: "Asia/Tokyo",
+    });
+
+    let md = `---
 title: "Microsoft Azure 常時無料サービス一覧(Always Free Services)"
 emoji: "🔵"
 type: "tech"
@@ -131,94 +211,50 @@ published: true
 最終更新日: ${updatedAt}
 
 AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が${filtered.length}件ほど用意されています。
-
-👉 English version: https://zenn.dev/good_sleeper/articles/azure-always-free-en
 `;
 
-  let body = "";
+    /* ===== カテゴリ描画 ===== */
+    for (const [category, services] of Object.entries(categoryMap)) {
+      const validItems = services
+        .map(name => {
+          const item = findItem(name);
+          if (item) used.add(item.title);
+          return item;
+        })
+        .filter(Boolean);
 
-  // =========================
-  // カテゴリ描画
-  // =========================
-  for (const [category, services] of Object.entries(categoryMap)) {
-    if (!Array.isArray(services)) continue;
+      if (validItems.length === 0) continue;
 
-    const validItems = services
-      .map(name => {
-        const item = findItem(name);
-        if (item) used.add(item.title);
-        return item;
-      })
-      .filter(Boolean);
+      md += `\n\n## ${CATEGORY_META[category] || "📁"} ${category}\n\n`;
 
-    if (validItems.length === 0) continue;
+      validItems.forEach((item, i) => {
+        md += formatItem(item, cache);
+        md += i !== validItems.length - 1 ? "\n---\n\n" : "\n";
+      });
+    }
 
-    const emoji = CATEGORY_META[category] || "📁";
+    /* ===== その他 ===== */
+    const others = filtered.filter(i => !used.has(i.title));
 
-    // ★カテゴリ前はしっかり空ける
-    body += `\n\n\n## ${emoji} ${category}\n\n`;
+    if (others.length > 0) {
+      md += `\n\n## 🧩 その他（${others.length}件）\n\n`;
 
-    validItems.forEach((item, i) => {
-      body += formatItem(item);
+      others.forEach((item, i) => {
+        md += formatItem(item, cache);
+        md += i !== others.length - 1 ? "\n---\n\n" : "\n";
+      });
+    }
 
-      // 区切り線（最後以外）
-      if (i !== validItems.length - 1) {
-        body += "\n---\n\n";
-      } else {
-        body += "\n";
-      }
-    });
+    /* ===== 出力 ===== */
+    fs.mkdirSync(path.dirname(OUTPUT), { recursive: true });
+    fs.writeFileSync(OUTPUT, md, "utf8");
+
+    console.log("✅ done:", OUTPUT);
+
+  } catch (e) {
+    console.error("❌", e);
+    process.exit(1);
   }
-
-  // =========================
-  // その他
-  // =========================
-  const others = filtered.filter(item => !used.has(item.title));
-
-  if (others.length > 0) {
-    body += `\n\n\n## 🧩 その他（${others.length}件）\n\n`;
-
-    others.forEach((item, i) => {
-      body += formatItem(item);
-
-      if (i !== others.length - 1) {
-        body += "\n---\n\n";
-      } else {
-        body += "\n";
-      }
-    });
-
-    console.log("⚠️ 未マッチ:");
-    others.forEach(o => console.log("-", o.title));
-  }
-
-  // =========================
-  // footer
-  // =========================
-  const footer = `
-
-
-## 関連記事：他クラウドの常時無料枠まとめ
-
-🌈 Google Cloud Platform の常時無料枠  
-👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
-
-🟧 AWS の常時無料枠  
-👉 https://zenn.dev/good_sleeper/articles/aws-always-free
-`;
-
-  const markdown = header + body + footer;
-
-  const dir = path.dirname(OUTPUT);
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-
-  fs.writeFileSync(OUTPUT, markdown, "utf8");
-
-  console.log("✅ Zenn記事生成:", OUTPUT);
-  console.log(`総件数: ${filtered.length}`);
-  console.log(`🧩 その他: ${others.length}`);
 }
 
 main();
