@@ -46,7 +46,7 @@ const CATEGORY_META = {
 };
 
 /* =========================
-   ▼ 正規化（超重要）
+   ▼ 正規化
 ========================= */
 const normalize = (s) =>
   s
@@ -61,11 +61,11 @@ const normalize = (s) =>
 /* =========================
    ▼ 軽微整形
 ========================= */
-const normalizeTitle = (title) =>
-  title?.replace("、サービス カタログ", "");
+const normalizeTitle = (t) =>
+  t?.replace("、サービス カタログ", "");
 
-const normalizeFreeTier = (text) =>
-  text?.trim() === "無料" ? "なし" : text;
+const normalizeFreeTier = (t) =>
+  t?.trim() === "無料" ? "なし" : t;
 
 /* =========================
    ▼ キャッシュ
@@ -88,7 +88,7 @@ function isExpired(entry) {
 }
 
 /* =========================
-   ▼ Gemini生成
+   ▼ Gemini（拡張生成）
 ========================= */
 async function generateDescription(title, description) {
   const prompt = `
@@ -106,11 +106,47 @@ ${description}
 ・ユースケースを自然に補足する
 ・冗長な表現は禁止
 ・箇条書き禁止
-・300文字前後に調整
+・300文字前後
 `;
 
   const result = await model.generateContent(prompt);
   return (await result.response).text().trim();
+}
+
+/* =========================
+   ▼ footer（関数化）
+========================= */
+function buildFooter({ exclude = "" } = {}) {
+  const links = [
+    {
+      name: "Google Cloud Platform",
+      emoji: "🌈",
+      url: "https://zenn.dev/good_sleeper/articles/gcp-always-free",
+      key: "gcp"
+    },
+    {
+      name: "AWS",
+      emoji: "🟧",
+      url: "https://zenn.dev/good_sleeper/articles/aws-always-free",
+      key: "aws"
+    },
+    {
+      name: "Microsoft Azure",
+      emoji: "🟦",
+      url: "https://zenn.dev/good_sleeper/articles/azure-always-free",
+      key: "azure"
+    }
+  ];
+
+  const filtered = links.filter(l => l.key !== exclude);
+
+  return `
+
+## 関連記事：他クラウドの常時無料枠まとめ
+
+${filtered.map(l => `${l.emoji} ${l.name} の常時無料枠  
+👉 ${l.url}`).join("\n\n")}
+`;
 }
 
 /* =========================
@@ -147,18 +183,13 @@ async function main() {
     for (let i = 0; i < filtered.length; i += BATCH_SIZE) {
       const batch = filtered.slice(i, i + BATCH_SIZE);
 
-      console.log(`🚀 batch ${i}`);
-
       await Promise.all(
         batch.map(async (item) => {
           const key = normalize(item.title);
 
           if (cache[key] && !isExpired(cache[key])) {
-            console.log(`⚡ cache: ${item.title}`);
             return;
           }
-
-          console.log(`🤖 gen: ${item.title}`);
 
           const text = await generateDescription(
             item.title,
@@ -245,9 +276,12 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
       });
     }
 
+    /* ===== footer ===== */
+    const footer = buildFooter({ exclude: "azure" });
+
     /* ===== 出力 ===== */
     fs.mkdirSync(path.dirname(OUTPUT), { recursive: true });
-    fs.writeFileSync(OUTPUT, md, "utf8");
+    fs.writeFileSync(OUTPUT, md + footer, "utf8");
 
     console.log("✅ done:", OUTPUT);
 
