@@ -287,17 +287,33 @@ async function main() {
 
   /* ===== grouping ===== */
   const grouped = {};
-
+  const stats = {
+    exact: 0,
+    prefix: 0,
+    partial: 0,
+    other: 0
+  };
+  
   for (const c of CATEGORY_ORDER) grouped[c] = [];
-
+  
   for (const item of items) {
     const category = resolveCategory(item.title, index);
-
-    if (!grouped[category]) grouped["Other"].push(item);
-    else grouped[category].push(item);
-
-    console.log("📂", item.title, "→", category);
+  
+    if (!grouped[category]) {
+      grouped["Other"].push(item);
+      stats.other++;
+    } else {
+      grouped[category].push(item);
+    }
+  
+    console.log("📂 RESULT:", item.title, "→", category);
   }
+
+  console.log("\n===== CATEGORY STATS =====");
+for (const [cat, list] of Object.entries(grouped)) {
+  console.log(`${cat}: ${list.length}`);
+}
+console.log("==========================\n");
 
   /* ===== Markdown ===== */
   let md = `---
