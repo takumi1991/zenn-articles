@@ -43,17 +43,6 @@ const normalize = (s) =>
     .trim();
 
 // =========================
-// エイリアス（ズレ吸収）
-// =========================
-const ALIAS = {
-  functions: "functions",
-  devops: "devops",
-  datacatalog: "datacatalog",
-  datafactory: "datafactory",
-  arc: "arc"
-};
-
-// =========================
 // タイトル補正
 // =========================
 const normalizeTitle = (title) => {
@@ -99,14 +88,29 @@ async function main() {
   const filtered = data.filter(d => d.period === "always");
 
   // =========================
-  // itemMap生成（ALIAS対応）
+  // itemMap
   // =========================
   const itemMap = {};
   for (const item of filtered) {
-    const key = normalize(item.title);
-    const mappedKey = ALIAS[key] || key;
-    itemMap[mappedKey] = item;
+    itemMap[normalize(item.title)] = item;
   }
+
+  // =========================
+  // 部分一致検索（超重要）
+  // =========================
+  const findItem = (name) => {
+    const key = normalize(name);
+
+    // 完全一致
+    if (itemMap[key]) return itemMap[key];
+
+    // 部分一致（双方向）
+    const found = Object.entries(itemMap).find(([k]) =>
+      k.includes(key) || key.includes(k)
+    );
+
+    return found?.[1];
+  };
 
   const used = new Set();
 
@@ -141,9 +145,7 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
 
     const validItems = services
       .map(name => {
-        const key = normalize(name);
-        const mappedKey = ALIAS[key] || key;
-        const item = itemMap[mappedKey];
+        const item = findItem(name);
         if (item) used.add(item.title);
         return item;
       })
@@ -153,12 +155,13 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
 
     const emoji = CATEGORY_META[category] || "📁";
 
-    // ★ここ：しっかり2行空ける
+    // ★カテゴリ前はしっかり空ける
     body += `\n\n\n## ${emoji} ${category}（${validItems.length}件）\n\n`;
 
     validItems.forEach((item, i) => {
       body += formatItem(item);
 
+      // 区切り線（最後以外）
       if (i !== validItems.length - 1) {
         body += "\n---\n\n";
       } else {
