@@ -21,7 +21,7 @@ const model = genAI.getGenerativeModel({
 });
 
 /* ========================= */
-// normalize（完全キー化）
+// normalize
 const normalize = (s) =>
   s?.toLowerCase()
     .replace(/azure|microsoft/g, "")
@@ -55,7 +55,7 @@ const CATEGORY_META = {
 const CATEGORY_ORDER = Object.keys(CATEGORY_META);
 
 /* ========================= */
-// index生成
+// category index
 function buildCategoryIndex(categoryMap) {
   const index = new Map();
 
@@ -73,7 +73,7 @@ function buildCategoryIndex(categoryMap) {
 }
 
 /* ========================= */
-// カテゴリ解決（最長一致）
+// category resolve
 function resolveCategory(title, index) {
   const key = normalize(title);
 
@@ -98,18 +98,25 @@ function resolveCategory(title, index) {
 // cache
 function loadCache() {
   if (!fs.existsSync(CACHE_PATH)) return {};
+
   try {
-    return JSON.parse(fs.readFileSync(CACHE_PATH, "utf8"));
+    const c = JSON.parse(fs.readFileSync(CACHE_PATH, "utf8"));
+    console.log("📦 cache loaded:", Object.keys(c).length);
+    return c;
   } catch {
+    console.warn("⚠️ cache load failed");
     return {};
   }
 }
 
 function saveCache(cache) {
   fs.mkdirSync(path.dirname(CACHE_PATH), { recursive: true });
+
   const tmp = CACHE_PATH + ".tmp";
   fs.writeFileSync(tmp, JSON.stringify(cache, null, 2));
   fs.renameSync(tmp, CACHE_PATH);
+
+  console.log("💾 cache saved:", Object.keys(cache).length);
 }
 
 function isExpired(entry) {
@@ -129,7 +136,7 @@ Rules:
 - No headings
 - First sentence explains what it does
 - Include use cases
-- No repetition
+- Avoid repetition
 `;
 
   const r = await model.generateContent(prompt);
@@ -166,7 +173,7 @@ function cleanGenerated(text, title) {
 }
 
 /* ========================= */
-// 重複排除
+// dedupe
 function prepare(items) {
   const map = new Map();
 
@@ -183,6 +190,11 @@ function prepare(items) {
 /* ========================= */
 function formatItem(item, cache) {
   const key = normalize(item.title);
+
+  if (!cache[key]) {
+    console.warn("❌ cache miss:", item.title, "key:", key);
+  }
+
   const text = cleanGenerated(cache[key]?.text, item.title);
 
   return `### ${item.title}
@@ -215,17 +227,20 @@ async function main() {
   const items = prepare(raw);
   const cache = loadCache();
 
+  console.log("📦 items:", items.length);
+  console.log("📦 cache sample:", Object.keys(cache).slice(0, 10));
+
   const categoryMap = JSON.parse(fs.readFileSync(CATEGORY_MAP, "utf8"));
   const index = buildCategoryIndex(categoryMap);
-
-  console.log("📦 items:", items.length);
 
   /* ===== generate ===== */
   for (const item of items) {
     const key = normalize(item.title);
 
+    console.log("🔑", item.title, "→", key);
+
     if (cache[key] && !isExpired(cache[key])) {
-      console.log("⚡ cache:", item.title);
+      console.log("⚡ cache hit:", item.title);
       continue;
     }
 
@@ -234,22 +249,23 @@ async function main() {
       console.log("🤖 gen:", item.title);
       text = await generateDescription(item.title);
     } catch {
+      console.warn("⚠️ fallback:", item.title);
       text = item.description;
     }
 
     cache[key] = { text, updatedAt: Date.now() };
+
+    console.log("📝 write:", key, "len:", text.length);
+
     saveCache(cache);
 
     await new Promise(r => setTimeout(r, 800));
   }
 
-  /* ===== grouping（完全版）===== */
+  /* ===== grouping ===== */
   const grouped = {};
 
-  // 初期化（これが最重要）
-  for (const c of CATEGORY_ORDER) {
-    grouped[c] = [];
-  }
+  for (const c of CATEGORY_ORDER) grouped[c] = [];
 
   for (const item of items) {
     const category = resolveCategory(item.title, index);
@@ -277,7 +293,7 @@ Azure provides many services that can be used for free within certain limits. Th
 
   for (const category of CATEGORY_ORDER) {
     const list = grouped[category];
-    if (!list || list.length === 0) continue;
+    if (!list.length) continue;
 
     const icon = CATEGORY_META[category] || "📁";
 
