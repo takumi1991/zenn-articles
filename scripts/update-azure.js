@@ -6,6 +6,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 const INPUT = "./data.json";
 const OUTPUT = "./articles/azure-always-free.md";
 const CACHE_PATH = "./scripts/cache/azure_cache_jp.json";
+const CATEGORY_MAP = "./data/azure-jp-category-map.json";
 const TTL_MS = 30 * 24 * 60 * 60 * 1000;
 
 /* ========================= */
@@ -66,7 +67,6 @@ ${title}
 ・ラベル禁止
 ・最初の1文で機能説明
 ・ユースケース含む
-・同じ文を繰り返さない
 `;
 
   const r = await model.generateContent(prompt);
@@ -102,15 +102,11 @@ function cleanGenerated(text, title) {
     return true;
   });
 
-  while (lines.length && lines[0] === name) {
-    lines.shift();
-  }
-
   return lines.join("\n\n").trim();
 }
 
 /* ========================= */
-// dedupe
+// 重複排除
 function prepare(items) {
   const map = new Map();
 
@@ -121,15 +117,29 @@ function prepare(items) {
     }
   }
 
-  return Array.from(map.values())
-    .filter(i => i.period === "always");
+  return Array.from(map.values()).filter(i => i.period === "always");
+}
+
+/* ========================= */
+// 🔥 カテゴリ分け
+function groupByCategory(items, categoryMap) {
+  const grouped = {};
+
+  for (const item of items) {
+    const key = normalize(item.title);
+    const category = categoryMap[key] || "その他";
+
+    if (!grouped[category]) grouped[category] = [];
+    grouped[category].push(item);
+  }
+
+  return grouped;
 }
 
 /* ========================= */
 function formatItem(item, cache) {
   const key = normalize(item.title);
-  const raw = cache[key]?.text;
-  const text = cleanGenerated(raw, item.title);
+  const text = cleanGenerated(cache[key]?.text, item.title);
 
   return `### ${item.title}
 
@@ -147,7 +157,7 @@ function buildFooter() {
 
 ## 関連記事
 
-🌈 Google Cloud Platform  
+🌈 GCP  
 👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
 
 🟧 AWS  
@@ -161,8 +171,13 @@ async function main() {
   const items = prepare(raw);
   const cache = loadCache();
 
+  const categoryMap = fs.existsSync(CATEGORY_MAP)
+    ? JSON.parse(fs.readFileSync(CATEGORY_MAP, "utf8"))
+    : {};
+
   console.log("📦 items:", items.length);
 
+  // 生成
   for (const item of items) {
     const key = normalize(item.title);
 
@@ -185,31 +200,31 @@ async function main() {
     await new Promise(r => setTimeout(r, 800));
   }
 
-  /* ========================= */
-  // 🔥 FrontMatter（これが今回の本質）
-  const updatedAt = new Date().toLocaleString("ja-JP", {
-    timeZone: "Asia/Tokyo",
-  });
+  // 🔥 カテゴリ適用
+  const grouped = groupByCategory(items, categoryMap);
 
+  // 🔥 FrontMatter必須
   let md = `---
-title: "Microsoft Azure 常時無料サービス一覧 (Always Free Services)"
-emoji: "🔵"
+title: "Azure常時無料サービス一覧"
+emoji: "🟦"
 type: "tech"
-topics: ["azure", "free-tier", "cloud"]
+topics: ["azure", "cloud", "free-tier"]
 published: true
 ---
 
 # Azure常時無料サービス一覧
 
-最終更新日: ${updatedAt}
-
-Azureには常時無料で利用できるサービスが多数用意されています。本記事ではそれらを一覧で整理しています。
+Azureには常時無料で利用できるサービスが多数存在します。本記事ではそれらをカテゴリごとに整理しています。
 
 `;
 
-  items.forEach(i => {
-    md += formatItem(i, cache) + "\n---\n\n";
-  });
+  for (const [category, list] of Object.entries(grouped)) {
+    md += `## ${category}\n\n`;
+
+    for (const item of list) {
+      md += formatItem(item, cache) + "\n---\n\n";
+    }
+  }
 
   md += buildFooter();
 
