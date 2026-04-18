@@ -3,6 +3,7 @@ import path from "path";
 
 const INPUT = "./data.json";
 const OUTPUT = "./articles/azure-always-free.md";
+const CATEGORY_MAP = "./data/azure-jp-category-map.json";
 
 // =========================
 // タイトル補正
@@ -13,7 +14,7 @@ const normalizeTitle = (title) => {
 };
 
 // =========================
-// Free Tier補正（JPのみ）
+// Free Tier補正
 // =========================
 const normalizeFreeTier = (text) => {
   if (!text) return text;
@@ -28,14 +29,13 @@ function formatItem(item) {
   const title = normalizeTitle(item.title);
   const freeTier = normalizeFreeTier(item.free_tier);
 
-  return `## ${title}
+  return `### ${title}
 
 ${item.description}
 
 **毎月の上限：** ${freeTier}
 
 🔗 ${item.link}
-
 `;
 }
 
@@ -46,6 +46,10 @@ async function main() {
   const raw = fs.readFileSync(INPUT, "utf8");
   const data = JSON.parse(raw);
 
+  const categoryMap = JSON.parse(
+    fs.readFileSync(CATEGORY_MAP, "utf8")
+  );
+
   if (!data.length) {
     console.error("❌ data empty");
     process.exit(1);
@@ -55,6 +59,14 @@ async function main() {
   // alwaysのみ
   // =========================
   const filtered = data.filter(d => d.period === "always");
+
+  // =========================
+  // タイトル→データの辞書化
+  // =========================
+  const itemMap = {};
+  for (const item of filtered) {
+    itemMap[item.title] = item;
+  }
 
   // =========================
   // 日本時間
@@ -93,9 +105,23 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
 `;
 
   // =========================
-  // body
+  // body（カテゴリ順そのまま）
   // =========================
-  const body = filtered.map(formatItem).join("\n");
+  let body = "";
+
+  for (const [category, services] of Object.entries(categoryMap)) {
+    const validItems = services
+      .map(name => itemMap[name])
+      .filter(Boolean);
+
+    if (validItems.length === 0) continue;
+
+    body += `\n## ${category}（${validItems.length}件）\n\n`;
+
+    for (const item of validItems) {
+      body += formatItem(item) + "\n";
+    }
+  }
 
   // =========================
   // footer
