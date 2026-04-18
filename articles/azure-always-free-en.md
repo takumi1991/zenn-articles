@@ -10,6 +10,7 @@ published: true
 
 Azure provides many services that can be used for free within certain limits. This article organizes those services by category.
 
+
 ## 🧠 AI + machine learning
 
 ### Azure AI Search
@@ -22,7 +23,6 @@ Key use cases for Azure AI Search include powering the search functionality with
 
 🔗 https://azure.microsoft.com/en-us/products/ai-services/ai-search/
 
----
 
 ### Azure Language
 
@@ -34,7 +34,6 @@ Use cases for Azure Language are diverse and impactful. Businesses can leverage 
 
 🔗 https://azure.microsoft.com/en-us/products/ai-foundry/tools/language
 
----
 
 ### AI Bot Service
 
@@ -44,7 +43,6 @@ Azure AI Bot  provides a robust platform for building, deploying, and managing i
 
 🔗 https://azure.microsoft.com/en-us/products/ai-services/ai-bot-service/
 
----
 
 ### AI Immersive Reader
 
@@ -58,7 +56,6 @@ This  finds application in educational settings, where it can assist students wi
 
 🔗 https://azure.microsoft.com/en-us/products/ai-services/ai-immersive-reader/
 
----
 
 ### Health Bot
 
@@ -70,7 +67,6 @@ Use cases abound for this versatile . Healthcare organizations can deploy it to 
 
 🔗 https://azure.microsoft.com/en-us/products/bot-services/health-bot/
 
----
 
 ### Translator
 
@@ -80,7 +76,6 @@ Build applications, websites, tools, or any solution requiring multi-language su
 
 🔗 https://azure.microsoft.com/en-us/products/ai-foundry/tools/translator
 
----
 
 ### Machine Learning
 
@@ -90,7 +85,6 @@ Azure Machine Learning is a cloud-based  that enables developers and data scient
 
 🔗 https://azure.microsoft.com/en-us/products/machine-learning/
 
----
 
 ### Open Datasets
 
@@ -102,7 +96,6 @@ You can leverage Azure Open Datasets for numerous use cases. For instance, healt
 
 🔗 https://azure.microsoft.com/en-us/products/open-datasets/
 
----
 
 ### Content Safety
 
@@ -115,6 +108,7 @@ Key use cases for Azure Content Safety include moderating user-generated content
 🔗 https://azure.microsoft.com/en-us/products/ai-services/ai-content-safety/
 
 <br><br>
+
 ## 📊 Analytics
 
 ### Data Catalog
@@ -127,7 +121,6 @@ Common use cases for Azure Data Catalog include enabling data analysts and busin
 
 🔗 https://azure.microsoft.com/en-us/products/data-catalog/
 
----
 
 ### Data Factory
 
@@ -139,7 +132,6 @@ Key use cases include migrating data to Azure, building data warehouses for busi
 
 🔗 https://azure.microsoft.com/en-us/products/data-factory/
 
----
 
 ### Service Fabric
 
@@ -150,6 +142,7 @@ Azure  Fabric is a distributed systems platform that makes it easy to package, d
 🔗 https://azure.microsoft.com/en-us/products/service-fabric/
 
 <br><br>
+
 ## 🖥️ Compute
 
 ### App Service
@@ -162,7 +155,6 @@ Common use cases include hosting customer-facing websites and e-commerce platfor
 
 🔗 https://azure.microsoft.com/en-us/products/app-service/
 
----
 
 ### Azure Kubernetes Service (AKS)
 
@@ -174,7 +166,6 @@ Organizations leverage AKS for a wide array of use cases. It's ideal for buildin
 
 🔗 https://azure.microsoft.com/en-us/products/kubernetes-service/
 
----
 
 ### Azure VM Image Builder
 
@@ -186,7 +177,6 @@ Common use cases for Azure VM Image Builder include pre-installing specific soft
 
 🔗 https://azure.microsoft.com/en-us/products/image-builder/
 
----
 
 ### Batch
 
@@ -196,7 +186,6 @@ Scale your application in the cloud with job orchestration and scheduling for HP
 
 🔗 https://azure.microsoft.com/en-us/products/batch/
 
----
 
 ### Functions
 
@@ -208,7 +197,6 @@ Functions can be triggered by a wide variety of events, such as HTTP requests, m
 
 🔗 https://azure.microsoft.com/en-us/products/functions/
 
----
 
 ### Static Web Apps
 
@@ -220,7 +208,6 @@ This  is ideal for a wide range of applications. It's perfect for hosting front-
 
 🔗 https://azure.microsoft.com/en-us/products/app-service/static/
 
----
 
 ### Container Apps
 
@@ -233,6 +220,7 @@ Use cases for Container Apps are diverse. You can deploy micros that communicate
 🔗 https://azure.microsoft.com/en-us/products/container-apps/
 
 <br><br>
+
 ## 📦 Containers
 
 ### Azure Container Storage
@@ -245,7 +233,6 @@ Key use cases include stateful applications like databases (e.g., PostgreSQL, My
 
 🔗 https://azure.microsoft.com/en-us/products/container-storage/
 
----
 
 ### App Configuration
 
@@ -256,6 +243,7 @@ Azure App Configuration is a managed  that acts as a central store for applicati
 🔗 https://azure.microsoft.com/en-us/products/app-configuration/
 
 <br><br>
+
 ## 🗄️ Databases
 
 ### Azure Cosmos DB
@@ -268,7 +256,6 @@ Its elastic scalability allows you to scale throughput and storage up or down on
 
 🔗 https://azure.microsoft.com/en-us/products/cosmos-db/
 
----
 
 ### Azure Cosmos DB for MongoDB
 
@@ -280,7 +267,6 @@ This  is ideal for a variety of use cases, including modern application developm
 
 🔗 https://azure.microsoft.com/en-us/products/cosmos-db/
 
----
 
 ### Database Migration Service
 
@@ -292,7 +278,6 @@ Use cases for Azure Database Migration  are diverse and impactful. Businesses ca
 
 🔗 https://azure.microsoft.com/en-us/products/database-migration/
 
----
 
 ### SQL Database
 
@@ -305,6 +290,7 @@ This  is ideal for a wide range of applications, from modern cloud-native applic
 🔗 https://azure.microsoft.com/en-us/products/azure-sql/database/
 
 <br><br>
+
 ## 🛠️ Developer tools
 
 ### Azure Deployment Environments​
@@ -317,7 +303,6 @@ Key use cases include enabling developers to spin up sandboxes for feature devel
 
 🔗 https://azure.microsoft.com/en-us/products/deployment-environments/
 
----
 
 ### Azure DevOps
 
@@ -331,7 +316,6 @@ Use cases for Azure DevOps are diverse, ranging from developing web applications
 
 🔗 https://azure.microsoft.com/en-us/products/devops/
 
----
 
 ### DevTest Labs
 
@@ -343,7 +327,6 @@ Use cases include rapid prototyping, where developers can quickly spin up isolat
 
 🔗 https://azure.microsoft.com/en-us/products/devtest-lab/
 
----
 
 ### Visual Studio Code
 
@@ -356,6 +339,7 @@ Its versatility makes it a go-to tool for a wide range of development tasks. Dev
 🔗 https://azure.microsoft.com/en-us/products/visual-studio-code/
 
 <br><br>
+
 ## ⚙️ DevOps
 
 ### Monitor
@@ -369,6 +353,7 @@ Key use cases include diagnosing performance problems by examining metrics like 
 🔗 https://azure.microsoft.com/en-us/products/monitor/
 
 <br><br>
+
 ## 🌐 Hybrid + multicloud
 
 ### Azure Arc
@@ -381,7 +366,6 @@ Use cases for Azure Arc are diverse, including managing your entire server estat
 
 🔗 https://azure.microsoft.com/en-us/products/azure-arc/
 
----
 
 ### IoT Edge
 
@@ -392,6 +376,7 @@ Extend cloud intelligence and analytics to IoT edge devices.
 🔗 https://azure.microsoft.com/en-us/products/iot-edge/
 
 <br><br>
+
 ## 🔐 Identity
 
 ### Microsoft Entra ID (formerly Azure AD)
@@ -405,6 +390,7 @@ Use cases for Microsoft Entra ID are extensive. Businesses leverage it to protec
 🔗 https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id
 
 <br><br>
+
 ## 🧩 Integration
 
 ### API Management
@@ -419,7 +405,6 @@ Key use cases include enabling micros architectures by providing a consistent in
 
 🔗 https://azure.microsoft.com/en-us/products/api-management/
 
----
 
 ### Event Grid
 
@@ -431,7 +416,6 @@ The core functionality involves defining event subscriptions that specify which 
 
 🔗 https://azure.microsoft.com/en-us/products/event-grid/
 
----
 
 ### Health Data Services
 
@@ -443,7 +427,6 @@ One of the primary use cases is the creation of a unified patient record by cons
 
 🔗 https://azure.microsoft.com/en-us/products/health-data-services/
 
----
 
 ### Logic Apps
 
@@ -455,7 +438,6 @@ Logic Apps are incredibly versatile and find application in numerous scenarios. 
 
 🔗 https://azure.microsoft.com/en-us/products/logic-apps/
 
----
 
 ### Web PubSub
 
@@ -468,6 +450,7 @@ Common use cases include live dashboards displaying real-time data updates, chat
 🔗 https://azure.microsoft.com/en-us/products/web-pubsub/
 
 <br><br>
+
 ## 📡 Internet of Things
 
 ### Azure Maps
@@ -480,7 +463,6 @@ Common use cases for Azure Maps include building interactive dashboards that dis
 
 🔗 https://azure.microsoft.com/en-us/products/azure-maps/
 
----
 
 ### IoT Hub
 
@@ -492,7 +474,6 @@ Use cases for IoT Hub are diverse and impactful. For instance, in manufacturing,
 
 🔗 https://azure.microsoft.com/en-us/products/iot-hub/
 
----
 
 ### Notification Hubs
 
@@ -505,6 +486,7 @@ Key use cases include sending breaking news alerts to subscribers, providing rea
 🔗 https://azure.microsoft.com/en-us/products/notification-hubs/
 
 <br><br>
+
 ## 📋 Management and governance
 
 ### Face
@@ -517,7 +499,6 @@ This powerful AI  has a wide range of practical applications. For instance, it c
 
 🔗 https://azure.microsoft.com/en-us/products/cognitive-services/face/
 
----
 
 ### Advisor
 
@@ -529,7 +510,6 @@ You can leverage Azure Advisor for numerous scenarios. For cost optimization, it
 
 🔗 https://azure.microsoft.com/en-us/products/advisor/
 
----
 
 ### Automation
 
@@ -541,7 +521,6 @@ Use cases for Azure Automation are extensive and varied. You can automate the st
 
 🔗 https://azure.microsoft.com/en-us/products/automation/
 
----
 
 ### Azure Automanage
 
@@ -553,7 +532,6 @@ The  simplifies various management tasks. For instance, it can automate the depl
 
 🔗 https://azure.microsoft.com/en-us/products/azure-automanage/
 
----
 
 ### Azure Lighthouse
 
@@ -565,7 +543,6 @@ Key use cases for Azure Lighthouse include providing centralized monitoring and 
 
 🔗 https://azure.microsoft.com/en-us/products/azure-lighthouse/
 
----
 
 ### Azure Managed Applications, Service catalog
 
@@ -577,7 +554,6 @@ This approach is particularly beneficial for large enterprises with diverse appl
 
 🔗 https://azure.microsoft.com/en-us/products/managed-applications/
 
----
 
 ### Azure Policy
 
@@ -589,7 +565,6 @@ Use cases for Azure Policy are diverse and crucial for managing a cloud footprin
 
 🔗 https://azure.microsoft.com/en-us/products/azure-policy/
 
----
 
 ### Azure Resource Mover
 
@@ -599,7 +574,6 @@ Azure Resource Mover is a  that simplifies moving Azure resources across regions
 
 🔗 https://azure.microsoft.com/en-us/products/resource-mover/
 
----
 
 ### Cloud Shell
 
@@ -611,7 +585,6 @@ This  is invaluable for a wide range of scenarios. Developers can quickly script
 
 🔗 https://azure.microsoft.com/en-us/get-started/azure-portal/cloud-shell/
 
----
 
 ### Cost Management
 
@@ -623,7 +596,6 @@ Key use cases include chargeback and showback scenarios, where costs are allocat
 
 🔗 https://azure.microsoft.com/en-us/products/cost-management/
 
----
 
 ### Resource Manager
 
@@ -635,7 +607,6 @@ One of its primary functions is enabling declarative deployments through ARM tem
 
 🔗 https://azure.microsoft.com/en-us/get-started/azure-portal/resource-manager/
 
----
 
 ### Azure Migrate
 
@@ -645,7 +616,6 @@ Discover, assess, right-size, and migrate your on-premises virtual machines to A
 
 🔗 https://azure.microsoft.com/en-us/products/azure-migrate/
 
----
 
 ### Network Watcher
 
@@ -660,6 +630,7 @@ Topology visualization offers a graphical representation of your virtual network
 🔗 https://azure.microsoft.com/en-us/products/network-watcher/
 
 <br><br>
+
 ## ✈️ Migration
 
 ### Azure Storage Mover
@@ -673,6 +644,7 @@ Key use cases include migrating file shares from on-premises servers to Azure fo
 🔗 https://azure.microsoft.com/en-us/products/storage-mover#Azure-storage-mover
 
 <br><br>
+
 ## 🌍 Networking
 
 ### Private Link
@@ -685,7 +657,6 @@ Use cases for Private Link are extensive. It's ideal for securely connecting to 
 
 🔗 https://azure.microsoft.com/en-us/products/private-link/
 
----
 
 ### Virtual Network
 
@@ -698,6 +669,7 @@ Use cases for Azure Virtual Networks are diverse and essential for most cloud de
 🔗 https://azure.microsoft.com/en-us/products/virtual-network/
 
 <br><br>
+
 ## 🛡️ Security
 
 ### Azure Attestation
@@ -711,6 +683,7 @@ A primary use case is securing confidential computing scenarios, where sensitive
 🔗 https://azure.microsoft.com/en-us/products/azure-attestation/
 
 <br><br>
+
 ## 🌎 Web
 
 ### Azure SignalR Service
@@ -724,6 +697,7 @@ Use cases abound for this . Real-time dashboards that display live data feeds, f
 🔗 https://azure.microsoft.com/en-us/products/signalr-service/
 
 <br><br>
+
 ## 📁 Other
 
 ### Speech to Text
@@ -736,7 +710,6 @@ Its applications are diverse and transformative. Businesses can use it for real-
 
 🔗 https://azure.microsoft.com/en-us/products/ai-foundry/tools/speech
 
----
 
 ### Text to Speech
 
@@ -748,7 +721,6 @@ Its applications are diverse, spanning from creating audio versions of articles 
 
 🔗 https://azure.microsoft.com/en-us/products/ai-foundry/tools/speech
 
----
 
 ### Speech Translation
 
@@ -760,7 +732,6 @@ This  finds extensive application in scenarios where immediate spoken translatio
 
 🔗 https://azure.microsoft.com/en-us/products/ai-foundry/tools/speech
 
----
 
 ### Azure Active Directory B2C
 
@@ -772,7 +743,6 @@ This  is ideal for scenarios where you need to manage large numbers of external 
 
 🔗 https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id
 
----
 
 ### Azure Update Manager
 
@@ -786,7 +756,6 @@ Key use cases include simplifying patch management for compliance requirements, 
 
 🔗 https://azure.microsoft.com/en-us/products/azure-update-management-center/
 
----
 
 ### Bandwidth (Data Transfer)
 
@@ -796,7 +765,6 @@ Azure Bandwidth, more accurately referred to as data transfer costs, encompasses
 
 🔗 https://azure.microsoft.com/en-us/products/virtual-network/
 
----
 
 ### Security Center
 
@@ -809,6 +777,7 @@ Use cases for Azure Security Center include managing security across hybrid envi
 🔗 https://azure.microsoft.com/en-us/products/defender-for-cloud/
 
 <br><br>
+
 
 
 ## Related Articles
