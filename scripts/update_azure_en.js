@@ -150,7 +150,7 @@ function isExpired(entry) {
 // Gemini
 async function generateDescription(title) {
   const prompt = `
-Explain this Azure service in about 280 words.
+Explain this Azure service in about 150 words.
 
 Service:
 ${title}
@@ -158,8 +158,12 @@ ${title}
 Rules:
 - No headings
 - First sentence explains what it does
-- Include use cases
+- Include one concrete use case
 - Avoid repetition
+- Use simple, clear language for beginners
+- Avoid jargon or explain it briefly if used
+- Keep sentences short and direct
+- Assume the reader has no cloud experience
 `;
 
   const r = await model.generateContent(prompt);
