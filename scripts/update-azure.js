@@ -134,7 +134,7 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
 
     const emoji = CATEGORY_META[category] || "📁";
 
-    body += `<br>\n## ${emoji} ${category}（${validItems.length}件）\n\n`;
+    body += `\n## ${emoji} ${category}（${validItems.length}件）\n\n`;
 
     validItems.forEach((item, i) => {
       body += formatItem(item);
@@ -153,7 +153,7 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
   const others = filtered.filter(item => !used.has(item.title));
 
   if (others.length > 0) {
-    body += `<br>\n## 🧩 その他（${others.length}件）\n\n`;
+    body += `\n## 🧩 その他（${others.length}件）\n\n`;
 
     others.forEach((item, i) => {
       body += formatItem(item);
