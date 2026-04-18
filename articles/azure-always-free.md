@@ -8,14 +8,12 @@ published: true
 
 # Azure常時無料サービス一覧
 
-最終更新日: 2026/4/18 11:32:54
+最終更新日: 2026/4/18 11:35:48
 
 AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されています。
 
 👉 English version: https://zenn.dev/good_sleeper/articles/azure-always-free-en
-
-
-
+<br>
 ## 🧠 AI + 機械学習（5件）
 
 ### AI Bot Service
@@ -66,9 +64,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 
 🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-immersive-reader/
 
-
-
-
+<br>
 ## 📊 分析（2件）
 
 ### Data Factory
@@ -89,9 +85,7 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 
 🔗 https://azure.microsoft.com/ja-jp/products/data-catalog/
 
-
-
-
+<br>
 ## 🖥️ コンピューティング（3件）
 
 ### App Service
@@ -122,9 +116,7 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 
 🔗 https://azure.microsoft.com/ja-jp/products/image-builder/
 
-
-
-
+<br>
 ## 📦 コンテナー（2件）
 
 ### Azure Kubernetes Service (AKS)
@@ -145,9 +137,7 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 
 🔗 https://azure.microsoft.com/ja-jp/products/container-apps/
 
-
-
-
+<br>
 ## 🗄️ データベース（2件）
 
 ### Azure Cosmos DB
@@ -168,9 +158,7 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-sql/database/
 
-
-
-
+<br>
 ## 🛠️ 開発者ツール（3件）
 
 ### DevTest Labs
@@ -201,9 +189,7 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 
 🔗 https://azure.microsoft.com/ja-jp/products/deployment-environments/
 
-
-
-
+<br>
 ## ⚙️ DevOps（1件）
 
 ### Azure DevOps
@@ -214,9 +200,7 @@ Git Repos、CI/CD、ビルドとリリースのオートメーションを使用
 
 🔗 https://azure.microsoft.com/ja-jp/products/devops/
 
-
-
-
+<br>
 ## 🌐 ハイブリッド + マルチクラウド（2件）
 
 ### Functions
@@ -237,9 +221,7 @@ Azure の管理とサービスを拡張します。
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-arc/
 
-
-
-
+<br>
 ## 🔐 ID（1件）
 
 ### Microsoft Entra ID (旧称 Azure AD)
@@ -250,9 +232,7 @@ Azure の管理とサービスを拡張します。
 
 🔗 https://www.microsoft.com/ja-jp/security/business/identity-access/microsoft-entra-id
 
-
-
-
+<br>
 ## 🔗 統合（5件）
 
 ### API Management
@@ -303,9 +283,7 @@ Web アプリやモバイル アプリにリアルタイムの双方向通信を
 
 🔗 https://azure.microsoft.com/ja-jp/products/web-pubsub/
 
-
-
-
+<br>
 ## 📡 モノのインターネット (IoT)（2件）
 
 ### IoT Edge
@@ -326,9 +304,7 @@ Web アプリやモバイル アプリにリアルタイムの双方向通信を
 
 🔗 https://azure.microsoft.com/ja-jp/products/iot-hub/
 
-
-
-
+<br>
 ## 📋 管理とガバナンス（9件）
 
 ### Monitor
@@ -419,9 +395,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 
 🔗 https://azure.microsoft.com/ja-jp/products/resource-mover/
 
-
-
-
+<br>
 ## ✈️ 移行（3件）
 
 ### Database Migration Service
@@ -452,9 +426,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 
 🔗 https://azure.microsoft.com/ja-jp/products/storage-mover#Azure-storage-mover
 
-
-
-
+<br>
 ## 🌍 ネットワーク（4件）
 
 ### Network Watcher
@@ -495,9 +467,7 @@ Azure リージョン間で複数のリソースを移動する方法をシン�
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-maps/
 
-
-
-
+<br>
 ## 🌎 Web（4件）
 
 ### Static Web Apps
@@ -538,9 +508,7 @@ Web アプリケーションにリアルタイム通信を追加します。
 
 🔗 https://azure.microsoft.com/ja-jp/products/signalr-service/
 
-
-
-
+<br>
 ## 🧩 その他（17件）
 
 ### Azure Language
