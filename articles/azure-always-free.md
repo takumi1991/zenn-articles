@@ -8,7 +8,7 @@ published: true
 
 # Azure常時無料サービス一覧
 
-最終更新日: 2026/4/18 11:46:50
+最終更新日: 2026/4/18 11:49:44
 
 AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されています。
 
@@ -16,7 +16,7 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
 
 
 
-## 🧠 AI + 機械学習（12件）
+## 🧠 AI + 機械学習（15件）
 
 ### AI Bot Service
 
@@ -55,6 +55,36 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 **毎月の上限：** 無料 (エグレスの料金が適用される場合あり)
 
 🔗 https://azure.microsoft.com/ja-jp/products/open-datasets/
+
+---
+
+### Azure Language
+
+センチメント、キー フレーズ、名前付きエンティティ、言語などの情報をテキストから抽出できます。
+
+**毎月の上限：** 5,000 テキスト レコード
+
+🔗 https://azure.microsoft.com/ja-jp/products/ai-foundry/tools/language
+
+---
+
+### Advisor
+
+Azure のパーソナライズされた推奨事項と成功事例を取得します。
+
+**毎月の上限：** 無制限
+
+🔗 https://azure.microsoft.com/ja-jp/products/advisor/
+
+---
+
+### Content Safety
+
+テキストと画像を適切に管理し、より安全でポジティブなユーザー エクスペリエンスを提供できます。
+
+**毎月の上限：** AKS クラスターの管理は無料です。ノードによって消費されるリソースに対して料金が発生します
+
+🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-content-safety/
 
 ---
 
@@ -225,7 +255,7 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 
 
 
-## 🗄️ データベース（4件）
+## 🗄️ データベース（5件）
 
 ### Azure Cosmos DB
 
@@ -234,6 +264,16 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 **毎月の上限：** 1,000 要求ユニット/秒のプロビジョニング済みスループット、25 GB のストレージ
 
 🔗 https://azure.microsoft.com/ja-jp/products/cosmos-db/
+
+---
+
+### SQL Database
+
+インテリジェンスが組み込まれた SQL Database を作成します。
+
+**毎月の上限：** 最大 10 個のデータベースを、それぞれ 100,000 vCore 秒のサーバーレス レベルと 32 GB のストレージを利用可能
+
+🔗 https://azure.microsoft.com/ja-jp/products/azure-sql/database/
 
 ---
 
@@ -397,7 +437,7 @@ Web アプリやモバイル アプリにリアルタイムの双方向通信を
 
 
 
-## 📋 管理とガバナンス（15件）
+## 📋 管理とガバナンス（17件）
 
 ### Monitor
 
@@ -439,6 +479,16 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 
 ---
 
+### Azure Managed Applications
+
+承認されたクラウド オファリングのカタログを使用して、サービスを取得しやすくなります。
+
+**毎月の上限：** 無料公開
+
+🔗 https://azure.microsoft.com/ja-jp/products/managed-applications/
+
+---
+
 ### Azure Policy
 
 一貫したリソース ガバナンスにより、大規模なリアルタイムのクラウド コンプライアンスを実現します。
@@ -446,6 +496,16 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 **毎月の上限：** 構成および変更追跡機能への無料アクセス
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-policy/
+
+---
+
+### Resource Manager
+
+アプリのリソースの管理方法をシンプルにします。
+
+**毎月の上限：** なし
+
+🔗 https://azure.microsoft.com/ja-jp/get-started/azure-portal/resource-manager/
 
 ---
 
@@ -593,7 +653,7 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 
 
 
-## 🌍 ネットワーク（8件）
+## 🌍 ネットワーク（9件）
 
 ### Network Watcher
 
@@ -602,6 +662,16 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 **毎月の上限：** 1,000 件のチェック、10 件のテスト、10 件の接続メトリックを含む 5 GB のストレージ
 
 🔗 https://azure.microsoft.com/ja-jp/products/network-watcher/
+
+---
+
+### Virtual Network
+
+プライベート ネットワークをプロビジョニングし、オンプレミスのデータセンターに接続します。
+
+**毎月の上限：** 50 仮想ネットワーク
+
+🔗 https://azure.microsoft.com/ja-jp/products/virtual-network/
 
 ---
 
@@ -752,7 +822,7 @@ Web アプリケーションにリアルタイム通信を追加します。
 
 
 
-## 🧩 その他（9件）
+## 🧩 その他（8件）
 
 ### Data Catalog
 
@@ -831,16 +901,6 @@ Azure の管理とサービスを拡張します。
 **毎月の上限：** Azure 外部のリソース向けの無料の Azure コントロール プレーン機能、Azure Arc 対応リソースの検索とインデックス作成する
 
 🔗 https://azure.microsoft.com/ja-jp/products/azure-arc/
-
----
-
-### Azure Managed Applications
-
-承認されたクラウド オファリングのカタログを使用して、サービスを取得しやすくなります。
-
-**毎月の上限：** 無料公開
-
-🔗 https://azure.microsoft.com/ja-jp/products/managed-applications/
 
 
 
