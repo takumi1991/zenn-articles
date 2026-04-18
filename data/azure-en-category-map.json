@@ -2,98 +2,219 @@
   "AI + machine learning": [
     "Microsoft Foundry",
     "Azure AI Bot Service",
+    "AI Bot Service",
     "Azure AI Search",
+    "AI Search",
     "Azure Databricks",
+    "Databricks",
     "Azure Machine Learning",
+    "Machine Learning",
     "Azure Open Datasets",
-    "Foundry Tools",
-    "Azure AI Video Indexer",
-    "Azure AI Custom Vision",
-    "Data Science Virtual Machines",
+    "Open Datasets",
+
+    "Azure Language",
     "Azure Language in Foundry Tools",
+    "Language",
+
+    "Azure Translator",
     "Azure Translator in Foundry Tools",
-    "Azure AI Metrics Advisor",
-    "Azure OpenAI in Foundry Models",
-    "Azure AI Personalizer",
-    "Content Safety in Foundry Control Plane",
-    "Health Bot",
-    "Azure Document Intelligence in Foundry Tools",
-    "AI Anomaly Detector",
-    "Foundry Models",
-    "Microsoft Security Copilot",
+    "Translator",
+
     "Azure AI Immersive Reader",
-    "Phi open models",
-    "Azure Content Understanding in Foundry Tools",
+    "AI Immersive Reader",
+    "Immersive Reader",
+
+    "Content Safety",
+    "Content Safety in Foundry Control Plane",
+
+    "Health Bot",
+
+    "Azure Speech",
     "Azure Speech in Foundry Tools",
-    "Microsoft Planetary Computer Pro",
-    "Foundry Agent Service",
-    "Azure SRE Agent",
-    "Observability in Foundry Control Plane",
-    "Azure Vision in Foundry Tools",
-    "Foundry IQ",
-    "Foundry Control Plane",
 
     "Speech to Text",
-    "Text to Speech",
-    "Speech Translation",
     "Azure Speech to Text",
+
+    "Text to Speech",
     "Azure Text to Speech",
+
+    "Speech Translation",
     "Azure Speech Translation"
   ],
 
-  "Identity": [
-    "Microsoft Entra ID (formerly Azure AD)",
-    "Microsoft Entra Domain Services",
-    "Microsoft Entra Verified ID",
-    "Microsoft Entra External ID",
+  "Analytics": [
+    "Azure Data Factory",
+    "Data Factory",
+    "Azure Data Explorer",
+    "Data Explorer",
+    "Azure Synapse Analytics",
+    "Synapse",
+    "Data Catalog"
+  ],
 
-    "Azure Active Directory B2C"
+  "Compute": [
+    "App Service",
+    "Azure App Service",
+
+    "Azure Kubernetes Service",
+    "Azure Kubernetes Service (AKS)",
+    "AKS",
+
+    "Azure VM Image Builder",
+    "VM Image Builder",
+
+    "Batch",
+    "Azure Batch",
+
+    "Functions",
+    "Azure Functions",
+
+    "Static Web Apps",
+    "Azure Static Web Apps",
+
+    "Container Apps",
+    "Azure Container Apps"
+  ],
+
+  "Containers": [
+    "Azure Container Storage",
+    "Container Storage",
+
+    "App Configuration",
+    "Azure App Configuration"
+  ],
+
+  "Databases": [
+    "Azure Cosmos DB",
+    "Cosmos DB",
+
+    "Azure Cosmos DB for MongoDB",
+    "Cosmos DB for MongoDB",
+
+    "Database Migration Service",
+    "Azure Database Migration Service",
+
+    "SQL Database",
+    "Azure SQL Database",
+    "Azure SQL"
+  ],
+
+  "Developer tools": [
+    "Azure DevOps",
+    "DevOps",
+
+    "DevTest Labs",
+    "Azure DevTest Labs",
+
+    "Visual Studio Code",
+    "VS Code",
+
+    "Azure Deployment Environments",
+    "Deployment Environments"
+  ],
+
+  "DevOps": [
+    "Azure Monitor",
+    "Monitor"
+  ],
+
+  "Hybrid + multicloud": [
+    "Azure Arc",
+    "Arc",
+
+    "IoT Edge",
+    "Azure IoT Edge"
+  ],
+
+  "Identity": [
+    "Microsoft Entra ID",
+    "Microsoft Entra ID (formerly Azure AD)",
+    "Azure AD",
+
+    "Azure Active Directory B2C",
+    "Azure AD B2C",
+    "Active Directory B2C"
+  ],
+
+  "Integration": [
+    "API Management",
+    "Azure API Management",
+
+    "Event Grid",
+    "Azure Event Grid",
+
+    "Logic Apps",
+    "Azure Logic Apps",
+
+    "Health Data Services",
+    "Azure Health Data Services",
+
+    "Web PubSub",
+    "Azure Web PubSub"
+  ],
+
+  "Internet of Things": [
+    "Azure Maps",
+    "Maps",
+
+    "IoT Hub",
+    "Azure IoT Hub",
+
+    "Notification Hubs",
+    "Azure Notification Hubs"
   ],
 
   "Management and governance": [
-    "Azure Copilot",
-    "Automation",
+    "Advisor",
     "Azure Advisor",
-    "Defender External Attack Surface Management",
-    "Azure Backup",
-    "Azure Blueprints",
-    "Azure Lighthouse",
-    "Azure Managed Applications",
-    "Azure Migrate",
-    "Azure Policy",
-    "Azure Resource Manager",
-    "Azure Resource Manager templates",
-    "Azure Site Recovery",
-    "Cloud Shell",
-    "Microsoft Cost Management",
-    "Azure Network Watcher",
-    "Azure Traffic Manager",
+
+    "Automation",
+    "Azure Automation",
+
     "Azure Automanage",
+    "Automanage",
+
+    "Azure Lighthouse",
+    "Lighthouse",
+
+    "Azure Managed Applications",
+    "Managed Applications",
+
+    "Azure Policy",
+    "Policy",
+
     "Azure Resource Mover",
-    "Update management center",
+    "Resource Mover",
 
     "Azure Update Manager",
-    "Update Manager"
+    "Update Manager",
+
+    "Cloud Shell",
+
+    "Cost Management",
+    "Microsoft Cost Management",
+
+    "Azure Resource Manager",
+    "Resource Manager",
+
+    "Azure Migrate",
+    "Migrate",
+
+    "Network Watcher",
+    "Azure Network Watcher"
+  ],
+
+  "Migration": [
+    "Azure Storage Mover",
+    "Storage Mover"
   ],
 
   "Networking": [
-    "Azure Application Gateway",
-    "Azure Bastion",
-    "Azure DDoS Protection",
-    "Azure DNS",
-    "Azure Firewall",
-    "Azure Route Server",
-    "Azure Web Application Firewall",
-    "Azure Front Door",
-    "Azure Network Function Manager",
-    "Azure Virtual Network Manager",
-    "Azure NAT Gateway",
-    "Azure Load Balancer",
+    "Private Link",
     "Azure Private Link",
-    "Azure Firewall Manager",
+
+    "Virtual Network",
     "Azure Virtual Network",
-    "Azure Virtual WAN",
-    "Azure VPN Gateway",
 
     "Bandwidth",
     "Bandwidth (Data Transfer)",
@@ -101,13 +222,16 @@
   ],
 
   "Security": [
-    "Azure Key Vault",
+    "Azure Attestation",
     "Microsoft Azure Attestation",
-    "Azure Cloud HSM",
-    "Azure Information Protection",
 
     "Security Center",
     "Azure Security Center",
     "Microsoft Defender for Cloud"
+  ],
+
+  "Web": [
+    "Azure SignalR Service",
+    "SignalR Service"
   ]
 }
