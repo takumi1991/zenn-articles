@@ -173,7 +173,7 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
   // footer（注意削除済み）
   // =========================
   const footer = `
----
+
 
 ## 関連記事：他クラウドの常時無料枠まとめ
 
