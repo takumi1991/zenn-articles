@@ -30,7 +30,7 @@ const CATEGORY_META = {
 };
 
 // =========================
-// 正規化（マッピング用キー）
+// 正規化
 // =========================
 const normalize = (s) =>
   s
@@ -53,22 +53,18 @@ const normalizeTitle = (title) => {
 // =========================
 const normalizeFreeTier = (text) => {
   if (!text) return text;
-  const t = text.trim();
-  return t === "無料" ? "なし" : text;
+  return text.trim() === "無料" ? "なし" : text;
 };
 
 // =========================
 // フォーマット
 // =========================
 function formatItem(item) {
-  const title = normalizeTitle(item.title);
-  const freeTier = normalizeFreeTier(item.free_tier);
-
-  return `### ${title}
+  return `### ${normalizeTitle(item.title)}
 
 ${item.description}
 
-**毎月の上限：** ${freeTier}
+**毎月の上限：** ${normalizeFreeTier(item.free_tier)}
 
 🔗 ${item.link}
 `;
@@ -78,26 +74,18 @@ ${item.description}
 // メイン
 // =========================
 async function main() {
-  const raw = fs.readFileSync(INPUT, "utf8");
-  const data = JSON.parse(raw);
-
-  const categoryMap = JSON.parse(
-    fs.readFileSync(CATEGORY_MAP, "utf8")
-  );
+  const data = JSON.parse(fs.readFileSync(INPUT, "utf8"));
+  const categoryMap = JSON.parse(fs.readFileSync(CATEGORY_MAP, "utf8"));
 
   if (!Array.isArray(data) || data.length === 0) {
     console.error("❌ data empty");
     process.exit(1);
   }
 
-  // =========================
   // alwaysのみ
-  // =========================
   const filtered = data.filter(d => d.period === "always");
 
-  // =========================
   // 正規化マップ
-  // =========================
   const itemMap = {};
   for (const item of filtered) {
     itemMap[normalize(item.title)] = item;
@@ -105,16 +93,10 @@ async function main() {
 
   const used = new Set();
 
-  // =========================
-  // 日本時間
-  // =========================
   const updatedAt = new Date().toLocaleString("ja-JP", {
     timeZone: "Asia/Tokyo",
   });
 
-  // =========================
-  // header
-  // =========================
   const header = `---
 title: "Microsoft Azure 常時無料サービス一覧(Always Free Services)"
 emoji: "🔵"
@@ -152,12 +134,12 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
 
     const emoji = CATEGORY_META[category] || "📁";
 
-    body += `\n\n## ${emoji} ${category}（${validItems.length}件）\n\n`;
+    // ← ここ修正（確実に1行空ける）
+    body += `\n\n\n## ${emoji} ${category}（${validItems.length}件）\n\n`;
 
     validItems.forEach((item, i) => {
       body += formatItem(item);
 
-      // 最後以外に区切り線
       if (i !== validItems.length - 1) {
         body += "\n---\n\n";
       } else {
@@ -167,13 +149,12 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
   }
 
   // =========================
-  // その他（未マッチ）
+  // その他
   // =========================
   const others = filtered.filter(item => !used.has(item.title));
 
   if (others.length > 0) {
-    body += `\n## 🧩 その他（${others.length}件）\n\n`;
-    body += `分類に含まれていないサービスです。\n\n`;
+    body += `\n\n\n## 🧩 その他（${others.length}件）\n\n`;
 
     others.forEach((item, i) => {
       body += formatItem(item);
@@ -190,15 +171,10 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
   }
 
   // =========================
-  // footer
+  // footer（注意削除済み）
   // =========================
-const footer = `
+  const footer = `
 ---
-
-## 注意
-
-常時無料枠には上限があります。超過すると課金されます。
-
 
 ## 関連記事：他クラウドの常時無料枠まとめ
 
@@ -211,9 +187,6 @@ const footer = `
 
   const markdown = header + body + footer;
 
-  // =========================
-  // 出力
-  // =========================
   const dir = path.dirname(OUTPUT);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
