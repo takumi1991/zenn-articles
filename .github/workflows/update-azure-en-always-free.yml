@@ -3,6 +3,11 @@ name: Update Azure Always Free Services (EN)
 permissions:
   contents: write
 
+# 🔥 並列実行防止（重要）
+concurrency:
+  group: azure-en-update
+  cancel-in-progress: true
+
 on:
   workflow_dispatch:
   schedule:
@@ -11,6 +16,7 @@ on:
 env:
   APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
   APIFY_ACTOR_ID_AZURE_EN: ${{ secrets.APIFY_ACTOR_ID_AZURE_EN }}
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
 jobs:
   update:
@@ -24,7 +30,7 @@ jobs:
         uses: actions/checkout@v3
 
       # --------------------------
-      # 2. Run Apify Actor (EN)
+      # 2. Apify 実行
       # --------------------------
       - name: Run Apify Actor (Azure EN)
         run: |
@@ -33,14 +39,21 @@ jobs:
           curl -s -X POST \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer $APIFY_TOKEN" \
-            "https://api.apify.com/v2/acts/$APIFY_ACTOR_ID_AZURE_EN/run-sync-get-dataset-items?token=$APIFY_TOKEN&format=json" \
+            "https://api.apify.com/v2/acts/$APIFY_ACTOR_ID_AZURE_EN/run-sync-get-dataset-items?format=json" \
             -o data.json
 
-          echo "Saved data.json:"
+          echo "📄 Preview data.json"
           head -n 20 data.json
 
       # --------------------------
-      # 3. Setup Node
+      # 3. JSON検証（壊れ防止）
+      # --------------------------
+      - name: Validate JSON
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('data.json','utf8')); console.log('✅ JSON OK')"
+
+      # --------------------------
+      # 4. Node
       # --------------------------
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -48,19 +61,35 @@ jobs:
           node-version: 20
 
       # --------------------------
-      # 4. Install deps
+      # 5. Install
       # --------------------------
       - name: Install deps
         run: npm install
 
       # --------------------------
-      # 5. Markdown生成（←ここ重要）
+      # 6. Markdown生成
       # --------------------------
       - name: Generate Azure EN article
-        run: node scripts/update_azure_en.js
+        run: |
+          node scripts/update_azure_en.js
+
+          echo "📄 Generated article preview:"
+          head -n 40 articles/azure-always-free-en.md
 
       # --------------------------
-      # 6. Commit & Push
+      # 7. FrontMatter検証（Zenn対策）
+      # --------------------------
+      - name: Validate FrontMatter
+        run: |
+          if ! grep -q "^---" articles/azure-always-free-en.md; then
+            echo "❌ FrontMatter missing"
+            exit 1
+          fi
+
+          echo "✅ FrontMatter OK"
+
+      # --------------------------
+      # 8. Commit & Push（競合耐性あり）
       # --------------------------
       - name: Commit & Push
         run: |
@@ -71,4 +100,17 @@ jobs:
 
           git commit -m "Update Azure Always Free Services (EN)" || echo "No changes"
 
-          git push
+          # 🔥 競合対策（必須）
+          git pull --rebase origin main
+
+          git push origin main
+
+      # --------------------------
+      # 9. デバッグログ（失敗時に効く）
+      # --------------------------
+      - name: Debug info
+        if: failure()
+        run: |
+          echo "❌ Workflow failed"
+          git status
+          ls -la articles
