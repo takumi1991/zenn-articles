@@ -8,11 +8,13 @@ published: true
 
 # Azure常時無料サービス一覧
 
-最終更新日: 2026/4/18 11:43:56
+最終更新日: 2026/4/18 11:46:50
 
 AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されています。
 
 👉 English version: https://zenn.dev/good_sleeper/articles/azure-always-free-en
+
+
 
 ## 🧠 AI + 機械学習（12件）
 
@@ -135,6 +137,8 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 🔗 https://azure.microsoft.com/ja-jp/products/ai-services/ai-content-safety/
 
 
+
+
 ## 📦 コンテナー（4件）
 
 ### Azure Kubernetes Service (AKS)
@@ -174,6 +178,8 @@ Web およびモバイル アプリケーションにクラウド検索サービ
 **毎月の上限：** 180,000 vCPU 秒、360,000 GiB 秒、200 万リクエスト
 
 🔗 https://azure.microsoft.com/ja-jp/products/container-apps/
+
+
 
 
 ## 🖥️ コンピューティング（4件）
@@ -217,6 +223,8 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 🔗 https://azure.microsoft.com/ja-jp/products/service-fabric/
 
 
+
+
 ## 🗄️ データベース（4件）
 
 ### Azure Cosmos DB
@@ -258,6 +266,8 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 🔗 https://azure.microsoft.com/ja-jp/products/azure-sql/database/
 
 
+
+
 ## 🔐 ID（2件）
 
 ### Microsoft Entra ID (旧称 Azure AD)
@@ -277,6 +287,8 @@ Linux および Windows VM イメージの構築、更新、パッチ適用、�
 **毎月の上限：** Azure Active Directory B2C で月間アクティブ ユーザー数 50,000 人
 
 🔗 https://www.microsoft.com/ja-jp/security/business/identity-access/microsoft-entra-id
+
+
 
 
 ## 🔗 統合（6件）
@@ -340,6 +352,8 @@ Web アプリやモバイル アプリにリアルタイムの双方向通信を
 🔗 https://azure.microsoft.com/ja-jp/products/web-pubsub/
 
 
+
+
 ## 📡 モノのインターネット (IoT)（4件）
 
 ### IoT Edge
@@ -381,7 +395,9 @@ Web アプリやモバイル アプリにリアルタイムの双方向通信を
 🔗 https://azure.microsoft.com/ja-jp/products/iot-hub/
 
 
-## 📋 管理とガバナンス（14件）
+
+
+## 📋 管理とガバナンス（15件）
 
 ### Monitor
 
@@ -450,6 +466,16 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 **毎月の上限：** Azure Files での 12 か月間 5 GB の無料ストレージ
 
 🔗 https://azure.microsoft.com/ja-jp/get-started/azure-portal/cloud-shell/
+
+---
+
+### Cost Management
+
+透明性、正確性、効率性を備え、クラウド コストを監視、割り当て、最適化します。
+
+**毎月の上限：** なし
+
+🔗 https://azure.microsoft.com/ja-jp/products/cost-management/
 
 ---
 
@@ -522,6 +548,8 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 🔗 https://azure.microsoft.com/ja-jp/products/monitor/
 
 
+
+
 ## ✈️ 移行（4件）
 
 ### Database Migration Service
@@ -561,6 +589,8 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 **毎月の上限：** 無料の Standard コンピューティング
 
 🔗 https://azure.microsoft.com/ja-jp/products/database-migration/
+
+
 
 
 ## 🌍 ネットワーク（8件）
@@ -644,7 +674,19 @@ Azure のパーソナライズされた推奨事項と成功事例を取得し�
 🔗 https://azure.microsoft.com/ja-jp/products/virtual-network/
 
 
-## 🛡️ セキュリティ（2件）
+
+
+## 🛡️ セキュリティ（3件）
+
+### Azure Attestation
+
+信頼できるプラットフォーム モジュールと信頼できる実行環境の ID とセキュリティ体制を検証します。
+
+**毎月の上限：** なし
+
+🔗 https://azure.microsoft.com/ja-jp/products/azure-attestation/
+
+---
 
 ### Azure Attestation
 
@@ -663,6 +705,8 @@ Azure リソースのセキュリティに対する可視性と制御を強化�
 **毎月の上限：** 無料のポリシー評価と推奨事項
 
 🔗 https://azure.microsoft.com/ja-jp/products/defender-for-cloud/
+
+
 
 
 ## 🌎 Web（4件）
@@ -704,6 +748,8 @@ Web アプリケーションにリアルタイム通信を追加します。
 **毎月の上限：** ユニットあたり 20 の同時接続と 20,000 件のメッセージ
 
 🔗 https://azure.microsoft.com/ja-jp/products/signalr-service/
+
+
 
 
 ## 🧩 その他（9件）
