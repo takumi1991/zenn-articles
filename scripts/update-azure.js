@@ -16,9 +16,9 @@ const CATEGORY_META = {
   "データベース": "🗄️",
   "開発者ツール": "🛠️",
   "DevOps": "⚙️",
-  "ハイブリッド + マルチクラウド": "🌐",
+  "ハイブリッド+マルチクラウド": "🌐",
   "ID": "🔐",
-  "統合": "🔗",
+  "統合": "🧩",
   "モノのインターネット (IoT)": "📡",
   "管理とガバナンス": "📋",
   "移行": "✈️",
@@ -130,7 +130,7 @@ published: true
 
 最終更新日: ${updatedAt}
 
-AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されています。
+AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が${filtered.length}用意されています。
 
 👉 English version: https://zenn.dev/good_sleeper/articles/azure-always-free-en
 `;
