@@ -30,15 +30,28 @@ const CATEGORY_META = {
 };
 
 // =========================
-// 正規化
+// 正規化（強化版）
 // =========================
 const normalize = (s) =>
   s
     ?.toLowerCase()
     .replace(/azure\s*/g, "")
-    .replace(/[（）()]/g, "")
+    .replace(/microsoft\s*/g, "")
+    .replace(/\(.*?\)/g, "")
+    .replace(/[（）]/g, "")
     .replace(/\s+/g, "")
     .trim();
+
+// =========================
+// エイリアス（ズレ吸収）
+// =========================
+const ALIAS = {
+  functions: "functions",
+  devops: "devops",
+  datacatalog: "datacatalog",
+  datafactory: "datafactory",
+  arc: "arc"
+};
 
 // =========================
 // タイトル補正
@@ -85,10 +98,14 @@ async function main() {
   // alwaysのみ
   const filtered = data.filter(d => d.period === "always");
 
-  // 正規化マップ
+  // =========================
+  // itemMap生成（ALIAS対応）
+  // =========================
   const itemMap = {};
   for (const item of filtered) {
-    itemMap[normalize(item.title)] = item;
+    const key = normalize(item.title);
+    const mappedKey = ALIAS[key] || key;
+    itemMap[mappedKey] = item;
   }
 
   const used = new Set();
@@ -124,7 +141,9 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
 
     const validItems = services
       .map(name => {
-        const item = itemMap[normalize(name)];
+        const key = normalize(name);
+        const mappedKey = ALIAS[key] || key;
+        const item = itemMap[mappedKey];
         if (item) used.add(item.title);
         return item;
       })
@@ -134,7 +153,8 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
 
     const emoji = CATEGORY_META[category] || "📁";
 
-    body += `\n## ${emoji} ${category}（${validItems.length}件）\n\n`;
+    // ★ここ：しっかり2行空ける
+    body += `\n\n\n## ${emoji} ${category}（${validItems.length}件）\n\n`;
 
     validItems.forEach((item, i) => {
       body += formatItem(item);
@@ -153,7 +173,7 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
   const others = filtered.filter(item => !used.has(item.title));
 
   if (others.length > 0) {
-    body += `\n## 🧩 その他（${others.length}件）\n\n`;
+    body += `\n\n\n## 🧩 その他（${others.length}件）\n\n`;
 
     others.forEach((item, i) => {
       body += formatItem(item);
@@ -170,7 +190,7 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
   }
 
   // =========================
-  // footer（注意削除済み）
+  // footer
   // =========================
   const footer = `
 
