@@ -30,25 +30,32 @@
     "Foundry コントロール プレーンの監視",
     "Foundry Tools の Azure Vision",
     "Foundry IQ",
-    "Foundry Control Plane"
+    "Foundry Control Plane",
+
+
+    "Azure Language",
+    "音声テキスト変換",
+    "テキスト読み上げ",
+    "音声翻訳",
+    "翻訳ツール",
+    "Face",
+    "Content Safety"
   ],
-  "分析": [
-    "Azure Analysis Services",
-    "Azure Data Explorer",
-    "Azure Data Factory",
-    "Azure Data Lake Storage",
-    "Azure Data Share",
-    "Azure Stream Analytics",
-    "Azure Synapse Analytics",
-    "Data Catalog",
-    "Data Lake Analytics",
-    "Event Hubs",
-    "HDInsight",
-    "Power BI Embedded",
-    "Microsoft Graph データ接続",
-    "Microsoft Fabric",
-    "Power BI"
+
+  "コンテナー": [
+    "Azure Kubernetes Service (AKS)",
+    "Azure Container Instances",
+    "Azure Container Apps",
+    "Azure Kubernetes Fleet Manager",
+    "Azure Red Hat OpenShift",
+    "Azure Container Registry",
+    "Azure Container Storage",
+
+
+    "Azure コンテナー ストレージ",
+    "Container Apps"
   ],
+
   "コンピューティング": [
     "App Service",
     "Azure Compute Fleet",
@@ -65,17 +72,12 @@
     "Windows Server",
     "Azure Dedicated Host",
     "Azure VM Image Builder",
-    "Nutanix Cloud Clusters"
+    "Nutanix Cloud Clusters",
+
+
+    "Service Fabric"
   ],
-  "コンテナー": [
-    "Azure Kubernetes Service (AKS)",
-    "Azure Container Instances",
-    "Azure Container Apps",
-    "Azure Kubernetes Fleet Manager",
-    "Azure Red Hat OpenShift",
-    "Azure Container Registry",
-    "Azure Container Storage"
-  ],
+
   "データベース": [
     "Azure Cosmos DB",
     "Azure DocumentDB",
@@ -88,46 +90,23 @@
     "Azure Managed Instance for Apache Cassandra",
     "Table Storage",
     "Azure confidential ledger",
-    "Azure HorizonDB"
+    "Azure HorizonDB",
+
+
+    "Azure Cosmos DB for MongoDB",
+    "SQL Database"
   ],
-  "開発者ツール": [
-    "Azure DevTest Labs",
-    "SDK",
-    "Visual Studio",
-    "Visual Studio Code",
-    "Azure App Testing",
-    "Azure Deployment Environments",
-    "Microsoft Playwright Testing",
-    "Artifact Signing"
-  ],
-  "DevOps": [
-    "Azure DevOps",
-    "Azure Pipelines",
-    "Azure Artifacts",
-    "Azure Boards",
-    "Azure Repos",
-    "Azure Test Plans",
-    "DevOps tool integrations",
-    "GitHub Advanced Security for Azure DevOps",
-    "GitHub Enterprise",
-    "GitHub Advanced Security",
-    "GitHub Copilot"
-  ],
-  "ハイブリッド + マルチクラウド": [
-    "Azure Functions",
-    "Azure Arc",
-    "Azure Local",
-    "Azure Stack Hub",
-    "Azure Stack Edge",
-    "Azure Operator Service Manager",
-    "Azure Operator Nexus"
-  ],
+
   "ID": [
     "Microsoft Entra ID (旧称 Azure AD)",
     "Microsoft Entra Domain Services",
     "Microsoft Entra Verified ID",
-    "Microsoft Entra 外部 ID"
+    "Microsoft Entra 外部 ID",
+
+
+    "Azure Active Directory B2C"
   ],
+
   "統合": [
     "API Management",
     "Azure Health Data Services",
@@ -135,8 +114,12 @@
     "Logic Apps",
     "Service Bus",
     "Azure Web PubSub",
-    "Microsoft Energy Data Services"
+    "Microsoft Energy Data Services",
+
+
+    "Web PubSub"
   ],
+
   "モノのインターネット (IoT)": [
     "Azure IoT Edge",
     "Azure Digital Twins",
@@ -144,8 +127,13 @@
     "Azure IoT Hub",
     "Azure IoT Operations",
     "Windows for IoT",
-    "Azure Sphere"
+    "Azure Sphere",
+
+
+    "IoT Edge",
+    "IoT Hub"
   ],
+
   "管理とガバナンス": [
     "Azure Chaos Studio",
     "Microsoft Purview",
@@ -165,15 +153,27 @@
     "Microsoft Cost Management",
     "Azure Automanage",
     "Azure Resource Mover",
-    "Update Management センター"
+    "Update Management センター",
+
+
+    "Azure Update Manager",
+    "Cost Management",
+    "Advisor",
+    "Resource Manager",
+    "Monitor"
   ],
+
   "移行": [
     "Azure Database Migration Service",
     "Azure Migrate",
     "Azure Site Recovery",
     "Azure Data Box",
-    "Azure Storage Mover"
+    "Azure Storage Mover",
+
+
+    "Database Migration Service"
   ],
+
   "ネットワーク": [
     "Azure ExpressRoute",
     "Azure Network Watcher",
@@ -195,8 +195,14 @@
     "Azure Virtual Network",
     "Azure Virtual WAN",
     "Azure VPN Gateway",
-    "Azure Maps"
+    "Azure Maps",
+
+    "Network Watcher",
+    "Private Link",
+    "Virtual Network",
+    "Bandwidth (データ転送)"
   ],
+
   "セキュリティ": [
     "Microsoft Sentinel",
     "Microsoft Defender for Cloud",
@@ -204,27 +210,13 @@
     "Azure Key Vault",
     "Microsoft Azure Attestation",
     "Azure Cloud HSM",
-    "Azure Information Protection"
+    "Azure Information Protection",
+
+
+    "Azure Attestation",
+    "Security Center"
   ],
-  "ストレージ": [
-    "Archive Storage",
-    "Azure Managed Lustre",
-    "Azure Files",
-    "Azure Storage Actions",
-    "Azure NetApp Files",
-    "Azure Blob Storage",
-    "Azure Disk Storage",
-    "Azure Elastic SAN",
-    "Queue Storage",
-    "Storage Accounts",
-    "Storage Explorer",
-    "Azure ストレージ ディスカバリー"
-  ],
-  "仮想デスクトップ インフラストラクチャ": [
-    "Azure Virtual Desktop",
-    "Microsoft Dev Box",
-    "Azure Lab Services"
-  ],
+
   "Web": [
     "Static Web Apps",
     "App Configuration",
