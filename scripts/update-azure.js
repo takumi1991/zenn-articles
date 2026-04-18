@@ -90,28 +90,25 @@ function isExpired(entry) {
 /* =========================
    ▼ Gemini（拡張生成）
 ========================= */
-async function generateDescription(title, description) {
-  const prompt = `
-以下のAzureサービスの説明文を、日本語で約300文字に膨らませてください。
+const prompt = `
+以下のAzureサービスについて、日本語で約280文字の解説を書いてください。
 
 # サービス名
 ${title}
 
-# 元の説明文
+# 参考情報（そのまま使わないこと）
 ${description}
 
 # 条件
-・元の内容をベースにする（創作しない）
+・参考情報に依存せず、自分の知識で再構成する
+・ただし内容の方向性は参考情報と矛盾しないこと
 ・最初の1文で何ができるか明確にする
-・ユースケースを自然に補足する
-・冗長な表現は禁止
+・具体的なユースケースを含める
 ・箇条書き禁止
+・見出しやラベルは出力しないこと
+・本文のみ出力
 ・300文字前後
 `;
-
-  const result = await model.generateContent(prompt);
-  return (await result.response).text().trim();
-}
 
 /* =========================
    ▼ footer（関数化）
