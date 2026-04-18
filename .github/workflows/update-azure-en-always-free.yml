@@ -3,7 +3,6 @@ name: Update Azure Always Free Services (EN)
 permissions:
   contents: write
 
-# 🔥 並列実行防止（重要）
 concurrency:
   group: azure-en-update
   cancel-in-progress: true
@@ -37,7 +36,6 @@ jobs:
           echo "▶ Running Azure EN Actor"
 
           curl -s -X POST \
-            -H "Content-Type: application/json" \
             -H "Authorization: Bearer $APIFY_TOKEN" \
             "https://api.apify.com/v2/acts/$APIFY_ACTOR_ID_AZURE_EN/run-sync-get-dataset-items?format=json" \
             -o data.json
@@ -46,7 +44,7 @@ jobs:
           head -n 20 data.json
 
       # --------------------------
-      # 3. JSON検証（壊れ防止）
+      # 3. JSON検証
       # --------------------------
       - name: Validate JSON
         run: |
@@ -77,7 +75,7 @@ jobs:
           head -n 40 articles/azure-always-free-en.md
 
       # --------------------------
-      # 7. FrontMatter検証（Zenn対策）
+      # 7. FrontMatter検証
       # --------------------------
       - name: Validate FrontMatter
         run: |
@@ -85,37 +83,45 @@ jobs:
             echo "❌ FrontMatter missing"
             exit 1
           fi
-
           echo "✅ FrontMatter OK"
 
       # --------------------------
-      # 8. Commit & Push（完全版）
+      # 8. Cache確認（←追加）
+      # --------------------------
+      - name: Debug cache
+        run: |
+          echo "===== CACHE CHECK ====="
+          ls -la scripts/cache || true
+          wc -l scripts/cache/azure_cache_en.json || true
+          head -n 5 scripts/cache/azure_cache_en.json || true
+
+      # --------------------------
+      # 9. Commit & Push（修正版）
       # --------------------------
       - name: Commit & Push
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          # 🔥 余計な変更を全削除（最重要）
-          git restore .
-          git clean -fd
+          # 🔥 重要：削除しない
+          # git restore .
+          # git clean -fd
 
-          # 記事だけ追加
+          # 🔥 必要なものだけ追加
           git add articles/azure-always-free-en.md
+          git add scripts/cache/azure_cache_en.json
 
           git commit -m "Update Azure Always Free Services (EN)" || echo "No changes"
 
-          # 🔥 競合対策
           git pull --rebase origin main
-
           git push origin main
 
       # --------------------------
-      # 9. デバッグログ（失敗時に効く）
+      # 10. Debug（失敗時）
       # --------------------------
       - name: Debug info
         if: failure()
         run: |
           echo "❌ Workflow failed"
           git status
-          ls -la articles
+          ls -la
