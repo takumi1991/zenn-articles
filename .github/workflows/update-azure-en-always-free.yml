@@ -89,18 +89,23 @@ jobs:
           echo "✅ FrontMatter OK"
 
       # --------------------------
-      # 8. Commit & Push（競合耐性あり）
+      # 8. Commit & Push（完全版）
       # --------------------------
       - name: Commit & Push
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
+          # 🔥 余計な変更を全削除（最重要）
+          git restore .
+          git clean -fd
+
+          # 記事だけ追加
           git add articles/azure-always-free-en.md
 
           git commit -m "Update Azure Always Free Services (EN)" || echo "No changes"
 
-          # 🔥 競合対策（必須）
+          # 🔥 競合対策
           git pull --rebase origin main
 
           git push origin main
