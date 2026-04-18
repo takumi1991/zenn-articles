@@ -262,5 +262,9 @@
   "webpubsub": {
     "text": "Azure Web PubSub helps your applications send real-time messages to connected web clients. Think of it like a special messaging service that works instantly over the internet. This is useful for building interactive features where everyone sees updates right away. For example, you could use it to create a live chat application where messages appear for all participants as soon as they are sent. It handles managing all those connections for you, so you don't have to build that complex infrastructure yourself. This service simplifies adding real-time capabilities to websites and apps, making them more engaging.",
     "updatedAt": 1776503385691
+  },
+  "managedapplications": {
+    "text": "Azure Managed Applications allow you to package and deploy complex applications as a single unit, simplifying installation and management for your users. Think of it like a pre-built app store item for your organization. This service is ideal for delivering custom solutions or shared services that need to be easily deployed across multiple teams or subscriptions. For example, a security operations team could create a managed application containing all the necessary security monitoring tools and configurations, which other teams could then deploy with just a few clicks, ensuring consistent security posture. This abstracts away the underlying complexity, making advanced solutions accessible to a wider audience.",
+    "updatedAt": 1776505662032
   }
 }

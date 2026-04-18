@@ -368,6 +368,17 @@ Azure  lets you run cloud analytics and custom business logic on your own device
 
 ## 🔐 Identity
 
+### Azure Active Directory B2C
+
+, or Azure AD B2C, is a service for managing customer identities and access to your applications. It allows you to provide a secure and personalized sign-up and sign-in experience for your customers. Think of it as a customer-facing identity provider.
+
+For example, an online retail store can use Azure AD B2C to let shoppers create their own accounts using email and password, or even their existing social media accounts like Google or Facebook. This makes it easy for customers to access their orders and profiles without needing separate logins for every part of the website. It handles the complexities of identity management so you can focus on building your business.
+
+**Free tier:** 50,000 active users per month (MAU) with Azure Active Directory B2C
+
+🔗 https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id
+
+
 ### Microsoft Entra ID (formerly Azure AD)
 
 Microsoft Entra ID is a cloud-based service that helps you manage who can access your apps and data. It acts like a central security guard for your digital resources.  For example, it allows employees to sign in once with a single username and password to access all the company applications they need, like email, sales software, and internal portals. This single sign-on (SSO) makes it easier for people to work and improves security by reducing the number of passwords they have to remember and manage. Entra ID also helps protect your accounts from unauthorized access.
@@ -496,6 +507,15 @@ lets you manage multiple Azure accounts from a single place.  Think of it like h
 **Free tier:** Free
 
 🔗 https://azure.microsoft.com/en-us/products/azure-lighthouse/
+
+
+### Azure Managed Applications
+
+allow you to package and deploy complex applications as a single unit, simplifying installation and management for your users. Think of it like a pre-built app store item for your organization. This service is ideal for delivering custom solutions or shared services that need to be easily deployed across multiple teams or subscriptions. For example, a security operations team could create a managed application containing all the necessary security monitoring tools and configurations, which other teams could then deploy with just a few clicks, ensuring consistent security posture. This abstracts away the underlying complexity, making advanced solutions accessible to a wider audience.
+
+**Free tier:** Free publishing
+
+🔗 https://azure.microsoft.com/en-us/products/managed-applications/
 
 
 ### Azure Policy
@@ -647,29 +667,6 @@ is a fully managed service that helps you build real-time web applications.  It 
 **Free tier:** 20 concurrent connections per unit and 20,000 messages
 
 🔗 https://azure.microsoft.com/en-us/products/signalr-service/
-
-<br><br>
-
-## 📁 Other
-
-### Azure Active Directory B2C
-
-, or Azure AD B2C, is a service for managing customer identities and access to your applications. It allows you to provide a secure and personalized sign-up and sign-in experience for your customers. Think of it as a customer-facing identity provider.
-
-For example, an online retail store can use Azure AD B2C to let shoppers create their own accounts using email and password, or even their existing social media accounts like Google or Facebook. This makes it easy for customers to access their orders and profiles without needing separate logins for every part of the website. It handles the complexities of identity management so you can focus on building your business.
-
-**Free tier:** 50,000 active users per month (MAU) with Azure Active Directory B2C
-
-🔗 https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id
-
-
-### Azure Managed Applications, Service catalog
-
-Azure Managed Applications, and its accompanying Service Catalog, let organizations easily share and deploy approved IT solutions. Think of it like a pre-made app store for your company's tech needs. Instead of each team figuring out how to set up the same software or service, a central IT department can create standardized "applications" in the Service Catalog. Then, anyone in the company can browse this catalog and deploy these pre-configured solutions with just a few clicks. This ensures consistency and makes getting started with new tools much faster. For example, a company could create a pre-approved web server setup in the catalog. Developers can then easily deploy this secure and compliant web server without needing to manually configure every detail, saving time and reducing errors.
-
-**Free tier:** Free publishing
-
-🔗 https://azure.microsoft.com/en-us/products/managed-applications/
 
 <br><br>
 
