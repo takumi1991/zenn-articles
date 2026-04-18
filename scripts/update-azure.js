@@ -30,6 +30,17 @@ const CATEGORY_META = {
 };
 
 // =========================
+// 正規化（超重要）
+// =========================
+const normalize = (s) =>
+  s
+    ?.toLowerCase()
+    .replace(/azure\s*/g, "")
+    .replace(/[（）()]/g, "")
+    .replace(/\s+/g, "")
+    .trim();
+
+// =========================
 // タイトル補正
 // =========================
 const normalizeTitle = (title) => {
@@ -85,12 +96,14 @@ async function main() {
   const filtered = data.filter(d => d.period === "always");
 
   // =========================
-  // タイトル→データ辞書
+  // 正規化マップ作成
   // =========================
   const itemMap = {};
   for (const item of filtered) {
-    itemMap[item.title] = item;
+    itemMap[normalize(item.title)] = item;
   }
+
+  const used = new Set();
 
   // =========================
   // 日本時間
@@ -98,12 +111,6 @@ async function main() {
   const now = new Date();
   const updatedAt = now.toLocaleString("ja-JP", {
     timeZone: "Asia/Tokyo",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
   });
 
   // =========================
@@ -121,38 +128,55 @@ published: true
 
 最終更新日: ${updatedAt}
 
-AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されています。それらと比較して対象サービス数も多く、AI・データ・アプリ基盤まで幅広く常時無料枠が揃っているため、個人開発でも多様な構成をコストを抑えて実現できます。
-
-この記事では、常時無料で利用できるAzureサービスのみをまとめています。
+AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services）」が用意されています。
 
 👉 English version: https://zenn.dev/good_sleeper/articles/azure-always-free-en
 `;
 
-  // =========================
-  // body
-  // =========================
   let body = "";
 
+  // =========================
+  // カテゴリ描画
+  // =========================
   for (const [category, services] of Object.entries(categoryMap)) {
-
-    // ← ここが今回のバグ対策
     if (!Array.isArray(services)) continue;
 
     const validItems = services
-      .map(name => itemMap[name])
+      .map(name => {
+        const item = itemMap[normalize(name)];
+        if (item) used.add(item.title);
+        return item;
+      })
       .filter(Boolean);
 
     if (validItems.length === 0) continue;
 
     const emoji = CATEGORY_META[category] || "📁";
 
-    // SEO用の1文も追加
     body += `\n## ${emoji} ${category}（${validItems.length}件）\n\n`;
     body += `Azureの「${category}」カテゴリに属する常時無料サービス一覧です。\n\n`;
 
     for (const item of validItems) {
       body += formatItem(item) + "\n";
     }
+  }
+
+  // =========================
+  // その他（未マッチ）
+  // =========================
+  const others = filtered.filter(item => !used.has(item.title));
+
+  if (others.length > 0) {
+    body += `\n## 🧩 その他（${others.length}件）\n\n`;
+    body += `分類に含まれていないサービスです。\n\n`;
+
+    for (const item of others) {
+      body += formatItem(item) + "\n";
+    }
+
+    // デバッグログ
+    console.log("⚠️ 未マッチ:");
+    others.forEach(o => console.log("-", o.title));
   }
 
   // =========================
@@ -163,23 +187,11 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
 
 ## 注意
 
-常時無料枠にも利用上限があります。  
-超過すると課金されるため、必ず公式ドキュメントを確認してください。
-
-## 関連リンク
-
-AWS 常時無料サービス一覧
-👉 https://zenn.dev/good_sleeper/articles/aws-always-free
-
-Google Cloud Platform 常時無料サービス一覧
-👉 https://zenn.dev/good_sleeper/articles/gcp-always-free
+常時無料枠には上限があります。超過すると課金されます。
 `;
 
   const markdown = header + body + footer;
 
-  // =========================
-  // ディレクトリ作成
-  // =========================
   const dir = path.dirname(OUTPUT);
   if (!fs.existsSync(dir)) {
     fs.mkdirSync(dir, { recursive: true });
@@ -188,8 +200,8 @@ Google Cloud Platform 常時無料サービス一覧
   fs.writeFileSync(OUTPUT, markdown, "utf8");
 
   console.log("✅ Zenn記事生成:", OUTPUT);
-  console.log(`件数: ${filtered.length}`);
-  console.log(`🕒 更新日時: ${updatedAt}`);
+  console.log(`総件数: ${filtered.length}`);
+  console.log(`🧩 その他: ${others.length}`);
 }
 
 main();
