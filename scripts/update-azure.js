@@ -157,6 +157,12 @@ AzureにもAWSやGoogle Cloud同様に「常時無料枠（Always Free Services�
 
     for (const item of validItems) {
       body += formatItem(item) + "\n";
+        // 最後以外だけ区切り線
+        if (i !== validItems.length - 1) {
+          body += "\n---\n\n";
+        } else {
+          body += "\n";
+  }
     }
   }
 
