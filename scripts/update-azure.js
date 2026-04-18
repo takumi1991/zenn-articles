@@ -122,6 +122,7 @@ ${title}
 ・最初の1文で機能説明
 ・初心者にとってわかりやすく
 ・ユースケース含む
+・冗長禁止
 `;
 
   const r = await model.generateContent(prompt);
