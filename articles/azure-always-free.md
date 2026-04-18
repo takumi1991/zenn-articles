@@ -10,7 +10,7 @@ published: true
 
 Azureには常時無料で利用できるサービスが多数存在します。本記事ではカテゴリごとに整理しています。
 
-## AI + 機械学習
+## 🧠 AI + 機械学習
 
 ### Azure AI Search
 
@@ -92,7 +92,7 @@ Content Safetyは、AzureのAIを活用したサービスで、テキストや�
 
 ---
 
-## コンテナー
+## 📦 コンテナー
 
 ### Azure コンテナー ストレージ
 
@@ -124,7 +124,7 @@ Azure Container Appsは、コンテナ化されたアプリケーションを簡
 
 ---
 
-## 分析
+## 📊 分析
 
 ### Data Catalog
 
@@ -146,7 +146,7 @@ Data Factoryは、Azure上でデータ統合とETL（Extract, Transform, Load）
 
 ---
 
-## コンピューティング
+## 🖥️ コンピューティング
 
 ### App Service
 
@@ -198,7 +198,7 @@ Service Fabricは、マイクロサービスアーキテクチャを構築・実
 
 ---
 
-## Web
+## 🌎 Web
 
 ### Static Web Apps
 
@@ -240,7 +240,7 @@ Azure SignalR Serviceは、リアルタイムWebアプリケーションの構�
 
 ---
 
-## データベース
+## 🗄️ データベース
 
 ### Azure Cosmos DB
 
@@ -272,7 +272,7 @@ SQL Databaseは、Azureが提供するフルマネージドなリレーショナ
 
 ---
 
-## 移行
+## ✈️ 移行
 
 ### Database Migration Service
 
@@ -304,7 +304,7 @@ Azure Storage Moverは、オンプレミスやその他のクラウドストレ�
 
 ---
 
-## 開発者ツール
+## 🛠️ 開発者ツール
 
 ### Azure Deployment Environments
 
@@ -336,7 +336,7 @@ Visual Studio Codeは、Microsoftが開発する軽量でパワフルなソー�
 
 ---
 
-## DevOps
+## ⚙️ DevOps
 
 ### Azure DevOps
 
@@ -348,7 +348,7 @@ Azure DevOpsは、開発チームがアプリケーションを計画、開発�
 
 ---
 
-## ハイブリッド + マルチクラウド
+## 📁 ハイブリッド + マルチクラウド
 
 ### Azure Arc
 
@@ -360,7 +360,7 @@ Azure Arc は、Azure の管理とガバナンスを、オンプレミス、マ�
 
 ---
 
-## ID
+## 🔐 ID
 
 ### Azure Active Directory B2C
 
@@ -382,7 +382,7 @@ Microsoft Entra ID（旧称 Azure AD）は、クラウドベースのIDおよび
 
 ---
 
-## 統合
+## 🧩 統合
 
 ### API Management
 
@@ -434,7 +434,7 @@ Web PubSubは、リアルタイムのWebアプリケーションを容易に構�
 
 ---
 
-## ネットワーク
+## 🌍 ネットワーク
 
 ### Azure Maps
 
@@ -486,7 +486,7 @@ Azure Virtual Network (VNet) は、Azureクラウド上で構築されるプラ�
 
 ---
 
-## モノのインターネット (IoT)
+## 📡 モノのインターネット (IoT)
 
 ### IoT Edge
 
@@ -508,7 +508,7 @@ IoT Hubは、IoTデバイスとAzure間の双方向通信を容易にする、�
 
 ---
 
-## 管理とガバナンス
+## 📋 管理とガバナンス
 
 ### Advisor
 
@@ -630,7 +630,7 @@ Azure Resource Manager (ARM) は、Azure リソースのデプロイ、管理、
 
 ---
 
-## セキュリティ
+## 🛡️ セキュリティ
 
 ### Azure Attestation
 
