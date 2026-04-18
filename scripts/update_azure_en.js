@@ -21,7 +21,7 @@ const model = genAI.getGenerativeModel({
 });
 
 /* ========================= */
-// normalize（EN対応強化版）
+// normalize（完全キー化）
 const normalize = (s) =>
   s?.toLowerCase()
     .replace(/azure|microsoft/g, "")
@@ -52,8 +52,10 @@ const CATEGORY_META = {
   "Other": "📁"
 };
 
+const CATEGORY_ORDER = Object.keys(CATEGORY_META);
+
 /* ========================= */
-// 🔥 category index（最重要）
+// index生成
 function buildCategoryIndex(categoryMap) {
   const index = new Map();
 
@@ -62,7 +64,6 @@ function buildCategoryIndex(categoryMap) {
       const key = normalize(name);
       index.set(key, category);
 
-      // Azure prefix除去版も登録
       const simplified = key.replace(/^azure/, "");
       index.set(simplified, category);
     }
@@ -72,14 +73,12 @@ function buildCategoryIndex(categoryMap) {
 }
 
 /* ========================= */
-// 🔥 カテゴリ解決（最強版）
+// カテゴリ解決（最長一致）
 function resolveCategory(title, index) {
   const key = normalize(title);
 
-  // 完全一致
   if (index.has(key)) return index.get(key);
 
-  // 最長一致
   let best = null;
   let bestLen = 0;
 
@@ -121,17 +120,16 @@ function isExpired(entry) {
 // Gemini
 async function generateDescription(title) {
   const prompt = `
-Write a clear explanation of this Azure service in about 280 words.
+Explain this Azure service in about 280 words.
 
-# Service
+Service:
 ${title}
 
-# Rules
+Rules:
 - No headings
-- No labels
 - First sentence explains what it does
 - Include use cases
-- Avoid repetition
+- No repetition
 `;
 
   const r = await model.generateContent(prompt);
@@ -245,14 +243,19 @@ async function main() {
     await new Promise(r => setTimeout(r, 800));
   }
 
-  /* ===== grouping ===== */
+  /* ===== grouping（完全版）===== */
   const grouped = {};
+
+  // 初期化（これが最重要）
+  for (const c of CATEGORY_ORDER) {
+    grouped[c] = [];
+  }
 
   for (const item of items) {
     const category = resolveCategory(item.title, index);
 
-    if (!grouped[category]) grouped[category] = [];
-    grouped[category].push(item);
+    if (!grouped[category]) grouped["Other"].push(item);
+    else grouped[category].push(item);
 
     console.log("📂", item.title, "→", category);
   }
@@ -272,7 +275,10 @@ Azure provides many services that can be used for free within certain limits. Th
 
 `;
 
-  for (const [category, list] of Object.entries(grouped)) {
+  for (const category of CATEGORY_ORDER) {
+    const list = grouped[category];
+    if (!list || list.length === 0) continue;
+
     const icon = CATEGORY_META[category] || "📁";
 
     md += `## ${icon} ${category}\n\n`;
