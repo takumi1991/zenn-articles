@@ -32,7 +32,6 @@
     "Foundry IQ",
     "Foundry Control Plane",
 
-
     "Azure Language",
     "音声テキスト変換",
     "テキスト読み上げ",
@@ -40,6 +39,11 @@
     "翻訳ツール",
     "Face",
     "Content Safety"
+  ],
+
+  "分析": [
+    "Data Catalog",
+    "Data Factory"
   ],
 
   "コンテナー": [
@@ -50,7 +54,6 @@
     "Azure Red Hat OpenShift",
     "Azure Container Registry",
     "Azure Container Storage",
-
 
     "Azure コンテナー ストレージ",
     "Container Apps"
@@ -74,8 +77,8 @@
     "Azure VM Image Builder",
     "Nutanix Cloud Clusters",
 
-
-    "Service Fabric"
+    "Service Fabric",
+    "Functions"
   ],
 
   "データベース": [
@@ -92,9 +95,22 @@
     "Azure confidential ledger",
     "Azure HorizonDB",
 
-
     "Azure Cosmos DB for MongoDB",
     "SQL Database"
+  ],
+
+  "開発者ツール": [
+    "Azure Deployment Environments",
+    "DevTest Labs",
+    "Visual Studio Code"
+  ],
+
+  "DevOps": [
+    "Azure DevOps"
+  ],
+
+  "ハイブリッド + マルチクラウド": [
+    "Azure Arc"
   ],
 
   "ID": [
@@ -102,7 +118,6 @@
     "Microsoft Entra Domain Services",
     "Microsoft Entra Verified ID",
     "Microsoft Entra 外部 ID",
-
 
     "Azure Active Directory B2C"
   ],
@@ -116,7 +131,6 @@
     "Azure Web PubSub",
     "Microsoft Energy Data Services",
 
-
     "Web PubSub"
   ],
 
@@ -128,7 +142,6 @@
     "Azure IoT Operations",
     "Windows for IoT",
     "Azure Sphere",
-
 
     "IoT Edge",
     "IoT Hub"
@@ -155,7 +168,6 @@
     "Azure Resource Mover",
     "Update Management センター",
 
-
     "Azure Update Manager",
     "Cost Management",
     "Advisor",
@@ -169,7 +181,6 @@
     "Azure Site Recovery",
     "Azure Data Box",
     "Azure Storage Mover",
-
 
     "Database Migration Service"
   ],
@@ -211,7 +222,6 @@
     "Microsoft Azure Attestation",
     "Azure Cloud HSM",
     "Azure Information Protection",
-
 
     "Azure Attestation",
     "Security Center"
