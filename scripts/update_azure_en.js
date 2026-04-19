@@ -266,7 +266,7 @@ published: true
 
 # Azure Always Free Services
 
-UTC: ${new Date().toISOString()}
+Updated: ${new Date().toISOString()}(UTC)
 
 Azure provides many services that can be used for free within certain limits. This article organizes those services by category.
 `;
