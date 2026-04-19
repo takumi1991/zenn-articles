@@ -8,6 +8,8 @@ published: true
 
 # Azure Always Free Services
 
+UTC: 2026-04-19T14:02:27.479Z
+
 Azure provides many services that can be used for free within certain limits. This article organizes those services by category.
 
 ## 🧠 AI + machine learning
@@ -20,6 +22,7 @@ helps you build powerful search experiences. It lets you quickly add a sophistic
 
 🔗 https://azure.microsoft.com/en-us/products/ai-services/ai-search/
 
+---
 
 ### Azure Language
 
@@ -29,6 +32,7 @@ is a service that helps computers understand and process human text. It can perf
 
 🔗 https://azure.microsoft.com/en-us/products/ai-foundry/tools/language
 
+---
 
 ### AI Bot Service
 
@@ -38,6 +42,7 @@ Azure  helps you build and deploy intelligent chatbots. These are computer progr
 
 🔗 https://azure.microsoft.com/en-us/products/ai-services/ai-bot-service/
 
+---
 
 ### AI Immersive Reader
 
@@ -47,6 +52,7 @@ Immersive Reader is a tool that helps people read and understand text better. It
 
 🔗 https://azure.microsoft.com/en-us/products/ai-services/ai-immersive-reader/
 
+---
 
 ### Health Bot
 
@@ -56,6 +62,7 @@ Azure  is a cloud-based service that helps developers build intelligent healthca
 
 🔗 https://azure.microsoft.com/en-us/products/bot-services/health-bot/
 
+---
 
 ### Speech to Text
 
@@ -65,6 +72,7 @@ Azure  converts spoken words into written text. This powerful tool allows you to
 
 🔗 https://azure.microsoft.com/en-us/products/ai-foundry/tools/speech
 
+---
 
 ### Text to Speech
 
@@ -76,6 +84,7 @@ For example, a company could use Text to Speech to create audio versions of thei
 
 🔗 https://azure.microsoft.com/en-us/products/ai-foundry/tools/speech
 
+---
 
 ### Speech Translation
 
@@ -85,6 +94,7 @@ Azure  helps you translate spoken words into text in a different language in rea
 
 🔗 https://azure.microsoft.com/en-us/products/ai-foundry/tools/speech
 
+---
 
 ### Translator
 
@@ -94,6 +104,7 @@ is a cloud-based service that automatically translates text between many differe
 
 🔗 https://azure.microsoft.com/en-us/products/ai-foundry/tools/translator
 
+---
 
 ### Face
 
@@ -103,6 +114,7 @@ Azure  is a service that can detect and analyze human faces in images. It helps 
 
 🔗 https://azure.microsoft.com/en-us/products/cognitive-services/face/
 
+---
 
 ### Machine Learning
 
@@ -112,6 +124,7 @@ Azure  is a cloud-based service that helps you build, train, and deploy machine 
 
 🔗 https://azure.microsoft.com/en-us/products/machine-learning/
 
+---
 
 ### Open Datasets
 
@@ -121,6 +134,7 @@ Azure  offers a curated collection of high-quality data ready for you to use in 
 
 🔗 https://azure.microsoft.com/en-us/products/open-datasets/
 
+---
 
 ### Content Safety
 
@@ -142,6 +156,7 @@ Azure  is a cloud service that helps people find and understand data within an o
 
 🔗 https://azure.microsoft.com/en-us/products/data-catalog/
 
+---
 
 ### Data Factory
 
@@ -163,6 +178,7 @@ Azure  is a cloud-based platform for building, deploying, and managing web appli
 
 🔗 https://azure.microsoft.com/en-us/products/app-service/
 
+---
 
 ### Azure Kubernetes Service (AKS)
 
@@ -172,6 +188,7 @@ Azure Kubernetes Service, or AKS, helps you run your applications in containers 
 
 🔗 https://azure.microsoft.com/en-us/products/kubernetes-service/
 
+---
 
 ### Azure VM Image Builder
 
@@ -181,6 +198,7 @@ helps you create custom virtual machine images for your applications.  Think of 
 
 🔗 https://azure.microsoft.com/en-us/products/image-builder/
 
+---
 
 ### Batch
 
@@ -192,6 +210,7 @@ For example, you could use Batch to process thousands of images simultaneously f
 
 🔗 https://azure.microsoft.com/en-us/products/batch/
 
+---
 
 ### Functions
 
@@ -201,6 +220,7 @@ Azure  is a way to run small pieces of code without managing servers. You just w
 
 🔗 https://azure.microsoft.com/en-us/products/functions/
 
+---
 
 ### Static Web Apps
 
@@ -210,6 +230,7 @@ Azure  is a service that hosts your website's front-end code and backend APIs in
 
 🔗 https://azure.microsoft.com/en-us/products/app-service/static/
 
+---
 
 ### Container Apps
 
@@ -219,6 +240,7 @@ Azure  lets you run applications packaged as containers without managing servers
 
 🔗 https://azure.microsoft.com/en-us/products/container-apps/
 
+---
 
 ### Service Fabric
 
@@ -242,6 +264,7 @@ lets you store data for applications running in containers. Containers are like 
 
 🔗 https://azure.microsoft.com/en-us/products/container-storage/
 
+---
 
 ### App Configuration
 
@@ -263,6 +286,7 @@ is a globally distributed, multi-model database service.  It allows you to store
 
 🔗 https://azure.microsoft.com/en-us/products/cosmos-db/
 
+---
 
 ### Azure Cosmos DB for MongoDB
 
@@ -272,6 +296,7 @@ is a fully managed cloud database service that lets you run your existing MongoD
 
 🔗 https://azure.microsoft.com/en-us/products/cosmos-db/
 
+---
 
 ### Database Migration Service
 
@@ -283,6 +308,7 @@ For instance, a company running an old version of SQL Server on their own comput
 
 🔗 https://azure.microsoft.com/en-us/products/database-migration/
 
+---
 
 ### SQL Database
 
@@ -304,6 +330,7 @@ Azure Deployment Environments helps teams reliably create and manage development
 
 🔗 https://azure.microsoft.com/en-us/products/deployment-environments/
 
+---
 
 ### Azure DevOps
 
@@ -313,6 +340,7 @@ is a suite of tools that helps teams plan, build, and deploy software. It provid
 
 🔗 https://azure.microsoft.com/en-us/products/devops/
 
+---
 
 ### DevTest Labs
 
@@ -322,6 +350,7 @@ Azure  helps developers and testers quickly set up their own ready-to-use develo
 
 🔗 https://azure.microsoft.com/en-us/products/devtest-lab/
 
+---
 
 ### Visual Studio Code
 
@@ -355,6 +384,7 @@ is a service that helps you manage your computing resources, whether they are in
 
 🔗 https://azure.microsoft.com/en-us/products/azure-arc/
 
+---
 
 ### IoT Edge
 
@@ -378,6 +408,7 @@ For example, an online retail store can use Azure AD B2C to let shoppers create 
 
 🔗 https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-id
 
+---
 
 ### Microsoft Entra ID (formerly Azure AD)
 
@@ -399,6 +430,7 @@ Azure  is a service that helps you manage and secure the application programming
 
 🔗 https://azure.microsoft.com/en-us/products/api-management/
 
+---
 
 ### Event Grid
 
@@ -408,6 +440,7 @@ Azure  is a fully managed service that acts as a central hub for event routing. 
 
 🔗 https://azure.microsoft.com/en-us/products/event-grid/
 
+---
 
 ### Health Data Services
 
@@ -417,6 +450,7 @@ Azure  is a managed cloud platform for healthcare data. It helps you securely st
 
 🔗 https://azure.microsoft.com/en-us/products/health-data-services/
 
+---
 
 ### Logic Apps
 
@@ -426,6 +460,7 @@ is a cloud service that helps you automate tasks and workflows. You can connect 
 
 🔗 https://azure.microsoft.com/en-us/products/logic-apps/
 
+---
 
 ### Web PubSub
 
@@ -447,6 +482,7 @@ provides a platform for developers to build location-aware applications. It offe
 
 🔗 https://azure.microsoft.com/en-us/products/azure-maps/
 
+---
 
 ### IoT Hub
 
@@ -456,6 +492,7 @@ is a service that connects your devices to the cloud.  It lets you send informat
 
 🔗 https://azure.microsoft.com/en-us/products/iot-hub/
 
+---
 
 ### Notification Hubs
 
@@ -479,6 +516,7 @@ For example, Advisor might notice you have a virtual machine that's rarely used.
 
 🔗 https://azure.microsoft.com/en-us/products/advisor/
 
+---
 
 ### Automation
 
@@ -490,6 +528,7 @@ For example, you could use Azure Automation to automatically shut down virtual m
 
 🔗 https://azure.microsoft.com/en-us/products/automation/
 
+---
 
 ### Azure Automanage
 
@@ -499,6 +538,7 @@ helps you automate common tasks on your Windows and Linux computers in Azure and
 
 🔗 https://azure.microsoft.com/en-us/products/azure-automanage/
 
+---
 
 ### Azure Lighthouse
 
@@ -508,6 +548,7 @@ lets you manage multiple Azure accounts from a single place.  Think of it like h
 
 🔗 https://azure.microsoft.com/en-us/products/azure-lighthouse/
 
+---
 
 ### Azure Managed Applications
 
@@ -517,6 +558,7 @@ allow you to package and deploy complex applications as a single unit, simplifyi
 
 🔗 https://azure.microsoft.com/en-us/products/managed-applications/
 
+---
 
 ### Azure Policy
 
@@ -528,6 +570,7 @@ For example, you can use Azure Policy to restrict the types of virtual machines 
 
 🔗 https://azure.microsoft.com/en-us/products/azure-policy/
 
+---
 
 ### Azure Resource Mover
 
@@ -537,6 +580,7 @@ helps you move your resources between different Azure regions. Think of it like 
 
 🔗 https://azure.microsoft.com/en-us/products/resource-mover/
 
+---
 
 ### Azure Update Manager
 
@@ -546,6 +590,7 @@ helps you manage software updates across your computers. It lets you schedule wh
 
 🔗 https://azure.microsoft.com/en-us/products/azure-update-management-center/
 
+---
 
 ### Cloud Shell
 
@@ -555,6 +600,7 @@ Azure  is a powerful, browser-based command-line experience. It gives you intera
 
 🔗 https://azure.microsoft.com/en-us/get-started/azure-portal/cloud-shell/
 
+---
 
 ### Cost Management
 
@@ -564,6 +610,7 @@ Azure  helps you understand and control your spending on Microsoft's cloud servi
 
 🔗 https://azure.microsoft.com/en-us/products/cost-management/
 
+---
 
 ### Resource Manager
 
@@ -573,6 +620,7 @@ Azure  is your central control panel for managing all your Azure resources. It h
 
 🔗 https://azure.microsoft.com/en-us/get-started/azure-portal/resource-manager/
 
+---
 
 ### Azure Migrate
 
@@ -582,6 +630,7 @@ helps businesses move their applications and data from their current computer sy
 
 🔗 https://azure.microsoft.com/en-us/products/azure-migrate/
 
+---
 
 ### Network Watcher
 
@@ -615,6 +664,7 @@ Bandwidth in Azure refers to how much data can be sent or received over the inte
 
 🔗 https://azure.microsoft.com/en-us/products/virtual-network/
 
+---
 
 ### Private Link
 
@@ -624,6 +674,7 @@ Azure  lets you securely connect your on-premises or other cloud networks to Azu
 
 🔗 https://azure.microsoft.com/en-us/products/private-link/
 
+---
 
 ### Virtual Network
 
@@ -647,6 +698,7 @@ A common use case is protecting sensitive data. For example, a company could use
 
 🔗 https://azure.microsoft.com/en-us/products/azure-attestation/
 
+---
 
 ### Security Center
 
