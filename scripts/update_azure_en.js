@@ -266,6 +266,8 @@ published: true
 
 # Azure Always Free Services
 
+UTC: ${new Date().toISOString()}
+
 Azure provides many services that can be used for free within certain limits. This article organizes those services by category.
 `;
 
@@ -279,7 +281,12 @@ Azure provides many services that can be used for free within certain limits. Th
 
     list.forEach((item, i) => {
       md += formatItem(item, cache);
-      md += i !== list.length - 1 ? "\n\n" : "\n<br><br>\n";
+    
+      if (i !== list.length - 1) {
+        md += "\n---\n\n";   // ← 区切り線
+      } else {
+        md += "\n<br><br>\n"; // ← カテゴリ最後
+      }
     });
   }
 
