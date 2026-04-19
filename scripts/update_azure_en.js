@@ -137,17 +137,19 @@ function isExpired(entry) {
 /* ========================= */
 async function generateDescription(title) {
   const prompt = `
-Explain this Azure service in about 120 words.
+Explain this Azure service in natural English.
 
 Service:
 ${title}
 
 Rules:
-- No headings
-- First sentence explains what it does
-- Include one concrete use case
-- Avoid repetition
-- Use simple, clear language for beginners
+- Use 4 short sentences (max 20 words each)
+- Start with what the service does in one clear sentence
+- Avoid generic phrases (e.g. "handles infrastructure", "focus on your code")
+- Avoid abstract words (e.g. efficient, scalable, powerful)
+- Describe concrete actions instead (e.g. deploy apps, process requests, store data)
+- Include one simple, specific use case (no "For example" required)
+- Use the service name correctly as the subject
 `;
 
   const r = await model.generateContent(prompt);
