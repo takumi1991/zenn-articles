@@ -1,0 +1,248 @@
+{
+  "生成AI": [
+    "Vertex AI platform",
+    "Gemini Enterprise",
+    "Vertex AI Studio",
+    "Vertex AI Agent Builder",
+    "Recommendations AI",
+    "Gemini Code Assist",
+    "Firebase AI Logic client SDKs",
+    "Genkit"
+  ],
+  "会話型AI": [
+    "Conversational Agents",
+    "Agent Assist",
+    "Conversational Insights",
+    "Translation AI",
+    "Contact Center as a Service"
+  ],
+  "MLとMLOps": [
+    "AutoML",
+    "Vertex AI Notebooks",
+    "Vertex Explainable AI",
+    "Text-to-Speech",
+    "Speech-to-Text",
+    "Natural Language AI"
+  ],
+  "AIインフラ": [
+    "Cloud TPUs",
+    "Vertex AI Vector Search"
+  ],
+  "画像・動画・AR API": [
+    "Vision AI",
+    "Video AI",
+    "Transcoder API"
+  ],
+  "ドキュメントAI": [
+    "Document AI"
+  ],
+
+  "コンピューティング": [
+    "Compute Engine",
+    "Cloud GPUs",
+    "VMware Engine",
+    "Spot VMs",
+    "Migrate to Virtual Machines",
+    "Batch",
+    "Deep Learning VM Image",
+    "Migration Center"
+  ],
+  "ネットワーキング": [
+    "Cloud DNS",
+    "Cloud Load Balancing",
+    "Cloud CDN",
+    "Virtual Private Cloud (VPC)",
+    "Network Service Tiers",
+    "Network Connectivity Center",
+    "Network Intelligence Center",
+    "Cloud NAT",
+    "Private Service Connect",
+    "Cloud Connectivity",
+    "Telecom Network Automation",
+    "Spectrum Access System (SAS)"
+  ],
+  "サーバーレス": [
+    "Cloud Run",
+    "App Engine",
+    "Knative"
+  ],
+  "ストレージ": [
+    "Cloud Storage",
+    "Filestore",
+    "Storage Transfer Service",
+    "Transfer Appliance",
+    "NetApp Volumes",
+    "Google Cloud Backup and DR",
+    "Cloud Storage for Firebase",
+    "Persistent Disk",
+    "Local SSD",
+    "Parallelstore"
+  ],
+  "Web3": [
+    "Blockchain Node Engine",
+    "Blockchain RPC"
+  ],
+  "コンテナ": [
+    "Google Kubernetes Engine",
+    "Cloud Service Mesh",
+    "Binary Authorization",
+    "Deep Learning Containers",
+    "Config Connector",
+    "Migrate to Containers"
+  ],
+  "ハイブリッド クラウドとマルチクラウド": [
+    "Google Distributed Cloud",
+    "Cloud Composer",
+    "Bare Metal Solution",
+    "Cloud Asset Inventory"
+  ],
+
+  "データ分析": [
+    "BigQuery",
+    "Google Marketing Platform",
+    "Looker",
+    "Dataform",
+    "Dataplex",
+    "Datastream",
+    "Dataproc",
+    "Dataflow",
+    "BigLake",
+    "Earth Engine",
+    "Sensitive Data Protection",
+    "Telecom Data Fabric",
+    "MongoDB Atlas (pay-as-you-go)",
+    "Elastic Cloud (Elasticsearch Service)"
+  ],
+  "データベース": [
+    "Cloud SQL",
+    "Spanner",
+    "Firestore",
+    "AlloyDB",
+    "Database Migration Service",
+    "Bigtable",
+    "Memorystore",
+    "Firebase Data Connect"
+  ],
+  "ビジネス インテリジェンス": [
+    "Looker Studio"
+  ],
+
+  "デベロッパー ツール": [
+    "Cloud Console",
+    "Cloud Code",
+    "Cloud Run functions",
+    "Cloud SDK",
+    "Cloud Workstations",
+    "Terraform on Google Cloud",
+    "Gemini Cloud Assist",
+    "Cloud Foundation Toolkit",
+    "Cloud Shell",
+    "Personalized Service Health",
+    "Cloud Scheduler",
+    "Skaffold",
+    "Service Catalog",
+    "Tekton",
+    "Google Maps Platform"
+  ],
+
+  "アプリの開発": [
+    "Firebase Cloud Messaging",
+    "Cloud Build",
+    "Appsheet Automation",
+    "Firebase Test Lab",
+    "Firebase",
+    "Firebase Authentication",
+    "Cloud Deploy",
+    "Firebase Crashlytics",
+    "Artifact Registry",
+    "Firebase Performance Monitoring",
+    "Firebase In-App Messaging",
+    "Firebase Remote Config",
+    "Firebase App Check",
+    "AppSheet",
+    "Cloud Functions for Firebase"
+  ],
+
+  "インテグレーション サービス": [
+    "Cloud APIs",
+    "Workflows",
+    "Apigee API Management",
+    "Cloud Tasks",
+    "Cloud Data Fusion",
+    "Eventarc",
+    "Pub/Sub",
+    "Application Integration",
+    "API Gateway",
+    "Live Stream API",
+    "Cloud Endpoints",
+    "Service Directory"
+  ],
+
+  "オブザーバビリティ": [
+    "Cloud Mobile App",
+    "Cloud Logging",
+    "Cloud Monitoring",
+    "Carbon Footprint",
+    "Error Reporting",
+    "Cloud Trace",
+    "Managed Service for Prometheus",
+    "Cloud Profiler",
+    "Datadog"
+  ],
+  "運用": [
+    "Resource Manager",
+    "Operations Suite",
+    "Infrastructure Manager"
+  ],
+
+  "セキュリティと ID": [
+    "reCAPTCHA Enterprise",
+    "Cloud Identity",
+    "Secret Manager",
+    "Google Security Operations",
+    "Google Threat Intelligence",
+    "Titan Security Key",
+    "Cloud Armor",
+    "Security Command Center",
+    "Identity Platform",
+    "Mandiant Consulting Services",
+    "Identity-Aware Proxy",
+    "Web Risk",
+    "Cloud IDS",
+    "Mandiant Attack Surface Management",
+    "Cloud Key Management",
+    "Cloud Firewall",
+    "VPC Service Controls",
+    "Cloud IAM",
+    "Certificate Authority Service",
+    "Mandiant Managed Detection and Response",
+    "Mandiant Incident Response Services",
+    "Managed Service for Microsoft Active Directory",
+    "Anti Money Laundering AI",
+    "Mandiant Academy",
+    "Assured Workloads",
+    "Access Transparency",
+    "Confidential Computing",
+    "Mandiant Digital Threat Monitoring",
+    "Shielded VMs",
+    "Mandiant Security Validation",
+    "Assured Open Source Software",
+    "Risk Manager",
+    "Virus Total",
+    "Policy Intelligence",
+    "Access Context Manager"
+  ],
+
+  "ウェブアプリのホスティング": [
+    "Firebase App Hosting"
+  ],
+  "ウェブサイトのホスティング": [
+    "Google Click to Deploy"
+  ],
+
+  "生産性とコラボレーション": [
+    "Chrome Enterprise",
+    "Google Workspace",
+    "Google Workspace Essentials"
+  ]
+}
