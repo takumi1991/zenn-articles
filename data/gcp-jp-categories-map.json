@@ -24,7 +24,7 @@
   "音声・自然言語API" :[
     "Text-to-Speech",
     "Speech-to-Text",
-    "Natural Language AI"
+    "Natural Language AI",
   ],
   "AIインフラ": [
     "Cloud TPUs",
@@ -33,7 +33,8 @@
   "画像・動画・AR API": [
     "Vision AI",
     "Video AI",
-    "Transcoder API"
+    "Transcoder API",
+    "Video Intelligence API"
   ],
   "ドキュメントAI": [
     "Document AI"
@@ -144,7 +145,8 @@
     "Skaffold",
     "Service Catalog",
     "Tekton",
-    "Google Maps Platform"
+    "Google Maps Platform",
+    "Cloud Source Repositories"
   ],
 
   "アプリの開発": [
@@ -189,12 +191,14 @@
     "Cloud Trace",
     "Managed Service for Prometheus",
     "Cloud Profiler",
-    "Datadog"
+    "Datadog",
+    "Operations"
   ],
   "運用": [
     "Resource Manager",
     "Operations Suite",
-    "Infrastructure Manager"
+    "Infrastructure Manager",
+    "ワークロード マネージャー"
   ],
 
   "セキュリティと ID": [
@@ -232,7 +236,8 @@
     "Risk Manager",
     "Virus Total",
     "Policy Intelligence",
-    "Access Context Manager"
+    "Access Context Manager",
+    "Cloud KMS Autokey"
   ],
 
   "ウェブアプリのホスティング": [
