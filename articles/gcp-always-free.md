@@ -21,7 +21,7 @@ Cloud Run・Firestore・BigQuery などは、この無料枠だけでも
 
 ---
 
-##  音声・自然言語API
+## 🎤 音声・自然言語API
 
 ### Speech-to-Text
 
@@ -35,6 +35,16 @@ Free Tier(monthly limits): 60 minutes per month
 
 
 ## 🎥 画像・動画・AR API
+
+### Video Intelligence API
+
+保存された動画とストリーミング動画内の物体、場所、アクションを認識する、事前トレーニングされた ML モデル。
+毎月無料で使える上限: 1,000 ユニット（1 か月あたり）
+
+Pre-trained ML models that recognize objects, places, and actions in stored and streaming video.
+Free Tier(monthly limits): 1,000 units per month
+
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#video-intelligence
 
 ### Vision AI
 
@@ -147,6 +157,16 @@ Free Tier(monthly limits): Includes 5 GB of persistent disk storage
 
 🔗 https://cloud.google.com/shell/docs
 
+### Cloud Source Repositories
+
+Google Cloud がホストするさまざまなプライベート Git リポジトリ。
+毎月無料で使える上限: 最大 5 ユーザーが無料で利用可能
+
+Multiple private Git repositories hosted on Google Cloud.
+Free Tier(monthly limits): Free access for up to five users
+
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#cloud-source-repos
+
 
 ## 📱 アプリの開発
 
@@ -184,7 +204,43 @@ Free Tier(monthly limits): 5,000 free internal steps per month
 🔗 https://cloud.google.com/free/docs/gcp-free-tier/#workflows
 
 
+## 👀 オブザーバビリティ
+
+### Operations
+
+Google Cloud 上のアプリケーションのモニタリング、ロギング、診断。
+毎月無料で使える上限: ロギングとモニタリングのための月々の割り当て
+
+Monitoring, logging, and diagnostics for applications on Google Cloud.
+Free Tier(monthly limits): Monthly allotments for logging and monitoring
+
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
+
+
+## ⚙️ 運用
+
+### ワークロード マネージャー
+
+Google Cloud 上で実行しているワークロードを評価する、ルールベースの検証サービス。
+毎月無料で使える上限: 5,000 件のリソース評価（1 か月あたり）
+
+Rule-based validation service for evaluating your workloads running on Google Cloud.
+Free Tier(monthly limits): 5,000 resource evaluations per month
+
+🔗 https://docs.cloud.google.com/free/docs/free-cloud-features#workload-manager
+
+
 ## 🔐 セキュリティと ID
+
+### Cloud KMS Autokey
+
+推奨される暗号化のプラクティスに沿った整合性を確保するために、適切な Cloud KMS 鍵をオンデマンドで取得します。
+毎月無料で使える上限: 100 個の有効な鍵バージョンと 10,000 個の鍵オペレーション（1 か月あたり）
+
+Get the right Cloud KMS keys on-demand, for consistent alignment with recommended encryption practices.
+Free Tier(monthly limits): 100 active key versions and 10,000 key operations per month
+
+🔗 https://cloud.google.com/kms/pricing#pricing_overview
 
 ### Secret Manager
 
@@ -199,26 +255,6 @@ Free Tier(monthly limits): 6 secret versions per month
 
 ## 📂 その他
 
-### Cloud KMS Autokey
-
-推奨される暗号化のプラクティスに沿った整合性を確保するために、適切な Cloud KMS 鍵をオンデマンドで取得します。
-毎月無料で使える上限: 100 個の有効な鍵バージョンと 10,000 個の鍵オペレーション（1 か月あたり）
-
-Get the right Cloud KMS keys on-demand, for consistent alignment with recommended encryption practices.
-Free Tier(monthly limits): 100 active key versions and 10,000 key operations per month
-
-🔗 https://cloud.google.com/kms/pricing#pricing_overview
-
-### Cloud Source Repositories
-
-Google Cloud がホストするさまざまなプライベート Git リポジトリ。
-毎月無料で使える上限: 最大 5 ユーザーが無料で利用可能
-
-Multiple private Git repositories hosted on Google Cloud.
-Free Tier(monthly limits): Free access for up to five users
-
-🔗 https://cloud.google.com/free/docs/gcp-free-tier/#cloud-source-repos
-
 ### Natural Language API
 
 Google の ML を使用して非構造化テキストから分析情報を引き出す。
@@ -228,36 +264,6 @@ Derive insights from unstructured text using Google machine learning.
 Free Tier(monthly limits): 5,000 units per month
 
 🔗 https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
-
-### Operations
-
-Google Cloud 上のアプリケーションのモニタリング、ロギング、診断。
-毎月無料で使える上限: ロギングとモニタリングのための月々の割り当て
-
-Monitoring, logging, and diagnostics for applications on Google Cloud.
-Free Tier(monthly limits): Monthly allotments for logging and monitoring
-
-🔗 https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
-
-### Video Intelligence API
-
-保存された動画とストリーミング動画内の物体、場所、アクションを認識する、事前トレーニングされた ML モデル。
-毎月無料で使える上限: 1,000 ユニット（1 か月あたり）
-
-Pre-trained ML models that recognize objects, places, and actions in stored and streaming video.
-Free Tier(monthly limits): 1,000 units per month
-
-🔗 https://cloud.google.com/free/docs/gcp-free-tier/#video-intelligence
-
-### ワークロード マネージャー
-
-Google Cloud 上で実行しているワークロードを評価する、ルールベースの検証サービス。
-毎月無料で使える上限: 5,000 件のリソース評価（1 か月あたり）
-
-Rule-based validation service for evaluating your workloads running on Google Cloud.
-Free Tier(monthly limits): 5,000 resource evaluations per month
-
-🔗 https://docs.cloud.google.com/free/docs/free-cloud-features#workload-manager
 
 ---
 
