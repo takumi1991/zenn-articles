@@ -21,52 +21,6 @@ Cloud Run・Firestore・BigQuery などは、この無料枠だけでも
 
 ---
 
-## 🎤 音声・自然言語API
-
-### Natural Language API
-
-Google の ML を使用して非構造化テキストから分析情報を引き出す。
-毎月無料で使える上限: 5,000 ユニット（1 か月あたり）
-
-Derive insights from unstructured text using Google machine learning.
-Free Tier(monthly limits): 5,000 units per month
-
-🔗 https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
-
-### Speech-to-Text
-
-Google 独自のプロダクトにも採用されている音声文字変換。
-毎月無料で使える上限: 60 分（1 か月あたり）
-
-Speech-to-text transcription — the same that powers Google's own products.
-Free Tier(monthly limits): 60 minutes per month
-
-🔗 https://cloud.google.com/free/docs/gcp-free-tier/#speech-to-text
-
-
-## 🎥 画像・動画・AR API
-
-### Video Intelligence API
-
-保存された動画とストリーミング動画内の物体、場所、アクションを認識する、事前トレーニングされた ML モデル。
-毎月無料で使える上限: 1,000 ユニット（1 か月あたり）
-
-Pre-trained ML models that recognize objects, places, and actions in stored and streaming video.
-Free Tier(monthly limits): 1,000 units per month
-
-🔗 https://cloud.google.com/free/docs/gcp-free-tier/#video-intelligence
-
-### Vision AI
-
-ラベル検出、OCR、顔検出をはじめとする多数の機能を提供。
-毎月無料で使える上限: 1,000 ユニット（1 か月あたり）
-
-Label detection, OCR, facial detection, and more.
-Free Tier(monthly limits): 1,000 units per month
-
-🔗 https://cloud.google.com/free/docs/gcp-free-tier/#vision-api
-
-
 ## 🖥️ コンピューティング
 
 ### Compute Engine
@@ -143,6 +97,52 @@ NoSQL document database that simplifies storing, syncing, and querying data for 
 Free Tier(monthly limits): 1 GB storage
 
 🔗 https://cloud.google.com/free/docs/gcp-free-tier/#firestore
+
+
+## 🎤 音声・自然言語API
+
+### Natural Language API
+
+Google の ML を使用して非構造化テキストから分析情報を引き出す。
+毎月無料で使える上限: 5,000 ユニット（1 か月あたり）
+
+Derive insights from unstructured text using Google machine learning.
+Free Tier(monthly limits): 5,000 units per month
+
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
+
+### Speech-to-Text
+
+Google 独自のプロダクトにも採用されている音声文字変換。
+毎月無料で使える上限: 60 分（1 か月あたり）
+
+Speech-to-text transcription — the same that powers Google's own products.
+Free Tier(monthly limits): 60 minutes per month
+
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#speech-to-text
+
+
+## 🎥 画像・動画・AR API
+
+### Video Intelligence API
+
+保存された動画とストリーミング動画内の物体、場所、アクションを認識する、事前トレーニングされた ML モデル。
+毎月無料で使える上限: 1,000 ユニット（1 か月あたり）
+
+Pre-trained ML models that recognize objects, places, and actions in stored and streaming video.
+Free Tier(monthly limits): 1,000 units per month
+
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#video-intelligence
+
+### Vision AI
+
+ラベル検出、OCR、顔検出をはじめとする多数の機能を提供。
+毎月無料で使える上限: 1,000 ユニット（1 か月あたり）
+
+Label detection, OCR, facial detection, and more.
+Free Tier(monthly limits): 1,000 units per month
+
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#vision-api
 
 
 ## 🛠️ デベロッパー ツール
