@@ -24,7 +24,7 @@
   "音声・自然言語API" :[
     "Text-to-Speech",
     "Speech-to-Text",
-    "Natural Language AI"
+    "Natural Language API"
   ],
   "AIインフラ": [
     "Cloud TPUs",
