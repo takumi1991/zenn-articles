@@ -17,7 +17,7 @@ const categoryEmoji = {
     "MLとMLOps": "📊",
     "AIインフラ": "🧮",
     "画像・動画・AR API": "🎥",
-    "音声・自然言語API": "🎤",
+    "音声・自然言語API": "🗣️",
     "ドキュメントAI": "📄",
     "ネットワーキング": "🌐",
     "Web3": "🪙",
@@ -70,7 +70,7 @@ async function main() {
     const orderedCategories = [...Object.keys(categoryMap), "その他"];
 
     const header = `---
-title: "Google Cloud 常時無料枠プロダクト一覧<br>(Always Free Tier products)"
+title: "Google Cloud 常時無料枠プロダクト一覧(Always Free Tier products)"
 emoji: "☁️"
 type: "tech"
 topics: ["gcp", "free-tier", "cloud"]
