@@ -19,7 +19,9 @@
   "MLとMLOps": [
     "AutoML",
     "Vertex AI Notebooks",
-    "Vertex Explainable AI",
+    "Vertex Explainable AI"
+  ],
+  "音声・自然言語API" :[
     "Text-to-Speech",
     "Speech-to-Text",
     "Natural Language AI"
