@@ -1,12 +1,12 @@
 ---
-title: "Google Cloud 常時無料枠プロダクト一覧(Free Tier products)"
+title: "Google Cloud 常時無料枠プロダクト一覧<br>(Always Free Tier products)"
 emoji: "☁️"
 type: "tech"
 topics: ["gcp", "free-tier", "cloud"]
 published: true
 ---
 
-# Google Cloud 常時無料枠プロダクト一覧<br>(Free Tier products)
+# Google Cloud 常時無料枠プロダクト一覧<br>(Always Free Tier products)
 
 Google Cloud offers Free Tier products that remain free within monthly usage limits, separate from the 12-month trial. This article summarizes the eligible services and their limits. Note: This article covers the Japan region.
 
@@ -21,7 +21,7 @@ Cloud Run・Firestore・BigQuery などは、この無料枠だけでも
 
 ---
 
-## 📊 MLとMLOps
+##  音声・自然言語API
 
 ### Speech-to-Text
 
