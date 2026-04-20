@@ -23,6 +23,16 @@ Cloud Run・Firestore・BigQuery などは、この無料枠だけでも
 
 ## 🎤 音声・自然言語API
 
+### Natural Language API
+
+Google の ML を使用して非構造化テキストから分析情報を引き出す。
+毎月無料で使える上限: 5,000 ユニット（1 か月あたり）
+
+Derive insights from unstructured text using Google machine learning.
+Free Tier(monthly limits): 5,000 units per month
+
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
+
 ### Speech-to-Text
 
 Google 独自のプロダクトにも採用されている音声文字変換。
@@ -251,19 +261,6 @@ Securely store API keys, passwords, certificates, and other sensitive data.
 Free Tier(monthly limits): 6 secret versions per month
 
 🔗 https://cloud.google.com/free/docs/gcp-free-tier/#secret-manager
-
-
-## 📂 その他
-
-### Natural Language API
-
-Google の ML を使用して非構造化テキストから分析情報を引き出す。
-毎月無料で使える上限: 5,000 ユニット（1 か月あたり）
-
-Derive insights from unstructured text using Google machine learning.
-Free Tier(monthly limits): 5,000 units per month
-
-🔗 https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
 
 ---
 
