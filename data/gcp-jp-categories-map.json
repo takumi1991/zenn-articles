@@ -1,5 +1,69 @@
 {
-  "生成AI": [
+
+
+  "コンピューティング": [
+    "Compute Engine",
+    "Cloud GPUs",
+    "VMware Engine",
+    "Spot VMs",
+    "Migrate to Virtual Machines",
+    "Batch",
+    "Deep Learning VM Image",
+    "Migration Center"
+  ],
+
+  "サーバーレス": [
+    "Cloud Run",
+    "App Engine",
+    "Knative"
+  ],
+  "ストレージ": [
+    "Cloud Storage",
+    "Filestore",
+    "Storage Transfer Service",
+    "Transfer Appliance",
+    "NetApp Volumes",
+    "Google Cloud Backup and DR",
+    "Cloud Storage for Firebase",
+    "Persistent Disk",
+    "Local SSD",
+    "Parallelstore"
+  ],
+    "コンテナ": [
+    "Google Kubernetes Engine",
+    "Cloud Service Mesh",
+    "Binary Authorization",
+    "Deep Learning Containers",
+    "Config Connector",
+    "Migrate to Containers"
+  ],
+    "データ分析": [
+    "BigQuery",
+    "Google Marketing Platform",
+    "Looker",
+    "Dataform",
+    "Dataplex",
+    "Datastream",
+    "Dataproc",
+    "Dataflow",
+    "BigLake",
+    "Earth Engine",
+    "Sensitive Data Protection",
+    "Telecom Data Fabric",
+    "MongoDB Atlas (pay-as-you-go)",
+    "Elastic Cloud (Elasticsearch Service)"
+  ],
+  "データベース": [
+    "Cloud SQL",
+    "Spanner",
+    "Firestore",
+    "AlloyDB",
+    "Database Migration Service",
+    "Bigtable",
+    "Memorystore",
+    "Firebase Data Connect"
+  ],
+    "生成AI": [
     "Vertex AI platform",
     "Gemini Enterprise",
     "Vertex AI Studio",
@@ -39,18 +103,11 @@
   "ドキュメントAI": [
     "Document AI"
   ],
-
-  "コンピューティング": [
-    "Compute Engine",
-    "Cloud GPUs",
-    "VMware Engine",
-    "Spot VMs",
-    "Migrate to Virtual Machines",
-    "Batch",
-    "Deep Learning VM Image",
-    "Migration Center"
+  "Web3": [
+    "Blockchain Node Engine",
+    "Blockchain RPC"
   ],
-  "ネットワーキング": [
+    "ネットワーキング": [
     "Cloud DNS",
     "Cloud Load Balancing",
     "Cloud CDN",
@@ -64,35 +121,7 @@
     "Telecom Network Automation",
     "Spectrum Access System (SAS)"
   ],
-  "サーバーレス": [
-    "Cloud Run",
-    "App Engine",
-    "Knative"
-  ],
-  "ストレージ": [
-    "Cloud Storage",
-    "Filestore",
-    "Storage Transfer Service",
-    "Transfer Appliance",
-    "NetApp Volumes",
-    "Google Cloud Backup and DR",
-    "Cloud Storage for Firebase",
-    "Persistent Disk",
-    "Local SSD",
-    "Parallelstore"
-  ],
-  "Web3": [
-    "Blockchain Node Engine",
-    "Blockchain RPC"
-  ],
-  "コンテナ": [
-    "Google Kubernetes Engine",
-    "Cloud Service Mesh",
-    "Binary Authorization",
-    "Deep Learning Containers",
-    "Config Connector",
-    "Migrate to Containers"
-  ],
+
   "ハイブリッド クラウドとマルチクラウド": [
     "Google Distributed Cloud",
     "Cloud Composer",
@@ -100,32 +129,7 @@
     "Cloud Asset Inventory"
   ],
 
-  "データ分析": [
-    "BigQuery",
-    "Google Marketing Platform",
-    "Looker",
-    "Dataform",
-    "Dataplex",
-    "Datastream",
-    "Dataproc",
-    "Dataflow",
-    "BigLake",
-    "Earth Engine",
-    "Sensitive Data Protection",
-    "Telecom Data Fabric",
-    "MongoDB Atlas (pay-as-you-go)",
-    "Elastic Cloud (Elasticsearch Service)"
-  ],
-  "データベース": [
-    "Cloud SQL",
-    "Spanner",
-    "Firestore",
-    "AlloyDB",
-    "Database Migration Service",
-    "Bigtable",
-    "Memorystore",
-    "Firebase Data Connect"
-  ],
+
   "ビジネス インテリジェンス": [
     "Looker Studio"
   ],
