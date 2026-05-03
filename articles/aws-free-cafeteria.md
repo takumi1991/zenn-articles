@@ -1,6 +1,6 @@
 ---
 title: "AWS０円食堂"
-emoji: "🦎"
+emoji: "🍚"
 type: "idea"
 topics: ["aws", "cloud", "cost"]
 published: true
