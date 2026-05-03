@@ -18,11 +18,8 @@ https://dejshbjyunelo.cloudfront.net/
 
 0円にこだわるための各社のAlways Free Services(常設無料枠)のまとめ記事です。
 
-### AWS
-https://zenn.dev/good_sleeper/articles/aws-always-free
+AWS: https://zenn.dev/good_sleeper/articles/aws-always-free
 
-### Google Cloud
-https://zenn.dev/good_sleeper/articles/gcp-always-free
+Google Cloud: https://zenn.dev/good_sleeper/articles/gcp-always-free
 
-### Microsoft Azure
-https://zenn.dev/good_sleeper/articles/azure-always-free
+Microsoft Azure: https://zenn.dev/good_sleeper/articles/azure-always-free
