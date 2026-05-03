@@ -10,7 +10,7 @@ published: true
 AWSにはサインアップ後の１２ヶ月間に無料で利用できるFree Tierサービスとは別に、毎月上限までは常時無料で利用できるAlways Free Services という枠もあります。「AWS0円食堂」では、常時無料枠を活用してどこまで表現できるか実践していきます。
 
 ## 実践
-AWSのAlways Freeのサービス群を活用して構築した、AWS Cloud Practitionerの模擬試験アプリです。S3は常時無料枠ではないため使わず、Lambdaでページを都度生成するサーバサイドレンダリング(SSR)となります。DynamoDB、CloudFront等も利用しています。
+AWSのAlways Freeのサービス群を活用して構築した、AWS Cloud Practitionerの模擬試験アプリです。S3は常時無料枠に含まれていないため使わず、Lambdaでページを都度生成するサーバサイド・レンダリング(SSR)となります。DBはDynamoDB、CloudFrontは一度作ったページ内容のキャッシュのために利用。CloudWatchでLambdaのリクエスト回数を監視し、上限に近づいたらアラーム→EventBridgeで、サービス遮断用Lambdaを実行しています。
 
 
 https://dejshbjyunelo.cloudfront.net/
