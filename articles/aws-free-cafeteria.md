@@ -1,16 +1,16 @@
 ---
-title: "AWS０円食堂"
+title: "AWS０円食堂 - 実践 Always Free Services"
 emoji: "🍱"
-type: "tech"
+type: "idea"
 topics: ["aws", "cloud", "cost"]
 published: true
 ---
 
+## 概要
+AWSにはサインアップ後の１２ヶ月間に無料で利用できるFree Tierサービスとは別に、毎月上限までは常時無料で利用できるAlways Free Services という枠もあります。「AWS0円食堂」では、常時無料枠を活用してどれくらいのものを表現できるかルポしていきます。
+
 ## デモサイト
-実際にAWSをフル活用して構築したデモサイトはこちらです。
+実際にAWSのAlways Freeのサービス群を活用して構築したデモ[AWS Cloud Practitioner模擬試験]です。
 
 https://dejshbjyunelo.cloudfront.net/
 
-## 概要
-この「AWS 0円食堂」では、無料枠を最大限に活用して、いかにコストを抑えつつ実用的なインフラを構築するかを解説します。
-...
