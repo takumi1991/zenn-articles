@@ -51,7 +51,7 @@ Free Tier(monthly limits): 2 million requests per month
 
 ### Cloud Storage
 
-高い性能と信頼性、手頃な料金体系で、あらゆるストレージ要件に対応。
+最高水準の性能と信頼性、手頃な料金体系で、あらゆるストレージ要件に対応。
 毎月無料で使える上限: 5 GB-月の Standard Storage
 
 Best-in-class performance, reliability, and pricing for all your storage needs.
@@ -90,7 +90,7 @@ Free Tier(monthly limits): 1 TB queries per month
 
 ### Firestore
 
-アプリのデータを簡単に保存、同期、照会できる NoSQL ドキュメント データベース。
+アプリのデータを簡単に保存、同期、クエリできる NoSQL ドキュメント データベース。
 毎月無料で使える上限: 1 GB のストレージ
 
 NoSQL document database that simplifies storing, syncing, and querying data for apps.
@@ -103,7 +103,7 @@ Free Tier(monthly limits): 1 GB storage
 
 ### Natural Language API
 
-Google の ML を使用して非構造化テキストから分析情報を引き出す。
+Google の ML を使用して非構造化テキストから分析情報を引き出せます。
 毎月無料で使える上限: 5,000 ユニット（1 か月あたり）
 
 Derive insights from unstructured text using Google machine learning.
@@ -126,7 +126,7 @@ Free Tier(monthly limits): 60 minutes per month
 
 ### Video Intelligence API
 
-保存された動画とストリーミング動画内の物体、場所、アクションを認識する、事前トレーニングされた ML モデル。
+保存された動画とストリーミング動画内の物体、場所、動作を認識する、事前トレーニングされた ML モデル。
 毎月無料で使える上限: 1,000 ユニット（1 か月あたり）
 
 Pre-trained ML models that recognize objects, places, and actions in stored and streaming video.
@@ -149,7 +149,7 @@ Free Tier(monthly limits): 1,000 units per month
 
 ### Cloud Run functions
 
-コードによるクラウド サービスの作成と接続が可能なサーバーレス環境。
+コードによるクラウド サービスの構築と接続が可能なサーバーレス環境。
 毎月無料で使える上限: 200 万回の呼び出し（1 か月あたり）
 
 A serverless environment to build and connect cloud services with code.
