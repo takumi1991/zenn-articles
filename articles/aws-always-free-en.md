@@ -18,50 +18,41 @@ This article provides a complete list of AWS Always Free services for learning, 
 
 ### AWS Lambda
 
-AWS Lambda is a serverless compute service that lets you run code without provisioning or managing servers. You simply upload your code, and Lambda automatically handles the underlying infrastructure, scaling it up or down to match incoming requests. This means you only pay for the compute time you actually consume, making it highly cost-effective. Lambda is ideal for a wide range of applications, including building event-driven architectures, processing data streams, creating backend APIs for web and mobile apps, and automating IT tasks. Its ability to trigger code in response to various AWS events, like changes in an S3 bucket or an API Gateway request, makes it incredibly flexible for modern cloud development.
+AWS Lambda is a compute service that lets you run code without provisioning or managing servers. You simply upload your code, and Lambda takes care of the rest, automatically scaling your application with high availability. It's perfect for event-driven architectures, like responding to changes in S3 buckets, processing data from Kinesis streams, or building serverless APIs with API Gateway. You can also use it for scheduled tasks, backing up data, or as a backend for mobile and web applications, paying only for the compute time you consume.
 
 🔗 https://aws.amazon.com/lambda/?did=ft_card2&trk=ft_lambda
-
-<br><br>
-## 🗄️ Storage
-
-### Amazon SimpleDB
-
-Amazon SimpleDB is a flexible, highly available, and schemaless NoSQL database service that simplifies data management by handling infrastructure and administration tasks. It's ideal for applications needing simple attribute-value storage with minimal administration, such as storing metadata for web applications, managing user profiles, or logging application events. SimpleDB excels in scenarios where data structure may evolve, or when you need a straightforward, scalable solution for data that doesn't require complex relational queries. Its ease of use and managed nature make it a cost-effective choice for many smaller or rapidly developing applications.
-
-🔗 https://aws.amazon.com/simpledb/?did=ft_card2&trk=ft_simpledb
 
 <br><br>
 ## 🧱 Database
 
 ### Amazon Aurora
 
-Amazon Aurora is a fully managed, relational database service that delivers high performance and availability, compatible with MySQL and PostgreSQL. It is designed for demanding workloads, offering up to five times the throughput of standard MySQL and three times that of standard PostgreSQL, while automatically scaling storage and compute resources to meet application needs without downtime. Aurora excels in use cases requiring rapid growth, consistent performance, and robust availability, such as transactional applications, e-commerce platforms, and SaaS applications where database performance and scalability are critical for user experience and business operations. Its serverless option further simplifies management by automatically provisioning and scaling database capacity.
+Amazon Aurora is a fully managed relational database service that is compatible with MySQL and PostgreSQL, offering significantly higher performance and availability than standard MySQL and PostgreSQL databases. It achieves this through a unique, distributed, log-structured storage system that automatically scales. Aurora is ideal for mission-critical applications demanding continuous operation and fast response times, such as e-commerce platforms, financial services, and large-scale web and mobile applications. Its serverless option further simplifies operations by automatically scaling compute and storage capacity up or down based on application demand, ensuring you only pay for what you use and eliminating manual administration. This makes it an excellent choice for applications with unpredictable workloads or for developers who want to focus on building applications rather than managing databases.
 
 🔗 https://aws.amazon.com/rds/aurora/
 
 ---
 
-### Amazon DynamoDB
+### Amazon SimpleDB
 
-Amazon DynamoDB is a fully managed, serverless NoSQL database that provides single-digit millisecond performance for applications at any scale. Its flexible schema and ability to handle massive amounts of data make it ideal for use cases like online gaming leaderboards, personalized recommendations, mobile application backends, and IoT data management. Developers can leverage DynamoDB's automatic scaling, high availability, and built-in security features to build robust and responsive applications without managing any database infrastructure. This allows for rapid development and predictable performance for demanding workloads.
+Amazon SimpleDB is a highly available, fully managed NoSQL database service that makes it easy to store and retrieve data at scale, offloading the burden of database administration. It's ideal for applications that need a flexible schema and simple data access patterns, such as storing user profiles, product catalogs, or metadata for media assets. Unlike traditional relational databases, SimpleDB doesn't require pre-defined schemas, allowing you to easily evolve your application's data structures. It automatically scales to handle varying workloads and provides high availability, ensuring your data is always accessible without manual intervention, making it a cost-effective solution for many web-scale applications.
 
-🔗 https://aws.amazon.com/dynamodb/?did=ft_card2&trk=ft_dynamodb
+🔗 https://aws.amazon.com/simpledb/?did=ft_card2&trk=ft_simpledb
 
 <br><br>
 ## 🧩 Application Integration
 
-### Amazon Cognito
+### Amazon DynamoDB
 
-Amazon Cognito is a managed service that provides secure user sign-up, sign-in, and access control for your web and mobile applications. It simplifies the complex task of managing user identities, allowing you to easily add user authentication, authorization, and management to your applications without managing your own identity infrastructure. Cognito is ideal for use cases like enabling users to sign up and log in with email and password, social media accounts (e.g., Google, Facebook), or enterprise identity providers. It also supports multi-factor authentication for enhanced security and can integrate with AWS services like Amazon API Gateway and AWS Lambda to authorize access to your backend resources based on user identity.
+Amazon DynamoDB is a fully managed, serverless NoSQL database service that delivers single-digit millisecond performance at any scale. It is designed for applications that require high availability and scalability, such as real-time bidding, gaming, IoT data processing, and user profile management. DynamoDB offers automatic scaling and replication, eliminating the need for manual administration, and its flexible schema allows for rapid development and iteration. Its pay-as-you-go pricing model makes it cost-effective for a wide range of applications, from small startups to enterprise-level deployments. Developers can leverage DynamoDB's fast and predictable performance to build applications that handle massive amounts of data and traffic with minimal latency.
 
-🔗 https://aws.amazon.com/cognito/?did=ft_card2&trk=ft_cognito
+🔗 https://aws.amazon.com/dynamodb/?did=ft_card2&trk=ft_dynamodb
 
 ---
 
 ### Amazon EventBridge
 
-Amazon EventBridge is a serverless event bus service that makes it easy to connect applications together using data from your own applications, integrated SaaS applications, and AWS services. It acts as a central hub for routing events, allowing you to build sophisticated, event-driven architectures without managing infrastructure.  Common use cases include triggering automated workflows in response to application activity, like updating a database when a new customer signs up, or orchestrating microservices by reacting to events from other services. EventBridge also facilitates integrating third-party SaaS applications into your AWS environment by transforming and routing their events. This enables you to react to changes and initiate actions across your entire application landscape dynamically.
+Amazon EventBridge is a serverless event bus service that allows you to build scalable event-driven applications by connecting various AWS services, your own applications, and SaaS partners. It acts as a central hub for routing events between different sources and targets. You can use EventBridge to trigger actions based on specific events, such as a file being uploaded to S3, a database change, or a user interaction in a SaaS application. Common use cases include automating workflows, synchronizing data across systems, monitoring application health, and building microservices architectures where components communicate asynchronously through events. This enables a more decoupled and responsive system design.
 
 🔗 https://aws.amazon.com/eventbridge/?did=ft_card2&trk=ft_eventbridge
 
@@ -69,7 +60,7 @@ Amazon EventBridge is a serverless event bus service that makes it easy to conne
 
 ### Amazon SNS
 
-Amazon Simple Notification Service (SNS) is a fully managed, publish/subscribe messaging service that enables you to decouple and scale microservices, distributed systems, and serverless applications. It allows you to fan out messages to a large number of subscribers, including application-to-application and application-to-person communication. Use cases include instant message delivery to users via SMS, email, or mobile push notifications, as well as triggering automated workflows, sending alerts from monitoring systems, and distributing updates to distributed applications. SNS provides durable message storage, guarantees message delivery, and supports a wide range of endpoints, making it a reliable choice for asynchronous communication.
+Amazon Simple Notification Service (SNS) is a fully managed, highly available, and scalable push messaging service that enables you to decouple and manage microservices, distributed systems, and serverless applications. It acts as a central hub for sending messages to a large number of subscribers, including other AWS services like Lambda and SQS, as well as mobile push notifications for iOS, Android, and Windows devices, and even email and SMS. SNS is ideal for fan-out scenarios where a single message needs to be delivered to multiple destinations simultaneously. It facilitates event-driven architectures, real-time alerts, application integration, and mobile push notifications, providing a robust and flexible way to communicate across your distributed applications.
 
 🔗 https://aws.amazon.com/sns/?did=ft_card2&trk=ft_sns
 
@@ -77,7 +68,7 @@ Amazon Simple Notification Service (SNS) is a fully managed, publish/subscribe m
 
 ### Amazon SQS
 
-Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications. It acts as a buffer, storing messages reliably until they can be processed by downstream applications, ensuring that components of your system can operate independently. This is incredibly useful for scenarios like processing e-commerce orders, batching tasks for background jobs, and managing asynchronous workflows where sending and receiving components may operate at different paces. By removing the need for applications to be constantly available to receive messages, SQS enhances resilience and scalability.
+Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications. It allows you to store messages as they travel between applications, ensuring reliable communication even if components are unavailable. SQS is ideal for use cases like processing background jobs, buffering data between different application tiers, and orchestrating complex workflows. By acting as a buffer, it prevents message loss and allows your applications to scale independently, processing messages at their own pace.
 
 🔗 https://aws.amazon.com/sqs/?did=ft_card2&trk=ft_sqs
 
@@ -85,7 +76,7 @@ Amazon Simple Queue Service (SQS) is a fully managed message queuing service tha
 
 ### Amazon SWF
 
-Amazon Simple Workflow Service (SWF) is a cloud-based orchestration service that helps developers coordinate distributed components in applications. SWF tracks the execution of tasks and manages their state, ensuring that complex workflows proceed reliably. It's ideal for building applications that require multiple steps, such as order processing systems, financial transactions, or batch data processing, where ensuring each step completes successfully and in the correct order is crucial. By abstracting away the complexities of managing task flow, retries, and error handling, SWF allows developers to focus on the core business logic of their applications.
+Amazon Simple Workflow Service (SWF) is a powerful AWS service designed for coordinating distributed tasks and managing the state of your cloud applications. It acts as a central orchestrator, allowing you to build complex workflows that involve multiple steps, human interactions, and asynchronous processing. SWF is ideal for use cases such as processing large datasets, implementing order fulfillment systems, managing batch jobs, and building microservices architectures that require robust error handling and retry mechanisms. By providing reliable state tracking and task management, SWF simplifies the development of resilient and scalable applications that can handle failures gracefully.
 
 🔗 https://aws.amazon.com/swf/?did=ft_card2&trk=ft_swf
 
@@ -93,7 +84,7 @@ Amazon Simple Workflow Service (SWF) is a cloud-based orchestration service that
 
 ### AWS Step Functions
 
-AWS Step Functions is a serverless orchestration service that allows you to coordinate the components of distributed applications and microservices using visual workflows. It enables you to design, build, and execute complex state machine-based workflows that can automate and manage various AWS services. Step Functions is ideal for use cases like automating IT tasks, building data processing pipelines, orchestrating microservices, and handling application error management and retries. By providing a visual way to define your application's flow, it simplifies the development of robust and scalable distributed systems, making it easier to track and debug your application logic.
+AWS Step Functions is a serverless orchestration service that allows you to coordinate multiple AWS services into business-critical applications. It helps you build robust, scalable, and fault-tolerant distributed systems by visually designing and managing workflows.  You can use Step Functions for tasks like automating IT processes, processing data pipelines, orchestrating microservices, and building complex event-driven applications. It enables you to define workflows as state machines, where each step represents a distinct task. This makes it easy to manage sequences of operations, handle errors gracefully, and integrate with various AWS services like Lambda, DynamoDB, and ECS, simplifying the development and maintenance of distributed applications.
 
 🔗 https://aws.amazon.com/step-functions/?did=ft_card2&trk=ft_stepfunctions
 
@@ -102,7 +93,7 @@ AWS Step Functions is a serverless orchestration service that allows you to coor
 
 ### Amazon CloudFront
 
-Amazon CloudFront is a content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency and high transfer speeds. It works by caching your content at edge locations worldwide, bringing it closer to your users. This ensures that when a user requests your content, it is served from the nearest edge location, significantly reducing loading times. CloudFront is ideal for distributing static and dynamic web content, streaming video, delivering software, and accelerating API requests. By distributing your content globally, it improves user experience, scales automatically to meet demand, and can help reduce the load on your origin servers, making it a cost-effective solution for high-traffic websites and applications.
+Amazon CloudFront is a global content delivery network (CDN) that accelerates the distribution of your static and dynamic web content to end users worldwide. By caching content at edge locations geographically closer to your viewers, it significantly reduces latency and improves transfer speeds. CloudFront is ideal for serving websites, streaming video and audio on demand, distributing software, and delivering APIs. It helps enhance user experience, reduce load on your origin servers, and offers security features like DDoS protection and integration with AWS WAF.
 
 🔗 https://aws.amazon.com/cloudfront/?did=ft_card2&trk=ft_cloudfront
 
@@ -110,16 +101,24 @@ Amazon CloudFront is a content delivery network (CDN) service that securely deli
 
 ### Amazon Route 53
 
-Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service that translates human-readable domain names into numerical IP addresses that computers use to connect to each other. It allows you to register and manage domain names, route internet traffic to AWS resources like EC2 instances and S3 buckets, and to your own infrastructure. Use cases include directing users to your website, managing complex traffic routing policies such as weighted routing for A/B testing, and providing health checks to automatically reroute traffic away from unhealthy endpoints. Route 53 also enables you to configure DNS security with DNSSEC.
+Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service that translates human-readable domain names like `example.com` into numerical IP addresses that computers use to connect to each other.  It acts as the internet's phonebook, directing traffic to your applications and websites.  Use cases include registering domain names, configuring DNS routing policies to distribute traffic for high availability and performance, and checking the health of your application endpoints to automatically route users away from unhealthy ones.  Route 53 also offers domain name registration and management, providing a centralized solution for your web presence.
 
 🔗 https://aws.amazon.com/route53/?did=ft_card2&trk=ft_route53
 
 <br><br>
 ## 🔐 Security
 
+### Amazon Cognito
+
+Amazon Cognito provides simple and secure user sign-up, sign-in, and access control for your web and mobile applications. It allows you to add user authentication and authorization to your applications with minimal effort, handling user directories, identity federation with social providers like Google and Facebook, and single sign-on capabilities. Use Cognito for managing user accounts, securing APIs, and enabling personalized user experiences. It helps developers scale user management seamlessly while maintaining robust security and compliance, making it ideal for everything from small startups to large enterprises.
+
+🔗 https://aws.amazon.com/cognito/?did=ft_card2&trk=ft_cognito
+
+---
+
 ### AWS Certificate Manager
 
-AWS Certificate Manager (ACM) simplifies the process of provisioning, deploying, and managing SSL/TLS certificates across your AWS, hybrid, and multicloud environments.  It allows you to easily obtain free public certificates from trusted Certificate Authorities or import your own private certificates.  ACM integrates seamlessly with various AWS services like Elastic Load Balancing, Amazon CloudFront, and API Gateway, enabling you to secure your websites, applications, and APIs with encrypted HTTPS connections. This automation streamlines certificate renewal, reducing manual effort and the risk of expired certificates impacting your service availability.
+AWS Certificate Manager (ACM) simplifies the process of provisioning, managing, and deploying SSL/TLS certificates across AWS, hybrid, and multicloud environments. ACM enables you to secure your websites, applications, and other network services by providing free public SSL/TLS certificates that you can easily associate with AWS resources like Elastic Load Balancing load balancers and Amazon CloudFront distributions. It automates certificate renewal, eliminating manual intervention and reducing the risk of expired certificates impacting your service availability. You can also import existing certificates or provision private certificates for internal use, offering a comprehensive solution for your certificate management needs. ACM is ideal for securing web traffic, enabling encrypted API communication, and ensuring secure data transmission.
 
 🔗 https://aws.amazon.com/certificate-manager/?did=ft_card2&trk=ft_certmanager
 
@@ -127,7 +126,7 @@ AWS Certificate Manager (ACM) simplifies the process of provisioning, deploying,
 
 ### AWS Key Management Service
 
-AWS Key Management Service (KMS) is a powerful, managed service that simplifies the creation and control of encryption keys. It allows you to easily encrypt your data across various AWS services, and even outside of AWS, using cryptographic keys that you manage. KMS handles the secure generation, storage, and management of these keys, abstracting away the complexities of underlying hardware security modules. Common use cases include protecting sensitive customer data in databases, encrypting data at rest in S3 buckets, securing configuration files, and ensuring compliance with data privacy regulations. By providing centralized key management with robust auditing capabilities, KMS empowers you to maintain strong security and control over your sensitive information.
+AWS Key Management Service (KMS) is a managed service that simplifies the creation, management, and use of cryptographic keys for encrypting data. It enables you to control access to your encrypted data, ensuring its security and compliance with regulatory requirements. KMS integrates seamlessly with various AWS services, allowing you to encrypt data stored in services like Amazon S3, EBS, and RDS, as well as application data. It supports hardware security modules (HSMs) for enhanced security and provides audit trails for key usage. Common use cases include protecting sensitive customer information, securing financial data, and ensuring the confidentiality of intellectual property.
 
 🔗 https://aws.amazon.com/kms/?did=ft_card2&trk=ft_kms
 
@@ -135,7 +134,7 @@ AWS Key Management Service (KMS) is a powerful, managed service that simplifies 
 
 ### AWS Resource Access Manager
 
-AWS Resource Access Manager (RAM) is a service that enables you to securely share your AWS resources, such as Amazon VPC subnets, AWS License Manager resources, and Amazon Machine Images (AMIs), with other AWS accounts. This is incredibly useful for organizations with multiple accounts that need to collaborate on shared infrastructure, development environments, or centralized resource pools without duplicating resources. For example, you can share a VPC subnet with a development account, allowing them to deploy resources within your network, or share a custom AMI with multiple accounts for consistent deployment. RAM simplifies resource management and promotes efficient utilization across your AWS environment, eliminating the need for complex manual configurations.
+AWS Resource Access Manager (RAM) is a service that allows you to securely share AWS resources, such as Amazon Machine Images (AMIs), Amazon Virtual Private Cloud (VPC) subnets, and AWS Key Management Service (KMS) keys, with other AWS accounts or within your AWS Organization. This is particularly useful for centralizing management of common resources, enabling teams to access shared services without replicating them across multiple accounts, and facilitating collaboration on projects. For instance, a central IT team can share standardized AMIs or VPC configurations across development, testing, and production accounts. RAM simplifies resource governance and promotes efficient resource utilization by enabling controlled sharing from a single account.
 
 🔗 https://aws.amazon.com/ram/?did=ft_card2&trk=ft_resourceaccess
 
@@ -143,7 +142,7 @@ AWS Resource Access Manager (RAM) is a service that enables you to securely shar
 
 ### AWS Security Incident Response
 
-AWS Security Incident Response is a managed service designed to automate your security incident response process, providing expert guidance throughout.  It helps organizations quickly detect, investigate, and remediate security threats by orchestrating automated response actions and offering access to AWS security professionals. This service is particularly useful for detecting and responding to compromised accounts, identifying and mitigating data exfiltration attempts, and responding to distributed denial-of-service (DDoS) attacks. By leveraging this service, you can significantly reduce the time it takes to contain and resolve security incidents, minimizing potential damage and operational disruption.
+AWS Security Incident Response helps organizations automate their security incident response processes, leveraging AWS expertise to swiftly address threats. This managed service assists in detecting, analyzing, and containing security incidents across your AWS environment and hybrid infrastructure, minimizing damage and downtime. Use cases include responding to compromised credentials, detecting unauthorized access, investigating malware outbreaks, and recovering from distributed denial-of-service (DDoS) attacks. By providing playbooks, expert guidance, and automated remediation capabilities, it streamlines investigations and ensures a consistent, effective response to a wide range of security events.
 
 🔗 https://aws.amazon.com/security-incident-response/?did=ft_card2&trk=ft_security-incident-response
 
@@ -151,7 +150,7 @@ AWS Security Incident Response is a managed service designed to automate your se
 
 ### AWS Shield
 
-AWS Shield is a managed Distributed Denial of Service (DDoS) protection service that safeguards your applications and networks from malicious traffic. It automatically deflects common, frequently occurring network and transport layer DDoS attacks. AWS Shield Standard is automatically included with all AWS customers at no additional cost, offering always-on detection and automatic inline mitigations against the most common, application-layer and network-layer DDoS attacks. For enhanced protection, AWS Shield Advanced provides expanded detection and mitigation capabilities, real-time visibility into DDoS attacks, and integration with AWS WAF (Web Application Firewall) to block malicious web requests. This makes it invaluable for protecting critical applications like websites, APIs, and gaming services from disruptions that can impact user experience and business continuity.
+AWS Shield is a managed Distributed Denial of Service (DDoS) protection service that safeguards applications and networks. It offers automatic, always-on detection and mitigation of common, frequently occurring network and transport layer DDoS attacks that AWS believes could impact availability. For applications requiring enhanced visibility, customization, and sophisticated attack detection, AWS Shield Advanced provides additional protection. Common use cases include protecting public-facing websites, APIs, and any critical internet-facing applications that must remain available to users, ensuring business continuity and a positive customer experience even during malicious traffic spikes.
 
 🔗 https://aws.amazon.com/shield/?did=ft_card2&trk=ft_shield
 
@@ -159,7 +158,7 @@ AWS Shield is a managed Distributed Denial of Service (DDoS) protection service 
 
 ### AWS WAF Bot Control
 
-AWS WAF Bot Control is a managed ruleset that automatically identifies and mitigates common and pervasive web bots, protecting your web applications from various automated threats. It can be used to prevent credential stuffing attacks by blocking bots attempting to log into your site, safeguard against content scraping that can steal your valuable data, and stop application-layer DDoS attacks designed to overwhelm your infrastructure. By distinguishing between benign bots, like search engine crawlers, and malicious ones, Bot Control helps ensure a better user experience and maintains the integrity and availability of your web applications.
+AWS WAF Bot Control automatically detects and mitigates the vast majority of common and pervasive bots that target your web applications and APIs. It provides robust protection against bots engaged in activities like credential stuffing, vulnerability scanning, and content scraping, allowing you to safeguard sensitive data and prevent service disruption. This service simplifies bot management by offering pre-configured detection logic, eliminating the need for complex custom rules. With Bot Control, you can focus on delivering a secure and reliable user experience, confident that your applications are shielded from automated threats.
 
 🔗 https://aws.amazon.com/waf/features/bot-control/?did=ft_card2&trk=ft_WAFbc
 
@@ -168,7 +167,7 @@ AWS WAF Bot Control is a managed ruleset that automatically identifies and mitig
 
 ### Amazon DataZone
 
-Amazon DataZone is a cloud-based data catalog and governance service that helps organizations manage and share data across different teams and departments, even those in separate AWS accounts or on-premises environments. It enables users to discover, understand, and access data securely through a self-service portal, while providing tools for data stewards to enforce policies and control access. This streamlines collaboration for use cases like unified business intelligence reporting, cross-functional analytics, and data democratization, ensuring data is discoverable, understandable, and compliant with organizational standards.
+Amazon DataZone is a cloud-based data governance service that helps organizations securely access and share data across their entire enterprise. It breaks down data silos by providing a unified catalog and self-service data discovery, allowing users to easily find, understand, and request access to data, even if it resides in different AWS accounts or on-premises environments. Use cases include enabling data scientists to discover and utilize data for machine learning projects, empowering business analysts to gain insights from various sources, and facilitating cross-functional collaboration by providing controlled access to shared datasets. With built-in governance, Amazon DataZone ensures data is accessed and used responsibly, adhering to organizational policies and compliance requirements.
 
 🔗 https://aws.amazon.com/datazone/?did=ft_card2&trk=ft_datazone
 
@@ -176,7 +175,7 @@ Amazon DataZone is a cloud-based data catalog and governance service that helps 
 
 ### Amazon OpenSearch Service
 
-Amazon OpenSearch Service provides a secure and cost-effective managed solution that simplifies AI-powered search, observability, and vector database operations. It allows you to easily ingest, store, search, and visualize vast amounts of data.  This service is ideal for use cases such as real-time application monitoring and log analytics for operational insights, as well as powering sophisticated search functionalities for e-commerce platforms and content discovery. Furthermore, it enables you to build generative AI applications by storing and querying embeddings efficiently, facilitating semantic search and recommendation engines.  With Amazon OpenSearch Service, you can focus on deriving value from your data without the overhead of managing infrastructure.
+Amazon OpenSearch Service is a fully managed offering that simplifies the deployment, operation, and scaling of OpenSearch, an open-source search and analytics suite. It empowers users to easily build AI-powered search applications, perform real-time log analytics for observability, and leverage its capabilities as a vector database for similarity search. Common use cases include website and application search, log aggregation and analysis for monitoring system health, security threat detection, and powering recommendation engines or image search by storing and querying vector embeddings. The service handles infrastructure management, patching, and scaling, allowing developers to focus on building innovative solutions.
 
 🔗 https://aws.amazon.com/opensearch-service/?did=ft_card2&trk=ft_opensearch
 
@@ -184,7 +183,7 @@ Amazon OpenSearch Service provides a secure and cost-effective managed solution 
 
 ### AWS Glue
 
-AWS Glue is a fully managed, cost-effective extract, transform, and load (ETL) service that makes it easy to prepare and move data for analytics. It automatically discovers data, generates code, and manages the execution of ETL jobs across various data stores. Glue can be used to catalog data from diverse sources like S3, RDS, and Redshift, making it readily available for querying. It enables common use cases such as data warehousing, data lake creation and maintenance, and preparing data for machine learning workloads. By automating many of the manual steps involved in data preparation, Glue simplifies and accelerates the process of getting data ready for analysis and insights.
+AWS Glue is a fully managed, serverless extract, transform, and load (ETL) service that simplifies the process of preparing and moving data for analytics, machine learning, and application development. It allows you to discover, catalog, and transform data from various sources, including relational databases, NoSQL databases, data lakes, and SaaS applications, without managing any infrastructure.  Common use cases include building data warehouses, preparing data for data lakes on Amazon S3, migrating data between databases, and transforming data for machine learning model training. Glue's intelligent data catalog and automated job generation make it easy to handle complex data integration tasks efficiently and cost-effectively.
 
 🔗 https://aws.amazon.com/glue/?did=ft_card2&trk=ft_glue
 
@@ -193,7 +192,7 @@ AWS Glue is a fully managed, cost-effective extract, transform, and load (ETL) s
 
 ### Amazon Q Business
 
-Amazon Q Business is an AI-powered assistant designed to enhance workplace productivity by securely connecting to your company's data. It allows employees to ask natural language questions about internal documents, systems, and repositories, receiving immediate and relevant answers. Use cases include quickly finding information in company policies, summarizing project updates from shared drives, generating reports based on internal data, and assisting with customer support by accessing knowledge bases. This generative AI tool streamlines workflows and empowers your team with on-demand insights, all while maintaining strict security and access controls for your sensitive business information.
+Amazon Q Business is an AI-powered assistant designed to enhance workplace productivity by leveraging generative AI. It allows organizations to securely connect to their business data sources, such as internal documents, wikis, and customer relationship management systems, enabling it to answer questions, summarize information, and even generate content. This empowers employees with a conversational interface to quickly find answers to complex queries, understand trends from vast datasets, and automate routine tasks like drafting emails or reports. Use cases include IT support, HR assistance, sales enablement by providing product information, and customer service by offering quick access to relevant knowledge.
 
 🔗 https://aws.amazon.com/q/business/?did=ft_card2&trk=ft_qbusiness
 
@@ -201,24 +200,16 @@ Amazon Q Business is an AI-powered assistant designed to enhance workplace produ
 
 ### Amazon Q Developer
 
-Amazon Q Developer is a generative AI-powered assistant designed to significantly enhance software development productivity. It streamlines tasks by understanding your codebase, providing intelligent code suggestions, identifying and fixing bugs, and even generating new code based on your prompts. Use it to accelerate coding, automate repetitive tasks like writing unit tests or documentation, and gain insights into your application's behavior. This powerful tool integrates with your existing development workflows, acting as a knowledgeable pair programmer to help you build and maintain software more efficiently.
+Amazon Q Developer is a generative AI-powered assistant designed to significantly enhance software development workflows. It helps developers write code faster and more efficiently by providing code generation and completion suggestions, identifying and fixing bugs, and summarizing complex codebases. Amazon Q can also assist with refactoring existing code, generating unit tests, and explaining unfamiliar code segments, ultimately accelerating development cycles and improving code quality. Its capabilities extend to translating code between different languages and answering technical questions, making it a comprehensive tool for modern software engineers.
 
 🔗 https://aws.amazon.com/q/developer/?did=ft_card2&trk=ft_q
-
----
-
-### AWS HealthLake
-
-AWS HealthLake is a HIPAA-eligible service that enables healthcare providers and independent software vendors to store, transform, transact, and analyze health data in minutes. It allows you to build applications that ingest and process data from various sources like electronic health records (EHRs) and medical imaging, standardizing it into a FHIR (Fast Healthcare Interoperability Resources) format. This facilitates a unified view of patient information, powering use cases such as population health analytics, identifying at-risk patients for proactive interventions, and accelerating clinical research by providing secure access to de-identified datasets for discovery. HealthLake simplifies the complex task of managing and extracting value from fragmented health information.
-
-🔗 https://aws.amazon.com/healthlake?did=ft_card2&trk=ft_healthlake
 
 <br><br>
 ## 🛠️ Developer Tools
 
 ### Amazon CloudWatch
 
-Amazon CloudWatch is a comprehensive monitoring and observability service for AWS cloud resources and applications. It collects and tracks metrics, collects and monitors log files, and sets alarms based on thresholds.  This allows you to gain visibility into the performance and operational health of your systems. You can use CloudWatch to track resource utilization like CPU, memory, and network traffic for services such as EC2 instances and RDS databases. It's also invaluable for troubleshooting application issues by analyzing log data from services like Lambda and containers, and for triggering automated actions, such as scaling instances or sending notifications, when predefined conditions are met.
+Amazon CloudWatch is a comprehensive monitoring service for your AWS cloud resources and applications. It collects and tracks metrics, writes log files, and sets alarms based on these data points, allowing you to gain operational visibility into their performance and health. CloudWatch is invaluable for debugging issues, understanding resource utilization, and proactively responding to changes. You can use it to monitor the performance of EC2 instances, RDS databases, Lambda functions, and a wide array of other AWS services. By setting alarms, you can be notified of critical events, such as high CPU utilization or low disk space, enabling you to take corrective action before they impact your users. Furthermore, CloudWatch Logs allows you to centralize and analyze logs from your applications and infrastructure, simplifying troubleshooting and security analysis.
 
 🔗 https://aws.amazon.com/cloudwatch/?did=ft_card2&trk=ft_cloudwatch
 
@@ -226,7 +217,7 @@ Amazon CloudWatch is a comprehensive monitoring and observability service for AW
 
 ### Amazon CodeCatalyst
 
-Amazon CodeCatalyst is a cloud-based service that streamlines the software development lifecycle, enabling teams to build and deliver applications on AWS more efficiently. It provides a unified environment with integrated tools for planning, coding, building, testing, and deploying applications.  Common use cases include developing microservices, deploying web applications, and managing complex CI/CD pipelines for cloud-native solutions. By automating repetitive tasks and fostering collaboration, CodeCatalyst helps developers focus on innovation and accelerate their time to market, making it ideal for organizations aiming to build and deliver apps at scale.
+Amazon CodeCatalyst is a cloud-based development service that simplifies and accelerates the entire application development lifecycle for building and delivering applications at scale on AWS. It provides a unified environment with integrated tools for project management, source code management, continuous integration and continuous delivery (CI/CD), and robust security scanning, allowing teams to collaborate efficiently from code to deployment. CodeCatalyst is ideal for developing cloud-native applications, microservices, and mobile backends, enabling faster iteration cycles and streamlined deployments by automating complex workflows and providing pre-configured templates. This service empowers developers to focus more on writing code and less on managing infrastructure, ultimately driving faster time-to-market for new features and applications.
 
 🔗 https://aws.amazon.com/codecatalyst/?did=ft_card2&trk=ft_codecatalyst
 
@@ -234,7 +225,7 @@ Amazon CodeCatalyst is a cloud-based service that streamlines the software devel
 
 ### AWS CodeArtifact
 
-AWS CodeArtifact is a fully managed artifact repository service that makes it easy for organizations to securely store, publish, and share software packages used in their development processes. It supports popular package managers like npm, Maven, PyPI, and NuGet, allowing developers to integrate CodeArtifact seamlessly into their existing workflows. This service is ideal for managing internal libraries, third-party dependencies, and proprietary code, ensuring version control and access control for improved security and compliance. By centralizing package management, CodeArtifact helps streamline build processes, reduce the risk of using unverified dependencies, and promote collaboration across development teams.
+AWS CodeArtifact is a fully managed artifact repository service that makes it easy for organizations to securely store, publish, and share software packages used in their development processes. It supports popular package managers like npm, Maven, pip, and NuGet, allowing developers to integrate it seamlessly into their existing workflows. Common use cases include managing internal libraries and dependencies, caching external dependencies to improve build speed and reliability, and enforcing organizational policies on approved package versions. By centralizing artifact management, CodeArtifact helps streamline the software supply chain, reduce security risks, and enhance developer productivity.
 
 🔗 https://aws.amazon.com/codeartifact/?did=ft_card2&trk=ft_codeartifact
 
@@ -242,7 +233,7 @@ AWS CodeArtifact is a fully managed artifact repository service that makes it ea
 
 ### AWS CodeBuild
 
-AWS CodeBuild is a fully managed continuous integration service that compiles source code, runs tests, and produces software packages ready to deploy. It eliminates the need for you to provision, manage, and scale your own build servers. Developers can use CodeBuild to automate build and test processes for a variety of applications, including web apps, mobile apps, and microservices, streamlining their software development lifecycle. It integrates seamlessly with other AWS services like CodeCommit, CodePipeline, and S3, facilitating a complete CI/CD pipeline for faster and more reliable software releases.
+AWS CodeBuild is a fully managed continuous integration service that compiles source code, runs tests, and produces software packages ready to deploy. It eliminates the need for you to provision, manage, and scale your own build servers. You can use CodeBuild to automate your build and test processes for a wide range of applications, from mobile apps and web applications to microservices and serverless functions. This service integrates seamlessly with other AWS developer tools like CodeCommit, CodeDeploy, and CodePipeline, enabling you to create a complete CI/CD pipeline for faster and more reliable software delivery. Its pay-as-you-go pricing model also means you only pay for the compute time you consume.
 
 🔗 https://aws.amazon.com/codebuild/?did=ft_card2&trk=ft_codebuild
 
@@ -250,7 +241,7 @@ AWS CodeBuild is a fully managed continuous integration service that compiles so
 
 ### AWS CodePipeline
 
-AWS CodePipeline is a fully managed continuous delivery service that automates your release pipelines for fast and reliable application and infrastructure updates. It orchestrates the build, test, and deploy phases of your release process, enabling you to move from code commit to production quickly and with confidence. Use cases include continuous integration and continuous delivery (CI/CD) for web applications, mobile apps, microservices, and infrastructure as code deployments. By integrating with services like CodeCommit, CodeBuild, and CodeDeploy, CodePipeline visualizes your entire release workflow, allowing you to track changes, identify bottlenecks, and ensure consistent, high-quality software delivery.
+AWS CodePipeline is a fully managed continuous delivery service that automates your release pipelines for fast and reliable application and infrastructure updates. It visually maps out your release process, enabling you to model, visualize, and improve your software release workflows.  Use cases include streamlining the process of building, testing, and deploying applications to various AWS services like Elastic Beanstalk, ECS, or Lambda. It's ideal for implementing robust CI/CD practices, allowing for rapid iteration and deployment cycles while maintaining quality through automated stages of build and test.
 
 🔗 https://aws.amazon.com/codepipeline/?did=ft_card2&trk=ft_codepipeline
 
@@ -258,7 +249,7 @@ AWS CodePipeline is a fully managed continuous delivery service that automates y
 
 ### AWS X-Ray
 
-AWS X-Ray is a service that helps developers analyze and debug distributed applications. It traces requests as they travel through your application's services, providing an end-to-end view of request flows and identifying performance bottlenecks or errors. Developers can use X-Ray to understand how their application is performing in real-time and to pinpoint the root causes of issues, whether it's slow database queries, misconfigured services, or unhandled exceptions. It's particularly useful for microservices architectures and serverless applications where understanding the interactions between various components is crucial for troubleshooting and optimization. X-Ray aids in improving application performance and reliability by offering deep visibility into the request lifecycle.
+AWS X-Ray is a service that helps developers analyze and debug distributed applications, such as those built using microservices. It traces requests as they travel through your application, providing an end-to-end view of how components interact. This visibility is crucial for identifying performance bottlenecks, understanding the root cause of errors, and optimizing application behavior. Developers can use X-Ray to visualize request paths, pinpoint latency issues within specific services, and detect and diagnose bugs across complex architectures. Its capabilities are invaluable for monitoring production environments, troubleshooting issues during development, and ensuring the overall health and performance of modern, distributed systems.
 
 🔗 https://aws.amazon.com/xray/?did=ft_card2&trk=ft_xray
 
@@ -267,7 +258,7 @@ AWS X-Ray is a service that helps developers analyze and debug distributed appli
 
 ### Amazon Managed Service for Prometheus
 
-Amazon Managed Service for Prometheus (AMP) is a fully managed Prometheus-compatible service that allows you to easily monitor and alert on containerized applications. It automatically discovers and scrapes metrics from your applications, storing them in a scalable and secure time-series database. AMP is ideal for use cases such as real-time application performance monitoring, identifying performance bottlenecks, troubleshooting issues in production environments, and establishing custom alerts to notify you of critical events. By abstracting away the operational burden of managing a Prometheus server, AMP enables you to focus on your applications rather than infrastructure.
+Amazon Managed Service for Prometheus is a fully managed service that makes it easy to monitor containerized applications and infrastructure at scale, leveraging the popular open-source Prometheus monitoring solution. It automatically discovers and scrapes metrics from your Amazon Elastic Kubernetes Service (EKS) and Amazon Elastic Container Service (ECS) clusters, storing them efficiently for querying and analysis. This service is ideal for use cases like real-time performance monitoring of microservices, tracking resource utilization across your containerized workloads, and setting up automated alerts for critical application health issues, enabling you to quickly detect and respond to problems before they impact your users.
 
 🔗 https://aws.amazon.com/prometheus/?did=ft_card2&trk=ft_msfp
 
@@ -275,7 +266,7 @@ Amazon Managed Service for Prometheus (AMP) is a fully managed Prometheus-compat
 
 ### AWS Budgets
 
-AWS Budgets helps you plan and control your AWS spending by allowing you to set custom budgets and receive alerts when your costs or usage exceed predefined thresholds. You can track your spending against these budgets in real-time, identify cost-saving opportunities, and forecast your future expenses based on current trends. Common use cases include setting budgets for specific projects, teams, or services to prevent unexpected costs, monitoring reserved instance or savings plan utilization to ensure optimal value, and establishing alerts to proactively manage budget overruns. This service empowers organizations to gain visibility into their AWS costs and maintain financial discipline.
+AWS Budgets empowers users to set custom cost and usage budgets, enabling proactive cost management and financial planning. By defining budgets for services, regions, or even specific tags, organizations can receive alerts when their actual or forecasted spending approaches or exceeds predefined thresholds. This service is invaluable for identifying cost anomalies, optimizing cloud expenditure by spotting underutilized resources, and ensuring that project spending stays within allocated limits. Whether for individual projects, departments, or the entire AWS account, AWS Budgets provides critical visibility and control to prevent unexpected bills and drive cost-efficiency.
 
 🔗 https://aws.amazon.com/aws-cost-management/aws-budgets/?did=ft_card2&trk=ft_budgets
 
@@ -283,7 +274,7 @@ AWS Budgets helps you plan and control your AWS spending by allowing you to set 
 
 ### AWS CloudFormation
 
-AWS CloudFormation is a service that lets you model and provision your Amazon Web Services and third-party application resources using a declarative template. You define your entire infrastructure, from compute and storage to networking and databases, in a template file, often written in JSON or YAML. CloudFormation then automatically provisions and configures those resources according to your template. This enables you to treat your infrastructure as code, facilitating version control, repeatable deployments, and efficient management of your AWS environment. Use cases include automating the setup of new application environments, managing complex multi-tier applications, and ensuring consistent configurations across different accounts and regions for compliance and faster troubleshooting.
+AWS CloudFormation allows you to model and provision your entire cloud infrastructure as code. You define your resources – like EC2 instances, databases, and networks – in a template file, which CloudFormation then uses to create, update, and delete those resources in a consistent and repeatable manner. This approach is invaluable for automating deployments, ensuring configuration compliance across your environments, and simplifying troubleshooting by providing a single source of truth for your infrastructure. Use cases include setting up development and testing environments, managing production stacks, and orchestrating complex application deployments.
 
 🔗 https://aws.amazon.com/cloudformation/?did=ft_card2&trk=ft_cloudformation
 
@@ -291,7 +282,7 @@ AWS CloudFormation is a service that lets you model and provision your Amazon We
 
 ### AWS CloudTrail
 
-AWS CloudTrail is a service that enables you to log, continuously monitor, and retain account activity and API usage across your AWS infrastructure. It records actions taken by users, roles, or AWS services, providing a history of what happened, when, and by whom. This is invaluable for security analysis, troubleshooting operational issues, and demonstrating compliance with regulatory requirements. For instance, CloudTrail helps you detect unauthorized access attempts, track changes to your resources for auditing purposes, and pinpoint the source of configuration errors. By centrally logging these events, you gain essential visibility into your AWS environment for enhanced governance and security posture.
+AWS CloudTrail is a service that records API calls and related events for your AWS account, providing a history of actions taken by users, roles, and AWS services. This enables you to log, continuously monitor, and retain account activity across your AWS infrastructure, which is crucial for security analysis, resource change tracking, and compliance auditing. For example, you can use CloudTrail to investigate unauthorized access attempts, understand who modified a specific resource, or verify that your security policies are being adhered to, all by examining the detailed logs it generates.
 
 🔗 https://aws.amazon.com/cloudtrail/?did=ft_card2&trk=ft_cloudtrail
 
@@ -299,7 +290,7 @@ AWS CloudTrail is a service that enables you to log, continuously monitor, and r
 
 ### AWS Control Tower
 
-AWS Control Tower simplifies the setup and ongoing governance of a secure, multi-account AWS environment. It automates the creation of a landing zone, which includes establishing a robust account structure, pre-configured security policies, and logging capabilities. This allows organizations to provision new AWS accounts quickly and confidently, ensuring compliance with their security and governance best practices. Control Tower is ideal for companies seeking to manage multiple teams or projects on AWS with consistent security guardrails, facilitate departmental cost allocation, or implement a secure foundation for sensitive workloads, all while maintaining centralized visibility and control.
+AWS Control Tower simplifies the creation and governance of secure, multi-account AWS environments, acting as a central command center. It automates the setup of a well-architected landing zone, pre-configured with best practices for security and compliance.  This service is ideal for organizations looking to establish a robust foundation for their AWS journey, enabling them to manage multiple accounts efficiently, enforce guardrails for security and operational compliance, and quickly provision new, compliant accounts for development, testing, or production workloads.  By automating these foundational tasks, Control Tower allows teams to focus on building and innovating on AWS with confidence.
 
 🔗 https://aws.amazon.com/controltower/?did=ft_card2&trk=ft_controltower
 
@@ -307,7 +298,7 @@ AWS Control Tower simplifies the setup and ongoing governance of a secure, multi
 
 ### AWS License Manager
 
-AWS License Manager helps organizations proactively manage, discover, and report on their third-party software license usage. It allows you to define rules to govern how your licenses are used, preventing costly over-deployment or under-licensing.  Common use cases include tracking licenses for popular software like Microsoft SQL Server or Oracle databases running on AWS, ensuring compliance with vendor agreements, and optimizing spending by identifying underutilized licenses.  By centralizing license management, License Manager provides visibility and control, simplifying audits and reducing the risk of license-related violations.
+AWS License Manager helps you manage, discover, and proactively report on your third-party software license usage. It allows you to set granular rules and track your license consumption across your AWS and on-premises environments to prevent costly over-licensing or under-licensing. This is particularly useful for organizations with complex licensing agreements for software like Microsoft, Oracle, or SAP, enabling them to gain visibility into their license inventory, monitor usage against entitlement, and automate license compliance checks. By centralizing license management and providing clear reporting, License Manager helps reduce licensing costs and mitigate compliance risks.
 
 🔗 https://aws.amazon.com/license-manager/?did=ft_card2&trk=ft_license-manager
 
@@ -315,7 +306,7 @@ AWS License Manager helps organizations proactively manage, discover, and report
 
 ### AWS re:Post
 
-AWS re:Post is a community-driven question-and-answer platform designed to help AWS customers overcome technical challenges and accelerate their cloud journey.  It allows users to ask questions about any AWS service and receive answers from a global community of fellow AWS users, AWS experts, and Amazon employees.  Common use cases include troubleshooting common errors, seeking advice on best practices for architecture design, understanding complex service configurations, and discovering innovative solutions to cloud-related problems. By fostering knowledge sharing, re:Post empowers individuals and organizations to resolve technical roadblocks efficiently and learn from the collective experience of the AWS ecosystem.
+AWS re:Post is a community-driven, question-and-answer service designed to help AWS customers overcome technical challenges. It serves as a platform where users can ask questions about AWS services, architecture, and best practices, and receive answers from a vast network of fellow users and AWS experts. This invaluable resource is useful for troubleshooting specific errors, understanding complex configurations, seeking advice on optimizing performance, and discovering innovative solutions to common cloud computing problems. Whether you're a beginner grappling with your first deployment or an experienced architect refining a large-scale system, re:Post offers a collaborative space to accelerate your learning and resolve technical roadblocks efficiently.
 
 🔗 https://www.repost.aws/?did=ft_card2&trk=ft_repost
 
@@ -323,7 +314,7 @@ AWS re:Post is a community-driven question-and-answer platform designed to help 
 
 ### AWS Resource Explorer
 
-AWS Resource Explorer is a service that helps you easily search for and discover your AWS resources across multiple AWS Regions. You can quickly find specific resources like EC2 instances, S3 buckets, or RDS databases by using keywords, tags, or resource types. This is particularly useful for managing large or complex AWS environments, troubleshooting issues, or when you need to quickly locate resources before performing an action such as deletion or configuration changes. Resource Explorer aggregates resource metadata, allowing you to create a unified view of your inventory and reduce the time spent navigating through different AWS services and Regions to find what you need.
+AWS Resource Explorer simplifies resource management by enabling you to quickly search for and discover your AWS resources across all your configured Regions.  This service acts as a centralized index, allowing you to find what you need without manually navigating through different services or Regions.  Common use cases include locating specific EC2 instances, S3 buckets, or RDS databases, as well as identifying resources associated with particular projects or teams. By providing a unified search interface, Resource Explorer helps you improve operational efficiency, reduce time spent on manual searches, and gain better visibility into your AWS environment.
 
 🔗 https://aws.amazon.com/resourceexplorer/?did=ft_card2&trk=ft_resourceexplorer
 
@@ -331,7 +322,7 @@ AWS Resource Explorer is a service that helps you easily search for and discover
 
 ### AWS Service Catalog
 
-AWS Service Catalog allows organizations to create and manage catalogs of approved IT services, including applications, software, and infrastructure, for use on AWS. This ensures consistency and compliance by providing a curated and governed selection of resources that end-users can provision through a self-service portal. Common use cases include deploying standardized development environments, onboarding new applications with pre-approved configurations, and enabling business users to access IT resources without requiring extensive technical expertise, thereby accelerating deployment cycles and reducing operational overhead. It helps maintain security and governance by offering pre-approved and configured services, reducing shadow IT, and ensuring adherence to organizational policies.
+AWS Service Catalog allows organizations to create and manage a curated catalog of approved IT services, such as virtual machines, databases, and web applications, for use on AWS. This ensures that users can only deploy resources that comply with company standards and policies, reducing sprawl and the risk of misconfigurations. Common use cases include providing self-service provisioning of pre-approved development environments, deploying standardized web application stacks, or offering pre-configured data analytics platforms. By centralizing the deployment of approved services, IT teams can gain better control and visibility over their AWS environment while empowering developers and business users to provision resources quickly and safely.
 
 🔗 https://aws.amazon.com/servicecatalog/?did=ft_card2&trk=ft_servicecatalog
 
@@ -339,7 +330,7 @@ AWS Service Catalog allows organizations to create and manage catalogs of approv
 
 ### AWS Systems Manager
 
-AWS Systems Manager is a unified interface that provides visibility and control over your AWS infrastructure, allowing you to centralize operational data and automate tasks. It helps manage your servers, virtual machines, and other AWS resources by offering capabilities like patching, configuration management, and remote command execution. For instance, you can use Systems Manager to automate OS updates across hundreds of instances, deploy application configurations consistently, or even run custom scripts to troubleshoot issues without direct access. This service streamlines operations, enhances security posture, and improves overall efficiency by providing a single pane of glass for managing your AWS environment.
+AWS Systems Manager is a powerful operational hub that centralizes your AWS data and automates tasks across your entire infrastructure.  It allows you to gain visibility into your operational data and provides a unified interface to manage resources.  Key use cases include automating patch management, distributing software, and running commands on multiple EC2 instances simultaneously.  You can also troubleshoot issues, manage operational workstreams, and ensure compliance with various configurations.  By consolidating these capabilities, Systems Manager helps you streamline operations, improve efficiency, and maintain the security and health of your AWS environment.
 
 🔗 https://aws.amazon.com/systems-manager/?did=ft_card2&trk=ft_systemsmanager
 
@@ -348,7 +339,7 @@ AWS Systems Manager is a unified interface that provides visibility and control 
 
 ### AWS Application Migration Service
 
-AWS Application Migration Service (AWS MGN) is a managed service designed to simplify and accelerate the migration of your on-premises applications to AWS with minimal disruption and reduced cost. It automates the server conversion process, enabling you to replicate your servers to AWS with continuous, block-level replication.  This allows you to perform test cutovers and then cut over to AWS with minimal downtime.  AWS MGN is ideal for migrating large volumes of servers, re-platforming applications, or for disaster recovery scenarios. Its automated nature reduces manual effort and the risk of human error, making migrations more predictable and cost-effective.
+AWS Application Migration Service (AWS MGN) is a fully managed service that orchestrates and automates the replication and cutover of servers to AWS, making migrations simpler, faster, and more cost-effective. It supports both lift-and-shift migrations and replatforming initiatives, allowing you to move virtually any application from any source server, whether physical, virtual, or cloud-based, with minimal downtime. AWS MGN is ideal for migrating large volumes of servers, modernizing legacy applications, consolidating data centers, or performing disaster recovery planning by enabling continuous, block-level replication to AWS.
 
 🔗 https://aws.amazon.com/application-migration-service/?did=ft_card2&trk=ft_appmigration
 
@@ -356,7 +347,7 @@ AWS Application Migration Service (AWS MGN) is a managed service designed to sim
 
 ### AWS Transform
 
-AWS Transform is an agentic AI service designed to accelerate the modernization of legacy systems. It helps organizations migrate and transform applications from diverse environments like Windows, mainframes, and VMware to cloud-native architectures.  This service automates complex migration tasks, reducing manual effort and speeding up the transition. Key use cases include refactoring monolithic applications into microservices, re-platforming databases, and modernizing user interfaces. By leveraging AI agents, AWS Transform intelligently analyzes existing code and infrastructure, generating optimized target code and configurations, thereby enabling businesses to unlock the agility and scalability of the cloud more rapidly.
+AWS Transform is an agentic AI service designed to significantly accelerate the modernization of diverse IT environments. It automates and streamlines the complex process of migrating applications and data from legacy systems like Windows servers, mainframes, and VMware virtual machines to modern cloud platforms. By leveraging intelligent agents, AWS Transform can analyze existing code, identify dependencies, and generate updated code or configurations, reducing manual effort and minimizing risk. This service is ideal for organizations seeking to unlock the benefits of the cloud, such as improved scalability, agility, and reduced operational costs, by efficiently transforming their existing infrastructure and applications.
 
 🔗 https://aws.amazon.com/transform/?did=ft_card2&trk=ft_transform
 
@@ -364,7 +355,7 @@ AWS Transform is an agentic AI service designed to accelerate the modernization 
 
 ### Migration Evaluator
 
-AWS Migration Evaluator is a service designed to quickly estimate the potential cost of migrating your existing on-premises infrastructure to the AWS cloud. By analyzing your current hardware and software inventory, it generates a detailed report projecting your future AWS spending. This is particularly useful for organizations planning cloud adoption, enabling them to understand the financial implications before committing resources. It aids in budget forecasting, comparing AWS costs against on-premises expenditures, and identifying potential cost savings. Businesses can leverage Migration Evaluator to build a solid business case for their cloud migration strategy, ensuring they are prepared for the financial shift.
+AWS Migration Evaluator is a tool designed to provide rapid, data-driven cost projections for migrating your on-premises infrastructure to AWS. It analyzes your existing environment to estimate the likely AWS costs, enabling informed decision-making for your cloud journey. This service is particularly useful for organizations planning large-scale migrations, seeking to understand the financial implications of moving workloads like databases, applications, and virtual machines to AWS. Migration Evaluator helps you build a business case for cloud adoption by offering transparent and actionable cost insights, allowing you to forecast future spending and optimize your AWS investment from the outset.
 
 🔗 https://aws.amazon.com/migration-evaluator/?did=ft_card2&trk=ft_migeval
 
