@@ -1,266 +1,266 @@
 {
   "aisearch": {
-    "text": "Azure AI Search helps you find information fast. It indexes your data so you can search it. Think of it like a super-smart library for your digital stuff. Companies use Azure AI Search to quickly find relevant product details for customers.",
-    "updatedAt": 1776608759880
+    "text": "Azure AI Search finds information within your data. It indexes documents, then lets users search them. You can use Azure AI Search to power a company knowledge base. It helps people find answers quickly.",
+    "updatedAt": 1780290517105
   },
   "language": {
-    "text": "Azure Language understands human text. It can find topics and extract key phrases. Azure Language can translate words between languages. It helps analyze customer feedback surveys.",
-    "updatedAt": 1776608760913
+    "text": "Azure Language understands written text. It can find sentiment and key phrases. It also translates between languages. A chatbot could use it to understand user questions.",
+    "updatedAt": 1780290518105
   },
   "aibotservice": {
-    "text": "AI Bot Service builds conversational AI assistants.\nIt helps you connect to users.\nAI Bot Service manages your bot's connections.\nIt can answer customer questions on a website.",
-    "updatedAt": 1776608761845
+    "text": "AI Bot Service builds conversational agents.\nIt lets you connect bots to users anywhere.\nAI Bot Service helps customers find product info.\nYou can deploy your bot logic with it.",
+    "updatedAt": 1780290519121
   },
   "aiimmersivereader": {
-    "text": "AI Immersive Reader helps people read text better. It highlights words as they are spoken aloud. AI Immersive Reader translates text into different languages. Students can use it to understand foreign language assignments.",
-    "updatedAt": 1776608763008
+    "text": "AI Immersive Reader helps people understand text. It reads words aloud and highlights them. AI Immersive Reader can translate text into other languages. It helps students read articles.",
+    "updatedAt": 1780290520070
   },
   "healthbot": {
-    "text": "Health Bot helps you build AI-powered health assistants. It understands medical questions and provides answers. Health Bot can help patients find nearby clinics. It also answers questions about common symptoms.",
-    "updatedAt": 1776608764988
+    "text": "The Health Bot helps you build conversational AI for healthcare. It connects to patient information securely. Health Bot answers patient questions about medication side effects. It can also schedule appointments for users.",
+    "updatedAt": 1780290521188
   },
   "speechtotext": {
-    "text": "Azure Speech to Text converts spoken words into written text.\nIt understands many languages and accents.\nIt can transcribe live conversations or audio files.\nUse it to automatically caption videos.",
-    "updatedAt": 1776608765981
+    "text": "Speech to Text turns spoken words into written text. It accurately transcribes audio recordings. You can use Speech to Text to caption videos. This makes content more accessible for everyone.",
+    "updatedAt": 1780290522126
   },
   "texttospeech": {
-    "text": "Text to Speech converts written words into spoken audio. It uses AI to create natural-sounding voices. Text to Speech can read aloud website content. This helps people who prefer listening over reading.",
-    "updatedAt": 1776608767042
+    "text": "Text to Speech turns written words into spoken audio. It creates natural-sounding voices for your content. Developers use Text to Speech to read news articles aloud. This makes information more accessible to everyone.",
+    "updatedAt": 1780290523162
   },
   "speechtranslation": {
-    "text": "Speech Translation converts spoken words into another language. It listens to audio and writes out the translated text. Speech Translation can help international customer support. A caller's question is understood in a different language.",
-    "updatedAt": 1776608768052
+    "text": "Speech Translation converts spoken words to text in another language. It can translate conversations happening in real-time. A presenter could use Speech Translation to deliver a talk in multiple languages. This makes global communication much easier for everyone.",
+    "updatedAt": 1780290524230
   },
   "translator": {
-    "text": "Translator changes text from one language to another.\nTranslator can translate website content into Spanish.\nIt processes your words and creates new text.\nTranslator enables communication across language barriers.",
-    "updatedAt": 1776608769095
+    "text": "Translator converts text between languages. It can translate your customer reviews. Translator helps people understand global messages. You can read foreign news articles instantly.",
+    "updatedAt": 1780290525250
   },
   "face": {
-    "text": "Face identifies people in pictures. It can detect faces and analyze their features. Face recognizes specific individuals from photos. This helps tag friends in your photo albums.",
-    "updatedAt": 1776608770286
+    "text": "Azure Face detects and analyzes human faces.\nIt can identify emotions and recognize individuals.\nThe service helps build features like photo tagging.\nDevelopers use Azure Face for security checks.",
+    "updatedAt": 1780290526254
   },
   "machinelearning": {
-    "text": "Azure Machine Learning builds smart models.\nIt trains models to recognize patterns.\nAzure Machine Learning predicts customer churn.\nIt helps businesses understand their customers better.",
-    "updatedAt": 1776608771280
+    "text": "Azure Machine Learning builds smart applications.\nIt helps you train models to recognize patterns.\nAzure Machine Learning can then make predictions.\nIt can predict customer churn for a business.",
+    "updatedAt": 1780290527150
   },
   "opendatasets": {
-    "text": "Open Datasets provides access to public information.\nIt lets you use ready-made data for analysis.\nYou can train machine learning models with this data.\nUse Open Datasets to analyze global weather patterns.",
-    "updatedAt": 1776608772268
+    "text": "Open Datasets provides public data for your projects.\nYou can explore and use this data freely.\nThis service helps train machine learning models.\nUse Open Datasets to build better AI.",
+    "updatedAt": 1780290528055
   },
   "contentsafety": {
-    "text": "Content Safety checks text and images for harmful material. It flags inappropriate content for review. This helps keep online spaces safe. A social media app uses it to block hateful comments.",
-    "updatedAt": 1776608773231
+    "text": "Content Safety identifies harmful text and images. It helps protect users from inappropriate material. Content Safety flags abusive language in online chats. This keeps communities safe and welcoming for all.",
+    "updatedAt": 1780290529123
   },
   "datacatalog": {
-    "text": "Data Catalog helps you find and understand data. It creates a searchable inventory of your data assets. You can document data sources and their meanings. A marketing team could find customer lists for campaigns.",
-    "updatedAt": 1776608774199
+    "text": "Azure Data Catalog finds your organization's data. It helps people discover and understand datasets. Data Catalog makes it easy to search for specific information. A marketing team uses it to find sales reports.",
+    "updatedAt": 1780290530095
   },
   "datafactory": {
-    "text": "Data Factory moves and transforms your data. It orchestrates data workflows. Data Factory can copy data from your database to Azure Blob Storage. It then transforms that data for analysis.",
-    "updatedAt": 1776608775172
+    "text": "Data Factory moves and transforms your data.\nIt connects to many data sources.\nData Factory can run your data processes automatically.\nIt copies customer information from sales systems to a data warehouse.",
+    "updatedAt": 1780290531123
   },
   "appservice": {
-    "text": "App Service lets you run your web applications and APIs.\nApp Service hosts your code directly.\nIt processes incoming requests for your site.\nIt hosts a blog for a small business.",
-    "updatedAt": 1776608776142
+    "text": "App Service lets you deploy web apps easily.\nIt runs your web applications for you.\nApp Service processes user requests and serves content.\nYou can host a blog on App Service.",
+    "updatedAt": 1780290532135
   },
   "kubernetesservice": {
-    "text": "Azure Kubernetes Service (AKS) lets you run containerized applications.\nAKS manages Kubernetes clusters for you.\nYou deploy your applications to these clusters.\nAKS can then run a web shop that processes orders.",
-    "updatedAt": 1776608777017
+    "text": "Azure Kubernetes Service (AKS) lets you run your applications in containers.\nAKS manages the complex parts of Kubernetes for you.\nYou can use AKS to deploy and manage web applications.\nIt helps run an online store with many customers.",
+    "updatedAt": 1780290533082
   },
   "vmimagebuilder": {
-    "text": "Azure VM Image Builder creates custom virtual machine images.\nIt automates image customization and building.\nYou can add specific software and configurations.\nBuild a standard image for deploying many identical servers.",
-    "updatedAt": 1776608778063
+    "text": "Azure VM Image Builder creates custom virtual machine images.\nIt automates the process of building operating system images.\nAzure VM Image Builder includes your applications and settings.\nUse it to build consistent Windows Server images for your deployments.",
+    "updatedAt": 1780290534074
   },
   "batch": {
-    "text": "Azure Batch runs many jobs at once. It helps process large amounts of data. Batch can render many video frames for a movie. This service manages your computing tasks.",
-    "updatedAt": 1776608779050
+    "text": "Azure Batch runs many jobs at once. It manages computing resources for you. Batch can process large video files for rendering. Batch scales to handle your workload needs.",
+    "updatedAt": 1780290534945
   },
   "functions": {
-    "text": "Azure Functions run small pieces of code.\nThese code snippets react to events happening.\nFunctions can process uploaded images automatically.\nThey are great for event-driven applications.",
-    "updatedAt": 1776608780153
+    "text": "Azure Functions run small pieces of code for you.\nFunctions respond to events automatically.\nThey can upload files to a storage account.\nFunctions execute code when a file appears.",
+    "updatedAt": 1780290535929
   },
   "staticwebapps": {
-    "text": "Azure Static Web Apps hosts your web application.\nIt builds your app when you push code changes.\nStatic Web Apps deploys your front-end code and APIs.\nIt serves your website directly to users.\nBuild a personal blog that updates automatically.",
-    "updatedAt": 1776608781162
+    "text": "Azure Static Web Apps quickly builds and hosts your web apps.\nIt automatically deploys your code from GitHub or Azure DevOps.\nStatic Web Apps handles running serverless APIs alongside your front end.\nIt serves your personal blog built with React and a Node.js API.",
+    "updatedAt": 1780290537053
   },
   "containerstorage": {
-    "text": "Azure Container Storage lets you manage data for containers. It provides persistent disks for stateful applications. You can attach and detach volumes easily. Use it for your databases running in containers.",
-    "updatedAt": 1776608782124
+    "text": "Azure Container Storage provides persistent disks for your containers.\nIt lets containers keep their data even when they restart.\nIt allows your stateful apps to run reliably in containers.\nUse it to store user uploads for your web application.",
+    "updatedAt": 1780290538186
   },
   "containerapps": {
-    "text": "Container Apps runs your applications.  It handles deploying and running your code.  Container Apps can serve web pages to users.  It also manages background tasks.",
-    "updatedAt": 1776608783033
+    "text": "Container Apps runs your containerized applications.\nIt deploys code packaged in containers to the cloud.\nContainer Apps manages scaling and networking automatically.\nIt can host a web API that processes user orders.",
+    "updatedAt": 1780290539145
   },
   "servicefabric": {
-    "text": "Service Fabric runs your applications reliably.\nIt manages microservices and containers.\nService Fabric deploys your code to servers.\nIt helps build distributed systems, like online stores.",
-    "updatedAt": 1776608784039
+    "text": "Service Fabric runs your applications reliably.\nService Fabric orchestrates containers and code packages.\nIt manages application health and automatic recovery.\nService Fabric can host microservices processing user orders.",
+    "updatedAt": 1780290540247
   },
   "cosmosdb": {
-    "text": "Azure Cosmos DB stores and manages your data globally. It lets you instantly access data from anywhere. Azure Cosmos DB processes millions of requests per second. Build a real-time gaming leaderboard with it.",
-    "updatedAt": 1776608785049
+    "text": "Azure Cosmos DB stores and accesses your application data. It lets you read and write data very quickly. Azure Cosmos DB supports many different ways to store data. You can store customer order information here.",
+    "updatedAt": 1780290541205
   },
   "cosmosdbformongodb": {
-    "text": "Azure Cosmos DB for MongoDB stores your application's data. It acts like a familiar MongoDB database. Your apps can easily connect and read/write data. Use it to run your existing MongoDB game leaderboards.",
-    "updatedAt": 1776608786253
+    "text": "Azure Cosmos DB for MongoDB stores your data.\nIt lets you run existing MongoDB applications.\nYou can deploy mobile apps that need global data.\nAzure Cosmos DB for MongoDB handles data replication.",
+    "updatedAt": 1780290542137
   },
   "databasemigrationservice": {
-    "text": "Azure Database Migration Service moves your databases.\nIt helps you switch from other cloud or on-premises systems.\nDatabase Migration Service brings your data to Azure SQL.\nThis service makes moving your databases simpler.",
-    "updatedAt": 1776608787287
+    "text": "Azure Database Migration Service moves your databases.\nIt transfers data from various sources.\nIt helps you switch to Azure SQL Database.\nDatabase Migration Service automates the move.",
+    "updatedAt": 1780290543128
   },
   "sqldatabase": {
-    "text": "Azure SQL Database stores your structured information.\nSQL Database lets you save and retrieve business records.\nIt runs applications that need to access customer details.\nBusinesses use SQL Database to track product inventories.",
-    "updatedAt": 1776608788300
+    "text": "Azure SQL Database stores your structured data.\nIt lets you run relational databases in the cloud.\nYour applications can read and write information.\nUse Azure SQL Database for your online store's inventory.",
+    "updatedAt": 1780290544101
   },
   "appconfiguration": {
-    "text": "App Configuration stores application settings centrally.\nIt allows you to change settings without redeploying your app.\nUpdate database connection strings easily.\nApp Configuration manages your app's feature flags.",
-    "updatedAt": 1776608789293
+    "text": "App Configuration stores settings for your applications.\nIt lets you manage secrets and feature flags.\nDevelopers can change app behavior without redeploying.\nUse App Configuration to control A/B testing rollout.",
+    "updatedAt": 1780290545062
   },
   "deploymentenvironments": {
-    "text": "Azure Deployment Environments quickly set up development and testing setups. It provisions cloud resources needed for application builds. Developers get consistent, ready-to-use environments. They can test their new website features.",
-    "updatedAt": 1776608790237
+    "text": "Azure Deployment Environments create consistent development setups.\nIt provides pre-configured environments for your teams.\nThis helps developers quickly start building applications.\nDevelopers can instantly spin up a testing environment for a new feature.",
+    "updatedAt": 1780290546075
   },
   "devops": {
-    "text": "Azure DevOps helps teams build and deliver software.\nIt manages code, tracks work, and automates builds.\nAzure DevOps helps test code and deploy applications.\nA team uses it to manage their new mobile app project.",
-    "updatedAt": 1776608791206
+    "text": "Azure DevOps helps teams build and deliver software faster. It allows you to plan work and track progress. Azure DevOps lets you write and test code automatically. You can then deploy your applications to the cloud. Build a website and publish it with Azure DevOps.",
+    "updatedAt": 1780290547001
   },
   "devtestlabs": {
-    "text": "DevTest Labs helps teams create and manage development environments.\nYou can quickly spin up new virtual machines for testing.\nDevTest Labs lets you control costs by setting usage limits.\nDevelopers can provision test environments for mobile app trials.",
-    "updatedAt": 1776608792172
+    "text": "DevTest Labs lets you quickly set up and manage development and testing environments. You can easily create virtual machines for your team. Developers can get their own sandboxes for experimenting. Use DevTest Labs to quickly build and test a new feature.",
+    "updatedAt": 1780290548089
   },
   "visualstudiocode": {
-    "text": "Visual Studio Code lets you write and edit code.\nIt helps you build applications by running commands.\nVisual Studio Code can debug your programs.\nYou use it to create a web page.",
-    "updatedAt": 1776608793095
+    "text": "Visual Studio Code writes and edits your computer programs. It helps you find mistakes in your code. You can build websites with it. Visual Studio Code lets you run your code tests.",
+    "updatedAt": 1780290549030
   },
   "arc": {
-    "text": "Azure Arc extends Azure management to your servers.  It lets you manage machines anywhere.  You can deploy applications to those servers.  Run your Kubernetes clusters on-premises using Azure Arc.",
-    "updatedAt": 1776608794034
+    "text": "Azure Arc connects your servers and Kubernetes clusters anywhere.  It lets you manage them from Azure.  You can deploy apps to your on-premises machines.  Azure Arc extends Azure's control to your data center.",
+    "updatedAt": 1780290550064
   },
   "activedirectoryb2c": {
-    "text": "Azure Active Directory B2C lets customers sign up and sign in. It manages your user accounts securely. Think of it for your online store's login. Azure Active Directory B2C keeps customer data safe.",
-    "updatedAt": 1776608795097
+    "text": "Azure Active Directory B2C lets customers sign in to your apps. It manages user accounts for your customers. Azure Active Directory B2C lets customers use their social accounts. It simplifies customer registration and login for your website.",
+    "updatedAt": 1780290551071
   },
   "entraid": {
-    "text": "Microsoft Entra ID manages who accesses your apps. It verifies user identities to grant or deny entry. Microsoft Entra ID secures your cloud services. It lets employees sign into company software.",
-    "updatedAt": 1776608797139
+    "text": "Microsoft Entra ID manages user access to cloud apps.\nIt lets people sign in securely to Microsoft 365.\nMicrosoft Entra ID verifies who you are.\nIt grants or denies entry based on your permissions.",
+    "updatedAt": 1780290552080
   },
   "apimanagement": {
-    "text": "API Management acts as a gateway for your services.\nIt lets you publish, secure, and monitor APIs.\nAPI Management routes incoming requests to your backends.\nIt allows developers to discover and use your APIs.\nA company can use it to expose customer data APIs.",
-    "updatedAt": 1776608798468
+    "text": "API Management acts as a gateway for your services.\nIt controls who can access your APIs.\nAPI Management lets you manage and publish your services.\nIt can monitor API usage and security.\nDevelopers use it to find and connect to partner services.",
+    "updatedAt": 1780290553147
   },
   "eventgrid": {
-    "text": "Event Grid sends notifications when things happen.\nIt routes events from Azure services and your apps.\nOther services react to these events to perform actions.\nAn image upload triggers Event Grid to process the image.",
-    "updatedAt": 1776608799484
+    "text": "Event Grid delivers messages about things that happen.\nIt sends notifications when something is updated.\nYour apps can subscribe to these events.\nThis lets you update a website when a file changes.",
+    "updatedAt": 1780290554175
   },
   "healthdataservices": {
-    "text": "Health Data Services manages patient information. It securely stores and organizes health records. Developers can build patient portals with it. A hospital can track appointment history.",
-    "updatedAt": 1776608800449
+    "text": "Health Data Services securely manages patient information.\nIt stores clinical records and medical histories.\nHealth Data Services enables sharing data between providers.\nIt helps build applications for remote patient monitoring.",
+    "updatedAt": 1780290555228
   },
   "logicapps": {
-    "text": "Logic Apps automate tasks between different services.\nLogic Apps connect apps to move data.\nLogic Apps trigger workflows when events happen.\nLogic Apps send an email when a file is added.",
-    "updatedAt": 1776608801339
+    "text": "Logic Apps connect different applications and services. It automates tasks by creating workflows. Logic Apps can send an email when a new file is added. This service helps you build automated processes.",
+    "updatedAt": 1780290556110
   },
   "maps": {
-    "text": "Azure Maps lets you add location data to your apps.\nIt provides maps, routing, and search services.\nAzure Maps can find nearby restaurants for users.\nThis helps people explore new places easily.",
-    "updatedAt": 1776608802469
+    "text": "Azure Maps provides location data for your apps.\nIt lets you add maps and routing to applications.\nAzure Maps helps find nearby restaurants.\nYou can also track vehicle locations with it.",
+    "updatedAt": 1780290557154
   },
   "iotedge": {
-    "text": "IoT Edge runs cloud workloads on your devices. It lets you deploy software and AI to the edge. This means data gets processed locally on the device. IoT Edge can analyze sensor readings on a factory floor.",
-    "updatedAt": 1776608803506
+    "text": "IoT Edge lets you run cloud-like processing on devices.\nIoT Edge deploys applications and custom code to your devices.\nIoT Edge processes data locally, reducing latency.\nIoT Edge sends filtered data to the cloud for analysis.\nImagine analyzing sensor readings from remote oil rigs instantly.",
+    "updatedAt": 1780290558274
   },
   "iothub": {
-    "text": "IoT Hub connects your devices to the cloud.\nIoT Hub sends commands from the cloud to devices.\nIoT Hub receives data from sensors.\nIoT Hub tracks farm sensors sending temperature readings.",
-    "updatedAt": 1776608804488
+    "text": "IoT Hub connects your devices to the cloud.\nIoT Hub sends commands to devices.\nIoT Hub receives data from sensors.\nIoT Hub tracks your smart thermostat's temperature.",
+    "updatedAt": 1780290559215
   },
   "advisor": {
-    "text": "Advisor helps you improve your Azure resources.\nIt finds ways to lower costs.\nAdvisor suggests security improvements.\nIt recommends performance enhancements.\nAdvisor helps make your applications reliable.\nRun your web app on Azure SQL for better database performance.",
-    "updatedAt": 1776608805647
+    "text": "Advisor watches your Azure resources.\nAdvisor suggests ways to improve them.\nIt helps you save money and boost performance.\nAdvisor finds security risks.\nIt recommends tuning your databases for better speed.",
+    "updatedAt": 1780290560172
   },
   "automation": {
-    "text": "Azure Automation runs tasks for you. It automates common jobs. Automation can restart virtual machines. It manages Windows updates across servers.",
-    "updatedAt": 1776608806661
+    "text": "Azure Automation runs tasks for you.\nIt executes runbooks on a schedule.\nAutomation can install software updates.\nIt manages virtual machine start-ups.",
+    "updatedAt": 1780290561148
   },
   "automanage": {
-    "text": "Azure Automanage automates routine server tasks. It applies best practices and configurations automatically. Azure Automanage can manage guest operating system updates. It helps keep your SQL servers running smoothly.",
-    "updatedAt": 1776608807595
+    "text": "Azure Automanage keeps your servers running smoothly. It automatically installs updates and security patches. Azure Automanage configures critical software for you. This ensures your web applications are always protected.",
+    "updatedAt": 1780290562046
   },
   "lighthouse": {
-    "text": "Azure Lighthouse lets you manage many Azure subscriptions centrally.\nIt helps you organize and govern customer or internal Azure environments.\nAzure Lighthouse allows you to deploy and monitor resources across these accounts.\nA managed service provider can use it to support multiple client Azure setups.",
-    "updatedAt": 1776608808761
+    "text": "Azure Lighthouse lets you manage multiple Azure subscriptions from one place.\nIt lets you control resources across different customer tenants.\nAzure Lighthouse helps you onboard and manage customer environments.\nYou can deploy security updates for many clients simultaneously.",
+    "updatedAt": 1780290563135
   },
   "managedapplications": {
-    "text": "Azure Managed Applications deploy pre-built software solutions.\nIt simplifies setting up complex applications for your teams.\nAzure Managed Applications handle application deployment automatically.\nYour developers can launch shared internal tools quickly.",
-    "updatedAt": 1776608809772
+    "text": "Azure Managed Applications simplifies app deployment. It packages apps and their resources. This ensures consistent setup every time. A company can quickly deploy a new web application.",
+    "updatedAt": 1780290564132
   },
   "policy": {
-    "text": "Azure Policy enforces organizational standards.\nAzure Policy ensures resources meet compliance rules.\nAzure Policy can prevent unencrypted storage accounts.\nAzure Policy helps control resource deployment.",
-    "updatedAt": 1776608810790
+    "text": "Azure Policy enforces company rules for Azure resources. It checks resource settings and takes action. Azure Policy ensures virtual machines use specific disk types. It prevents unauthorized deployments and maintains compliance.",
+    "updatedAt": 1780290565043
   },
   "resourcemover": {
-    "text": "Azure Resource Mover moves your Azure resources between regions.\nIt helps you relocate virtual machines and databases.\nAzure Resource Mover copies data to a new location.\nIt then updates configurations for the new region.",
-    "updatedAt": 1776608811798
+    "text": "Azure Resource Mover helps you move resources between Azure regions.\nIt lets you move virtual machines to another data center.\nAzure Resource Mover automates the migration process.\nThis makes moving workloads simpler and faster.",
+    "updatedAt": 1780290566053
   },
   "updatemanager": {
-    "text": "Azure Update Manager keeps your servers updated. It automates applying security patches. It ensures operating systems and software are current. You can manage updates for virtual machines in Azure and on-premises.",
-    "updatedAt": 1776608812963
+    "text": "Azure Update Manager keeps your machines up-to-date. It automates software patching across your servers. Azure Update Manager can deploy security updates to Windows servers. This ensures your systems are protected from threats.",
+    "updatedAt": 1780290567040
   },
   "cloudshell": {
-    "text": "Cloud Shell provides a browser-based command line.\nIt lets you manage Azure resources easily.\nYou can run Bash or PowerShell commands directly.\nUse Cloud Shell to quickly create virtual machines.",
-    "updatedAt": 1776608814005
+    "text": "Cloud Shell gives you a command-line access.\nYou can run shell commands from your browser.\nCloud Shell lets you deploy virtual machines easily.\nIt's great for managing your Azure resources quickly.",
+    "updatedAt": 1780290567968
   },
   "costmanagement": {
-    "text": "Azure Cost Management helps you track spending.\nIt shows where your money goes in Azure.\nYou can set budgets to control costs.\nIt helps you optimize spending for your virtual machines.",
-    "updatedAt": 1776608814963
+    "text": "Azure Cost Management tracks your cloud spending. It helps you see where money goes. You can set budgets to control costs. This service helps a company track its monthly Azure bills.",
+    "updatedAt": 1780290568862
   },
   "monitor": {
-    "text": "Azure Monitor watches your cloud resources.\nMonitor collects logs and metrics from your apps.\nIt helps you find and fix problems quickly.\nMonitor alerts you when disk space is low.",
-    "updatedAt": 1776608816405
+    "text": "Azure Monitor watches your applications and resources. It collects logs and metrics from everything. Azure Monitor helps you find problems quickly. See a database running slow with this service.",
+    "updatedAt": 1780290569754
   },
   "resourcemanager": {
-    "text": "Resource Manager deploys your Azure resources. It defines what you need in templates. Resource Manager then builds these resources for you. You can deploy a virtual machine this way.",
-    "updatedAt": 1776608817428
+    "text": "Resource Manager lets you manage Azure resources. It helps you deploy and configure virtual machines. You can also set up databases and storage. Resource Manager enables you to create new web apps.",
+    "updatedAt": 1780290570689
   },
   "migrate": {
-    "text": "Azure Migrate helps you move your computers to Microsoft's cloud.\nIt finds and assesses your existing systems.\nAzure Migrate then moves your applications and data.\nYou can use it to move a company website.",
-    "updatedAt": 1776608818566
+    "text": "Azure Migrate helps move your servers to the cloud. It assesses your existing systems. Azure Migrate then transfers your virtual machines. You can move your on-premises databases to Azure SQL.",
+    "updatedAt": 1780290571622
   },
   "storagemover": {
-    "text": "Azure Storage Mover copies data between storage locations. It moves files from on-premises servers to Azure Blob Storage. This service automates bulk data transfers. Use Azure Storage Mover to migrate large archives to the cloud.",
-    "updatedAt": 1776608819589
+    "text": "Azure Storage Mover copies data between storage locations.\nIt moves large files from on-premises servers to Azure.\nAzure Storage Mover simplifies migration tasks.\nThis service helps you get data into the cloud.",
+    "updatedAt": 1780290572673
   },
   "notificationhubs": {
-    "text": "Notification Hubs sends messages to many devices.\nIt helps your app reach users quickly.\nNotification Hubs delivers alerts to phones and tablets.\nThis is perfect for breaking news updates.",
-    "updatedAt": 1776608820662
+    "text": "Notification Hubs sends messages to many devices fast.\nIt pushes alerts to iOS and Android phones.\nDevelopers use it to update app users instantly.\nThink sending a new flash sale announcement.",
+    "updatedAt": 1780290573673
   },
   "bandwidth": {
-    "text": "Bandwidth lets you move data in and out of Azure.\nThis controls how much data your applications send.\nIt helps customers download large video files.\nBandwidth manages your internet connection costs.",
-    "updatedAt": 1776608821671
+    "text": "Bandwidth moves data between Azure and your location.\nIt lets your apps send results to users.\nThis service allows virtual machines to talk.\nA game server sends player actions over Bandwidth.",
+    "updatedAt": 1780290574687
   },
   "networkwatcher": {
-    "text": "Network Watcher helps you monitor your Azure network.\nIt allows you to diagnose network issues.\nNetwork Watcher tests connectivity between resources.\nYou can see traffic flow to a virtual machine.",
-    "updatedAt": 1776608822709
+    "text": "Network Watcher helps you monitor your Azure network.\nIt lets you see traffic flow and diagnose network problems.\nNetwork Watcher can test network connectivity to a virtual machine.\nIt also helps you identify security group issues.",
+    "updatedAt": 1780290575807
   },
   "privatelink": {
-    "text": "Private Link lets you connect privately to Azure services.  It creates a dedicated network pathway. This keeps your data within your network boundary.  Access Azure Storage securely from your virtual machine.",
-    "updatedAt": 1776608823703
+    "text": "Private Link securely connects your services. It creates private network access. Your data travels directly over Azure's backbone. Access your Azure SQL Database from your on-premises network.",
+    "updatedAt": 1780290576856
   },
   "virtualnetwork": {
-    "text": "Virtual Network lets you build your own private network in Azure.\nIt connects your Azure resources securely.\nYour virtual machines can talk to each other there.\nIt hosts a web server that only internal users access.",
-    "updatedAt": 1776608824990
+    "text": "Virtual Network creates your own private network in Azure.\nIt lets your Azure resources communicate securely.\nYou can place virtual machines inside your Virtual Network.\nThis allows your web servers to talk to your database.",
+    "updatedAt": 1780290577812
   },
   "attestation": {
-    "text": "Azure Attestation proves your code runs securely. It verifies the integrity of your running software. Use Azure Attestation to confirm a virtual machine's configuration. This ensures sensitive data processing is trustworthy.",
-    "updatedAt": 1776608826051
+    "text": "Azure Attestation proves your software is running securely. It verifies the integrity of your running code. This confirms your application hasn't been tampered with. Use it to verify that sensitive data processing code is unmodified.",
+    "updatedAt": 1780290578780
   },
   "securitycenter": {
-    "text": "Security Center protects your cloud resources. It finds potential threats on your servers. Security Center can recommend ways to fix issues. It helps you secure virtual machines running in Azure.",
-    "updatedAt": 1776608827194
+    "text": "Azure Security Center keeps your cloud safe.\nSecurity Center finds and fixes security risks.\nIt helps you manage security across your resources.\nSecurity Center alerts you about suspicious activity.",
+    "updatedAt": 1780290579707
   },
   "signalrservice": {
-    "text": "Azure SignalR Service pushes real-time messages to connected clients.\nIt allows web applications to send updates instantly.\nThis service helps build live chat features.\nYour users see new messages immediately without refreshing.",
-    "updatedAt": 1776608828181
+    "text": "Azure SignalR Service pushes messages to connected web clients.\nIt keeps your users updated with real-time information.\nBuild live dashboards that show changing data instantly.\nAzure SignalR Service manages the connections for you.",
+    "updatedAt": 1780290580770
   },
   "webpubsub": {
-    "text": "Web PubSub lets you send real-time messages to connected users.\nIt manages connections for live updates.\nYour app publishes messages, and Web PubSub distributes them instantly.\nLive chat in a game uses Web PubSub.",
-    "updatedAt": 1776608829112
+    "text": "Web PubSub sends real-time messages to connected clients. It manages WebSocket connections for you. This allows apps to push updates instantly. Live chat applications can use Web PubSub.",
+    "updatedAt": 1780290581660
   }
 }

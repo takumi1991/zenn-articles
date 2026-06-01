@@ -8,7 +8,7 @@ published: true
 
 # Azure Always Free Services
 
-Updated: 2026-05-01T04:11:06.948Z(UTC)
+Updated: 2026-06-01T05:09:42.162Z(UTC)
 
 Azure provides many services that can be used for free within certain limits. This article organizes those services by category.
 
@@ -16,7 +16,7 @@ Azure provides many services that can be used for free within certain limits. Th
 
 ### Azure AI Search
 
-helps you find information fast. It indexes your data so you can search it. Think of it like a super-smart library for your digital stuff. Companies use Azure AI Search to quickly find relevant product details for customers.
+finds information within your data. It indexes documents, then lets users search them. You can use Azure AI Search to power a company knowledge base. It helps people find answers quickly.
 
 **Free tier:** 50 MB storage for 10,000 hosted documents and 3 indexes per service
 
@@ -26,7 +26,7 @@ helps you find information fast. It indexes your data so you can search it. Thin
 
 ### Azure Language
 
-understands human text. It can find topics and extract key phrases. Azure Language can translate words between languages. It helps analyze customer feedback surveys.
+understands written text. It can find sentiment and key phrases. It also translates between languages. A chatbot could use it to understand user questions.
 
 **Free tier:** 5,000 text records
 
@@ -36,10 +36,10 @@ understands human text. It can find topics and extract key phrases. Azure Langua
 
 ### AI Bot Service
 
-builds conversational AI assistants.
-It helps you connect to users.
-AI Bot Service manages your bot's connections.
-It can answer customer questions on a website.
+builds conversational agents.
+It lets you connect bots to users anywhere.
+AI Bot Service helps customers find product info.
+You can deploy your bot logic with it.
 
 **Free tier:** 10,000 premium channel messages and unlimited standard channel messages
 
@@ -49,7 +49,7 @@ It can answer customer questions on a website.
 
 ### AI Immersive Reader
 
-helps people read text better. It highlights words as they are spoken aloud. AI Immersive Reader translates text into different languages. Students can use it to understand foreign language assignments.
+helps people understand text. It reads words aloud and highlights them. AI Immersive Reader can translate text into other languages. It helps students read articles.
 
 **Free tier:** 3 million characters
 
@@ -59,7 +59,7 @@ helps people read text better. It highlights words as they are spoken aloud. AI 
 
 ### Health Bot
 
-helps you build AI-powered health assistants. It understands medical questions and provides answers. Health Bot can help patients find nearby clinics. It also answers questions about common symptoms.
+The  helps you build conversational AI for healthcare. It connects to patient information securely. Health Bot answers patient questions about medication side effects. It can also schedule appointments for users.
 
 **Free tier:** 3,000 messages (up to 10 messages per second)
 
@@ -69,10 +69,7 @@ helps you build AI-powered health assistants. It understands medical questions a
 
 ### Speech to Text
 
-Azure  converts spoken words into written text.
-It understands many languages and accents.
-It can transcribe live conversations or audio files.
-Use it to automatically caption videos.
+turns spoken words into written text. It accurately transcribes audio recordings. You can use Speech to Text to caption videos. This makes content more accessible for everyone.
 
 **Free tier:** 5 audio hours per month for Realtime Speech to Text
 
@@ -82,7 +79,7 @@ Use it to automatically caption videos.
 
 ### Text to Speech
 
-converts written words into spoken audio. It uses AI to create natural-sounding voices. Text to Speech can read aloud website content. This helps people who prefer listening over reading.
+turns written words into spoken audio. It creates natural-sounding voices for your content. Developers use Text to Speech to read news articles aloud. This makes information more accessible to everyone.
 
 **Free tier:** 0.5 million characters per month for Standard Neural Voices
 
@@ -92,7 +89,7 @@ converts written words into spoken audio. It uses AI to create natural-sounding 
 
 ### Speech Translation
 
-converts spoken words into another language. It listens to audio and writes out the translated text. Speech Translation can help international customer support. A caller's question is understood in a different language.
+converts spoken words to text in another language. It can translate conversations happening in real-time. A presenter could use Speech Translation to deliver a talk in multiple languages. This makes global communication much easier for everyone.
 
 **Free tier:** 5 audio hours per month for Real-time Speech Translation (with Standard Voice)
 
@@ -102,10 +99,7 @@ converts spoken words into another language. It listens to audio and writes out 
 
 ### Translator
 
-changes text from one language to another.
-Translator can translate website content into Spanish.
-It processes your words and creates new text.
-Translator enables communication across language barriers.
+converts text between languages. It can translate your customer reviews. Translator helps people understand global messages. You can read foreign news articles instantly.
 
 **Free tier:** 2 million characters of any combination of standard translation and custom translation training free per month
 
@@ -115,7 +109,10 @@ Translator enables communication across language barriers.
 
 ### Face
 
-identifies people in pictures. It can detect faces and analyze their features. Face recognizes specific individuals from photos. This helps tag friends in your photo albums.
+Azure  detects and analyzes human faces.
+It can identify emotions and recognize individuals.
+The service helps build features like photo tagging.
+Developers use Azure Face for security checks.
 
 **Free tier:** 30,000 transactions of Free instance
 
@@ -125,10 +122,10 @@ identifies people in pictures. It can detect faces and analyze their features. F
 
 ### Machine Learning
 
-Azure  builds smart models.
-It trains models to recognize patterns.
-Azure Machine Learning predicts customer churn.
-It helps businesses understand their customers better.
+Azure  builds smart applications.
+It helps you train models to recognize patterns.
+Azure Machine Learning can then make predictions.
+It can predict customer churn for a business.
 
 **Free tier:** Free
 
@@ -138,10 +135,10 @@ It helps businesses understand their customers better.
 
 ### Open Datasets
 
-provides access to public information.
-It lets you use ready-made data for analysis.
-You can train machine learning models with this data.
-Use Open Datasets to analyze global weather patterns.
+provides public data for your projects.
+You can explore and use this data freely.
+This service helps train machine learning models.
+Use Open Datasets to build better AI.
 
 **Free tier:** Free (egress charges may apply)
 
@@ -151,7 +148,7 @@ Use Open Datasets to analyze global weather patterns.
 
 ### Content Safety
 
-checks text and images for harmful material. It flags inappropriate content for review. This helps keep online spaces safe. A social media app uses it to block hateful comments.
+identifies harmful text and images. It helps protect users from inappropriate material. Content Safety flags abusive language in online chats. This keeps communities safe and welcoming for all.
 
 **Free tier:** AKS cluster management is free; you’ll incur a charge for resources consumed by nodes
 
@@ -163,7 +160,7 @@ checks text and images for harmful material. It flags inappropriate content for 
 
 ### Data Catalog
 
-helps you find and understand data. It creates a searchable inventory of your data assets. You can document data sources and their meanings. A marketing team could find customer lists for campaigns.
+Azure  finds your organization's data. It helps people discover and understand datasets. Data Catalog makes it easy to search for specific information. A marketing team uses it to find sales reports.
 
 **Free tier:** Unlimited users
 
@@ -173,7 +170,10 @@ helps you find and understand data. It creates a searchable inventory of your da
 
 ### Data Factory
 
-moves and transforms your data. It orchestrates data workflows. Data Factory can copy data from your database to Azure Blob Storage. It then transforms that data for analysis.
+moves and transforms your data.
+It connects to many data sources.
+Data Factory can run your data processes automatically.
+It copies customer information from sales systems to a data warehouse.
 
 **Free tier:** 5 low-frequency activities
 
@@ -185,10 +185,10 @@ moves and transforms your data. It orchestrates data workflows. Data Factory can
 
 ### App Service
 
-lets you run your web applications and APIs.
-App Service hosts your code directly.
-It processes incoming requests for your site.
-It hosts a blog for a small business.
+lets you deploy web apps easily.
+It runs your web applications for you.
+App Service processes user requests and serves content.
+You can host a blog on App Service.
 
 **Free tier:** Up to 10 web or API apps with 1 GB storage and 1 hour per day
 
@@ -198,10 +198,10 @@ It hosts a blog for a small business.
 
 ### Azure Kubernetes Service (AKS)
 
-lets you run containerized applications.
-AKS manages Kubernetes clusters for you.
-You deploy your applications to these clusters.
-AKS can then run a web shop that processes orders.
+lets you run your applications in containers.
+AKS manages the complex parts of Kubernetes for you.
+You can use AKS to deploy and manage web applications.
+It helps run an online store with many customers.
 
 **Free tier:** AKS cluster management is free; you’ll incur a charge for resources consumed by nodes
 
@@ -212,9 +212,9 @@ AKS can then run a web shop that processes orders.
 ### Azure VM Image Builder
 
 creates custom virtual machine images.
-It automates image customization and building.
-You can add specific software and configurations.
-Build a standard image for deploying many identical servers.
+It automates the process of building operating system images.
+Azure VM Image Builder includes your applications and settings.
+Use it to build consistent Windows Server images for your deployments.
 
 **Free tier:** VM Image Builder is a free service. You may incur a charge if your build transfers data or uses paid Azure services
 
@@ -224,7 +224,7 @@ Build a standard image for deploying many identical servers.
 
 ### Batch
 
-Azure  runs many jobs at once. It helps process large amounts of data. Batch can render many video frames for a movie. This service manages your computing tasks.
+Azure  runs many jobs at once. It manages computing resources for you. Batch can process large video files for rendering. Batch scales to handle your workload needs.
 
 **Free tier:** Free
 
@@ -234,10 +234,10 @@ Azure  runs many jobs at once. It helps process large amounts of data. Batch can
 
 ### Functions
 
-Azure  run small pieces of code.
-These code snippets react to events happening.
-Functions can process uploaded images automatically.
-They are great for event-driven applications.
+Azure  run small pieces of code for you.
+Functions respond to events automatically.
+They can upload files to a storage account.
+Functions execute code when a file appears.
 
 **Free tier:** 1 million requests
 
@@ -247,11 +247,10 @@ They are great for event-driven applications.
 
 ### Static Web Apps
 
-Azure  hosts your web application.
-It builds your app when you push code changes.
-Static Web Apps deploys your front-end code and APIs.
-It serves your website directly to users.
-Build a personal blog that updates automatically.
+Azure  quickly builds and hosts your web apps.
+It automatically deploys your code from GitHub or Azure DevOps.
+Static Web Apps handles running serverless APIs alongside your front end.
+It serves your personal blog built with React and a Node.js API.
 
 **Free tier:** 100 GB bandwidth per subscription, 2 custom domains and .5 GB storage per app
 
@@ -261,7 +260,10 @@ Build a personal blog that updates automatically.
 
 ### Container Apps
 
-runs your applications.  It handles deploying and running your code.  Container Apps can serve web pages to users.  It also manages background tasks.
+runs your containerized applications.
+It deploys code packaged in containers to the cloud.
+Container Apps manages scaling and networking automatically.
+It can host a web API that processes user orders.
 
 **Free tier:** 180,000 vCPU seconds, 360,000 GiB seconds, and 2 million requests
 
@@ -272,9 +274,9 @@ runs your applications.  It handles deploying and running your code.  Container 
 ### Service Fabric
 
 runs your applications reliably.
-It manages microservices and containers.
-Service Fabric deploys your code to servers.
-It helps build distributed systems, like online stores.
+Service Fabric orchestrates containers and code packages.
+It manages application health and automatic recovery.
+Service Fabric can host microservices processing user orders.
 
 **Free tier:** Free
 
@@ -286,7 +288,10 @@ It helps build distributed systems, like online stores.
 
 ### Azure Container Storage
 
-lets you manage data for containers. It provides persistent disks for stateful applications. You can attach and detach volumes easily. Use it for your databases running in containers.
+provides persistent disks for your containers.
+It lets containers keep their data even when they restart.
+It allows your stateful apps to run reliably in containers.
+Use it to store user uploads for your web application.
 
 **Free tier:** This service will offer a free tier for deployments with storage pool capacity under 5 TiB
 
@@ -296,10 +301,10 @@ lets you manage data for containers. It provides persistent disks for stateful a
 
 ### App Configuration
 
-stores application settings centrally.
-It allows you to change settings without redeploying your app.
-Update database connection strings easily.
-App Configuration manages your app's feature flags.
+stores settings for your applications.
+It lets you manage secrets and feature flags.
+Developers can change app behavior without redeploying.
+Use App Configuration to control A/B testing rollout.
 
 **Free tier:** 1,000 requests per day with 10 MB storage
 
@@ -311,7 +316,7 @@ App Configuration manages your app's feature flags.
 
 ### Azure Cosmos DB
 
-stores and manages your data globally. It lets you instantly access data from anywhere. Azure Cosmos DB processes millions of requests per second. Build a real-time gaming leaderboard with it.
+stores and accesses your application data. It lets you read and write data very quickly. Azure Cosmos DB supports many different ways to store data. You can store customer order information here.
 
 **Free tier:** 1,000 request units per-second provisioned throughput with 25 GB storage
 
@@ -321,7 +326,10 @@ stores and manages your data globally. It lets you instantly access data from an
 
 ### Azure Cosmos DB for MongoDB
 
-stores your application's data. It acts like a familiar MongoDB database. Your apps can easily connect and read/write data. Use it to run your existing MongoDB game leaderboards.
+stores your data.
+It lets you run existing MongoDB applications.
+You can deploy mobile apps that need global data.
+Azure Cosmos DB for MongoDB handles data replication.
 
 **Free tier:** A dedicated MongoDB cluster with 32 GB storage
 
@@ -332,9 +340,9 @@ stores your application's data. It acts like a familiar MongoDB database. Your a
 ### Database Migration Service
 
 Azure  moves your databases.
-It helps you switch from other cloud or on-premises systems.
-Database Migration Service brings your data to Azure SQL.
-This service makes moving your databases simpler.
+It transfers data from various sources.
+It helps you switch to Azure SQL Database.
+Database Migration Service automates the move.
 
 **Free tier:** Free Standard Compute
 
@@ -344,10 +352,10 @@ This service makes moving your databases simpler.
 
 ### SQL Database
 
-Azure  stores your structured information.
-SQL Database lets you save and retrieve business records.
-It runs applications that need to access customer details.
-Businesses use SQL Database to track product inventories.
+Azure  stores your structured data.
+It lets you run relational databases in the cloud.
+Your applications can read and write information.
+Use Azure SQL Database for your online store's inventory.
 
 **Free tier:** Get up to 10 databases with 100,000 vCore seconds of serverless tier and 32 GB of storage each
 
@@ -359,7 +367,10 @@ Businesses use SQL Database to track product inventories.
 
 ### Azure Deployment Environments​
 
-Azure Deployment Environments quickly set up development and testing setups. It provisions cloud resources needed for application builds. Developers get consistent, ready-to-use environments. They can test their new website features.
+Azure Deployment Environments create consistent development setups.
+It provides pre-configured environments for your teams.
+This helps developers quickly start building applications.
+Developers can instantly spin up a testing environment for a new feature.
 
 **Free tier:** Azure Deployment Environments is a free service today. However, you will be charged for other Azure resources like compute, storage, and networking that are created in environments deployed through the service
 
@@ -369,10 +380,7 @@ Azure Deployment Environments quickly set up development and testing setups. It 
 
 ### Azure DevOps
 
-helps teams build and deliver software.
-It manages code, tracks work, and automates builds.
-Azure DevOps helps test code and deploy applications.
-A team uses it to manage their new mobile app project.
+helps teams build and deliver software faster. It allows you to plan work and track progress. Azure DevOps lets you write and test code automatically. You can then deploy your applications to the cloud. Build a website and publish it with Azure DevOps.
 
 **Free tier:** 5 users with unlimited private Git repos
 
@@ -382,10 +390,7 @@ A team uses it to manage their new mobile app project.
 
 ### DevTest Labs
 
-helps teams create and manage development environments.
-You can quickly spin up new virtual machines for testing.
-DevTest Labs lets you control costs by setting usage limits.
-Developers can provision test environments for mobile app trials.
+lets you quickly set up and manage development and testing environments. You can easily create virtual machines for your team. Developers can get their own sandboxes for experimenting. Use DevTest Labs to quickly build and test a new feature.
 
 **Free tier:** Free
 
@@ -395,10 +400,7 @@ Developers can provision test environments for mobile app trials.
 
 ### Visual Studio Code
 
-lets you write and edit code.
-It helps you build applications by running commands.
-Visual Studio Code can debug your programs.
-You use it to create a web page.
+writes and edits your computer programs. It helps you find mistakes in your code. You can build websites with it. Visual Studio Code lets you run your code tests.
 
 **Free tier:** Free
 
@@ -410,10 +412,7 @@ You use it to create a web page.
 
 ### Monitor
 
-Azure  watches your cloud resources.
-Monitor collects logs and metrics from your apps.
-It helps you find and fix problems quickly.
-Monitor alerts you when disk space is low.
+Azure  watches your applications and resources. It collects logs and metrics from everything. Azure Monitor helps you find problems quickly. See a database running slow with this service.
 
 **Free tier:** See Azure Monitor pricing details for free amounts per feature
 
@@ -425,7 +424,7 @@ Monitor alerts you when disk space is low.
 
 ### Azure Arc
 
-extends Azure management to your servers.  It lets you manage machines anywhere.  You can deploy applications to those servers.  Run your Kubernetes clusters on-premises using Azure Arc.
+connects your servers and Kubernetes clusters anywhere.  It lets you manage them from Azure.  You can deploy apps to your on-premises machines.  Azure Arc extends Azure's control to your data center.
 
 **Free tier:** Free Azure control plane functionality for resources outside Azure, search and indexing for Azure Arc-enabled resources
 
@@ -435,7 +434,11 @@ extends Azure management to your servers.  It lets you manage machines anywhere.
 
 ### IoT Edge
 
-runs cloud workloads on your devices. It lets you deploy software and AI to the edge. This means data gets processed locally on the device. IoT Edge can analyze sensor readings on a factory floor.
+lets you run cloud-like processing on devices.
+IoT Edge deploys applications and custom code to your devices.
+IoT Edge processes data locally, reducing latency.
+IoT Edge sends filtered data to the cloud for analysis.
+Imagine analyzing sensor readings from remote oil rigs instantly.
 
 **Free tier:** Free, open-source edge runtime
 
@@ -447,7 +450,7 @@ runs cloud workloads on your devices. It lets you deploy software and AI to the 
 
 ### Azure Active Directory B2C
 
-lets customers sign up and sign in. It manages your user accounts securely. Think of it for your online store's login. Azure Active Directory B2C keeps customer data safe.
+lets customers sign in to your apps. It manages user accounts for your customers. Azure Active Directory B2C lets customers use their social accounts. It simplifies customer registration and login for your website.
 
 **Free tier:** 50,000 active users per month (MAU) with Azure Active Directory B2C
 
@@ -457,7 +460,10 @@ lets customers sign up and sign in. It manages your user accounts securely. Thin
 
 ### Microsoft Entra ID (formerly Azure AD)
 
-Microsoft Entra ID manages who accesses your apps. It verifies user identities to grant or deny entry. Microsoft Entra ID secures your cloud services. It lets employees sign into company software.
+Microsoft Entra ID manages user access to cloud apps.
+It lets people sign in securely to Microsoft 365.
+Microsoft Entra ID verifies who you are.
+It grants or denies entry based on your permissions.
 
 **Free tier:** 50,000 stored objects with single sign-on (SSO) to all cloud apps
 
@@ -470,10 +476,10 @@ Microsoft Entra ID manages who accesses your apps. It verifies user identities t
 ### API Management
 
 acts as a gateway for your services.
-It lets you publish, secure, and monitor APIs.
-API Management routes incoming requests to your backends.
-It allows developers to discover and use your APIs.
-A company can use it to expose customer data APIs.
+It controls who can access your APIs.
+API Management lets you manage and publish your services.
+It can monitor API usage and security.
+Developers use it to find and connect to partner services.
 
 **Free tier:** 1 million monthly calls free with Consumption tier
 
@@ -483,10 +489,10 @@ A company can use it to expose customer data APIs.
 
 ### Event Grid
 
-sends notifications when things happen.
-It routes events from Azure services and your apps.
-Other services react to these events to perform actions.
-An image upload triggers Event Grid to process the image.
+delivers messages about things that happen.
+It sends notifications when something is updated.
+Your apps can subscribe to these events.
+This lets you update a website when a file changes.
 
 **Free tier:** 100,000 operations per month
 
@@ -496,7 +502,10 @@ An image upload triggers Event Grid to process the image.
 
 ### Health Data Services
 
-manages patient information. It securely stores and organizes health records. Developers can build patient portals with it. A hospital can track appointment history.
+securely manages patient information.
+It stores clinical records and medical histories.
+Health Data Services enables sharing data between providers.
+It helps build applications for remote patient monitoring.
 
 **Free tier:** 1 GB structured and blob storage, 50,000 API requests, .5 GB transformation operations, 100,000 events
 
@@ -506,10 +515,7 @@ manages patient information. It securely stores and organizes health records. De
 
 ### Logic Apps
 
-automate tasks between different services.
-Logic Apps connect apps to move data.
-Logic Apps trigger workflows when events happen.
-Logic Apps send an email when a file is added.
+connect different applications and services. It automates tasks by creating workflows. Logic Apps can send an email when a new file is added. This service helps you build automated processes.
 
 **Free tier:** 4,000 built-in actions with the Consumption plan
 
@@ -519,10 +525,7 @@ Logic Apps send an email when a file is added.
 
 ### Web PubSub
 
-lets you send real-time messages to connected users.
-It manages connections for live updates.
-Your app publishes messages, and Web PubSub distributes them instantly.
-Live chat in a game uses Web PubSub.
+sends real-time messages to connected clients. It manages WebSocket connections for you. This allows apps to push updates instantly. Live chat applications can use Web PubSub.
 
 **Free tier:** 20,000 messages per unit per day and 20 concurrent connections per unit (1 unit max)
 
@@ -534,10 +537,10 @@ Live chat in a game uses Web PubSub.
 
 ### Azure Maps
 
-lets you add location data to your apps.
-It provides maps, routing, and search services.
-Azure Maps can find nearby restaurants for users.
-This helps people explore new places easily.
+provides location data for your apps.
+It lets you add maps and routing to applications.
+Azure Maps helps find nearby restaurants.
+You can also track vehicle locations with it.
 
 **Free tier:** 1,000 to 5,000 transactions for specific mapping and location insights features
 
@@ -548,9 +551,9 @@ This helps people explore new places easily.
 ### IoT Hub
 
 connects your devices to the cloud.
-IoT Hub sends commands from the cloud to devices.
+IoT Hub sends commands to devices.
 IoT Hub receives data from sensors.
-IoT Hub tracks farm sensors sending temperature readings.
+IoT Hub tracks your smart thermostat's temperature.
 
 **Free tier:** 8,000 messages per day and .5 KB message meter size of Free edition
 
@@ -560,10 +563,10 @@ IoT Hub tracks farm sensors sending temperature readings.
 
 ### Notification Hubs
 
-sends messages to many devices.
-It helps your app reach users quickly.
-Notification Hubs delivers alerts to phones and tablets.
-This is perfect for breaking news updates.
+sends messages to many devices fast.
+It pushes alerts to iOS and Android phones.
+Developers use it to update app users instantly.
+Think sending a new flash sale announcement.
 
 **Free tier:** 1 million push notifications with free namespace
 
@@ -575,12 +578,11 @@ This is perfect for breaking news updates.
 
 ### Advisor
 
-helps you improve your Azure resources.
-It finds ways to lower costs.
-Advisor suggests security improvements.
-It recommends performance enhancements.
-Advisor helps make your applications reliable.
-Run your web app on Azure SQL for better database performance.
+watches your Azure resources.
+Advisor suggests ways to improve them.
+It helps you save money and boost performance.
+Advisor finds security risks.
+It recommends tuning your databases for better speed.
 
 **Free tier:** Unlimited
 
@@ -590,7 +592,10 @@ Run your web app on Azure SQL for better database performance.
 
 ### Automation
 
-Azure  runs tasks for you. It automates common jobs. Automation can restart virtual machines. It manages Windows updates across servers.
+Azure  runs tasks for you.
+It executes runbooks on a schedule.
+Automation can install software updates.
+It manages virtual machine start-ups.
 
 **Free tier:** 500 minutes of job runtime
 
@@ -600,7 +605,7 @@ Azure  runs tasks for you. It automates common jobs. Automation can restart virt
 
 ### Azure Automanage
 
-automates routine server tasks. It applies best practices and configurations automatically. Azure Automanage can manage guest operating system updates. It helps keep your SQL servers running smoothly.
+keeps your servers running smoothly. It automatically installs updates and security patches. Azure Automanage configures critical software for you. This ensures your web applications are always protected.
 
 **Free tier:** There are no charges specifically for Automanage. Azure services that are onboarded through Automanage will be billed individually
 
@@ -610,10 +615,10 @@ automates routine server tasks. It applies best practices and configurations aut
 
 ### Azure Lighthouse
 
-lets you manage many Azure subscriptions centrally.
-It helps you organize and govern customer or internal Azure environments.
-Azure Lighthouse allows you to deploy and monitor resources across these accounts.
-A managed service provider can use it to support multiple client Azure setups.
+lets you manage multiple Azure subscriptions from one place.
+It lets you control resources across different customer tenants.
+Azure Lighthouse helps you onboard and manage customer environments.
+You can deploy security updates for many clients simultaneously.
 
 **Free tier:** Free
 
@@ -623,10 +628,7 @@ A managed service provider can use it to support multiple client Azure setups.
 
 ### Azure Managed Applications
 
-deploy pre-built software solutions.
-It simplifies setting up complex applications for your teams.
-Azure Managed Applications handle application deployment automatically.
-Your developers can launch shared internal tools quickly.
+simplifies app deployment. It packages apps and their resources. This ensures consistent setup every time. A company can quickly deploy a new web application.
 
 **Free tier:** Free publishing
 
@@ -636,10 +638,7 @@ Your developers can launch shared internal tools quickly.
 
 ### Azure Policy
 
-enforces organizational standards.
-Azure Policy ensures resources meet compliance rules.
-Azure Policy can prevent unencrypted storage accounts.
-Azure Policy helps control resource deployment.
+enforces company rules for Azure resources. It checks resource settings and takes action. Azure Policy ensures virtual machines use specific disk types. It prevents unauthorized deployments and maintains compliance.
 
 **Free tier:** Free access to configuration and change tracking features
 
@@ -649,10 +648,10 @@ Azure Policy helps control resource deployment.
 
 ### Azure Resource Mover
 
-moves your Azure resources between regions.
-It helps you relocate virtual machines and databases.
-Azure Resource Mover copies data to a new location.
-It then updates configurations for the new region.
+helps you move resources between Azure regions.
+It lets you move virtual machines to another data center.
+Azure Resource Mover automates the migration process.
+This makes moving workloads simpler and faster.
 
 **Free tier:** Free (ingress and egress charges may apply)
 
@@ -662,7 +661,7 @@ It then updates configurations for the new region.
 
 ### Azure Update Manager
 
-keeps your servers updated. It automates applying security patches. It ensures operating systems and software are current. You can manage updates for virtual machines in Azure and on-premises.
+keeps your machines up-to-date. It automates software patching across your servers. Azure Update Manager can deploy security updates to Windows servers. This ensures your systems are protected from threats.
 
 **Free tier:** Free for Azure resources (charged for Arc-enabled servers) – see pricing page for details
 
@@ -672,10 +671,10 @@ keeps your servers updated. It automates applying security patches. It ensures o
 
 ### Cloud Shell
 
-provides a browser-based command line.
-It lets you manage Azure resources easily.
-You can run Bash or PowerShell commands directly.
-Use Cloud Shell to quickly create virtual machines.
+gives you a command-line access.
+You can run shell commands from your browser.
+Cloud Shell lets you deploy virtual machines easily.
+It's great for managing your Azure resources quickly.
 
 **Free tier:** 5 GB free storage in Azure Files for 12 months
 
@@ -685,10 +684,7 @@ Use Cloud Shell to quickly create virtual machines.
 
 ### Cost Management
 
-Azure  helps you track spending.
-It shows where your money goes in Azure.
-You can set budgets to control costs.
-It helps you optimize spending for your virtual machines.
+Azure  tracks your cloud spending. It helps you see where money goes. You can set budgets to control costs. This service helps a company track its monthly Azure bills.
 
 **Free tier:** Free
 
@@ -698,7 +694,7 @@ It helps you optimize spending for your virtual machines.
 
 ### Resource Manager
 
-deploys your Azure resources. It defines what you need in templates. Resource Manager then builds these resources for you. You can deploy a virtual machine this way.
+lets you manage Azure resources. It helps you deploy and configure virtual machines. You can also set up databases and storage. Resource Manager enables you to create new web apps.
 
 **Free tier:** Free
 
@@ -708,10 +704,7 @@ deploys your Azure resources. It defines what you need in templates. Resource Ma
 
 ### Azure Migrate
 
-helps you move your computers to Microsoft's cloud.
-It finds and assesses your existing systems.
-Azure Migrate then moves your applications and data.
-You can use it to move a company website.
+helps move your servers to the cloud. It assesses your existing systems. Azure Migrate then transfers your virtual machines. You can move your on-premises databases to Azure SQL.
 
 **Free tier:** Free
 
@@ -722,9 +715,9 @@ You can use it to move a company website.
 ### Network Watcher
 
 helps you monitor your Azure network.
-It allows you to diagnose network issues.
-Network Watcher tests connectivity between resources.
-You can see traffic flow to a virtual machine.
+It lets you see traffic flow and diagnose network problems.
+Network Watcher can test network connectivity to a virtual machine.
+It also helps you identify security group issues.
 
 **Free tier:** 5 GB storage with 1,000 checks, 10 tests, and 10 connection metrics
 
@@ -736,7 +729,10 @@ You can see traffic flow to a virtual machine.
 
 ### Azure Storage Mover
 
-copies data between storage locations. It moves files from on-premises servers to Azure Blob Storage. This service automates bulk data transfers. Use Azure Storage Mover to migrate large archives to the cloud.
+copies data between storage locations.
+It moves large files from on-premises servers to Azure.
+Azure Storage Mover simplifies migration tasks.
+This service helps you get data into the cloud.
 
 **Free tier:** Free
 
@@ -748,10 +744,10 @@ copies data between storage locations. It moves files from on-premises servers t
 
 ### Bandwidth (Data Transfer)
 
-Bandwidth lets you move data in and out of Azure.
-This controls how much data your applications send.
-It helps customers download large video files.
-Bandwidth manages your internet connection costs.
+Bandwidth moves data between Azure and your location.
+It lets your apps send results to users.
+This service allows virtual machines to talk.
+A game server sends player actions over Bandwidth.
 
 **Free tier:** 100 GB outbound
 
@@ -761,7 +757,7 @@ Bandwidth manages your internet connection costs.
 
 ### Private Link
 
-lets you connect privately to Azure services.  It creates a dedicated network pathway. This keeps your data within your network boundary.  Access Azure Storage securely from your virtual machine.
+securely connects your services. It creates private network access. Your data travels directly over Azure's backbone. Access your Azure SQL Database from your on-premises network.
 
 **Free tier:** Free
 
@@ -771,10 +767,10 @@ lets you connect privately to Azure services.  It creates a dedicated network pa
 
 ### Virtual Network
 
-lets you build your own private network in Azure.
-It connects your Azure resources securely.
-Your virtual machines can talk to each other there.
-It hosts a web server that only internal users access.
+creates your own private network in Azure.
+It lets your Azure resources communicate securely.
+You can place virtual machines inside your Virtual Network.
+This allows your web servers to talk to your database.
 
 **Free tier:** 50 virtual networks
 
@@ -786,7 +782,7 @@ It hosts a web server that only internal users access.
 
 ### Azure Attestation
 
-proves your code runs securely. It verifies the integrity of your running software. Use Azure Attestation to confirm a virtual machine's configuration. This ensures sensitive data processing is trustworthy.
+proves your software is running securely. It verifies the integrity of your running code. This confirms your application hasn't been tampered with. Use it to verify that sensitive data processing code is unmodified.
 
 **Free tier:** Free
 
@@ -796,7 +792,10 @@ proves your code runs securely. It verifies the integrity of your running softwa
 
 ### Security Center
 
-protects your cloud resources. It finds potential threats on your servers. Security Center can recommend ways to fix issues. It helps you secure virtual machines running in Azure.
+Azure  keeps your cloud safe.
+Security Center finds and fixes security risks.
+It helps you manage security across your resources.
+Security Center alerts you about suspicious activity.
 
 **Free tier:** Free policy assessment and recommendations
 
@@ -808,10 +807,10 @@ protects your cloud resources. It finds potential threats on your servers. Secur
 
 ### Azure SignalR Service
 
-pushes real-time messages to connected clients.
-It allows web applications to send updates instantly.
-This service helps build live chat features.
-Your users see new messages immediately without refreshing.
+pushes messages to connected web clients.
+It keeps your users updated with real-time information.
+Build live dashboards that show changing data instantly.
+Azure SignalR Service manages the connections for you.
 
 **Free tier:** 20 concurrent connections per unit and 20,000 messages
 
