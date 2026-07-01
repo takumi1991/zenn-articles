@@ -38,7 +38,7 @@ Free Tier(monthly limits): 1 e2-micro instance per month
 
 ### Cloud Run
 
-ステートレス コンテナの実行、アプリの構築、ウェブサイトのホストとデプロイのためのフルマネージド環境。
+ステートレス コンテナの実行、アプリの構築、ウェブサイトのデプロイとホストのためのフルマネージド環境。
 毎月無料で使える上限: 200 万リクエスト（1 か月あたり）
 
 A fully managed environment to run stateless containers, build apps, or host and deploy websites.
@@ -64,7 +64,7 @@ Free Tier(monthly limits): 5 GB-months Standard Storage
 
 ### Google Kubernetes Engine
 
-Google が管理する Kubernetes クラスタを使用して、ワンクリックでコンテナ オーケストレーションを実施。
+Google が管理する Kubernetes クラスタを使用して、ワンクリックでコンテナ オーケストレーションを実施できます。
 毎月無料で使える上限: 1 つの Autopilot またはゾーンクラスタ（1 か月あたり）
 
 One-click container orchestration via Kubernetes clusters, managed by Google.
@@ -169,7 +169,7 @@ Free Tier(monthly limits): Includes 5 GB of persistent disk storage
 
 ### Cloud Source Repositories
 
-Google Cloud がホストするさまざまなプライベート Git リポジトリ。
+複数の Git プライベート リポジトリを Google Cloud でホスト。
 毎月無料で使える上限: 最大 5 ユーザーが無料で利用可能
 
 Multiple private Git repositories hosted on Google Cloud.
@@ -205,26 +205,13 @@ Free Tier(monthly limits): 10 GB messages per month
 
 ### Workflows
 
-Google Cloud や HTTP API でサービス呼び出しのフルマネージド シーケンスを実行。
+Google Cloud やあらゆる HTTP API にわたるサービス呼び出しのフルマネージド シーケンスを実行。
 毎月無料で使える上限: 5,000 の内部ステップが無料（1 か月あたり）
 
 Run fully-managed sequences of service calls across Google Cloud and any HTTP APIs.
 Free Tier(monthly limits): 5,000 free internal steps per month
 
 🔗 https://cloud.google.com/free/docs/gcp-free-tier/#workflows
-
-
-## 👀 オブザーバビリティ
-
-### Operations
-
-Google Cloud 上のアプリケーションのモニタリング、ロギング、診断。
-毎月無料で使える上限: ロギングとモニタリングのための月々の割り当て
-
-Monitoring, logging, and diagnostics for applications on Google Cloud.
-Free Tier(monthly limits): Monthly allotments for logging and monitoring
-
-🔗 https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
 
 
 ## ⚙️ 運用
@@ -244,7 +231,7 @@ Free Tier(monthly limits): 5,000 resource evaluations per month
 
 ### Cloud KMS Autokey
 
-推奨される暗号化のプラクティスに沿った整合性を確保するために、適切な Cloud KMS 鍵をオンデマンドで取得します。
+適切な Cloud KMS 鍵をオンデマンドで取得して、暗号化の推奨プラクティスに沿った整合性を確保しましょう。
 毎月無料で使える上限: 100 個の有効な鍵バージョンと 10,000 個の鍵オペレーション（1 か月あたり）
 
 Get the right Cloud KMS keys on-demand, for consistent alignment with recommended encryption practices.
@@ -261,6 +248,19 @@ Securely store API keys, passwords, certificates, and other sensitive data.
 Free Tier(monthly limits): 6 secret versions per month
 
 🔗 https://cloud.google.com/free/docs/gcp-free-tier/#secret-manager
+
+
+## 📂 その他
+
+### オペレーション
+
+Google Cloud 上のアプリケーションのモニタリング、ロギング、診断。
+毎月無料で使える上限: ロギングとモニタリングのための月々の割り当て
+
+Google Cloud 上のアプリケーションのモニタリング、ロギング、診断。
+Free Tier(monthly limits): ロギングとモニタリングのための月々の割り当て
+
+🔗 https://cloud.google.com/free/docs/gcp-free-tier/#logging-monitoring
 
 ---
 
