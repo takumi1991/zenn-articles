@@ -8,7 +8,7 @@ published: true
 
 # Azure Always Free Services
 
-Updated: 2026-06-01T05:09:42.162Z(UTC)
+Updated: 2026-07-01T04:48:42.354Z(UTC)
 
 Azure provides many services that can be used for free within certain limits. This article organizes those services by category.
 
@@ -324,19 +324,6 @@ stores and accesses your application data. It lets you read and write data very 
 
 ---
 
-### Azure Cosmos DB for MongoDB
-
-stores your data.
-It lets you run existing MongoDB applications.
-You can deploy mobile apps that need global data.
-Azure Cosmos DB for MongoDB handles data replication.
-
-**Free tier:** A dedicated MongoDB cluster with 32 GB storage
-
-🔗 https://azure.microsoft.com/en-us/products/cosmos-db/
-
----
-
 ### Database Migration Service
 
 Azure  moves your databases.
@@ -350,9 +337,9 @@ Database Migration Service automates the move.
 
 ---
 
-### SQL Database
+### Azure SQL Database
 
-Azure  stores your structured data.
+stores your structured data.
 It lets you run relational databases in the cloud.
 Your applications can read and write information.
 Use Azure SQL Database for your online store's inventory.
@@ -815,6 +802,21 @@ Azure SignalR Service manages the connections for you.
 **Free tier:** 20 concurrent connections per unit and 20,000 messages
 
 🔗 https://azure.microsoft.com/en-us/products/signalr-service/
+
+<br><br>
+
+## 📁 Other
+
+### Azure DocumentDB
+
+stores and manages JSON data.
+It allows developers to build applications with flexible data.
+Azure DocumentDB processes many database requests quickly.
+Developers use Azure DocumentDB to power online retail carts.
+
+**Free tier:** A dedicated MongoDB cluster with 32 GB storage
+
+🔗 https://azure.microsoft.com/en-us/products/documentdb
 
 <br><br>
 

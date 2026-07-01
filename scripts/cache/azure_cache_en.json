@@ -262,5 +262,9 @@
   "webpubsub": {
     "text": "Web PubSub sends real-time messages to connected clients. It manages WebSocket connections for you. This allows apps to push updates instantly. Live chat applications can use Web PubSub.",
     "updatedAt": 1780290581660
+  },
+  "documentdb": {
+    "text": "Azure DocumentDB stores and manages JSON data.\nIt allows developers to build applications with flexible data.\nAzure DocumentDB processes many database requests quickly.\nDevelopers use Azure DocumentDB to power online retail carts.",
+    "updatedAt": 1782881321848
   }
 }
