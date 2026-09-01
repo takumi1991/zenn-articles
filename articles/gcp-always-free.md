@@ -85,6 +85,16 @@ Free Tier(monthly limits): 1 TB queries per month
 
 🔗 https://cloud.google.com/free/docs/gcp-free-tier/#bigquery
 
+### Datastream
+
+データベースやアプリケーションの間で、最小限のレイテンシでデータを確実に複製。
+毎月無料で使える上限: 
+
+Reliably replicates data across your databases and applications with minimal latency.
+Free Tier(monthly limits): 
+
+🔗 https://docs.cloud.google.com/free/docs/free-cloud-features#datastream
+
 
 ## 🗄️ データベース
 
@@ -180,6 +190,16 @@ Free Tier(monthly limits): Free access for up to five users
 
 ## 📱 アプリの開発
 
+### Artifact Registry
+
+コンテナ イメージや言語パッケージのための安全なストレージ レジストリ。
+毎月無料で使える上限: 0.5 GB の保存容量（1 か月あたり）
+
+A secure storage registry for container images and language packages.
+Free Tier(monthly limits): 0.5 GB of storage per month
+
+🔗 https://docs.cloud.google.com/free/docs/free-cloud-features#artifact-registry
+
 ### Cloud Build
 
 高速で一貫した信頼性の高いビルドを Google Cloud で実行。
@@ -192,6 +212,16 @@ Free Tier(monthly limits): 120 build-minutes per day
 
 
 ## 🔗 インテグレーション サービス
+
+### Application Integration
+
+エンタープライズ向けアプリケーションやデータに使用できるノーコードのフルマネージド統合プラットフォーム。
+毎月無料で使える上限: 最大 400 回の統合の実行と 20 GiB のデータ処理（1 か月あたり）
+
+A fully managed, no-code integration platform for enterprise applications and data.
+Free Tier(monthly limits): Up to 400 integration executions and 20 GiB of data processed per month
+
+🔗 https://docs.cloud.google.com/free/docs/free-cloud-features#application-integration
 
 ### Pub/Sub
 
@@ -251,6 +281,16 @@ Free Tier(monthly limits): 6 secret versions per month
 
 
 ## 📂 その他
+
+### Agent Engine
+
+AI エージェント向けのエンタープライズ グレードのオーケストレーションとカスタマイズ。
+毎月無料で使える上限: 最初の 180,000 vCPU 秒（50 時間）（1 か月あたり）
+
+Enterprise-grade orchestration and customization for AI agents.
+Free Tier(monthly limits): First 180,000 vCPU-seconds (50 hours) per month
+
+🔗 https://docs.cloud.google.com/free/docs/free-cloud-features#agent-engine
 
 ### オペレーション
 
