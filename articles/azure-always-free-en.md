@@ -8,7 +8,7 @@ published: true
 
 # Azure Always Free Services
 
-Updated: 2026-09-01T04:56:20.440Z(UTC)
+Updated: 2026-10-01T05:39:37.155Z(UTC)
 
 Azure provides many services that can be used for free within certain limits. This article organizes those services by category.
 
