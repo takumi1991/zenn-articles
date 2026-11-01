@@ -287,8 +287,8 @@ Free Tier(monthly limits): 6 secret versions per month
 AI エージェント向けのエンタープライズ グレードのオーケストレーションとカスタマイズ。
 毎月無料で使える上限: 最初の 180,000 vCPU 秒（50 時間）（1 か月あたり）
 
-Enterprise-grade orchestration and customization for AI agents.
-Free Tier(monthly limits): First 180,000 vCPU-seconds (50 hours) per month
+AI エージェント向けのエンタープライズ グレードのオーケストレーションとカスタマイズ。
+Free Tier(monthly limits): 最初の 180,000 vCPU 秒（50 時間）（1 か月あたり）
 
 🔗 https://docs.cloud.google.com/free/docs/free-cloud-features#agent-engine
 
